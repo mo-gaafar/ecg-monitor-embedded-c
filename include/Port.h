@@ -11,6 +11,8 @@
     PIN
 */
 
+// TODO: Remove MCU specific ports and pins
+
 //########################################################################//
 //__________________________OUTPUT PORTS__________________________________//
 //########################################################################//
@@ -18,17 +20,17 @@
 /*BUZZER*/
 
 #define BUZ_PORT_DATA (PORTB)
-#define BUZ_PORT_DIRECTION (PORTB)
+#define BUZ_PORT_DIRECTION (DDRB)
 #define BUZ_PIN (GPIO_PIN_1)
 
 /*LED*/
 
 #define LED_ALARM_PORT_DATA (PORTB)
-#define LED_ALARM_PORT_DIRECTION (PORTB)
+#define LED_ALARM_PORT_DIRECTION (DDRB)
 #define LED_ALARM_PIN (GPIO_PIN_2)
 
 #define LED_PROCESSING_PORT_DATA (PORTB)
-#define LED_PROCESSING_PORT_DIRECTION (PORTB)
+#define LED_PROCESSING_PORT_DIRECTION (DDRB)
 #define LED_PROCESSING_PIN (GPIO_PIN_3)
 
 /*LCD*/

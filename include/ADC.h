@@ -1,7 +1,7 @@
 #ifndef __ADC_H__
 #define __ADC_H__
 
-#include "STD_TYPES.h"
+#include "main.h"
 
 // Private variables
 

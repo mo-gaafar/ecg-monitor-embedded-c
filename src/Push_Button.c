@@ -8,6 +8,8 @@
 #define PB_PRESSED_VOLTAGE (0)
 #define PB_RELEASED_VOLTAGE (1)
 
+u8 current_sample_index = 0;
+
 typedef struct PB_Info
 {
     unsigned char samples[NUMBER_OF_SAMPLE];
@@ -63,21 +65,21 @@ void PB_Update(void)
     for (current_button = PB_VOL_PLUS; current_button <= PB_DISP_SLEEP; current_button++)
     {
         /* Update samples */
-        pb_info[current_button].samples[0] = ***; // fill this line
+        // pb_info[current_button].samples[0] = ***; // fill this line
 
         switch (current_button)
         {
         case PB_VOL_PLUS:
-            pb_info[current_button].samples[1] = ***; // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_VOL_PLUS_PORT_DATA, PB_VOL_PLUS_PIN); // fill this line
             break;
         case PB_VOL_MINUS:
-            pb_info[current_button].samples[1] = ***; // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN); // fill this line
             break;
         case PB_SNOOZE:
-            pb_info[current_button].samples[1] = ***; // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_SNOOZE_PORT_DATA, PB_SNOOZE_PIN); // fill this line
             break;
         case PB_DISP_SLEEP:
-            pb_info[current_button].samples[1] = ***; // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_DISP_SLEEP_PORT_DATA, PB_DISP_SLEEP_PIN); // fill this line
             break;
         default:
             /* Should not be here */
@@ -88,28 +90,29 @@ void PB_Update(void)
         switch (pb_info[current_button].state)
         {
         case PB_RELEASED:
-            if (***) // fill this line
+            if ((pb_info[current_button].samples[0] == PB_PRESSED_VOLTAGE) && // fill this line
+                (pb_info[current_button].samples[1] == PB_PRESSED_VOLTAGE))   // fill this line
             {
-                pb_info[current_button].state = ***; // fill this line
+                pb_info[current_button].state = PB_PRE_PRESSED; // fill this line
             }
             break;
         case PB_PRE_PRESSED:
-            if (***) // fill this line
+            if (pb_info[current_button].samples[1] == PB_PRESSED_VOLTAGE) // fill this line
             {
-                pb_info[current_button].state = ***; // fill this line
+                pb_info[current_button].state = PB_PRESSED; // fill this line
             }
             break;
         case PB_PRESSED:
-            if ((pb_info[current_button].samples[0] == ***)&& // fill this line
-                (pb_info[current_button].samples[1] == **))   // fill this line
+            if ((pb_info[current_button].samples[0] == PB_RELEASED_VOLTAGE) && // fill this line
+                (pb_info[current_button].samples[1] == PB_RELEASED_VOLTAGE))   // fill this line
             {
-                pb_info[current_button].state = ***; // fill this line
+                pb_info[current_button].state = PB_PRE_RELEASED; // fill this line
             }
             break;
         case PB_PRE_RELEASED:
-            if (pb_info[current_button].samples[1] == ***) // fill this line
+            if (pb_info[current_button].samples[1] == PB_PRESSED_VOLTAGE) // fill this line
             {
-                pb_info[current_button].state = ***; // fill this line
+                pb_info[current_button].state = PB_RELEASED; // fill this line
             }
             break;
             break;

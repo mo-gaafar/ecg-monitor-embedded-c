@@ -8,7 +8,7 @@
 #define PB_PRESSED_VOLTAGE (0)
 #define PB_RELEASED_VOLTAGE (1)
 
-u8 current_sample_index = 0;
+u8 current_sample_index = 1;
 
 typedef struct PB_Info
 {
@@ -25,15 +25,19 @@ void PB_Init(tPB pb, tPB_State initial_state)
     {
     case PB_VOL_PLUS:
         GPIO_InitPortPin(PB_VOL_MINUS_PORT_DIRECTION, PB_VOL_MINUS_PIN, GPIO_IN); // port, pin, direction
+        // GPIO_WritePortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN, PB_RELEASED_VOLTAGE); // pullup
         break;
     case PB_VOL_MINUS:
         GPIO_InitPortPin(PB_VOL_MINUS_PORT_DIRECTION, PB_VOL_MINUS_PIN, GPIO_IN); // port, pin, direction
+        // GPIO_WritePortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN, PB_RELEASED_VOLTAGE); // pullup
         break;
     case PB_SNOOZE:
         GPIO_InitPortPin(PB_SNOOZE_PORT_DIRECTION, PB_SNOOZE_PIN, GPIO_IN); // port, pin, direction
+        // GPIO_WritePortPin(PB_SNOOZE_PORT_DATA, PB_SNOOZE_PIN, PB_RELEASED_VOLTAGE); // pullup
         break;
     case PB_DISP_SLEEP:
         GPIO_InitPortPin(PB_DISP_SLEEP_PORT_DIRECTION, PB_DISP_SLEEP_PIN, GPIO_IN); // port, pin, direction
+        // GPIO_WritePortPin(PB_DISP_SLEEP_PORT_DATA, PB_DISP_SLEEP_PIN, PB_RELEASED_VOLTAGE); // pullup
         break;
     default:
         /* Should not be here */
@@ -41,17 +45,21 @@ void PB_Init(tPB pb, tPB_State initial_state)
     }
 
     /* Initialize state */
-    pb_info[pb].state = PB_RELEASED_VOLTAGE; // fill this line
+    pb_info[pb].state = PB_RELEASED; // fill this line
 
     /* Initialize samples */
     switch (initial_state)
     {
     case PB_RELEASED:
+        pb_info[pb].samples[0] = PB_RELEASED_VOLTAGE; // fill this line
+        pb_info[pb].samples[1] = PB_RELEASED_VOLTAGE; // fill this line
     case PB_PRE_RELEASED:
         pb_info[pb].samples[0] = PB_RELEASED_VOLTAGE; // fill this line
         pb_info[pb].samples[1] = PB_RELEASED_VOLTAGE; // fill this line
         break;
     case PB_PRESSED:
+        pb_info[pb].samples[0] = PB_PRESSED_VOLTAGE; // fill this line
+        pb_info[pb].samples[1] = PB_PRESSED_VOLTAGE; // fill this line
     case PB_PRE_PRESSED:
         pb_info[pb].samples[0] = PB_PRESSED_VOLTAGE; // fill this line
         pb_info[pb].samples[1] = PB_PRESSED_VOLTAGE; // fill this line
@@ -62,24 +70,34 @@ void PB_Init(tPB pb, tPB_State initial_state)
 void PB_Update(void)
 {
     tPB current_button = PB_VOL_PLUS;
+
+    // Increment sample index each update function call
+    if (current_sample_index == 0)
+    {
+        current_sample_index = 1;
+    }
+    else
+    {
+        current_sample_index = 0;
+    }
+
     for (current_button = PB_VOL_PLUS; current_button <= PB_DISP_SLEEP; current_button++)
     {
         /* Update samples */
-        // pb_info[current_button].samples[0] = ***; // fill this line
 
         switch (current_button)
         {
         case PB_VOL_PLUS:
-            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_VOL_PLUS_PORT_DATA, PB_VOL_PLUS_PIN); // fill this line
+            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_VOL_PLUS_PORT_DATA, PB_VOL_PLUS_PIN); // fill this line
             break;
         case PB_VOL_MINUS:
-            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN); // fill this line
+            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN); // fill this line
             break;
         case PB_SNOOZE:
-            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_SNOOZE_PORT_DATA, PB_SNOOZE_PIN); // fill this line
+            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_SNOOZE_PORT_DATA, PB_SNOOZE_PIN); // fill this line
             break;
         case PB_DISP_SLEEP:
-            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_DISP_SLEEP_PORT_DATA, PB_DISP_SLEEP_PIN); // fill this line
+            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_DISP_SLEEP_PORT_DATA, PB_DISP_SLEEP_PIN); // fill this line
             break;
         default:
             /* Should not be here */
@@ -110,11 +128,10 @@ void PB_Update(void)
             }
             break;
         case PB_PRE_RELEASED:
-            if (pb_info[current_button].samples[1] == PB_PRESSED_VOLTAGE) // fill this line
+            if (pb_info[current_button].samples[1] == PB_RELEASED_VOLTAGE) // fill this line
             {
                 pb_info[current_button].state = PB_RELEASED; // fill this line
             }
-            break;
             break;
         default:
             /* Should not be here */

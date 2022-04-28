@@ -17,6 +17,7 @@
 # Precompiled Headers
 *.gch
 *.pch
+*.dblite
 
 # Libraries
 *.lib
@@ -53,3 +54,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 docs/Last Loaded ECG_Monitor_Simulation.pdsbak
+.pio/build/uno/.sconsign39.dblite
+.sconsign39.dblite

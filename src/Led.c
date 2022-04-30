@@ -14,15 +14,6 @@ void LED_Init(tLED led, tLED_State state)
     case LED_PROCESSING:                                                      // led
         GPIO_InitPortPin(LED_PROCESSING_PORT_DIRECTION, LED_PROCESSING_PIN, GPIO_OUT); // led_port, led_pin, in or out
         break;
-    // case 2:                                                      // led
-    //     GPIO_InitPortPin(LED_2_PORT_DIRECTION, LED_2_PIN, GPIO_OUT); // led_port, led_pin, in or out
-    //     break;
-    // case 3:                                                      // led
-    //     GPIO_InitPortPin(LED_3_PORT_DIRECTION, LED_3_PIN, GPIO_OUT); // led_port, led_pin, in or out
-    //     break;
-    // case 4:                                                      // led
-    //     GPIO_InitPortPin(LED_4_PORT_DIRECTION, LED_4_PIN, GPIO_OUT); // led_port, led_pin, in or out
-    //     break;
     default:
         /* Should not come here */
         break;
@@ -62,15 +53,7 @@ void LED_SetState(tLED led, tLED_State state)
     case LED_PROCESSING:                                               // led
         GPIO_WritePortPin(LED_PROCESSING_PORT_DATA, LED_PROCESSING_PIN, state); // led_port, led_pin
         break;
-    // case LED_2:                                               // led
-    //     GPIO_WritePortPin(LED_2_PORT_DATA, LED_2_PIN, state); // led_port, led_pin
-    //     break;
-    // case LED_3:                                               // led
-    //     GPIO_WritePortPin(LED_3_PORT_DATA, LED_3_PIN, state); // led_port, led_pin
-    //     break;
-    // case LED_4:                                               // led
-    //     GPIO_WritePortPin(LED_4_PORT_DATA, LED_4_PIN, state); // led_port, led_pin
-    //     break;
+
     default:
         /* Should not come here */
         break;
@@ -93,15 +76,6 @@ tLED_State LED_GetState(tLED led)
     case LED_PROCESSING:
         ret = GPIO_ReadPortPin(LED_PROCESSING_PORT_DATA, LED_PROCESSING_PIN); // led_port, led_pin
         break;
-    // case LED_2:
-    //     ret = GPIO_ReadPortPin(LED_2_PORT_DATA, LED_2_PIN); // led_port, led_pin
-    //     break;
-    // case LED_3:
-    //     ret = GPIO_ReadPortPin(LED_3_PORT_DATA, LED_3_PIN); // led_port, led_pin
-    //     break;
-    // case LED_4:
-    //     ret = GPIO_ReadPortPin(LED_4_PORT_DATA, LED_4_PIN); // led_port, led_pin
-    //     break;
     default:
         /* Should not come here */
         break;

@@ -21,12 +21,15 @@
 // #define GPIO_PORT_1_DIRECTION (DDRA)
 
 #define GPIO_PORT_1_DATA (PORTB)
+#define GPIO_PORT_1_INPUT (PINB)
 #define GPIO_PORT_1_DIRECTION (DDRB)
 
 #define GPIO_PORT_2_DATA (PORTC)
+#define GPIO_PORT_2_INPUT (PINC)
 #define GPIO_PORT_2_DIRECTION (DDRC)
 
 #define GPIO_PORT_3_DATA (PORTD)
+#define GPIO_PORT_3_INPUT (PIND)
 #define GPIO_PORT_3_DIRECTION (DDRD)
 
 /* GPIO direction setting */

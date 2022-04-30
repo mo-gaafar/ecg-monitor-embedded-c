@@ -72,14 +72,7 @@ void PB_Update(void)
     tPB current_button = PB_VOL_PLUS;
 
     // Increment sample index each update function call
-    if (current_sample_index == 0)
-    {
-        current_sample_index = 1;
-    }
-    else
-    {
-        current_sample_index = 0;
-    }
+    current_sample_index = (current_sample_index == 1) ? 0 : 1;
 
     for (current_button = PB_VOL_PLUS; current_button <= PB_DISP_SLEEP; current_button++)
     {

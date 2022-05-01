@@ -41,3 +41,13 @@ int main(void)
     }
     return 0;
 }
+
+ISR(TIMER0_COMPA_vect) // called when TCNT0 == OCR0A
+{
+    //
+}
+
+ISR(TIMER0_OVF_vect) // called when timer 0 overflows
+{
+    //
+}

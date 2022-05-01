@@ -18,6 +18,7 @@ typedef struct PB_Info
 
 static tPB_Info pb_info[NUMBER_OF_PUSH_BUTTONS];
 
+
 void PB_Init(tPB pb, tPB_State initial_state)
 {
     /* Initialize hw pins */
@@ -67,30 +68,30 @@ void PB_Init(tPB pb, tPB_State initial_state)
     }
 }
 
+
 void PB_Update(void)
 {
     tPB current_button = PB_VOL_PLUS;
 
     // Increment sample index each update function call
-    current_sample_index = (current_sample_index == 1) ? 0 : 1;
 
     for (current_button = PB_VOL_PLUS; current_button <= PB_DISP_SLEEP; current_button++)
     {
         /* Update samples */
-
+        pb_info[current_button].samples[0] = pb_info[current_button].samples[1];
         switch (current_button)
         {
         case PB_VOL_PLUS:
-            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_VOL_PLUS_PORT_DATA, PB_VOL_PLUS_PIN); // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_VOL_PLUS_PORT_DATA, PB_VOL_PLUS_PIN); // fill this line
             break;
         case PB_VOL_MINUS:
-            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN); // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_VOL_MINUS_PORT_DATA, PB_VOL_MINUS_PIN); // fill this line
             break;
         case PB_SNOOZE:
-            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_SNOOZE_PORT_DATA, PB_SNOOZE_PIN); // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_SNOOZE_PORT_DATA, PB_SNOOZE_PIN); // fill this line
             break;
         case PB_DISP_SLEEP:
-            pb_info[current_button].samples[current_sample_index] = GPIO_ReadPortPin(PB_DISP_SLEEP_PORT_DATA, PB_DISP_SLEEP_PIN); // fill this line
+            pb_info[current_button].samples[1] = GPIO_ReadPortPin(PB_DISP_SLEEP_PORT_DATA, PB_DISP_SLEEP_PIN); // fill this line
             break;
         default:
             /* Should not be here */
@@ -132,6 +133,7 @@ void PB_Update(void)
         }
     }
 }
+
 
 tPB_State PB_GetState(tPB pb)
 {

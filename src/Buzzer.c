@@ -103,74 +103,74 @@ void BUZ_SetMode(tBUZ buzzer, tBUZ_Mode mode)
         buzzer_info[buzzer].state_sequence[i] = BUZ_PATTERN[buzzer_info[buzzer].mode][i];
     }
 };
-
-void BUZ_GeneratePWM(tBUZ buzzer, u8 duty_cycle)
-{
-    /* Generate PWM */
-    switch (buzzer)
-    {
-    case BUZ_ALARM:
-        PWM_GeneratePWM(BUZ_ALARM_PWM, duty_cycle);
-        break;
-    default:
-        /* Should not be here */
-        break;
-    }
-}
-void BUZ_SetVolume(tBUZ buzzer, u8 volume)
-{
-    /* Set buzzer volume */
-    switch (buzzer)
-    {
-    case BUZ_ALARM:
-        if (volume > BUZ_MAX_VOLTAGE)
-        {
-            volume = BUZ_MAX_VOLTAGE;
-        }
-        else if (volume < BUZ_MIN_VOLTAGE)
-        {
-            volume = BUZ_MIN_VOLTAGE;
-        }
-        break;
-    default:
-        /* Should not be here */
-        break;
-    }
-}
-void BUZ_VolumeUp(tBUZ buzzer)
-{
-    /* Increase buzzer volume */
-    switch (buzzer)
-    {
-    case BUZ_ALARM:
-        BUZ_SetVolume(buzzer, BUZ_GetVolume(buzzer) + 1);
-        break;
-    default:
-        /* Should not be here */
-        break;
-    }
-}
-void BUZ_VolumeDn(tBUZ buzzer)
-{
-    /* Decrease buzzer volume */
-    switch (buzzer)
-    {
-    case BUZ_ALARM:
-        BUZ_SetVolume(buzzer, BUZ_GetVolume(buzzer) - 1);
-        break;
-    default:
-        /* Should not be here */
-        break;
-    }
-}
-void BUZ_Mute(tBUZ buzzer)
-{
-    BUZ_SetVolume(buzzer, BUZ_MIN_VOLTAGE);
-}
-void BUZ_Unmute(tBUZ buzzer)
-{
-    BUZ_SetVolume(buzzer, BUZ_MAX_VOLTAGE);
-}
+// TODO: Implement these functions using a PWM generator module
+//  void BUZ_GeneratePWM(tBUZ buzzer, u8 duty_cycle)
+//  {
+//      /* Generate PWM */
+//      switch (buzzer)
+//      {
+//      case BUZ_ALARM:
+//          PWM_GeneratePWM(BUZ_ALARM_PWM, duty_cycle);
+//          break;
+//      default:
+//          /* Should not be here */
+//          break;
+//      }
+//  }
+//  void BUZ_SetVolume(tBUZ buzzer, u8 volume)
+//  {
+//      /* Set buzzer volume */
+//      switch (buzzer)
+//      {
+//      case BUZ_ALARM:
+//          if (volume > BUZ_MAX_VOLTAGE)
+//          {
+//              volume = BUZ_MAX_VOLTAGE;
+//          }
+//          else if (volume < BUZ_MIN_VOLTAGE)
+//          {
+//              volume = BUZ_MIN_VOLTAGE;
+//          }
+//          break;
+//      default:
+//          /* Should not be here */
+//          break;
+//      }
+//  }
+//  void BUZ_VolumeUp(tBUZ buzzer)
+//  {
+//      /* Increase buzzer volume */
+//      switch (buzzer)
+//      {
+//      case BUZ_ALARM:
+//          BUZ_SetVolume(buzzer, BUZ_GetVolume(buzzer) + 1);
+//          break;
+//      default:
+//          /* Should not be here */
+//          break;
+//      }
+//  }
+//  void BUZ_VolumeDn(tBUZ buzzer)
+//  {
+//      /* Decrease buzzer volume */
+//      switch (buzzer)
+//      {
+//      case BUZ_ALARM:
+//          BUZ_SetVolume(buzzer, BUZ_GetVolume(buzzer) - 1);
+//          break;
+//      default:
+//          /* Should not be here */
+//          break;
+//      }
+//  }
+//  void BUZ_Mute(tBUZ buzzer)
+//  {
+//      BUZ_SetVolume(buzzer, BUZ_MIN_VOLTAGE);
+//  }
+//  void BUZ_Unmute(tBUZ buzzer)
+//  {
+//      BUZ_SetVolume(buzzer, BUZ_MAX_VOLTAGE);
+//  }
 
 tBUZ_State BUZ_GetState(tBUZ buzzer) // TODO: Add safety check?
 {

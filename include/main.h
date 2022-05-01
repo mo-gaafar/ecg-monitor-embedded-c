@@ -3,6 +3,11 @@
 
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
+
+#define enable_global_interrupt() sei()
+#define SET_REGISTER_PIN(REG, BIT, VAL) ((REG) = (((REG) & (~(1 << BIT))) | ((VAL) << (BIT))))
+#define READ_REGISTER_PIN(REG, BIT) ((REG & (1 << BIT)) >> (BIT))
 
 /* GPIO definitions */
 /* GPIO Pins */
@@ -16,9 +21,6 @@
 #define GPIO_PIN_7 (7)
 
 /* GPIO Port Registers redefinition */
-
-// #define GPIO_PORT_1_DATA (PORTA)
-// #define GPIO_PORT_1_DIRECTION (DDRA)
 
 #define GPIO_PORT_1_DATA (PORTB)
 #define GPIO_PORT_1_INPUT (PINB)
@@ -45,7 +47,6 @@
 #define GPIO_InitPortPin(CONTROL, PIN, DIRECTION) ((CONTROL) = (CONTROL & (~(1 << PIN))) | (DIRECTION << PIN))
 #define GPIO_WritePortPin(PORT, PIN, DATA) ((PORT) = (PORT & (~(1 << PIN))) | (DATA << PIN))
 #define GPIO_ReadPortPin(PORT, PIN) (((PORT) & (1 << PIN)) >> (PIN))
-/* End of code filling */
 
 /* Standard data types */
 typedef unsigned int tWord;
@@ -59,7 +60,5 @@ typedef signed long int s32;
 
 typedef float f32;
 typedef double f64;
-
-void Delay_MS(int MS);
 
 #endif // __MAIN_H__

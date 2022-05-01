@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1609107663 source:c:\users\salma\documents\embeded systtems\digital clock\digital clock\count.c
+	"count.h"
+	"ssd.h"
+	"push_button.h"
+
+1609107608 c:\users\salma\documents\embeded systtems\digital clock\digital clock\count.h
+
+1609107717 c:\users\salma\documents\embeded systtems\digital clock\digital clock\ssd.h
+	"main.h"
+	"port.h"
+
+1609107466 c:\users\salma\documents\embeded systtems\digital clock\digital clock\main.h
+	<pic16f877a.h>
+
+1609107508 c:\users\salma\documents\embeded systtems\digital clock\digital clock\port.h
+	"main.h"
+
+1609107899 c:\users\salma\documents\embeded systtems\digital clock\digital clock\push_button.h
+	"main.h"
+	"port.h"
+
+1609108224 source:c:\users\salma\documents\embeded systtems\digital clock\digital clock\digital_clock.c
+	<pic16f877a.h>
+	"push_button.h"
+	"count.h"
+	"ssd.h"
+	"timer0.h"
+
+1609108143 c:\users\salma\documents\embeded systtems\digital clock\digital clock\timer0.h
+
+1609107938 source:c:\users\salma\documents\embeded systtems\digital clock\digital clock\push_button.c
+	"push_button.h"
+
+1609107757 source:c:\users\salma\documents\embeded systtems\digital clock\digital clock\ssd.c
+	"ssd.h"
+	"utilities.h"
+
+1609108006 c:\users\salma\documents\embeded systtems\digital clock\digital clock\utilities.h
+
+1609108175 source:c:\users\salma\documents\embeded systtems\digital clock\digital clock\timer0.c
+	"timer0.h"
+	"push_button.h"
+	"count.h"
+	"ssd.h"
+	<pic16f877a.h>
+
+1609108085 source:c:\users\salma\documents\embeded systtems\digital clock\digital clock\utilities.c
+	"utilities.h"
+
+1609259417 source:c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\count.c
+	"count.h"
+	"ssd.h"
+	"push_button.h"
+
+1609258068 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\count.h
+
+1609107717 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\ssd.h
+	"main.h"
+	"port.h"
+
+1609107466 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\main.h
+	<pic16f877a.h>
+
+1609107508 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\port.h
+	"main.h"
+
+1609258070 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\push_button.h
+	"main.h"
+	"port.h"
+
+1609257692 source:c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\digital_clock.c
+	<pic16f877a.h>
+	"push_button.h"
+	"count.h"
+	"ssd.h"
+	"timer0.h"
+
+1609257656 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\timer0.h
+
+1609258083 source:c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\push_button.c
+	"push_button.h"
+
+1609258241 source:c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\timer0.c
+	"timer0.h"
+	"push_button.h"
+	"count.h"
+	"ssd.h"
+	<pic16f877a.h>
+
+1609108085 source:c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\utilities.c
+	"utilities.h"
+
+1609108006 c:\users\√Õ„œ Õ·„Ì\desktop\digital clock\utilities.h
+

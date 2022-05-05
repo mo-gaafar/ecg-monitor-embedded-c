@@ -7,19 +7,15 @@
                                     SET_REGISTER_PIN(TCCR0B, CS01, ((x&0x2)>>CS01));\
                                     SET_REGISTER_PIN(TCCR0B, CS02, ((x&0x4)>>CS02));
 
-// #define TMR0_SET_CLOCK_SELECTOR(x) 	TCCR0B |= (x&0x1) | (x&0x2) |(x&0x4)
-// TCCR0B |= ((x&0x4)>>2)<<WGM02;
 #define TMR0_SET_MODE(x) 	SET_REGISTER_PIN(TCCR0B, WGM02, ((x&0x8)>>WGM02));\
                             SET_REGISTER_PIN(TCCR0A, WGM01, ((x&0x2)>>WGM01));\
                             SET_REGISTER_PIN(TCCR0A, WGM00, (x&0x1));
 
 
-// #define TMR0_SET_INTERRUPT(x) 	TIMSK0 |= (x&0x1) | (x&0x2) |(x&0x4)
 #define TMR0_SET_INTERRUPT(x) 	SET_REGISTER_PIN(TIMSK0, TOIE0, (x&0x1));\
                                 SET_REGISTER_PIN(TIMSK0, OCIE0A, ((x&0x2)>>OCIE0A));\
                                 SET_REGISTER_PIN(TIMSK0, OCIE0B, ((x&0x4)>>OCIE0B));
-// TIMSK0 |= (x&0x1) | (x&0x2) |(x&0x4)
-#define TMR0_READ_COUNTER()			(TCNT0)
+#define TMR0_READ_COUNTER()			(READ_REGISTER_PIN(TCNT0))
 
 typedef enum {
     NO_CLOCK_SOURCE = 0,

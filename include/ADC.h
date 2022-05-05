@@ -4,6 +4,7 @@
 #include "main.h"
 
 // Private variables
+#define ADC_INTERRUPT 0
 
 // Public function prototypes
 void ADC_Init(void);

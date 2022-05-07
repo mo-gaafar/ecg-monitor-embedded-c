@@ -1,6 +1,14 @@
 #ifndef LCD_H
 #define LCD_H
 
+/**
+ * @file LCD.h
+ * @author Mohamed Nasser
+ * @brief This is a LCD driver module
+ * @version 0.1
+ * @date 2022-04-30
+ **/
+
 #include "main.h"
 
 /* LCD Modes */
@@ -10,147 +18,83 @@
 /* User Input */
 #define LCD_MODE LCD_4BIT_MODE
 
-/*
- * Function: LCD_Init
- * ----------------------------
- *  Initializes the LCD command and data pins and the data mode
- * (whether it is 8-bit or 4-bit defined in the preprocessor directive).
- *
- *
- *  Parameters:
- *  void
- *
- *  Returns:
- *   void
- */
+/**
+ * @brief Initializes the LCD command and data pins and the data mode
+ * @n (whether it is 8-bit or 4-bit defined in the preprocessor directive).
+ * @param void
+ * @return void
+ **/
 void LCD_Init(void);
 
-/*
- * Function: LCD_SendCommand
- * ----------------------------
- *  Sends a command to the LCD.
- *
- *
- *  Parameters:
- *  uint8_t command - The command to send to the LCD.
- *
- *  Returns:
- *   void
- */
-void LCD_SendCommand(u8 command);
+/**
+ * @brief Sends a command to the LCD.
+ * @param char command - The command to send to the LCD.
+ * @return void
+ **/
+void LCD_SendCommand(char command);
 
-/*
- * Function: LCD_SendData
- * ----------------------------
- *  Sends data to the LCD.
+/**
+ * @brief Sends data to the LCD.
  *
- *  Parameters:
- *  u8 data - The data to send to the LCD.
- *
- *  Returns:
- *   void
+ * @param char Data
  */
-void LCD_SendData(u8 Data);
+void LCD_SendData(char Data);
 
-/*
- * Function: LCD_SetCursorAt
- * ----------------------------
- *   Sets the cursor at the specified position.
- *
- *
- *  Parameters:
- *  u8 x - The x position of the cursor.
- *  u8 y - The y position of the cursor.
- *
- *  Returns:
- *      void
- */
-void LCD_SetCursorAt(u8 Columns, u8 Rows);
+/**
+ * @brief Sets the cursor at the specified position.
+ * @param char x - The x position of the cursor.
+ * @param char y - The y position of the cursor.
+ * @return void
+ **/
+void LCD_SetCursorAt(char Columns, char Rows);
 
-/*
- * Function: LCD_PrintNumber
- * ----------------------------
- *  Prints a number to the LCD.
- *  The number is printed in decimal format.
- *
- * Parameters:
- *  u8 numb - The number to print.
- *
- *  Returns:
- *      void
- */
-void LCD_PrintNumber(u8 numb);
+/**
+ * @brief Prints a number to the LCD.
+ * @param char numb - The number to print.
+ * @return void
+ **/
+void LCD_PrintNumber(char numb);
 
-/*
- * Function: LCD_PrintString
- * ----------------------------
- *  Prints a string to the LCD Right at the current cursor location.
- *
- * Parameters:
- *  u8 *Str - The char array pointer (string) to print.
- *
- *  Returns:
- *      void
- */
-void LCD_PrintString(const u8 *Str);
+/**
+ * @brief Prints a string to the LCD.
+ * @param char* str - The char array pointer (string) to print.
+ * @return void
+ **/
+void LCD_PrintString(const char *Str);
 
-/*
- * Function: LCD_PrintSpecialCharacter
- * ----------------------------
- *  Prints a special character to the LCD.
+/**
+ * @brief Prints a special character to the LCD.
  *
- * Parameters:
- *  u8 *arr - The char array pointer (string) to print.
- *  u8 patternno - The pattern number to print.
- *  u8 x - The x position of the cursor.
- *  u8 y - The y position of the cursor.
- *
- *  Returns:
- *      void
- */
-void LCD_PrintSpecialCharacter(u8 *arr, u8 patternno, u8 x, u8 y);
+ * @param char *arr - The char array pointer (string) to print.
+ * @param char patternno - The pattern number to print.
+ * @param char x - The x position of the cursor.
+ * @param char y - The y position of the cursor.
+ * @return void
+ * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
+ * @todo Implement this function
+ **/
+void LCD_PrintSpecialCharacter(char *arr, char patternno, char x, char y);
 
-// TODO: Add clear function
-/*
- * Function: LCD_Clear
- * ----------------------------
- *  Clears the LCD.
- *
- *  Parameters:
- *  void
- *
- *  Returns:
- *      void
- */
+/**
+ * @brief Clears the LCD.
+ * @return void
+ * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
+ * @todo Implement this function
+ **/
 void LCD_Clear(void);
 
-// TODO: Add clear line function
-/*
- * Function: LCD_ClearLine
- * ----------------------------
- *  Clears the specified line.
- *
- *  Parameters:
- *  u8 line - The line to clear.
- *
- *  Returns:
- *      void
- */
-void LCD_ClearLine(u8 line);
+/**
+ * @brief Clears the specified line.
+ * @param char line - The line to clear.
+ * @return void
+ * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
+ * @todo Implement this function
+ **/
+void LCD_ClearLine(char line);
 
-/*
- * Function: LED_Init
- * ----------------------------
- *   Initializes the LED with its initial state and sets HW pin direction.
- *
- *
- *  Parameters:
- *  tLED led - The LED to initialize.
- *  tLED_State state - The initial state of the LED.
- *
- *  Returns:
- *      void
- */
+/**
+ * @brief Latches the EN pin on the LCD.
+ **/
 void LCD_LatchSignal(void);
 
 #endif /* LCD_H */

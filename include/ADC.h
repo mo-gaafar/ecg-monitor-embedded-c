@@ -1,13 +1,37 @@
-#ifndef __ADC_H__
-#define __ADC_H__
+/*
+ADC Library 0x05
 
-#include "main.h"
+copyright (c) Davide Gironi, 2013
 
-// Private variables
-#define ADC_INTERRUPT 0
+Released under GPLv3.
+Please refer to LICENSE file for licensing information.
+*/
 
-// Public function prototypes
-void ADC_Init(void);
-u16 ADC_Read(u8 channel);
+#ifndef ADC_H
+#define ADC_H
+
+// setup values
+#define ADC_REF 1         // adc reference voltage (see adc_init function for reference)
+#define ADC_PRESCALER 128 // adc prescaler (2, 4, 8, 16, 32, 64, 128)
+#define ADC_JUSTIFY 'R'   // adc justify ('L' or 'R')
+#define ADC_TRIGGERON 0   // adc trigger (1 on - 0 off)
+#define ADC_REFRES 1024   // reference resolution used for conversions
+
+// bandgap reference voltage * 1000, refers to datasheet
+#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
+#define ADC_BANDGAPVOLTAGE 1100L
+#elif defined(__AVR_ATmega8__)
+#define ADC_BANDGAPVOLTAGE 1300L
+#endif
+
+// functions
+extern void ADC_SetChannel(uint8_t channel);
+extern uint16_t ADC_Read(uint8_t channel);
+extern uint16_t ADC_ReadSel(void);
+extern void ADC_Init(void);
+extern double ADC_GetRealVref(void);
+extern long ADC_GetResistance(uint16_t adcread, uint16_t adcbalanceresistor);
+extern double ADC_GetVoltage(uint16_t adcread, double adcvref);
+extern unsigned int ADC_EMAFilter(unsigned int newvalue, unsigned int value);
 
 #endif

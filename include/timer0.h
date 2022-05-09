@@ -83,6 +83,7 @@ void TMR0_Stop();
 
 /**
  * @brief Start timer0 by setting the clock selector to the last used prescaler
+ **/
 void TMR0_Start(void);
 
 #endif // __TMR_H__

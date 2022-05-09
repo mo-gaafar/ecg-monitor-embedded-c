@@ -3,7 +3,7 @@
 
 static tClock_Selector current_prescalar = NO_CLOCK_SOURCE;
 
-void TMR0_Init(void)
+void TMR0_Init_Default(void)
 {
     enable_global_interrupt();
     current_prescalar = PRESCALAR_256;

@@ -1,6 +1,14 @@
 #ifndef __LED_H__
 #define __LED_H__
 
+/**
+ * @file Led.h
+ * @author Mohamed Nasser
+ * @brief This is a LED driver module
+ * @version 1.0
+ * @date 2022-4-28
+ **/
+
 #define LED_DELAY_MS (1000)
 
 typedef enum LED_Name
@@ -18,63 +26,41 @@ typedef enum LED_State
     LED_ON = 1
 } tLED_State;
 
-/*
- * Function: LED_Init
- * ----------------------------
- *   Initializes the LED with its initial state and sets HW pin direction.
- *
- *
- *  Parameters:
- *  tLED led - The LED to initialize.
- *  tLED_State state - The initial state of the LED.
- *
- *  Returns:
- *      void
- */
+/**
+ * @brief Initializes the LED with its initial state and sets HW pin direction.
+ * @param led The LED to initialize.
+ * @param state The initial state of the LED.
+ * @return void
+ * @see tLED
+ * @see tLED_State
+ **/
 void LED_Init(tLED led, tLED_State state);
 
-/*
- * Function: LED_SetState
- * ----------------------------
- *   Sets the state of one LED.
- *
- *
- *  Parameters:
- * tLED led - The LED to set state of.
- * tLED_State state - The state to set the LED to.
- *
- *  Returns:
- *      void
- */
+/**
+ * @brief Sets the state of one LED.
+ * @param led The LED to set state of.
+ * @param state The state to set the LED to.
+ * @return void
+ * @see tLED
+ * @see tLED_State
+ **/
 void LED_SetState(tLED led, tLED_State state);
 
-/*
- * Function: LED_Toggle
- * ----------------------------
- *   Toggles the state of one LED.
- *
- *
- *  Parameters:
- * tLED led - The LED to toggle state of.
- *
- *  Returns:
- *      void
- */
+/**
+ * @brief Toggles the state of one LED.
+ * @param led The LED to toggle state of.
+ * @return void
+ * @see tLED
+ **/
 void LED_Toggle(tLED led);
 
-/*
- * Function: LED_GetState
- * ----------------------------
- *  Gets the current state of one LED.
- *
- *
- *  Parameters:
- *  tLED led - LED to get state of
- *
- *  Returns:
- *  tLED_State - The current state of the LED.
- *
- */
+/**
+ * @brief Gets the state of one LED.
+ * @param led The LED to get state of.
+ * @return tLED_State The state of the LED.
+ * @see tLED
+ * @see tLED_State
+ **/
 tLED_State LED_GetState(tLED led);
 
 #endif // __LED_H__

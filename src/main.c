@@ -2,13 +2,18 @@
 #include "LCD.h"
 #include "Led.h"
 #include "Buzzer.h"
+#include "FIRFilter.h"
 #include "main.h"
 
 #include <util/delay.h>
+
+FIRFilter lpfTest;
+
 int main(void)
 {
     /* Initialization */
     u8 Test_Button_State = 0;
+    FIRFilter_Init(&lpfTest); // Initialize lp filter
     LCD_Init();
     PB_Init(PB_VOL_PLUS, PB_RELEASED);
     LED_Init(LED_ALARM, LED_OFF);

@@ -1,13 +1,17 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+/************************************************
+ *  ... MCU SPECIFIC DEFINITIONS
+ ***********************************************/
+
+/* MCU Libraries*/
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
+/*Interrupt wrapper macro*/
 #define enable_global_interrupt() sei()
-#define SET_REGISTER_PIN(REG, BIT, VAL) ((REG) = (((REG) & (~(1 << BIT))) | ((VAL) << (BIT))))
-#define READ_REGISTER_PIN(REG, BIT) ((REG & (1 << BIT)) >> (BIT))
 
 /* GPIO definitions */
 /* GPIO Pins */
@@ -38,6 +42,13 @@
 #define GPIO_OUT (1)
 #define GPIO_IN (0)
 
+/************************************************
+ *  ... REGISTER OPERATION MACROS
+ ***********************************************/
+
+#define SET_REGISTER_PIN(REG, BIT, VAL) ((REG) = (((REG) & (~(1 << BIT))) | ((VAL) << (BIT))))
+#define READ_REGISTER_PIN(REG, BIT) ((REG & (1 << BIT)) >> (BIT))
+
 /* GPIO port operations */
 #define GPIO_InitPort(CONTROL, DIRECTION) ((CONTROL) = ((DIRECTION) ? (~GPIO_OUT) : (GPIO_OUT)))
 #define GPIO_WritePort(PORT, DATA) ((PORT) = (DATA))
@@ -47,6 +58,10 @@
 #define GPIO_InitPortPin(CONTROL, PIN, DIRECTION) ((CONTROL) = (CONTROL & (~(1 << PIN))) | (DIRECTION << PIN))
 #define GPIO_WritePortPin(PORT, PIN, DATA) ((PORT) = (PORT & (~(1 << PIN))) | (DATA << PIN))
 #define GPIO_ReadPortPin(PORT, PIN) (((PORT) & (1 << PIN)) >> (PIN))
+
+/************************************************
+ *  ... STANDARD DATA TYPES
+ ***********************************************/
 
 /* Standard data types */
 typedef unsigned int tWord;

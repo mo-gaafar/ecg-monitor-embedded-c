@@ -35,7 +35,7 @@ void LCD_Init()
 #endif
 }
 
-void LCD_SendCommand(u8 Command)
+void LCD_SendCommand(char Command)
 {
 #if LCD_MODE == LCD_8BIT_MODE
     GPIO_WritePort(LCD_DPRT_DR, Command);
@@ -56,7 +56,7 @@ void LCD_SendCommand(u8 Command)
 #endif
 }
 
-void LCD_SendData(u8 Data)
+void LCD_SendData(char Data)
 {
 #if LCD_MODE == LCD_8BIT_MODE
     GPIO_WritePort(LCD_DPRT_DR, Data);
@@ -79,15 +79,15 @@ void LCD_SendData(u8 Data)
 #error Please Select The Correct Mode of LCD
 #endif
 }
-// void LCD_SetCursorAt(u8 x, u8 y) {
-//   u8 firstCharAdr[] = {0x80, 0xC0, 0x94, 0xD4};
+// void LCD_SetCursorAt(char x, char y) {
+//   char firstCharAdr[] = {0x80, 0xC0, 0x94, 0xD4};
 //   LCD_SendCommand(firstCharAdr[x - 1] + (y - 1));
 // }
 
-void LCD_SetCursorAt(u8 Columns, u8 Rows)
+void LCD_SetCursorAt(char Columns, char Rows)
 {
 
-    u8 address = 0;
+    char address = 0;
     switch (Rows)
     {
     case 0:
@@ -103,7 +103,7 @@ void LCD_SetCursorAt(u8 Columns, u8 Rows)
     LCD_SendCommand(address + 128);
 }
 
-void LCD_PrintString(const u8 *Str)
+void LCD_PrintString(const char *Str)
 {
     int i = 0;
     while (!(Str[i] == '\0'))
@@ -112,10 +112,10 @@ void LCD_PrintString(const u8 *Str)
         i++;
     }
 }
-void LCD_PrintSpecialCharacter(u8 *arr, u8 patternno, u8 x, u8 y)
+void LCD_PrintSpecialCharacter(char *arr, char patternno, char x, char y)
 {
 
-    u8 cgramaddress = 0;
+    char cgramaddress = 0;
     int i;
     cgramaddress = 8 * patternno;
     LCD_SendCommand(cgramaddress + 64);
@@ -126,27 +126,27 @@ void LCD_PrintSpecialCharacter(u8 *arr, u8 patternno, u8 x, u8 y)
     LCD_SetCursorAt(x, y);
     LCD_SendData(patternno);
 }
-void LCD_PrintNumber(u8 numb)
+void LCD_PrintNumber(char numb)
 {
     if (numb >= 100)
     {
-        u8 first = numb / 100;
+        char first = numb / 100;
         LCD_SendData(first + '0');
-        u8 second = (numb / 10) % 10;
+        char second = (numb / 10) % 10;
         LCD_SendData(second + '0');
-        u8 third = numb % 10;
+        char third = numb % 10;
         LCD_SendData(third + '0');
     }
     else if (numb == 0 || numb < 10)
     {
-        u8 first = numb;
+        char first = numb;
         LCD_SendData(first + '0');
     }
     else
     {
-        u8 first = numb / 10;
+        char first = numb / 10;
         LCD_SendData(first + '0');
-        u8 second = numb % 10;
+        char second = numb % 10;
         LCD_SendData(second + '0');
     }
 }

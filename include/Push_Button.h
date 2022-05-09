@@ -1,6 +1,14 @@
 #ifndef __PB_H__
 #define __PB_H__
 
+/**
+ * @file Push_Button.h
+ * @author Mohamed Nasser
+ * @brief This is a Push Button driver module
+ * @version 1.0
+ * @date 2022-4-30
+ **/
+
 typedef enum PB_Name
 {
     PB_VOL_PLUS,
@@ -18,45 +26,30 @@ typedef enum PB_State
     PB_PRE_RELEASED
 } tPB_State;
 
-/*
- * Function: PB_Init
- * ----------------------------
- *   Initializes the Push Button with its initial state and HW pin direction.
- *
- *
- *  Parameters:
- *   tPB pb - The Push Button to initialize.
- *   tPB_State state - The initial state of the Push Button.
- *
- *  Returns:
- *      void
- */
+/**
+ * @brief Initializes the Push Button with its initial state and sets HW pin direction.
+ * @param pb The Push Button to initialize.
+ * @param state The initial state of the Push Button.
+ * @return void
+ * @see tPB
+ * @see tPB_State
+ **/
 void PB_Init(tPB pb, tPB_State initial_state);
 
-/*
- * Function: PB_Update
- * ----------------------------
- *   Reads the samples of all pushbuttons and updates state accordingly.
- *
- *  Paramters:
- *     void
- *
- *  Returns:
- *     void
- */
+/**
+ * @brief Updates the state and samples of all pushbuttons.
+ * @param void
+ * @return void
+ **/
 void PB_Update(void);
 
-/*
- * Function: PB_GetState
- * ----------------------------
- *  Gets the current state of one pushbutton.
- *
- *  Parameters:
- *  tPB pb - pushbutton to get state of
- *
- *  Returns:
- *  tPB_State - The current state of the Push Button.
- */
+/**
+ * @brief Gets the current state of one pushbutton.
+ * @param tPB pb - pushbutton to get state of
+ * @return tPB_State - The current state of the Push Button.
+ * @see tPB
+ * @see tPB_State
+ **/
 tPB_State PB_GetState(tPB pb);
 
 #endif // __PB_H__

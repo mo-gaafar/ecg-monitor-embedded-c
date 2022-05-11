@@ -68,5 +68,6 @@
 #define PB_SNOOZE_PORT_DIRECTION (GPIO_PORT_2_DIRECTION)
 #define PB_SNOOZE_PIN (GPIO_PIN_4)
 
+
 /* End of code filling */
 #endif // __PORT_H__

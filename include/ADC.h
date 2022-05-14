@@ -18,20 +18,17 @@ Please refer to LICENSE file for licensing information.
 #define ADC_REFRES 1024   // reference resolution used for conversions
 
 // bandgap reference voltage * 1000, refers to datasheet
-#if defined(__AVR_ATmega168__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
 #define ADC_BANDGAPVOLTAGE 1100L
-#elif defined(__AVR_ATmega8__)
-#define ADC_BANDGAPVOLTAGE 1300L
-#endif
+
 
 // functions
-extern void ADC_SetChannel(uint8_t channel);
-extern uint16_t ADC_Read(uint8_t channel);
-extern uint16_t ADC_ReadSel(void);
-extern void ADC_Init(void);
-extern double ADC_GetRealVref(void);
-extern long ADC_GetResistance(uint16_t adcread, uint16_t adcbalanceresistor);
-extern double ADC_GetVoltage(uint16_t adcread, double adcvref);
-extern unsigned int ADC_EMAFilter(unsigned int newvalue, unsigned int value);
+void ADC_SetChannel(uint8_t channel);
+uint16_t ADC_Read(uint8_t channel);
+uint16_t ADC_ReadSel(void);
+void ADC_Init(void);
+double ADC_GetRealVref(void);
+long ADC_GetResistance(uint16_t adcread, uint16_t adcbalanceresistor);
+double ADC_GetVoltage(uint16_t adcread, double adcvref);
+unsigned int ADC_EMAFilter(unsigned int newvalue, unsigned int value);
 
 #endif

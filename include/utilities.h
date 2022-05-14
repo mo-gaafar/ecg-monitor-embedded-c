@@ -9,4 +9,7 @@
  * @return void
  **/
 void UTIL_DelayMS(u16 delay_ms);
+
+// TODO: Write function declaration and documentation
+u8 UTIL_Normalize_to_8bit(u16 input);
 #endif // __UTIL_H__

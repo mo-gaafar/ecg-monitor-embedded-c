@@ -36,8 +36,8 @@ jobs:
           # Generated HTML documents output folder
           htmloutput: ./docs/html/
           # GitHub Pages branch name
-          ghpagesbranch: gh-pages
+          ghpagesbranch: main
           # GitHub Pages directory path
-          ghpagesdir: ./
+          ghpagesdir: ./docs/
           # Toggle dark mode CSS
           darkmode: true

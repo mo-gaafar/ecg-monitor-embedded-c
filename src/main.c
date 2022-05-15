@@ -12,6 +12,7 @@
 FIRFilter lpfTest;
 u16 adc_out = 0;
 u8 Test_Button_State = 0;
+u8 ticks_ms = 0;
 
 int main(void)
 {
@@ -61,17 +62,23 @@ ISR(TIMER0_COMPA_vect) // called when TCNT0 == OCR0A
 
 ISR(TIMER0_OVF_vect) // called when timer 0 overflows
 {
-    LED_On(LED_PROCESSING);
-    //
-    // adc_out = ADC_Read(0);
-    if (Test_Button_State == PB_PRESSED)
+    if (ticks_ms == 0)
     {
-        adc_out = ADC_Read(0);
-    }
-    else
-    {
-        adc_out = ADC_ReadNormalized8Bit(0);
-    }
+        LED_On(LED_PROCESSING);
 
-    LED_Off(LED_PROCESSING);
+        adc_out = ADC_Read(0);
+        // FIRFilter_Update(&lpfTest, adc_out);
+        // adc_out = FIRFilter_GetOutput(&lpfTest);
+
+        //
+        // adc_out = ADC_Read(0);
+        adc_out = ADC_ReadNormalized8Bit(0);
+        ticks_ms++;
+
+        LED_Off(LED_PROCESSING);
+    }
+    else if (ticks_ms == 1)
+    {
+        ticks_ms = 0;
+    }
 }

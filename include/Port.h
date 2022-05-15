@@ -35,10 +35,13 @@
 #define LCD_RS (GPIO_PIN_1)
 #define LCD_RW (GPIO_PIN_2)
 #define LCD_EN (GPIO_PIN_3)
+
 #define LCD_CPRT_DR (GPIO_PORT_3_DATA)
 #define lCD_CPRT_CR (GPIO_PORT_3_DIRECTION)
+
 #define LCD_DPRT_DR (GPIO_PORT_3_DATA)
 #define LCD_DPRT_CR (GPIO_PORT_3_DIRECTION)
+#define LCD_DPRT_IN (GPIO_PORT_3_INPUT)
 
 /************************************************
  *  ... INPUT PORTS
@@ -67,7 +70,6 @@
 #define PB_SNOOZE_PORT_DATA (GPIO_PORT_2_INPUT)
 #define PB_SNOOZE_PORT_DIRECTION (GPIO_PORT_2_DIRECTION)
 #define PB_SNOOZE_PIN (GPIO_PIN_4)
-
 
 /* End of code filling */
 #endif // __PORT_H__

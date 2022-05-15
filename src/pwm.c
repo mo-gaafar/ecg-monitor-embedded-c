@@ -2,8 +2,17 @@
 #include <main.h>
 #include <avr/io.h>
 
+typedef struct tPWM_CONFIG
+{
+    tPWM_MODE mode;
+    u8 duty;
+    u8 prescaler;
+} tPWM_CONFIG;
+
+static tPWM_CONFIG pwm_config[2];
+
 // Timer 2 Phase correct pwm, main frequency 50hz
-void PWM_Init(tPWM pwm, u8 init_duty, tPWM_MODE init_mode)
+void PWM_Init(tPWM pwm, tPWM_MODE init_mode, u8 init_duty)
 {
     switch (pwm)
     {
@@ -19,7 +28,8 @@ void PWM_Init(tPWM pwm, u8 init_duty, tPWM_MODE init_mode)
          * 3. CS02:00 are set with the entered pre-scaler.
          * 4. COM01:00 are set with required mode of PWM (inverting/non-inverting).
          */
-        TCCR0A = ((1 << WGM00) | (1 << WGM01) | (Config_Ptr->prescaler) | (Config_Ptr->mode));
+        // TODO: PWM MODE IS INCORRECT
+        TCCR0A = ((1 << WGM00) | (1 << WGM01) | (pwm_config[PWM_0].prescaler) | (pwm_config[PWM_0].mode));
         TCNT0 = 0; /* Reseting TIMER0 register */
 
         /* A simple equation to calculate OCR0 value depending on preferred duty cycle entered. */

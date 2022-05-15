@@ -84,6 +84,13 @@ void LCD_SendData(char Data)
 //   LCD_SendCommand(firstCharAdr[x - 1] + (y - 1));
 // }
 
+void LCD_LatchSignal(void)
+{
+    GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 1);
+    _delay_us(20);
+    GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 0);
+    _delay_us(100);
+}
 void LCD_SetCursorAt(char Columns, char Rows)
 {
 
@@ -126,35 +133,25 @@ void LCD_PrintSpecialCharacter(char *arr, char patternno, char x, char y)
     LCD_SetCursorAt(x, y);
     LCD_SendData(patternno);
 }
-void LCD_PrintNumber(char numb)
-{
-    if (numb >= 100)
-    {
-        char first = numb / 100;
-        LCD_SendData(first + '0');
-        char second = (numb / 10) % 10;
-        LCD_SendData(second + '0');
-        char third = numb % 10;
-        LCD_SendData(third + '0');
-    }
-    else if (numb == 0 || numb < 10)
-    {
-        char first = numb;
-        LCD_SendData(first + '0');
-    }
-    else
-    {
-        char first = numb / 10;
-        LCD_SendData(first + '0');
-        char second = numb % 10;
-        LCD_SendData(second + '0');
-    }
-}
 
-void LCD_LatchSignal(void)
+void LCD_PrintNumber(u32 num)
 {
-    GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 1);
-    _delay_us(20);
-    GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 0);
-    _delay_us(100);
+    u8 txt[10] = {0};
+    s8 i = 0;
+    if (num == 0)
+    {
+        LCD_SendData('0');
+        return;
+    }
+    for (i = 0; num != 0; i++)
+    {
+        txt[i] = num % 10 + 48;
+        num = num / 10;
+    }
+    i--;
+    while (i >= 0)
+    {
+        LCD_SendData(txt[i]);
+        i--;
+    }
 }

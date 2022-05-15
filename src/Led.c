@@ -8,10 +8,10 @@ void LED_Init(tLED led, tLED_State state)
     /* Configure led pins as output */
     switch (led)
     {
-    case LED_ALARM:                                                      // led
+    case LED_ALARM:                                                          // led
         GPIO_InitPortPin(LED_ALARM_PORT_DIRECTION, LED_ALARM_PIN, GPIO_OUT); // led_port, led_pin, in or out
         break;
-    case LED_PROCESSING:                                                      // led
+    case LED_PROCESSING:                                                               // led
         GPIO_InitPortPin(LED_PROCESSING_PORT_DIRECTION, LED_PROCESSING_PIN, GPIO_OUT); // led_port, led_pin, in or out
         break;
     default:
@@ -47,10 +47,10 @@ void LED_SetState(tLED led, tLED_State state)
     /* Set led state */
     switch (led)
     {
-    case LED_ALARM:                                               // led
+    case LED_ALARM:                                                   // led
         GPIO_WritePortPin(LED_ALARM_PORT_DATA, LED_ALARM_PIN, state); // led_port, led_pin
         break;
-    case LED_PROCESSING:                                               // led
+    case LED_PROCESSING:                                                        // led
         GPIO_WritePortPin(LED_PROCESSING_PORT_DATA, LED_PROCESSING_PIN, state); // led_port, led_pin
         break;
 
@@ -83,4 +83,14 @@ tLED_State LED_GetState(tLED led)
 
     /* End of your code */
     return ret;
-}  
+}
+
+void LED_On(tLED led)
+{
+    LED_SetState(led, LED_ON);
+}
+
+void LED_Off(tLED led)
+{
+    LED_SetState(led, LED_OFF);
+}

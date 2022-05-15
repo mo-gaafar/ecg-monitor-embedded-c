@@ -6,18 +6,10 @@ copyright (c) Davide Gironi, 2013
 Released under GPLv3.
 Please refer to LICENSE file for licensing information.
 */
-
+#include <main.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include <util/delay.h>
-
-#if defined(__AVR_ATtiny13A__)
-#elif defined(__AVR_ATmega8__)
-#elif defined(__AVR_ATmega168__) || defined(__AVR_ATmega168P__)
-#elif defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
-#else
-#error "no definitions available for this AVR"
-#endif
 
 #include "ADC.h"
 
@@ -31,7 +23,7 @@ Please refer to LICENSE file for licensing information.
 /*
  * set an adc channel
  */
-void ADC_SetChannel(uint8_t channel)
+void ADC_SetChannel(u8 channel)
 {
     ADCSRA &= ~(1 << ADEN);
     ADMUX = (ADMUX & 0xf8) | (channel & 0x07); // set channel
@@ -41,7 +33,7 @@ void ADC_SetChannel(uint8_t channel)
 /*
  * read from selected adc channel
  */
-uint16_t ADC_ReadSel(void)
+u16 ADC_ReadSel(void)
 {
     ADCSRA |= (1 << ADSC); // Start conversion
     while (ADCSRA & _BV(ADSC))
@@ -55,7 +47,7 @@ uint16_t ADC_ReadSel(void)
 /*
  * read from adc channel
  */
-uint16_t ADC_Read(uint8_t channel)
+u16 ADC_Read(u8 channel)
 {
     ADC_SetChannel(channel);
     return ADC_ReadSel();
@@ -66,23 +58,14 @@ uint16_t ADC_Read(uint8_t channel)
  */
 void ADC_Init(void)
 {
-// Set ADC reference
-#if defined(__AVR_ATtiny13A__)
+    // Set ADC reference
+
 #if ADC_REF == 0
-    ADMUX |= (0 << REFS0); // VCC used as analog reference
+    ADMUX |= (0 << REFS1) | (0 << REFS0); // AREF, Internal Vref turned off
 #elif ADC_REF == 1
-    ADMUX |= (1 << REFS0); // Internal Voltage Reference
-#endif
-#elif defined(__AVR_ATmega8__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
-#if ADC_REF == 0
-    ADMUX |= (0 << REFS1) | (0 << REFS0);                 // AREF, Internal Vref turned off
-#elif ADC_REF == 1
-    ADMUX |= (0 << REFS1) | (1 << REFS0); // AVCC with external capacitor at AREF pin
+    ADMUX |= (0 << REFS1) | (1 << REFS0);                 // AVCC with external capacitor at AREF pin
 #elif ADC_REF == 3
-    ADMUX |= (1 << REFS1) | (1 << REFS0); // Internal 2.56V Voltage Reference with external cap at AREF
-#endif
-#else
-#error "No processor type defined!"
+    ADMUX |= (1 << REFS1) | (1 << REFS0);                 // Internal 2.56V Voltage Reference with external cap at AREF
 #endif
 
 // Set ADC prescaler
@@ -152,23 +135,23 @@ double ADC_GetRealVref(void)
 /*
  * convert an adc value to a resistence value
  */
-long ADC_GetResistance(uint16_t adcread, uint16_t adcbalanceresistor)
+f64 ADC_GetResistance(u16 adcread, u16 adcbalanceresistor)
 {
     if (adcread == 0)
         return 0;
     else
-        return (long)((long)(ADC_REFRES * (long)adcbalanceresistor) / adcread - (long)adcbalanceresistor);
+        return (f64)((f64)(ADC_REFRES * (f64)adcbalanceresistor) / adcread - (f64)adcbalanceresistor);
 }
 
 /*
  * convert an adc value to a voltage value
  */
-double ADC_GetVoltage(uint16_t adcread, double adcvref)
+f64 ADC_GetVoltage(u16 adcread, f64 adcvref)
 {
     if (adcread == 0)
         return 0;
     else
-        return (double)(adcread * adcvref / (double)ADC_REFRES);
+        return (f64)(adcread * adcvref / (f64)ADC_REFRES);
 }
 
 /*
@@ -182,11 +165,19 @@ double ADC_GetVoltage(uint16_t adcread, double adcvref)
  *   Guillem Planissi: Measurement and filtering of temperatures with NTC
  */
 #define ADC_EMAFILTERALPHA 30
-unsigned int ADC_EMAFilter(unsigned int newvalue, unsigned int value)
+u16 ADC_EMAFilter(u16 newvalue, u16 value)
 {
     // use exponential moving avarate Y=(1-alpha)*Y + alpha*Ynew, alpha between 1 and 0
     // in uM we use int math, so Y=(63-63alpha)*Y + 63alpha*Ynew  and  Y=Y/63 (Y=Y>>6)
     value = (64 - ADC_EMAFILTERALPHA) * value + ADC_EMAFILTERALPHA * newvalue;
     value = (value >> 6);
     return value;
+}
+
+// TODO: Maybe put this in the start of a pipeline sequence to make it normalize the actual signal?
+
+u8 ADC_ReadNormalized8Bit(u8 channel)
+{
+    u8 normalized = (u8)(ADC_Read(channel) / 4);
+    return normalized;
 }

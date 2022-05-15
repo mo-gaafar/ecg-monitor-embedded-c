@@ -21,8 +21,9 @@
     SET_REGISTER_PIN(TCCR0A, WGM01, ((x & 0x2) >> WGM01)); \
     SET_REGISTER_PIN(TCCR0A, WGM00, (x & 0x1));
 
+// TODO: Refactor syntax, causes bugs
 #define TMR0_SET_INTERRUPT(x)                                \
-    SET_REGISTER_PIN(TIMSK0, TOIE0, (x & 0x1));              \
+    SET_REGISTER_PIN(TIMSK0, TOIE0, ((0x1) >> TOIE0));       \
     SET_REGISTER_PIN(TIMSK0, OCIE0A, ((x & 0x2) >> OCIE0A)); \
     SET_REGISTER_PIN(TIMSK0, OCIE0B, ((x & 0x4) >> OCIE0B));
 
@@ -58,7 +59,7 @@ typedef enum
  * @brief Initialize the timer0 peripheral using default values
  * @note The default values are:
  * @note Clock Selector: NO_CLOCK_SOURCE
- * @note Mode: MODE_UpToOCR0A
+ * @note Mode: MODE_UpToFF
  * @note Interrupt: INTERRUPT_OVR
  * @note Prescalar: PRESCALAR_256
  **/

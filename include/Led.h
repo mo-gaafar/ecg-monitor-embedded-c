@@ -63,4 +63,8 @@ void LED_Toggle(tLED led);
  **/
 tLED_State LED_GetState(tLED led);
 
+// TODO: Documentation missing
+void LED_On(tLED led);
+void LED_Off(tLED led);
+
 #endif // __LED_H__

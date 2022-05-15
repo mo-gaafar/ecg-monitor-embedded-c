@@ -29,14 +29,6 @@ typedef enum
     // PWM_MODE_PHASE_CORRECTED
 } tPWM_MODE;
 
-struct tPWM_CONFIG
-{
-    tPWM_MODE mode;
-    u8 duty;
-    u8 prescaler;
-};
-
-tPWM_CONFIG pwm_config[2];
 
 void PWM_Init(tPWM pwm, tPWM_MODE init_mode, u8 init_duty);
 void PWM_Set_Duty(tPWM pwm, u8 duty);

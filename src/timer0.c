@@ -6,9 +6,9 @@ static tClock_Selector current_prescalar = NO_CLOCK_SOURCE;
 void TMR0_Init_Default(void)
 {
     enable_global_interrupt();
-    current_prescalar = PRESCALAR_256;
-    TMR0_SET_CLOCK_SELECTOR(PRESCALAR_256);
-    TMR0_SET_MODE(MODE_UpToOCR0A);
+    current_prescalar = PRESCALAR_8;
+    TMR0_SET_MODE(MODE_UpToFF);
+    TMR0_SET_CLOCK_SELECTOR(current_prescalar);
     TMR0_SET_INTERRUPT(INTERRUPT_OVR);
 }
 

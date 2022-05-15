@@ -53,7 +53,7 @@ void LCD_SetCursorAt(char Columns, char Rows);
  * @param char numb - The number to print.
  * @return void
  **/
-void LCD_PrintNumber(char numb);
+void LCD_PrintNumber(u32 numb);
 
 /**
  * @brief Prints a string to the LCD.

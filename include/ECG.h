@@ -20,6 +20,18 @@
 #define winSize 250
 #define HP_CONSTANT ((float)1 / (float)M)
 #define MAX_BPM 100
+
+#define ECG_DEBUG 1
+#define ECG_Sample_Period_ms 4
+
+// pre-recorded ECG, for testing
+int s_ecg_idx;
+#define S_ECG_SIZE 226
+// const float s_ecg[S_ECG_SIZE];
+u16 ecg_found_ticks_ms;
+u16 ecg_old_found_ticks_ms;
+volatile u16 bpm;
+
 // resolution of RNG
 // #define RAND_RES 100000000
 
@@ -54,17 +66,13 @@ int tmp;
 
 u16 number_iter;
 
-void ECG_Init(void);
-
-u8 ECG_Detect(float ecg);
-
-// typedef enum
-// {
-//     Normal,
-//     Tachycardia,
-//     Bradycardia,
-//     Irregular_Heartbeat
-// } ECG_Arrythmia_Type;
+typedef enum
+{
+    Normal,
+    Tachycardia,
+    Bradycardia,
+    Irregular_Heartbeat
+} ECG_Arrythmia_Type;
 
 // typedef struct
 // {
@@ -75,17 +83,26 @@ u8 ECG_Detect(float ecg);
 //     float SDSD = 0;  // Standard deviation of successive differences
 // } ECG_Statistics;
 
+void ECG_Init();
+
+void ECG_Update(void); // update ecg signal, update counter, detect peaks, calculate heart rate
+
+u8 ECG_Get_BPM(void);
+
+void ECG_Set_BPM(u8 bpm);
+
+ECG_Arrythmia_Type ECG_Get_Arrythmia_Type(void);
+
+s8 *ECG_Get_Arrythmia_Type_String(void);
+
+u8 ECG_Detect(float ecg);
+
+
+
 // static u8 current_bpm = 0; // Current heart rate in beats per minute
 // static ECG_Arrythmia_Type current_arrythmia = Normal;
 // static ECG_Statistics current_statistics;
 
-// void ECG_Init(void);
-
-// void ECG_Update(void);
-// void ECG_UpdateArrythmia(void);
-
-// ECG_Arrythmia_Type ECG_GetArrythmia(void);
-// u8 ECG_GetHR(void);
 // ECG_Statistics ECG_GetStatistics(void);
 
 #endif

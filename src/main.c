@@ -2,17 +2,21 @@
 #include "LCD.h"
 #include "Led.h"
 #include "Buzzer.h"
-#include "FIRFilter.h"
 #include "main.h"
 #include "timer0.h"
 #include "ADC.h"
 
+#include "ECG.h"
+
 #include <util/delay.h>
 
-FIRFilter lpfTest;
 u16 adc_out = 0;
 u8 Test_Button_State = 0;
-u8 ticks_ms = 0;
+static u8 ticks_ms = 0;
+
+static u8 ecg_found_ticks_ms = 0;
+static u8 ecg_old_found_ticks_ms = 0;
+static f32 bpm = 0;
 
 int main(void)
 {
@@ -26,6 +30,7 @@ int main(void)
     BUZ_Init(BUZ_ALARM, BUZ_STOPPED_MODE);
     TMR0_Init_Default();
     ADC_Init();
+    ECG_Init();
 
     while (1)
     {
@@ -41,7 +46,12 @@ int main(void)
             LED_SetState(LED_ALARM, LED_ON);
             // LED_Toggle(LED_PROCESSING);
             BUZ_SetMode(BUZ_ALARM, BUZ_SINGLE_MODE);
-            LCD_PrintNumber(adc_out);
+            // LCD_PrintNumber(adc_out);
+            LCD_SetCursorAt(0, 0);
+            LCD_PrintString("BPM: ");
+            LCD_PrintNumber((u32)bpm);
+            LCD_SetCursorAt(0, 1);
+            LCD_PrintString("Arrythmia: ");
         }
         // else if (Test_Button_State == PB_RELEASED)
         // {
@@ -49,35 +59,53 @@ int main(void)
         //     LED_SetState(LED_ALARM, LED_OFF);
         //     BUZ_SetMode(BUZ_ALARM, BUZ_PATTERN_MODE);
         // }
-
         /* Output */
     }
     return 0;
 }
 
-ISR(TIMER0_COMPA_vect) // called when TCNT0 == OCR0A
-{
-    //
-}
+// ISR(TIMER0_COMPA_vect) // called when TCNT0 == OCR0A
+// {
+//     //
+// }
 
 ISR(TIMER0_OVF_vect) // called when timer 0 overflows
 {
+
     if (ticks_ms == 0)
     {
         LED_On(LED_PROCESSING);
 
+        // Timing overhead: 5 us
         adc_out = ADC_Read(0);
-        // FIRFilter_Update(&lpfTest, adc_out);
-        // adc_out = FIRFilter_GetOutput(&lpfTest);
 
-        //
-        // adc_out = ADC_Read(0);
-        adc_out = ADC_ReadNormalized8Bit(0);
-        ticks_ms++;
+        // Timing overhead: 120us -> ?
+        u8 isdetected = ECG_Detect(adc_out);
+
+        if (isdetected)
+        {
+            bpm = (f32)(1 / (u32)(ecg_found_ticks_ms - ecg_old_found_ticks_ms) * 60000); // find heartbeat period in ms
+            ecg_found_ticks_ms = ecg_old_found_ticks_ms;                                 // reset ms counter
+            LED_On(LED_ALARM);
+            BUZ_SetMode(BUZ_ALARM, BUZ_SINGLE_MODE);
+        }
+        else
+        {
+            LED_Off(LED_ALARM);
+            BUZ_SetMode(BUZ_ALARM, BUZ_PATTERN_MODE);
+        }
+
+        // // Timing overhead: 8us
+        // adc_out = ADC_ReadNormalized8Bit(0);
 
         LED_Off(LED_PROCESSING);
     }
-    else if (ticks_ms == 1)
+
+    ticks_ms++;
+    ecg_found_ticks_ms++;
+
+    // Reset at 5th ms (200 Hz)
+    if (ticks_ms == 5)
     {
         ticks_ms = 0;
     }

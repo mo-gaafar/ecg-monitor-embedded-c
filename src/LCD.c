@@ -2,6 +2,7 @@
 #include "main.h"
 #include "Port.h"
 
+#include "Led.h"
 #include "avr/io.h"
 #include "util/delay.h"
 
@@ -12,18 +13,35 @@
 
 static void LCD_WaitBusy(void)
 {
+    // GPIO_InitPortPin(LCD_DPRT_CR, 4, GPIO_IN);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 5, GPIO_IN);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 6, GPIO_IN);
     // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_IN);
-    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RS, 0);
+    // // GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 1);
     // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 1);
+    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RS, 0);
+
+    // GPIO_InitPortPin(DDRB, 4, GPIO_OUT);
+    // GPIO_WritePortPin(PORTB, 4, 1);
+    // _delay_us(LCD_DELAY_US_SHORT);
 
     // while (GPIO_ReadPortPin(LCD_DPRT_IN, 7) == 1)
     // { /* LCD is busy if MSB is set */
     //     LCD_LatchSignal();
+    //     GPIO_WritePortPin(PORTB, 4, 0);
     //     // GPIO_WritePortPin(LCD_DPRT_DR, 7, 0);
     // }
-    // _delay_us(LCD_DELAY_US_LONG);
-
+    // // _delay_us(LCD_DELAY_US_LONG);
+    // GPIO_WritePortPin(PORTB, 4, 1);
+    // // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
+    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 4, GPIO_OUT);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 5, GPIO_OUT);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 6, GPIO_OUT);
     // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_OUT);
+
+    // bala waga3 dema8
+    _delay_ms(20);
 }
 
 void LCD_Init()
@@ -80,6 +98,7 @@ void LCD_SendCommand(char Command)
 
 void LCD_SendData(char Data)
 {
+
     LCD_WaitBusy();
 #if LCD_MODE == LCD_8BIT_MODE
     GPIO_WritePort(LCD_DPRT_DR, Data);
@@ -109,11 +128,10 @@ void LCD_SendData(char Data)
 
 void LCD_LatchSignal(void)
 {
-
+    _delay_us(20);
     GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 1);
     _delay_us(20);
     GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 0);
-    _delay_us(20);
 }
 void LCD_SetCursorAt(char Columns, char Rows)
 {

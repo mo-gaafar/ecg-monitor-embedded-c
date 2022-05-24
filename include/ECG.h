@@ -20,6 +20,8 @@
 #define winSize 250
 #define HP_CONSTANT ((float)1 / (float)M)
 #define MAX_BPM 100
+// resolution of RNG
+// #define RAND_RES 100000000
 
 // circular buffer for input ecg signal
 // we need to keep a history of M + 1 samples for HP filter
@@ -48,7 +50,9 @@ int trig_time;
 float win_max;
 int win_idx;
 
-u16 num_iter;
+int tmp;
+
+u16 number_iter;
 
 void ECG_Init(void);
 

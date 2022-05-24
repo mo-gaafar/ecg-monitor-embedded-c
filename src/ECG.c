@@ -8,45 +8,46 @@ void ECG_Init(void)
 {
     // circular buffer for input ecg signal
     // we need to keep a history of M + 1 samples for HP filter
-    // ecg_buff[M + 1] = {0};
-    ecg_buff_WR_idx = 0;
-    ecg_buff_RD_idx = 0;
+    float ecg_buff[M + 1] = {0};
+    int ecg_buff_WR_idx = 0;
+    int ecg_buff_RD_idx = 0;
 
     // circular buffer for input ecg signal
     // we need to keep a history of N+1 samples for LP filter
-    // hp_buff[N + 1] = {0};
-    hp_buff_WR_idx = 0;
-    hp_buff_RD_idx = 0;
+    float hp_buff[N + 1] = {0};
+    int hp_buff_WR_idx = 0;
+    int hp_buff_RD_idx = 0;
 
     // LP filter outputs a single point for every input point
     // This goes straight to adaptive filtering for eval
-    next_eval_pt = 0;
+    float next_eval_pt = 0;
 
     // running sums for HP and LP filters, values shifted in FILO
-    hp_sum = 0;
-    lp_sum = 0;
+    float hp_sum = 0;
+    float lp_sum = 0;
 
-    // parameters for adaptive thresholding
-    treshold = 0;
-    triggered = false;
-    trig_time = 0;
-    win_max = 0;
-    win_idx = 0;
+    // working variables for adaptive thresholding
+    float treshold = 0;
+    u8 triggered = false;
+    int trig_time = 0;
+    float win_max = 0;
+    int win_idx = 0;
 
-    num_iter = 0;
+    // numebr of starting iterations, used determine when moving windows are filled
+    int number_iter = 0;
+
+    int tmp = 0;
 }
 
-u8 ECG_Detect(float ecg)
+u8 ECG_Detect(float new_ecg_pt)
 {
 
     // copy new point into circular buffer, increment index
-    ecg_buff[ecg_buff_WR_idx++] = ecg;
+    ecg_buff[ecg_buff_WR_idx++] = new_ecg_pt;
     ecg_buff_WR_idx %= (M + 1);
 
-    // printf("i - %d\n", i);
-
     /* High pass filtering */
-    if (num_iter < M)
+    if (number_iter < M)
     {
         // first fill buffer with enough points for HP filter
         hp_sum += ecg_buff[ecg_buff_RD_idx];
@@ -56,7 +57,7 @@ u8 ECG_Detect(float ecg)
     {
         hp_sum += ecg_buff[ecg_buff_RD_idx];
 
-        int tmp = ecg_buff_RD_idx - M;
+        tmp = ecg_buff_RD_idx - M;
         if (tmp < 0)
             tmp += M + 1;
 
@@ -89,7 +90,7 @@ u8 ECG_Detect(float ecg)
     // shift in new sample from high pass filter
     lp_sum += hp_buff[hp_buff_RD_idx] * hp_buff[hp_buff_RD_idx];
 
-    if (num_iter < N)
+    if (number_iter < N)
     {
         // first fill buffer with enough points for LP filter
         next_eval_pt = 0;
@@ -97,9 +98,9 @@ u8 ECG_Detect(float ecg)
     else
     {
         // shift out oldest data point
-        int tmp = hp_buff_RD_idx - N;
+        tmp = hp_buff_RD_idx - N;
         if (tmp < 0)
-            tmp += N + 1;
+            tmp += (N + 1);
 
         lp_sum -= hp_buff[tmp] * hp_buff[tmp];
 
@@ -112,16 +113,20 @@ u8 ECG_Detect(float ecg)
 
     /* Adapative thresholding beat detection */
     // set initial threshold
-    if (num_iter < winSize)
+    if (number_iter < winSize)
     {
         if (next_eval_pt > treshold)
         {
             treshold = next_eval_pt;
         }
+
+        // only increment number_iter iff it is less than winSize
+        // if it is bigger, then the counter serves no further purpose
+        number_iter++;
     }
 
     // check if detection hold off period has passed
-    if (triggered)
+    if (triggered == true)
     {
         trig_time++;
 
@@ -139,15 +144,12 @@ u8 ECG_Detect(float ecg)
     // find if we are above adaptive threshold
     if (next_eval_pt > treshold && !triggered)
     {
-        // result[index] = 1;
-
         triggered = true;
+
         return true;
     }
-    // else
-    // {
-    //     // result[index] = 0;
-    // }
+    // else we'll finish the function before returning FALSE,
+    // to potentially change threshold
 
     // adjust adaptive threshold using max of signal found
     // in previous window
@@ -159,13 +161,16 @@ u8 ECG_Detect(float ecg)
 
         // forgetting factor -
         // rate at which we forget old observations
+        // choose a random value between 0.01 and 0.1 for this,
         float alpha = 0.01 + (((float)rand() / (float)RAND_MAX) * ((0.1 - 0.01)));
-
+        // compute new threshold
         treshold = alpha * gamma * win_max + (1 - alpha) * treshold;
 
-        // reset current window ind
+        // reset current window index
         win_idx = 0;
         win_max = -10000000;
     }
+
+    // return false if we didn't detect a new QRS
     return false;
 }

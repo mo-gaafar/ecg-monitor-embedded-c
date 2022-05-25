@@ -21,15 +21,12 @@
 /**
  * @brief Initializes the LCD command and data pins and the data mode
  * @n (whether it is 8-bit or 4-bit defined in the preprocessor directive).
- * @param void
- * @return void
  **/
 void LCD_Init(void);
 
 /**
  * @brief Sends a command to the LCD.
  * @param char command - The command to send to the LCD.
- * @return void
  **/
 void LCD_SendCommand(char command);
 

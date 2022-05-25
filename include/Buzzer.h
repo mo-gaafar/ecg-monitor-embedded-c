@@ -7,25 +7,35 @@
  *
  * @brief      Buzzer driver module
  *
- * @version    0.8.0
+ * @version    0.9.1
  * @date       2022-5-04
  */
 
 #define BUZ_DELAY_MS (1000)
 
+/**
+ * @brief List of supported buzzers
+ *
+ */
 typedef enum tBUZ_Name
 {
     BUZ_ALARM,
 } tBUZ;
 
-// Cotains the states of the buzzer pin
+/**
+ * @brief  States of the buzzer pin
+ *
+ */
 typedef enum tBUZ_State
 {
     BUZ_OFF = 0,
     BUZ_ON = 1
 } tBUZ_State;
 
-// Contains the sound pattern modes
+/**
+ * @brief Contains the sound pattern operation modes
+ *
+ */
 typedef enum tBUZ_Mode
 {
     BUZ_STOPPED_MODE,
@@ -101,7 +111,12 @@ void BUZ_GeneratePWM(tBUZ buzzer, u8 duty_cycle);
  */
 void BUZ_SetVolume(tBUZ buzzer, u8 volume);
 
-// TODO:
+/**
+ * @brief
+ *
+ * @param buzzer Selected buzzer
+ * @return u8 returned volume (0-100)
+ */
 u8 BUZ_GetVolume(tBUZ buzzer);
 
 /**

@@ -122,6 +122,7 @@ void PWM_Set_Duty(tPWM pwm, u8 duty)
         pwm_config[PWM_2].duty = duty;
         // pwm_config[PWM_2].mode = PWM_MODE_RUNNING;
         OCR2A = 255 * ((float)duty / 100);
+        TCNT2 = 0;
         break;
     }
 }

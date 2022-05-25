@@ -154,27 +154,7 @@ f64 ADC_GetVoltage(u16 adcread, f64 adcvref)
         return (f64)(adcread * adcvref / (f64)ADC_REFRES);
 }
 
-/*
- * exponential moving avarage filter
- *
- * "newvalue" new adc read value
- * "value" old adc filtered value
- * return a new filtered value
- *
- * References:
- *   Guillem Planissi: Measurement and filtering of temperatures with NTC
- */
-#define ADC_EMAFILTERALPHA 30
-u16 ADC_EMAFilter(u16 newvalue, u16 value)
-{
-    // use exponential moving avarate Y=(1-alpha)*Y + alpha*Ynew, alpha between 1 and 0
-    // in uM we use int math, so Y=(63-63alpha)*Y + 63alpha*Ynew  and  Y=Y/63 (Y=Y>>6)
-    value = (64 - ADC_EMAFILTERALPHA) * value + ADC_EMAFILTERALPHA * newvalue;
-    value = (value >> 6);
-    return value;
-}
 
-// TODO: Maybe put this in the start of a pipeline sequence to make it normalize the actual signal?
 
 u8 ADC_ReadNormalized8Bit(u8 channel)
 {

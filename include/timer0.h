@@ -29,6 +29,10 @@
 
 #define TMR0_READ_COUNTER() (READ_REGISTER_PIN(TCNT0))
 
+/**
+ * @brief Supported clock prescalars
+ *
+ */
 typedef enum
 {
     NO_CLOCK_SOURCE = 0,
@@ -39,6 +43,10 @@ typedef enum
     PRESCALAR_1024 = 5,
 } tClock_Selector;
 
+/**
+ * @brief Supported timer modes
+ *
+ */
 typedef enum
 {
     MODE_UpToFF = 0,
@@ -47,6 +55,10 @@ typedef enum
     MODE_UpToOCR0A_PWM = 7,
 } tTimer_mode;
 
+/**
+ * @brief Timer Interrupt enable flags
+ *
+ */
 typedef enum
 {
     INTERRUPT_OVR = TOIE0,
@@ -73,7 +85,6 @@ void TMR0_Init_Default(void);
  * @see tTimer_mode
  * @param tTimer_Interrupt interrupt
  * @see tTimer_Interrupt
- * @return void
  **/
 void TMR0_Init(tClock_Selector prescalar, tTimer_mode timer, tTimer_Interrupt interrupt);
 

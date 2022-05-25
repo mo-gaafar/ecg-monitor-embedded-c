@@ -1,6 +1,19 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+/*! \mainpage ECG Monitor Documentation
+ *
+ * \section intro_sec Introduction
+ *
+ * This is the introduction.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Opening the box
+ *
+ * etc...
+ */
+
 /************************************************
  *  ... MCU SPECIFIC DEFINITIONS
  ***********************************************/

@@ -1,6 +1,8 @@
 #ifndef __PB_H__
 #define __PB_H__
 
+#include <main.h>
+
 /**
  * @file Push_Button.h
  * @author Mohamed Nasser
@@ -9,6 +11,7 @@
  * @date 2022-4-30
  **/
 
+// TODO:
 typedef enum PB_Name
 {
     PB_VOL_PLUS,
@@ -18,6 +21,7 @@ typedef enum PB_Name
 
 } tPB;
 
+// TODO:
 typedef enum PB_State
 {
     PB_RELEASED,
@@ -42,6 +46,11 @@ void PB_Init(tPB pb, tPB_State initial_state);
  * @return void
  **/
 void PB_Update(void);
+
+// TODO:
+u16 PB_GetClicks(tPB pb);
+
+void PB_ResetClicks(tPB pb);
 
 /**
  * @brief Gets the current state of one pushbutton.

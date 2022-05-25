@@ -10,6 +10,11 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
+/* CPU Clock Frequency */
+#ifndef F_CPU
+#define F_CPU 16000000UL
+#endif
+
 /*Interrupt wrapper macro*/
 #define enable_global_interrupt() sei()
 

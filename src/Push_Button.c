@@ -14,10 +14,10 @@ typedef struct PB_Info
 {
     unsigned char samples[NUMBER_OF_SAMPLE];
     tPB_State state;
+    u16 clicks;
 } tPB_Info;
 
 static tPB_Info pb_info[NUMBER_OF_PUSH_BUTTONS];
-
 
 void PB_Init(tPB pb, tPB_State initial_state)
 {
@@ -68,7 +68,6 @@ void PB_Init(tPB pb, tPB_State initial_state)
     }
 }
 
-
 void PB_Update(void)
 {
     tPB current_button = PB_VOL_PLUS;
@@ -112,6 +111,7 @@ void PB_Update(void)
             if (pb_info[current_button].samples[1] == PB_PRESSED_VOLTAGE) // fill this line
             {
                 pb_info[current_button].state = PB_PRESSED; // fill this line
+                pb_info[current_button].clicks++;
             }
             break;
         case PB_PRESSED:
@@ -134,6 +134,15 @@ void PB_Update(void)
     }
 }
 
+u16 PB_GetClicks(tPB pb)
+{
+    return pb_info[pb].clicks;
+}
+
+void PB_ResetClicks(tPB pb)
+{
+    pb_info[pb].clicks = 0;
+}
 
 tPB_State PB_GetState(tPB pb)
 {

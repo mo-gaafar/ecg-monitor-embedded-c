@@ -101,6 +101,9 @@ void BUZ_GeneratePWM(tBUZ buzzer, u8 duty_cycle);
  */
 void BUZ_SetVolume(tBUZ buzzer, u8 volume);
 
+// TODO:
+u8 BUZ_GetVolume(tBUZ buzzer);
+
 /**
  * @brief Increment the buzzer's volume level
  *
@@ -108,7 +111,7 @@ void BUZ_SetVolume(tBUZ buzzer, u8 volume);
  * @return void
  * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
  **/
-void BUZ_VolumeUp(tBUZ buzzer);
+void BUZ_VolumeUp(tBUZ buzzer, u8 increments);
 
 /**
  * @brief Decrement the buzzer's volume level
@@ -117,7 +120,7 @@ void BUZ_VolumeUp(tBUZ buzzer);
  * @return void
  * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
  **/
-void BUZ_VolumeDn(tBUZ buzzer);
+void BUZ_VolumeDn(tBUZ buzzer, u8 decrements);
 
 /**
  * @brief Sets the volume to zero

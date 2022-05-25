@@ -11,42 +11,42 @@ const float s_ecg[226] = {1.5989, 1.5978, 1.5995, 1.5976, 1.5991, 1.5984, 1.5981
 void ECG_Init()
 {
     // pre-recorded ECG, for testing
-    int s_ecg_idx = 0;
+    s_ecg_idx = 0;
 
-    u16 ecg_found_ticks_ms = 0;
-    u16 ecg_old_found_ticks_ms = 0;
-    volatile u16 bpm = 0;
+    ecg_found_ticks_ms = 0;
+    ecg_old_found_ticks_ms = 0;
+    bpm = 0;
     // circular buffer for input ecg signal
     // we need to keep a history of M + 1 samples for HP filter
-    float ecg_buff[M + 1] = {0};
-    int ecg_buff_WR_idx = 0;
-    int ecg_buff_RD_idx = 0;
+    // ecg_buff[M + 1] = {0};
+    ecg_buff_WR_idx = 0;
+    ecg_buff_RD_idx = 0;
 
     // circular buffer for input ecg signal
     // we need to keep a history of N+1 samples for LP filter
-    float hp_buff[N + 1] = {0};
-    int hp_buff_WR_idx = 0;
-    int hp_buff_RD_idx = 0;
+    // hp_buff[N + 1] = {0};
+    hp_buff_WR_idx = 0;
+    hp_buff_RD_idx = 0;
 
     // LP filter outputs a single point for every input point
     // This goes straight to adaptive filtering for eval
-    float next_eval_pt = 0;
+    next_eval_pt = 0;
 
     // running sums for HP and LP filters, values shifted in FILO
-    float hp_sum = 0;
-    float lp_sum = 0;
+    hp_sum = 0;
+    lp_sum = 0;
 
     // working variables for adaptive thresholding
-    float treshold = 0;
-    u8 triggered = false;
-    int trig_time = 0;
-    float win_max = 0;
-    int win_idx = 0;
+    treshold = 0;
+    triggered = false;
+    trig_time = 0;
+    win_max = 0;
+    win_idx = 0;
 
     // numebr of starting iterations, used determine when moving windows are filled
-    int number_iter = 0;
+    number_iter = 0;
 
-    int tmp = 0;
+    tmp = 0;
 }
 
 u8 ECG_Get_BPM(void)
@@ -65,6 +65,7 @@ u16 ECG_Get_Sample(void)
     s_ecg_idx++;
     return ecg_samp;
 #else
+    // Timing overhead: 5 us
     return ADC_Read(ADC_ECG_IN_PIN);
 #endif
 }
@@ -90,7 +91,7 @@ ECG_Arrythmia_Type ECG_Get_Arrythmia_Type(void)
     }
 }
 
-s8 *ECG_Get_Arrythmia_Type_String(void)
+char *ECG_Get_Arrythmia_Type_String(void)
 {
     switch (ECG_Get_Arrythmia_Type())
     {

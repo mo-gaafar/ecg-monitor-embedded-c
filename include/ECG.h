@@ -33,7 +33,7 @@ u16 ecg_old_found_ticks_ms;
 volatile u16 bpm;
 
 // resolution of RNG
-// #define RAND_RES 100000000
+#define RAND_RES 100000000
 
 // circular buffer for input ecg signal
 // we need to keep a history of M + 1 samples for HP filter
@@ -93,11 +93,9 @@ void ECG_Set_BPM(u8 bpm);
 
 ECG_Arrythmia_Type ECG_Get_Arrythmia_Type(void);
 
-s8 *ECG_Get_Arrythmia_Type_String(void);
+char *ECG_Get_Arrythmia_Type_String(void);
 
 u8 ECG_Detect(float ecg);
-
-
 
 // static u8 current_bpm = 0; // Current heart rate in beats per minute
 // static ECG_Arrythmia_Type current_arrythmia = Normal;

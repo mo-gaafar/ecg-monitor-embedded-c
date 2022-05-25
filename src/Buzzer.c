@@ -10,6 +10,11 @@
 #define BUZ_MAX_VOLTAGE (1)
 #define BUZ_MIN_VOLTAGE (0)
 
+#define BUZ_Update_Period_ms (ISR_TMR0_Period_ms)
+#define BUZ_State_Update_Period_ms (1000)
+
+u16 buzzer_update_ms = 0;
+
 u8 current_state_index = 0;
 
 typedef struct tBUZ_Info
@@ -50,21 +55,30 @@ void BUZ_Init(tBUZ buzzer, tBUZ_Mode mode)
 
 void BUZ_Update(void)
 {
-    tBUZ current_buzzer = BUZ_ALARM;
-    tBUZ_State current_state = BUZ_OFF;
-
-    /* Update state for all buzzers */
-    for (; current_buzzer < NUMBER_OF_BUZZERS; current_buzzer++)
+    if (buzzer_update_ms >= BUZ_State_Update_Period_ms)
     {
-        // Retrieve state from sequence
-        current_state = buzzer_info[current_buzzer].state_sequence[current_state_index];
-        // Set pin state
-        BUZ_SetState(current_buzzer, current_state);
-    }
+        buzzer_update_ms = 0;
 
-    current_state_index++;
-    // Reset Counter
-    current_state_index = (current_state_index == STATE_SEQUENCE_LENGTH) ? 0 : current_state_index;
+        tBUZ current_buzzer = BUZ_ALARM;
+        tBUZ_State current_state = BUZ_OFF;
+
+        /* Update state for all buzzers */
+        for (; current_buzzer < NUMBER_OF_BUZZERS; current_buzzer++)
+        {
+            // Retrieve state from sequence
+            current_state = buzzer_info[current_buzzer].state_sequence[current_state_index];
+            // Set pin state
+            BUZ_SetState(current_buzzer, current_state);
+        }
+
+        current_state_index++;
+        // Reset Counter
+        current_state_index = (current_state_index == STATE_SEQUENCE_LENGTH) ? 0 : current_state_index;
+    }
+    else
+    {
+        buzzer_update_ms += BUZ_Update_Period_ms;
+    }
 }
 
 void BUZ_SetState(tBUZ buzzer, tBUZ_State state)

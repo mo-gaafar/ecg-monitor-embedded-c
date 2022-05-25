@@ -15,6 +15,8 @@
 #define F_CPU 16000000UL
 #endif
 
+#define ISR_TMR0_Period_ms 4
+
 /*Interrupt wrapper macro*/
 #define enable_global_interrupt() sei()
 

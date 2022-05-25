@@ -22,7 +22,7 @@
 #define MAX_BPM 100
 
 #define ECG_DEBUG 1
-#define ECG_Sample_Period_ms 4
+#define ECG_Sample_Period_ms (ISR_TMR0_Period_ms)
 
 // pre-recorded ECG, for testing
 int s_ecg_idx;

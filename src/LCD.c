@@ -2,6 +2,7 @@
 #include "main.h"
 #include "Port.h"
 
+#include <utilities.h>
 #include "Led.h"
 #include "avr/io.h"
 #include "util/delay.h"
@@ -41,7 +42,7 @@ static void LCD_WaitBusy(void)
     // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_OUT);
 
     // bala waga3 dema8
-    _delay_ms(20);
+    UTIL_DelayMS(2);
 }
 
 void LCD_Init()

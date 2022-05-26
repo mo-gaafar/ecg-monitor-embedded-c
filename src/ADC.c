@@ -1,11 +1,4 @@
-/*
-ADC Library 0x05
 
-copyright (c) Davide Gironi, 2013
-
-Released under GPLv3.
-Please refer to LICENSE file for licensing information.
-*/
 #include <main.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
@@ -116,34 +109,6 @@ void ADC_Init(void)
 }
 
 /*
- * get reference voltage using bandgap voltage
- */
-double ADC_GetRealVref(void)
-{
-    double intvoltage = 0;
-#if defined(__AVR_ATmega8__) || defined(__AVR_ATmega168__) || defined(__AVR_ATmega168P__) || defined(__AVR_ATmega328__) || defined(__AVR_ATmega328P__)
-    // set bandgap voltage channel, and read value
-    ADC_SetChannel(14);
-    _delay_us(250);
-    uint16_t adc = ADC_ReadSel();
-    // calculate internal voltage
-    intvoltage = ((ADC_BANDGAPVOLTAGE * ADC_REFRES) / adc) / 1000.0;
-#endif
-    return intvoltage;
-}
-
-/*
- * convert an adc value to a resistence value
- */
-f64 ADC_GetResistance(u16 adcread, u16 adcbalanceresistor)
-{
-    if (adcread == 0)
-        return 0;
-    else
-        return (f64)((f64)(ADC_REFRES * (f64)adcbalanceresistor) / adcread - (f64)adcbalanceresistor);
-}
-
-/*
  * convert an adc value to a voltage value
  */
 f64 ADC_GetVoltage(u16 adcread, f64 adcvref)
@@ -153,8 +118,6 @@ f64 ADC_GetVoltage(u16 adcread, f64 adcvref)
     else
         return (f64)(adcread * adcvref / (f64)ADC_REFRES);
 }
-
-
 
 u8 ADC_ReadNormalized8Bit(u8 channel)
 {

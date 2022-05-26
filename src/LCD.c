@@ -12,39 +12,6 @@
 #define LCD_DELAY_US_LONG 52
 #define LCD_DELAY_US_SHORT 15
 
-static void LCD_WaitBusy(void)
-{
-    // GPIO_InitPortPin(LCD_DPRT_CR, 4, GPIO_IN);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 5, GPIO_IN);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 6, GPIO_IN);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_IN);
-    // // GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 1);
-    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 1);
-    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RS, 0);
-
-    // GPIO_InitPortPin(DDRB, 4, GPIO_OUT);
-    // GPIO_WritePortPin(PORTB, 4, 1);
-    // _delay_us(LCD_DELAY_US_SHORT);
-
-    // while (GPIO_ReadPortPin(LCD_DPRT_IN, 7) == 1)
-    // { /* LCD is busy if MSB is set */
-    //     LCD_LatchSignal();
-    //     GPIO_WritePortPin(PORTB, 4, 0);
-    //     // GPIO_WritePortPin(LCD_DPRT_DR, 7, 0);
-    // }
-    // // _delay_us(LCD_DELAY_US_LONG);
-    // GPIO_WritePortPin(PORTB, 4, 1);
-    // // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
-    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 4, GPIO_OUT);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 5, GPIO_OUT);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 6, GPIO_OUT);
-    // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_OUT);
-
-    // bala waga3 dema8
-    UTIL_DelayMS(2);
-}
-
 void LCD_Init()
 {
 #if LCD_MODE == LCD_8BIT_MODE
@@ -196,4 +163,36 @@ void LCD_PrintNumber(u32 num)
         LCD_SendData(txt[i]);
         i--;
     }
+}
+void LCD_WaitBusy(void)
+{
+    // GPIO_InitPortPin(LCD_DPRT_CR, 4, GPIO_IN);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 5, GPIO_IN);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 6, GPIO_IN);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_IN);
+    // // GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 1);
+    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 1);
+    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RS, 0);
+
+    // GPIO_InitPortPin(DDRB, 4, GPIO_OUT);
+    // GPIO_WritePortPin(PORTB, 4, 1);
+    // _delay_us(LCD_DELAY_US_SHORT);
+
+    // while (GPIO_ReadPortPin(LCD_DPRT_IN, 7) == 1)
+    // { /* LCD is busy if MSB is set */
+    //     LCD_LatchSignal();
+    //     GPIO_WritePortPin(PORTB, 4, 0);
+    //     // GPIO_WritePortPin(LCD_DPRT_DR, 7, 0);
+    // }
+    // // _delay_us(LCD_DELAY_US_LONG);
+    // GPIO_WritePortPin(PORTB, 4, 1);
+    // // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
+    // GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 4, GPIO_OUT);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 5, GPIO_OUT);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 6, GPIO_OUT);
+    // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_OUT);
+
+    // bala waga3 dema8
+    UTIL_DelayMS(2);
 }

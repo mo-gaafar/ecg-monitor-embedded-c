@@ -31,6 +31,10 @@
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1a8da1164ef72160c76f2942455afc5f82"/>void <emphasis role="strong">LCD_WaitBusy</emphasis> ()</para>
+
+<para>Waits for the LCD to be ready to recieve more commands. </para>
+</listitem>
             <listitem><para><anchor xml:id="__l_c_d_8h_1aa53c9d40f3aa552a9974cd55ac510cb3"/>void <emphasis role="strong">LCD_Init</emphasis> (void)</para>
 
 <para>Initializes the LCD command and data pins and the data mode 

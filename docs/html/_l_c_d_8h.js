@@ -9,5 +9,6 @@ var _l_c_d_8h =
     [ "LCD_PrintString", "_l_c_d_8h.html#accb051c780ec0b69e76a39fd5f3d328c", null ],
     [ "LCD_SendCommand", "_l_c_d_8h.html#a8b5d0007beae86db52e5c5116369ec38", null ],
     [ "LCD_SendData", "_l_c_d_8h.html#ad55c31aa224052ee56d5e0361f17a660", null ],
-    [ "LCD_SetCursorAt", "_l_c_d_8h.html#aea6baf25c39b13ae7f99cf34886283a0", null ]
+    [ "LCD_SetCursorAt", "_l_c_d_8h.html#aea6baf25c39b13ae7f99cf34886283a0", null ],
+    [ "LCD_WaitBusy", "_l_c_d_8h.html#a8da1164ef72160c76f2942455afc5f82", null ]
 ];

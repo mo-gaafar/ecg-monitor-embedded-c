@@ -7,7 +7,7 @@
 /**
  * @file       ADC.h
  * @author     Mohamed Nasser
- * @copyright Davide Gironi
+ * @copyright Davide Gironi 2013
  *
  * @brief      ADC driver module
  *

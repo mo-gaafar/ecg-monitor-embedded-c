@@ -19,6 +19,12 @@
 #define LCD_MODE LCD_4BIT_MODE
 
 /**
+ * @brief Waits for the LCD to be ready to recieve more commands
+ *
+ */
+void LCD_WaitBusy();
+
+/**
  * @brief Initializes the LCD command and data pins and the data mode
  * @n (whether it is 8-bit or 4-bit defined in the preprocessor directive).
  **/

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_todo" xml:lang="en-US">
+
+<para><variablelist>
+<varlistentry><term>Global <link linkend="__l_c_d_8h_1ae60d0b62d7eb3fa31266c095d7b3c245">LCD_Clear</link>  (void)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000002"/>Implement this function  </para>
+</listitem></varlistentry>
+<varlistentry><term>Global <link linkend="__l_c_d_8h_1a0083f5163ab55b3501fe6bc1f794aff5">LCD_ClearLine</link>  (char line)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000003"/>Implement this function  </para>
+</listitem></varlistentry>
+<varlistentry><term>Global <link linkend="__l_c_d_8h_1a5d739b4dfe04ff901f83f379e828be3e">LCD_PrintSpecialCharacter</link>  (char *arr, char patternno, char x, char y)</term>
+<listitem>
+<para><anchor xml:id="_todo_1_todo000001"/>Implement this function </para>
+</listitem></varlistentry>
+</variablelist>
+</para>
+</section>

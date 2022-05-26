@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ecg_5fstatistics_0',['ECG_Statistics',['../struct_e_c_g___statistics.html',1,'']]]
+  ['pb_5finfo_0',['PB_Info',['../struct_p_b___info.html',1,'']]]
 ];

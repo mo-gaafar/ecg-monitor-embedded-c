@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structt_p_b___info" xml:lang="en-US">
+<title>tPB_Info Struct Reference</title>
+<indexterm><primary>tPB_Info</primary></indexterm>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structt_p_b___info_1ab8a1098a63391002255551cbd2ed2ce3"/>unsigned char <emphasis role="strong">samples</emphasis> [NUMBER_OF_SAMPLE]</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structt_p_b___info_1ad0359ab40c8ac5e63a0c788467f1e0d3"/><link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> <emphasis role="strong">state</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following files:</para>
+lib/code examples/Digital Clock/push_button.clib/code examples/Seb7a_OS_Sol_PIC/push_button.c</section>

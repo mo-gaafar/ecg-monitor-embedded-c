@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__e_c_g_8h_source" xml:lang="en-US">
+<title>ECG.h</title>
+<indexterm><primary>include/ECG.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;_ECG_H_</emphasis>
+2 <emphasis role="preprocessor">#define&#32;_ECG_H_</emphasis>
+3 
+13 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_main_8h">main.h</link>&gt;</emphasis>
+14 
+15 <emphasis role="preprocessor">#define&#32;true&#32;1</emphasis>
+16 <emphasis role="preprocessor">#define&#32;false&#32;0</emphasis>
+17 <emphasis role="preprocessor">#define&#32;M&#32;5</emphasis>
+18 <emphasis role="preprocessor">#define&#32;N&#32;30</emphasis>
+19 <emphasis role="preprocessor">#define&#32;winSize&#32;250</emphasis>
+20 <emphasis role="preprocessor">#define&#32;HP_CONSTANT&#32;((float)1&#32;/&#32;(float)M)</emphasis>
+21 <emphasis role="preprocessor">#define&#32;MAX_BPM&#32;100</emphasis>
+22 
+23 <emphasis role="preprocessor">#define&#32;ECG_DEBUG&#32;1</emphasis>
+24 <emphasis role="preprocessor">#define&#32;ECG_Sample_Period_ms&#32;(ISR_TMR0_Period_ms)</emphasis>
+25 
+26 <emphasis role="comment">//&#32;pre-recorded&#32;ECG,&#32;for&#32;testing</emphasis>
+27 <emphasis role="keywordtype">int</emphasis>&#32;s_ecg_idx;
+28 <emphasis role="preprocessor">#define&#32;S_ECG_SIZE&#32;226</emphasis>
+29 <emphasis role="comment">//&#32;const&#32;float&#32;s_ecg[S_ECG_SIZE];</emphasis>
+30 u16&#32;ecg_found_ticks_ms;
+31 u16&#32;ecg_old_found_ticks_ms;
+32 <emphasis role="keyword">volatile</emphasis>&#32;u16&#32;bpm;
+33 
+34 <emphasis role="comment">//&#32;resolution&#32;of&#32;RNG</emphasis>
+35 <emphasis role="preprocessor">#define&#32;RAND_RES&#32;100000000</emphasis>
+36 
+37 <emphasis role="comment">//&#32;circular&#32;buffer&#32;for&#32;input&#32;ecg&#32;signal</emphasis>
+38 <emphasis role="comment">//&#32;we&#32;need&#32;to&#32;keep&#32;a&#32;history&#32;of&#32;M&#32;+&#32;1&#32;samples&#32;for&#32;HP&#32;filter</emphasis>
+39 <emphasis role="keywordtype">float</emphasis>&#32;ecg_buff[M&#32;+&#32;1];
+40 <emphasis role="keywordtype">int</emphasis>&#32;ecg_buff_WR_idx;
+41 <emphasis role="keywordtype">int</emphasis>&#32;ecg_buff_RD_idx;
+42 
+43 <emphasis role="comment">//&#32;circular&#32;buffer&#32;for&#32;input&#32;ecg&#32;signal</emphasis>
+44 <emphasis role="comment">//&#32;we&#32;need&#32;to&#32;keep&#32;a&#32;history&#32;of&#32;N+1&#32;samples&#32;for&#32;LP&#32;filter</emphasis>
+45 <emphasis role="keywordtype">float</emphasis>&#32;hp_buff[N&#32;+&#32;1];
+46 <emphasis role="keywordtype">int</emphasis>&#32;hp_buff_WR_idx;
+47 <emphasis role="keywordtype">int</emphasis>&#32;hp_buff_RD_idx;
+48 
+49 <emphasis role="comment">//&#32;LP&#32;filter&#32;outputs&#32;a&#32;single&#32;point&#32;for&#32;every&#32;input&#32;point</emphasis>
+50 <emphasis role="comment">//&#32;This&#32;goes&#32;straight&#32;to&#32;adaptive&#32;filtering&#32;for&#32;eval</emphasis>
+51 <emphasis role="keywordtype">float</emphasis>&#32;next_eval_pt;
+52 
+53 <emphasis role="comment">//&#32;running&#32;sums&#32;for&#32;HP&#32;and&#32;LP&#32;filters,&#32;values&#32;shifted&#32;in&#32;FILO</emphasis>
+54 <emphasis role="keywordtype">float</emphasis>&#32;hp_sum;
+55 <emphasis role="keywordtype">float</emphasis>&#32;lp_sum;
+56 
+57 <emphasis role="comment">//&#32;parameters&#32;for&#32;adaptive&#32;thresholding</emphasis>
+58 <emphasis role="keywordtype">double</emphasis>&#32;treshold;
+59 u8&#32;triggered;
+60 <emphasis role="keywordtype">int</emphasis>&#32;trig_time;
+61 <emphasis role="keywordtype">float</emphasis>&#32;win_max;
+62 <emphasis role="keywordtype">int</emphasis>&#32;win_idx;
+63 
+64 <emphasis role="keywordtype">int</emphasis>&#32;tmp;
+65 
+66 u16&#32;number_iter;
+67 
+72 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+73 {
+74 &#32;&#32;&#32;&#32;Normal,
+75 &#32;&#32;&#32;&#32;Tachycardia,
+76 &#32;&#32;&#32;&#32;Bradycardia,
+77 &#32;&#32;&#32;&#32;Irregular_Heartbeat
+78 }&#32;<link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link>;
+79 
+80 <emphasis role="comment">//&#32;typedef&#32;struct</emphasis>
+81 <emphasis role="comment">//&#32;{</emphasis>
+82 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;float&#32;*NN_intervals_Array&#32;=&#32;nullptr;</emphasis>
+83 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;float&#32;SDNN&#32;=&#32;0;&#32;&#32;//&#32;Standard&#32;deviation&#32;of&#32;NN&#32;intervals</emphasis>
+84 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;float&#32;RMSSD&#32;=&#32;0;&#32;//&#32;Root&#32;mean&#32;square&#32;of&#32;successive&#32;differences</emphasis>
+85 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;float&#32;pNN50&#32;=&#32;0;&#32;//&#32;Percentage&#32;of&#32;NN&#32;intervals&#32;greater&#32;than&#32;50&#32;ms</emphasis>
+86 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;float&#32;SDSD&#32;=&#32;0;&#32;&#32;//&#32;Standard&#32;deviation&#32;of&#32;successive&#32;differences</emphasis>
+87 <emphasis role="comment">//&#32;}&#32;ECG_Statistics;</emphasis>
+88 
+93 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__e_c_g_8h_1a3dea6402ef2b9b53d8dd231c0f6f423a">ECG_Init</link>();
+94 
+99 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__e_c_g_8h_1a677b0e53cb36755e36e041705d550c7e">ECG_Update</link>(<emphasis role="keywordtype">void</emphasis>);&#32;<emphasis role="comment">//&#32;update&#32;ecg&#32;signal,&#32;update&#32;counter,&#32;detect&#32;peaks,&#32;calculate&#32;heart&#32;rate</emphasis>
+100 
+106 u8&#32;<link linkend="__e_c_g_8h_1ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</link>(<emphasis role="keywordtype">void</emphasis>);
+107 
+113 <link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link>&#32;<link linkend="__e_c_g_8h_1afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</link>(<emphasis role="keywordtype">void</emphasis>);
+114 
+120 <emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__e_c_g_8h_1a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</link>(<emphasis role="keywordtype">void</emphasis>);
+121 
+128 u8&#32;<link linkend="__e_c_g_8h_1ab7d56516f139537a7186781941304a59">ECG_Detect</link>(<emphasis role="keywordtype">float</emphasis>&#32;ecg_sample);
+129 
+130 <emphasis role="comment">//&#32;static&#32;u8&#32;current_bpm&#32;=&#32;0;&#32;//&#32;Current&#32;heart&#32;rate&#32;in&#32;beats&#32;per&#32;minute</emphasis>
+131 <emphasis role="comment">//&#32;static&#32;ECG_Arrythmia_Type&#32;current_arrythmia&#32;=&#32;Normal;</emphasis>
+132 <emphasis role="comment">//&#32;static&#32;ECG_Statistics&#32;current_statistics;</emphasis>
+133 
+134 <emphasis role="comment">//&#32;ECG_Statistics&#32;ECG_GetStatistics(void);</emphasis>
+135 
+136 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

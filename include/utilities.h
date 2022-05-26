@@ -1,6 +1,16 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
+/**
+ * @file       utilities.h
+ * @author     Mohamed Nasser
+ *
+ * @brief      Useful functions
+ *
+ * @version    0.5.0
+ * @date       2022-5-25
+ **/
+
 #include <main.h>
 
 /**
@@ -10,6 +20,4 @@
  **/
 void UTIL_DelayMS(u16 delay_ms);
 
-// TODO: Write function declaration and documentation
-u8 UTIL_Normalize_to_8bit(u16 input);
 #endif // __UTIL_H__

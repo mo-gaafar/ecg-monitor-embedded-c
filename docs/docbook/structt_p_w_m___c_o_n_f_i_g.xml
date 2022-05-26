@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structt_p_w_m___c_o_n_f_i_g" xml:lang="en-US">
+<title>tPWM_CONFIG Struct Reference</title>
+<indexterm><primary>tPWM_CONFIG</primary></indexterm>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structt_p_w_m___c_o_n_f_i_g_1a9a383ffd143d21712cb9213958b6424d"/>tPWM_MODE <emphasis role="strong">mode</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structt_p_w_m___c_o_n_f_i_g_1a9578e0142e13a4e3f3b45bdbd2213ac9"/>u8 <emphasis role="strong">duty</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structt_p_w_m___c_o_n_f_i_g_1a80a05ece57ae756a9af20b3d4757440e"/>u8 <emphasis role="strong">prescaler</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+src/pwm.c</section>

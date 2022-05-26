@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__led_8h" xml:lang="en-US">
+<title>include/Led.h File Reference</title>
+<indexterm><primary>include/Led.h</primary></indexterm>
+<para>
+
+<para>This is a LED driver module. </para>
+ 
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__led_8h_1ae89a64708a9f72dd2d40c74a8c8d4e56"/>#define <emphasis role="strong">LED_DELAY_MS</emphasis>   (1000)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__led_8h_1a7d240b7077545455fc6ede382a7a0779"/>typedef enum <link linkend="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</link> <emphasis role="strong">tLED</emphasis></para>
+
+<para>Contains supported LED names. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf"/>typedef enum <link linkend="__led_8h_1a4a8326721c03c1e5b40de78b999236b8">LED_State</link> <emphasis role="strong">tLED_State</emphasis></para>
+
+<para>LED Output pin state. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5"/>enum <link linkend="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</link> { 
+<emphasis role="strong">LED_ALARM</emphasis>
+, <emphasis role="strong">LED_PROCESSING</emphasis>
+, <emphasis role="strong">LED_2</emphasis>
+, <emphasis role="strong">LED_3</emphasis>
+, 
+<emphasis role="strong">LED_4</emphasis>
+ }</para>
+
+<para>Contains supported LED names. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__led_8h_1a4a8326721c03c1e5b40de78b999236b8"/>enum <link linkend="__led_8h_1a4a8326721c03c1e5b40de78b999236b8">LED_State</link> { <emphasis role="strong">LED_OFF</emphasis> = 0
+, <emphasis role="strong">LED_ON</emphasis> = 1
+ }</para>
+
+<para>LED Output pin state. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="__led_8h_1a5c94357ac45b8fbae1f5f82d4d8d98ba">LED_Init</link> (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led, <link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> state)</para>
+
+<para>Initializes the LED with its initial state and sets HW pin direction. </para>
+</listitem>
+            <listitem><para>void <link linkend="__led_8h_1a4da8fb54006f04c1a081af656bd769b1">LED_SetState</link> (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led, <link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> state)</para>
+
+<para>Sets the state of one LED. </para>
+</listitem>
+            <listitem><para>void <link linkend="__led_8h_1a5988e25776a512a49cf76c38b0a2aff8">LED_Toggle</link> (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</para>
+
+<para>Toggles the state of one LED. </para>
+</listitem>
+            <listitem><para><link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> <link linkend="__led_8h_1a4095f62ac58106e30268c979becbfbf3">LED_GetState</link> (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</para>
+
+<para>Gets the state of one LED. </para>
+</listitem>
+            <listitem><para>void <link linkend="__led_8h_1afbc92c0219f5323097677bc5c397a4fb">LED_On</link> (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</para>
+
+<para>Turn selected LED on. </para>
+</listitem>
+            <listitem><para>void <link linkend="__led_8h_1a6b9b6d9e873da32aa5fcc421d4b8aecf">LED_Off</link> (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</para>
+
+<para>Turn selected LED off. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This is a LED driver module. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-4-28 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__led_8h_1a4095f62ac58106e30268c979becbfbf3"/><section>
+    <title>LED_GetState()</title>
+<indexterm><primary>LED_GetState</primary><secondary>Led.h</secondary></indexterm>
+<indexterm><primary>Led.h</primary><secondary>LED_GetState</secondary></indexterm>
+<para><computeroutput><link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> LED_GetState (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</computeroutput></para><para>
+
+<para>Gets the state of one LED. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>led</entry><entry>
+<para>The LED to get state of. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>tLED_State The state of the LED. </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> </para>
+
+<para><link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__led_8h_1a5c94357ac45b8fbae1f5f82d4d8d98ba"/><section>
+    <title>LED_Init()</title>
+<indexterm><primary>LED_Init</primary><secondary>Led.h</secondary></indexterm>
+<indexterm><primary>Led.h</primary><secondary>LED_Init</secondary></indexterm>
+<para><computeroutput>void LED_Init (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led, <link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> state)</computeroutput></para><para>
+
+<para>Initializes the LED with its initial state and sets HW pin direction. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>led</entry><entry>
+<para>The LED to initialize. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>state</entry><entry>
+<para>The initial state of the LED. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> </para>
+
+<para><link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__led_8h_1a6b9b6d9e873da32aa5fcc421d4b8aecf"/><section>
+    <title>LED_Off()</title>
+<indexterm><primary>LED_Off</primary><secondary>Led.h</secondary></indexterm>
+<indexterm><primary>Led.h</primary><secondary>LED_Off</secondary></indexterm>
+<para><computeroutput>void LED_Off (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</computeroutput></para><para>
+
+<para>Turn selected LED off. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>led</entry><entry>
+<para>selected LED </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__led_8h_1afbc92c0219f5323097677bc5c397a4fb"/><section>
+    <title>LED_On()</title>
+<indexterm><primary>LED_On</primary><secondary>Led.h</secondary></indexterm>
+<indexterm><primary>Led.h</primary><secondary>LED_On</secondary></indexterm>
+<para><computeroutput>void LED_On (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</computeroutput></para><para>
+
+<para>Turn selected LED on. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>led</entry><entry>
+<para>selected LED </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__led_8h_1a4da8fb54006f04c1a081af656bd769b1"/><section>
+    <title>LED_SetState()</title>
+<indexterm><primary>LED_SetState</primary><secondary>Led.h</secondary></indexterm>
+<indexterm><primary>Led.h</primary><secondary>LED_SetState</secondary></indexterm>
+<para><computeroutput>void LED_SetState (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led, <link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> state)</computeroutput></para><para>
+
+<para>Sets the state of one LED. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>led</entry><entry>
+<para>The LED to set state of. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>state</entry><entry>
+<para>The state to set the LED to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> </para>
+
+<para><link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__led_8h_1a5988e25776a512a49cf76c38b0a2aff8"/><section>
+    <title>LED_Toggle()</title>
+<indexterm><primary>LED_Toggle</primary><secondary>Led.h</secondary></indexterm>
+<indexterm><primary>Led.h</primary><secondary>LED_Toggle</secondary></indexterm>
+<para><computeroutput>void LED_Toggle (<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> led)</computeroutput></para><para>
+
+<para>Toggles the state of one LED. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>led</entry><entry>
+<para>The LED to toggle state of. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link> </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

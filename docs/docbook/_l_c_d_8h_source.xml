@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__l_c_d_8h_source" xml:lang="en-US">
+<title>LCD.h</title>
+<indexterm><primary>include/LCD.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;LCD_H</emphasis>
+2 <emphasis role="preprocessor">#define&#32;LCD_H</emphasis>
+3 
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
+13 
+14 <emphasis role="comment">/*&#32;LCD&#32;Modes&#32;*/</emphasis>
+15 <emphasis role="preprocessor">#define&#32;LCD_8BIT_MODE&#32;0</emphasis>
+16 <emphasis role="preprocessor">#define&#32;LCD_4BIT_MODE&#32;1</emphasis>
+17 
+18 <emphasis role="comment">/*&#32;User&#32;Input&#32;*/</emphasis>
+19 <emphasis role="preprocessor">#define&#32;LCD_MODE&#32;LCD_4BIT_MODE</emphasis>
+20 
+25 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1aa53c9d40f3aa552a9974cd55ac510cb3">LCD_Init</link>(<emphasis role="keywordtype">void</emphasis>);
+26 
+31 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1a8b5d0007beae86db52e5c5116369ec38">LCD_SendCommand</link>(<emphasis role="keywordtype">char</emphasis>&#32;command);
+32 
+38 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1ad55c31aa224052ee56d5e0361f17a660">LCD_SendData</link>(<emphasis role="keywordtype">char</emphasis>&#32;Data);
+39 
+46 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1aea6baf25c39b13ae7f99cf34886283a0">LCD_SetCursorAt</link>(<emphasis role="keywordtype">char</emphasis>&#32;Columns,&#32;<emphasis role="keywordtype">char</emphasis>&#32;Rows);
+47 
+53 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1af98eeee119bf1662b2b1a1fe5156e32b">LCD_PrintNumber</link>(u32&#32;numb);
+54 
+60 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1accb051c780ec0b69e76a39fd5f3d328c">LCD_PrintString</link>(<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;*Str);
+61 
+73 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1a5d739b4dfe04ff901f83f379e828be3e">LCD_PrintSpecialCharacter</link>(<emphasis role="keywordtype">char</emphasis>&#32;*arr,&#32;<emphasis role="keywordtype">char</emphasis>&#32;patternno,&#32;<emphasis role="keywordtype">char</emphasis>&#32;x,&#32;<emphasis role="keywordtype">char</emphasis>&#32;y);
+74 
+81 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1ae60d0b62d7eb3fa31266c095d7b3c245">LCD_Clear</link>(<emphasis role="keywordtype">void</emphasis>);
+82 
+90 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1a0083f5163ab55b3501fe6bc1f794aff5">LCD_ClearLine</link>(<emphasis role="keywordtype">char</emphasis>&#32;line);
+91 
+95 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1afbf0ca489cc7beb5a4bc2d13a718822b">LCD_LatchSignal</link>(<emphasis role="keywordtype">void</emphasis>);
+96 
+97 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;LCD_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+</programlisting></section>

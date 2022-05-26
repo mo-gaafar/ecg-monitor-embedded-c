@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_include_2_push___button_8h_source" xml:lang="en-US">
+<title>Push_Button.h</title>
+<indexterm><primary>include/Push_Button.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__PB_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__PB_H__</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&lt;main.h&gt;</emphasis>
+5 
+18 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a914905e917b30f9a0d59250bb8e55cef">PB_Name</link>
+19 {
+20 &#32;&#32;&#32;&#32;PB_VOL_PLUS,
+21 &#32;&#32;&#32;&#32;PB_VOL_MINUS,
+22 &#32;&#32;&#32;&#32;PB_SNOOZE,
+23 &#32;&#32;&#32;&#32;PB_DISP_SLEEP
+24 
+25 }&#32;<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link>;
+26 
+31 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a2c36253581090b7a8ea320c3f88d5d32">PB_State</link>
+32 {
+33 &#32;&#32;&#32;&#32;PB_RELEASED,
+34 &#32;&#32;&#32;&#32;PB_PRE_PRESSED,
+35 &#32;&#32;&#32;&#32;PB_PRESSED,
+36 &#32;&#32;&#32;&#32;PB_PRE_RELEASED
+37 }&#32;<link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link>;
+38 
+47 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a80c4a02c09621448913663654e359a67">PB_Init</link>(tPB&#32;pb,&#32;tPB_State&#32;initial_state);
+48 
+54 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a65ea2a324d4774c441b0fadc0936f5fc">PB_Update</link>(<emphasis role="keywordtype">void</emphasis>);
+55 
+62 u16&#32;<link linkend="_include_2_push___button_8h_1a680b8c37ddd449ecbbb9097a35346fe0">PB_GetClicks</link>(tPB&#32;pb);
+63 
+69 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a05aa4260d9a09a3ae207d009ebd936b9">PB_ResetClicks</link>(tPB&#32;pb);
+70 
+78 tPB_State&#32;<link linkend="_include_2_push___button_8h_1af1726202fc37b0188259ad902957b035">PB_GetState</link>(tPB&#32;pb);
+79 
+80 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__PB_H__</emphasis>
+</programlisting></section>

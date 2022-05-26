@@ -1,0 +1,24 @@
+digraph "include/main.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/main.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Microprocessor abstraction layer."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="include/ADC.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_a_d_c_8h.html",tooltip="ADC driver module."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="include/ECG.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_e_c_g_8h.html",tooltip="ECG Signal Processing and feature extraction module."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="include/LCD.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_l_c_d_8h.html",tooltip="This is a LCD driver module."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="include/Port.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$include_2_port_8h.html",tooltip="This module abstracts the pcb."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="include/pwm.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pwm_8h.html",tooltip="Pulse width modulation driver module."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="include/Push_Button.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$include_2_push___button_8h.html",tooltip="This is a Push Button driver module."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="include/timer0.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$include_2timer0_8h.html",tooltip="This module drives the timer0 peripheral."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="include/utilities.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$include_2utilities_8h.html",tooltip="Useful functions."];
+}

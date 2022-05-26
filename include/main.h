@@ -5,14 +5,31 @@
  *
  * \section intro_sec Introduction
  *
- * This is the introduction.
+ * The project is designed to be used with the
+ * Atmel AVR series of microcontrollers.
+ *
+ * This project is a simple ECG Monitor that can be used to
+ * reliably measure the heart rate of a patient by extracting features
+ * from an ECG signal based on digital signal processing algorithms.
  *
  * \section install_sec Installation
  *
- * \subsection step1 Step 1: Opening the box
+ * \subsection step1 Step 1: Install platform IO drivers
+ * \subsection step2 Step 2: Open the project in platform IO
+ * \subsection step3 Step 3: Build/Upload the project to you MCU
+ * \subsection step4 Step 4: Wiring diagrams are in the simulation folder
  *
- * etc...
  */
+
+/**
+ * @file       main.h
+ * @author     Mohamed Nasser
+ *
+ * @brief      Microprocessor abstraction layer
+ *
+ * @version    1.2.0
+ * @date       2022-5-25
+ **/
 
 /************************************************
  *  ... MCU SPECIFIC DEFINITIONS

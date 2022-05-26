@@ -34,7 +34,7 @@ void LCD_SendCommand(char command);
  * @brief Sends data to the LCD.
  *
  * @param char Data
- */
+ **/
 void LCD_SendData(char Data);
 
 /**

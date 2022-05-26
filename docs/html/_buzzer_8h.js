@@ -1,6 +1,5 @@
 var _buzzer_8h =
 [
-    [ "BUZ_DELAY_MS", "_buzzer_8h.html#a20bbfde662ddcde633ff5c7e9262245b", null ],
     [ "tBUZ", "_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48", null ],
     [ "tBUZ_Mode", "_buzzer_8h.html#a071c7e79bc0662dd7d5c28d2b1cce9ab", null ],
     [ "tBUZ_State", "_buzzer_8h.html#aae424ee37aaf0ce6fd006e006dd5909c", null ],
@@ -20,6 +19,7 @@ var _buzzer_8h =
     [ "BUZ_GeneratePWM", "_buzzer_8h.html#a45a8be203173b3387272c64980ca01f5", null ],
     [ "BUZ_GetMode", "_buzzer_8h.html#add905ca0911317e301020b214453150e", null ],
     [ "BUZ_GetState", "_buzzer_8h.html#ab353b2f78f65e3f3bb620837def896ec", null ],
+    [ "BUZ_GetVolume", "_buzzer_8h.html#a545e730cc7d0debd813906deda40225f", null ],
     [ "BUZ_Init", "_buzzer_8h.html#a9e9e2030f643b457a5425f6e53eec0fe", null ],
     [ "BUZ_Mute", "_buzzer_8h.html#a69449961331b25b2a3239d0e532f7c10", null ],
     [ "BUZ_SetMode", "_buzzer_8h.html#abde70ebbc7d4cb67740260f14eca1afc", null ],
@@ -27,6 +27,6 @@ var _buzzer_8h =
     [ "BUZ_SetVolume", "_buzzer_8h.html#ae14daf7dd7cd337cc991c73ed868b2ab", null ],
     [ "BUZ_Unmute", "_buzzer_8h.html#a46a04bde975c0cbb87face7a6eb58866", null ],
     [ "BUZ_Update", "_buzzer_8h.html#abc3e277e280a3018698f0e3e3ef7ffce", null ],
-    [ "BUZ_VolumeDn", "_buzzer_8h.html#aa2d2392f7296acd29c70f966114e5bd0", null ],
-    [ "BUZ_VolumeUp", "_buzzer_8h.html#a44394fd0a79b23c15a643855c27af8fb", null ]
+    [ "BUZ_VolumeDn", "_buzzer_8h.html#a95c2a52eb710eec0674f42b480e1b8a7", null ],
+    [ "BUZ_VolumeUp", "_buzzer_8h.html#aacef2c9c9fc5ec65c393ce7a681a9543", null ]
 ];

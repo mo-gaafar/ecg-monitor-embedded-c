@@ -1,6 +1,16 @@
 #ifndef _PWM_H_
 #define _PWM_H_
 
+/**
+ * @file       pwm.h
+ * @author     Mohamed Nasser
+ *
+ * @brief      Pulse width modulation driver module
+ *
+ * @version    0.2.1
+ * @date       2022-5-25
+ **/
+
 #include "main.h"
 #include "Port.h"
 #include <avr/io.h>
@@ -13,8 +23,6 @@
 #define PWM2_PORT_DATA (BUZ_ALARM_PORT_DATA)
 #define PWM2_PORT_DIRECTION (BUZ_ALARM_PORT_DIRECTION)
 #define PWM2_PIN (BUZ_ALARM_PIN)
-
-// TODO: account for already used timer peripherals
 
 typedef enum
 {
@@ -35,6 +43,7 @@ void PWM_Set_Clock(tPWM pwm, u8 clock);
 u8 PWM_Get_Duty(tPWM pwm);
 void PWM_Start(tPWM pwm);
 void PWM_Resume(tPWM pwm);
+
 void PWM_Pause(tPWM pwm);
 
 #endif

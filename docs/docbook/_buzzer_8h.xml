@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__buzzer_8h" xml:lang="en-US">
+<title>include/Buzzer.h File Reference</title>
+<indexterm><primary>include/Buzzer.h</primary></indexterm>
+<para>
+
+<para>Buzzer driver module. </para>
+ 
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__buzzer_8h_1a20bbfde662ddcde633ff5c7e9262245b"/>#define <emphasis role="strong">BUZ_DELAY_MS</emphasis>   (1000)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48"/>typedef enum <link linkend="__buzzer_8h_1a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</link> <emphasis role="strong">tBUZ</emphasis></para>
+
+<para>List of supported buzzers. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__buzzer_8h_1aae424ee37aaf0ce6fd006e006dd5909c"/>typedef enum <link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> <emphasis role="strong">tBUZ_State</emphasis></para>
+
+<para>States of the buzzer pin. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__buzzer_8h_1a071c7e79bc0662dd7d5c28d2b1cce9ab"/>typedef enum <link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> <emphasis role="strong">tBUZ_Mode</emphasis></para>
+
+<para>Contains the sound pattern operation modes. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__buzzer_8h_1a0431c1e3d13807f611ffe80c2e421088"/>enum <link linkend="__buzzer_8h_1a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</link> { <emphasis role="strong">BUZ_ALARM</emphasis>
+ }</para>
+
+<para>List of supported buzzers. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56"/>enum <link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> { <emphasis role="strong">BUZ_OFF</emphasis> = 0
+, <emphasis role="strong">BUZ_ON</emphasis> = 1
+ }</para>
+
+<para>States of the buzzer pin. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__buzzer_8h_1af77d749161eec1892df160aab4dd706d"/>enum <link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> { <emphasis role="strong">BUZ_STOPPED_MODE</emphasis>
+, <emphasis role="strong">BUZ_SINGLE_MODE</emphasis>
+, <emphasis role="strong">BUZ_PATTERN_MODE</emphasis>
+, <emphasis role="strong">BUZ_TOGGLE_MODE</emphasis>
+ }</para>
+
+<para>Contains the sound pattern operation modes. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="__buzzer_8h_1a9e9e2030f643b457a5425f6e53eec0fe">BUZ_Init</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, <link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> mode)</para>
+
+<para>Initializes buzzer HW pins and buzzer mode (sound pattern) </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1abc3e277e280a3018698f0e3e3ef7ffce">BUZ_Update</link> (void)</para>
+
+<para>Updates buzzer states based on their selected sound pattern. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1a79964c1fd19af8d32df813e939a60f1c">BUZ_SetState</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, <link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> state)</para>
+
+<para>Sets the output state of one buzzer. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1abde70ebbc7d4cb67740260f14eca1afc">BUZ_SetMode</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, <link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> mode)</para>
+
+<para>Sets the sound mode of the buzzer. </para>
+</listitem>
+            <listitem><para><link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> <link linkend="__buzzer_8h_1ab353b2f78f65e3f3bb620837def896ec">BUZ_GetState</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</para>
+
+<para>Gets the current state of one buzzer. </para>
+</listitem>
+            <listitem><para><link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> <link linkend="__buzzer_8h_1add905ca0911317e301020b214453150e">BUZ_GetMode</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</para>
+
+<para>Gets the current sound mode of one buzzer. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1a45a8be203173b3387272c64980ca01f5">BUZ_GeneratePWM</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 duty_cycle)</para>
+
+<para>Generates PWM signal at the buzzer pin. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1ae14daf7dd7cd337cc991c73ed868b2ab">BUZ_SetVolume</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 volume)</para>
+
+<para>Sets the buzzer&apos;s volume level. </para>
+</listitem>
+            <listitem><para>u8 <link linkend="__buzzer_8h_1a545e730cc7d0debd813906deda40225f">BUZ_GetVolume</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1aacef2c9c9fc5ec65c393ce7a681a9543">BUZ_VolumeUp</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 increments)</para>
+
+<para>Increment the buzzer&apos;s volume level. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1a95c2a52eb710eec0674f42b480e1b8a7">BUZ_VolumeDn</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 decrements)</para>
+
+<para>Decrement the buzzer&apos;s volume level. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1a69449961331b25b2a3239d0e532f7c10">BUZ_Mute</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</para>
+
+<para>Sets the volume to zero. </para>
+</listitem>
+            <listitem><para>void <link linkend="__buzzer_8h_1a46a04bde975c0cbb87face7a6eb58866">BUZ_Unmute</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</para>
+
+<para>Sets the volume back to previous level. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Buzzer driver module. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser</para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>0.9.1 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-5-04 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__buzzer_8h_1a45a8be203173b3387272c64980ca01f5"/><section>
+    <title>BUZ_GeneratePWM()</title>
+<indexterm><primary>BUZ_GeneratePWM</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_GeneratePWM</secondary></indexterm>
+<para><computeroutput>void BUZ_GeneratePWM (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 duty_cycle)</computeroutput></para><para>
+
+<para>Generates PWM signal at the buzzer pin. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tBUZ</entry><entry>
+<para>buzzer - The buzzer to generate PWM signal for. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>u8</entry><entry>
+<para>duty_cycle - The duty cycle of the PWM signal. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1add905ca0911317e301020b214453150e"/><section>
+    <title>BUZ_GetMode()</title>
+<indexterm><primary>BUZ_GetMode</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_GetMode</secondary></indexterm>
+<para><computeroutput><link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> BUZ_GetMode (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</computeroutput></para><para>
+
+<para>Gets the current sound mode of one buzzer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tBUZ</entry><entry>
+<para>buzzer - The buzzer to get mode of. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>tBUZ_Mode - The current sound mode of the buzzer. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1ab353b2f78f65e3f3bb620837def896ec"/><section>
+    <title>BUZ_GetState()</title>
+<indexterm><primary>BUZ_GetState</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_GetState</secondary></indexterm>
+<para><computeroutput><link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> BUZ_GetState (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</computeroutput></para><para>
+
+<para>Gets the current state of one buzzer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tBUZ</entry><entry>
+<para>buzzer - The buzzer to get state of. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>tBUZ_State - The current state of the buzzer. </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1a545e730cc7d0debd813906deda40225f"/><section>
+    <title>BUZ_GetVolume()</title>
+<indexterm><primary>BUZ_GetVolume</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_GetVolume</secondary></indexterm>
+<para><computeroutput>u8 BUZ_GetVolume (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</computeroutput></para>
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buzzer</entry><entry>
+<para>Selected buzzer </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>u8 returned volume (0-100) </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1a9e9e2030f643b457a5425f6e53eec0fe"/><section>
+    <title>BUZ_Init()</title>
+<indexterm><primary>BUZ_Init</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_Init</secondary></indexterm>
+<para><computeroutput>void BUZ_Init (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, <link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> mode)</computeroutput></para><para>
+
+<para>Initializes buzzer HW pins and buzzer mode (sound pattern) </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tBUZ</entry><entry>
+<para>buz - The buzzer to initialize. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tBUZ_Mode</entry><entry>
+<para>mode - The initial sound mode of the buzzer. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>This function is called in the main.c file </para>
+</note>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1a69449961331b25b2a3239d0e532f7c10"/><section>
+    <title>BUZ_Mute()</title>
+<indexterm><primary>BUZ_Mute</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_Mute</secondary></indexterm>
+<para><computeroutput>void BUZ_Mute (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</computeroutput></para><para>
+
+<para>Sets the volume to zero. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buzzer</entry><entry>
+<para>- The buzzer to set volume to zero for. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1abde70ebbc7d4cb67740260f14eca1afc"/><section>
+    <title>BUZ_SetMode()</title>
+<indexterm><primary>BUZ_SetMode</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_SetMode</secondary></indexterm>
+<para><computeroutput>void BUZ_SetMode (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, <link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> mode)</computeroutput></para><para>
+
+<para>Sets the sound mode of the buzzer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tBUZ</entry><entry>
+<para>buzzer - The buzzer to set mode of. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tBUZ_Mode</entry><entry>
+<para>mode - The sound mode to set the buzzer to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1a79964c1fd19af8d32df813e939a60f1c"/><section>
+    <title>BUZ_SetState()</title>
+<indexterm><primary>BUZ_SetState</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_SetState</secondary></indexterm>
+<para><computeroutput>void BUZ_SetState (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, <link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> state)</computeroutput></para><para>
+
+<para>Sets the output state of one buzzer. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tBUZ</entry><entry>
+<para>buzzer - The buzzer to set state of. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>tBUZ_State</entry><entry>
+<para>state - The state to set the buzzer to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1ae14daf7dd7cd337cc991c73ed868b2ab"/><section>
+    <title>BUZ_SetVolume()</title>
+<indexterm><primary>BUZ_SetVolume</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_SetVolume</secondary></indexterm>
+<para><computeroutput>void BUZ_SetVolume (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 volume)</computeroutput></para><para>
+
+<para>Sets the buzzer&apos;s volume level. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buzzer</entry><entry>
+<para>- The buzzer to set volume for. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>volume</entry><entry>
+<para>- The volume level to set the buzzer to. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1a46a04bde975c0cbb87face7a6eb58866"/><section>
+    <title>BUZ_Unmute()</title>
+<indexterm><primary>BUZ_Unmute</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_Unmute</secondary></indexterm>
+<para><computeroutput>void BUZ_Unmute (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer)</computeroutput></para><para>
+
+<para>Sets the volume back to previous level. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buzzer</entry><entry>
+<para>- The buzzer to set volume back to previous level for. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1abc3e277e280a3018698f0e3e3ef7ffce"/><section>
+    <title>BUZ_Update()</title>
+<indexterm><primary>BUZ_Update</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_Update</secondary></indexterm>
+<para><computeroutput>void BUZ_Update (void )</computeroutput></para><para>
+
+<para>Updates buzzer states based on their selected sound pattern. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<note><title>Note</title>
+
+<para>This function is called in the main.c file </para>
+</note>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1a95c2a52eb710eec0674f42b480e1b8a7"/><section>
+    <title>BUZ_VolumeDn()</title>
+<indexterm><primary>BUZ_VolumeDn</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_VolumeDn</secondary></indexterm>
+<para><computeroutput>void BUZ_VolumeDn (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 decrements)</computeroutput></para><para>
+
+<para>Decrement the buzzer&apos;s volume level. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buzzer</entry><entry>
+<para>- The buzzer to decrement volume for. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+</para>
+</section>
+<anchor xml:id="__buzzer_8h_1aacef2c9c9fc5ec65c393ce7a681a9543"/><section>
+    <title>BUZ_VolumeUp()</title>
+<indexterm><primary>BUZ_VolumeUp</primary><secondary>Buzzer.h</secondary></indexterm>
+<indexterm><primary>Buzzer.h</primary><secondary>BUZ_VolumeUp</secondary></indexterm>
+<para><computeroutput>void BUZ_VolumeUp (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 increments)</computeroutput></para><para>
+
+<para>Increment the buzzer&apos;s volume level. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>buzzer</entry><entry>
+<para>- The buzzer to increment volume for. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+</para>
+</section>
+</section>
+</section>

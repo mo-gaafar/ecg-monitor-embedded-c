@@ -2,7 +2,7 @@
 #define __TMR_H__
 
 /**
- * @file Timer0 Module
+ * @file timer0.h
  * @author Mohamed Nasser
  * @brief This module drives the timer0 peripheral
  * @version 1.0
@@ -10,6 +10,8 @@
  **/
 
 #include <main.h>
+
+#define TMR0_IS_USED 1
 
 #define TMR0_SET_CLOCK_SELECTOR(x)                       \
     SET_REGISTER_PIN(TCCR0B, CS00, (x & 0x1));           \

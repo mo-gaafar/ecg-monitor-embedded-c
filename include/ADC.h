@@ -1,6 +1,11 @@
 
+
+#ifndef ADC_H
+#define ADC_H
+#include <main.h>
+
 /**
- * @file       ADC
+ * @file       ADC.h
  * @author     Mohamed Nasser
  * @copyright Davide Gironi
  *
@@ -8,11 +13,7 @@
  *
  * @version    1.0
  * @date       2022-5-25
- */
-
-#ifndef ADC_H
-#define ADC_H
-#include <main.h>
+ **/
 
 // setup values
 #define ADC_REF 1       // adc reference voltage (see adc_init function for reference)
@@ -28,7 +29,7 @@
  * @brief Set ADC channel to read from later using ReadSel
  *
  * @param channel selected ADC channel
- */
+ **/
 void ADC_SetChannel(u8 channel);
 
 /**
@@ -36,20 +37,20 @@ void ADC_SetChannel(u8 channel);
  *
  * @param channel selected channel
  * @return u16 10-bit adc reading
- */
+ **/
 u16 ADC_Read(u8 channel);
 
 /**
  * @brief Reads previously selected channel (use ADC_SetChannel)
  *
  * @return u16  10-bit adc reading
- */
+ **/
 u16 ADC_ReadSel(void);
 
 /**
  * @brief Initialize ADC module
  * @warning must be called before using adc
- */
+ **/
 void ADC_Init(void);
 
 /**
@@ -58,7 +59,7 @@ void ADC_Init(void);
  * @param adcread input adc value
  * @param adcvref voltage reference
  * @return f64 converted value
- */
+ **/
 f64 ADC_GetVoltage(u16 adcread, f64 adcvref);
 
 /**
@@ -66,7 +67,7 @@ f64 ADC_GetVoltage(u16 adcread, f64 adcvref);
  *
  * @param channel selected ADC channel to read from
  * @return u8 normalized ADC value
- */
+ **/
 u8 ADC_ReadNormalized8Bit(u8 channel);
 
 #endif

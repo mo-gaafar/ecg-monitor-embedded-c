@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ECG Monitor
+   <div id="projectname">ECG Monitor<span id="projectnumber">&#160;0.6.0</span>
    </div>
   </td>
  </tr>
@@ -98,31 +99,38 @@ $(document).ready(function(){initNavTree('_led_8h.html',''); initResizable(); })
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ae89a64708a9f72dd2d40c74a8c8d4e56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#ae89a64708a9f72dd2d40c74a8c8d4e56">LED_DELAY_MS</a>&#160;&#160;&#160;(1000)</td></tr>
+<tr class="memitem:ae89a64708a9f72dd2d40c74a8c8d4e56"><td class="memItemLeft" align="right" valign="top"><a id="ae89a64708a9f72dd2d40c74a8c8d4e56" name="ae89a64708a9f72dd2d40c74a8c8d4e56"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED_DELAY_MS</b>&#160;&#160;&#160;(1000)</td></tr>
 <tr class="separator:ae89a64708a9f72dd2d40c74a8c8d4e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a7d240b7077545455fc6ede382a7a0779"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a></td></tr>
+<tr class="memitem:a7d240b7077545455fc6ede382a7a0779"><td class="memItemLeft" align="right" valign="top"><a id="a7d240b7077545455fc6ede382a7a0779" name="a7d240b7077545455fc6ede382a7a0779"></a>
+typedef enum <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tLED</b></td></tr>
+<tr class="memdesc:a7d240b7077545455fc6ede382a7a0779"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains supported LED names. <br /></td></tr>
 <tr class="separator:a7d240b7077545455fc6ede382a7a0779"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eecfe1091700dc9320c31d17a0645cf"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8">LED_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf">tLED_State</a></td></tr>
+<tr class="memitem:a5eecfe1091700dc9320c31d17a0645cf"><td class="memItemLeft" align="right" valign="top"><a id="a5eecfe1091700dc9320c31d17a0645cf" name="a5eecfe1091700dc9320c31d17a0645cf"></a>
+typedef enum <a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8">LED_State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tLED_State</b></td></tr>
+<tr class="memdesc:a5eecfe1091700dc9320c31d17a0645cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED Output pin state. <br /></td></tr>
 <tr class="separator:a5eecfe1091700dc9320c31d17a0645cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a9632506c5b20ae2f4a0d0942bf1d7db5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</a> { <br />
-&#160;&#160;<a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5acd54c6c9d11b0091816989ce8a570915">LED_ALARM</a>
-, <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5aca1411ac68133ad761e3833db0cd2c82">LED_PROCESSING</a>
-, <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5a00af6b2437d9982f1f125d2cc2537c41">LED_2</a>
-, <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5a3e1b1af0f74f675e4eb7bd18229adfd3">LED_3</a>
+<tr class="memitem:a9632506c5b20ae2f4a0d0942bf1d7db5"><td class="memItemLeft" align="right" valign="top"><a id="a9632506c5b20ae2f4a0d0942bf1d7db5" name="a9632506c5b20ae2f4a0d0942bf1d7db5"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</a> { <br />
+&#160;&#160;<b>LED_ALARM</b>
+, <b>LED_PROCESSING</b>
+, <b>LED_2</b>
+, <b>LED_3</b>
 , <br />
-&#160;&#160;<a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5ada6e5fa936f81b6b94078ecc353a7f5f">LED_4</a>
+&#160;&#160;<b>LED_4</b>
 <br />
  }</td></tr>
+<tr class="memdesc:a9632506c5b20ae2f4a0d0942bf1d7db5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains supported LED names. <br /></td></tr>
 <tr class="separator:a9632506c5b20ae2f4a0d0942bf1d7db5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a8326721c03c1e5b40de78b999236b8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8">LED_State</a> { <a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8afc0ca8cc6cbe215fd3f1ae6d40255b40">LED_OFF</a> = 0
-, <a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8add01b80eb93658fb4cf7eb9aceb89a1d">LED_ON</a> = 1
+<tr class="memitem:a4a8326721c03c1e5b40de78b999236b8"><td class="memItemLeft" align="right" valign="top"><a id="a4a8326721c03c1e5b40de78b999236b8" name="a4a8326721c03c1e5b40de78b999236b8"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8">LED_State</a> { <b>LED_OFF</b> = 0
+, <b>LED_ON</b> = 1
  }</td></tr>
+<tr class="memdesc:a4a8326721c03c1e5b40de78b999236b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED Output pin state. <br /></td></tr>
 <tr class="separator:a4a8326721c03c1e5b40de78b999236b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -139,97 +147,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a4095f62ac58106e30268c979becbfbf3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf">tLED_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a4095f62ac58106e30268c979becbfbf3">LED_GetState</a> (<a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> led)</td></tr>
 <tr class="memdesc:a4095f62ac58106e30268c979becbfbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state of one LED.  <a href="_led_8h.html#a4095f62ac58106e30268c979becbfbf3">More...</a><br /></td></tr>
 <tr class="separator:a4095f62ac58106e30268c979becbfbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbc92c0219f5323097677bc5c397a4fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#afbc92c0219f5323097677bc5c397a4fb">LED_On</a> (<a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> led)</td></tr>
+<tr class="memdesc:afbc92c0219f5323097677bc5c397a4fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn selected LED on.  <a href="_led_8h.html#afbc92c0219f5323097677bc5c397a4fb">More...</a><br /></td></tr>
+<tr class="separator:afbc92c0219f5323097677bc5c397a4fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b9b6d9e873da32aa5fcc421d4b8aecf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_led_8h.html#a6b9b6d9e873da32aa5fcc421d4b8aecf">LED_Off</a> (<a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> led)</td></tr>
+<tr class="memdesc:a6b9b6d9e873da32aa5fcc421d4b8aecf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn selected LED off.  <a href="_led_8h.html#a6b9b6d9e873da32aa5fcc421d4b8aecf">More...</a><br /></td></tr>
+<tr class="separator:a6b9b6d9e873da32aa5fcc421d4b8aecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This is a LED driver module. </p>
 <dl class="section author"><dt>Author</dt><dd>Mohamed Nasser </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-4-28 </dd></dl>
-</div><h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ae89a64708a9f72dd2d40c74a8c8d4e56" name="ae89a64708a9f72dd2d40c74a8c8d4e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae89a64708a9f72dd2d40c74a8c8d4e56">&#9670;&nbsp;</a></span>LED_DELAY_MS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define LED_DELAY_MS&#160;&#160;&#160;(1000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a7d240b7077545455fc6ede382a7a0779" name="a7d240b7077545455fc6ede382a7a0779"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d240b7077545455fc6ede382a7a0779">&#9670;&nbsp;</a></span>tLED</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</a> <a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5eecfe1091700dc9320c31d17a0645cf" name="a5eecfe1091700dc9320c31d17a0645cf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5eecfe1091700dc9320c31d17a0645cf">&#9670;&nbsp;</a></span>tLED_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8">LED_State</a> <a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf">tLED_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a9632506c5b20ae2f4a0d0942bf1d7db5" name="a9632506c5b20ae2f4a0d0942bf1d7db5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9632506c5b20ae2f4a0d0942bf1d7db5">&#9670;&nbsp;</a></span>LED_Name</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_led_8h.html#a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9632506c5b20ae2f4a0d0942bf1d7db5acd54c6c9d11b0091816989ce8a570915" name="a9632506c5b20ae2f4a0d0942bf1d7db5acd54c6c9d11b0091816989ce8a570915"></a>LED_ALARM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9632506c5b20ae2f4a0d0942bf1d7db5aca1411ac68133ad761e3833db0cd2c82" name="a9632506c5b20ae2f4a0d0942bf1d7db5aca1411ac68133ad761e3833db0cd2c82"></a>LED_PROCESSING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9632506c5b20ae2f4a0d0942bf1d7db5a00af6b2437d9982f1f125d2cc2537c41" name="a9632506c5b20ae2f4a0d0942bf1d7db5a00af6b2437d9982f1f125d2cc2537c41"></a>LED_2&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9632506c5b20ae2f4a0d0942bf1d7db5a3e1b1af0f74f675e4eb7bd18229adfd3" name="a9632506c5b20ae2f4a0d0942bf1d7db5a3e1b1af0f74f675e4eb7bd18229adfd3"></a>LED_3&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9632506c5b20ae2f4a0d0942bf1d7db5ada6e5fa936f81b6b94078ecc353a7f5f" name="a9632506c5b20ae2f4a0d0942bf1d7db5ada6e5fa936f81b6b94078ecc353a7f5f"></a>LED_4&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a4a8326721c03c1e5b40de78b999236b8" name="a4a8326721c03c1e5b40de78b999236b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4a8326721c03c1e5b40de78b999236b8">&#9670;&nbsp;</a></span>LED_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_led_8h.html#a4a8326721c03c1e5b40de78b999236b8">LED_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4a8326721c03c1e5b40de78b999236b8afc0ca8cc6cbe215fd3f1ae6d40255b40" name="a4a8326721c03c1e5b40de78b999236b8afc0ca8cc6cbe215fd3f1ae6d40255b40"></a>LED_OFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a4a8326721c03c1e5b40de78b999236b8add01b80eb93658fb4cf7eb9aceb89a1d" name="a4a8326721c03c1e5b40de78b999236b8add01b80eb93658fb4cf7eb9aceb89a1d"></a>LED_ON&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a4095f62ac58106e30268c979becbfbf3" name="a4095f62ac58106e30268c979becbfbf3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4095f62ac58106e30268c979becbfbf3">&#9670;&nbsp;</a></span>LED_GetState()</h2>
 
@@ -254,9 +184,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>tLED_State The state of the LED. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779" title="Contains supported LED names.">tLED</a> </dd>
 <dd>
-<a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf">tLED_State</a> </dd></dl>
+<a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf" title="LED Output pin state.">tLED_State</a> </dd></dl>
 
 </div>
 </div>
@@ -295,9 +225,61 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779" title="Contains supported LED names.">tLED</a> </dd>
 <dd>
-<a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf">tLED_State</a> </dd></dl>
+<a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf" title="LED Output pin state.">tLED_State</a> </dd></dl>
+
+</div>
+</div>
+<a id="a6b9b6d9e873da32aa5fcc421d4b8aecf" name="a6b9b6d9e873da32aa5fcc421d4b8aecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b9b6d9e873da32aa5fcc421d4b8aecf">&#9670;&nbsp;</a></span>LED_Off()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED_Off </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a>&#160;</td>
+          <td class="paramname"><em>led</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn selected LED off. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">led</td><td>selected LED </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afbc92c0219f5323097677bc5c397a4fb" name="afbc92c0219f5323097677bc5c397a4fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbc92c0219f5323097677bc5c397a4fb">&#9670;&nbsp;</a></span>LED_On()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LED_On </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a>&#160;</td>
+          <td class="paramname"><em>led</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Turn selected LED on. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">led</td><td>selected LED </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -336,9 +318,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779" title="Contains supported LED names.">tLED</a> </dd>
 <dd>
-<a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf">tLED_State</a> </dd></dl>
+<a class="el" href="_led_8h.html#a5eecfe1091700dc9320c31d17a0645cf" title="LED Output pin state.">tLED_State</a> </dd></dl>
 
 </div>
 </div>
@@ -366,7 +348,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779">tLED</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_led_8h.html#a7d240b7077545455fc6ede382a7a0779" title="Contains supported LED names.">tLED</a> </dd></dl>
 
 </div>
 </div>

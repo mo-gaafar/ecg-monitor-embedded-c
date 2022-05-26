@@ -1,9 +1,5 @@
 var timer0_8h =
 [
-    [ "TMR0_READ_COUNTER", "timer0_8h.html#af443153043184296a315f206bfad9233", null ],
-    [ "TMR0_SET_CLOCK_SELECTOR", "timer0_8h.html#a8d100ac3a9804f9cc0ab1f10dd7a46bb", null ],
-    [ "TMR0_SET_INTERRUPT", "timer0_8h.html#a70ab3c85a23cb4520bd81c9594ddbd00", null ],
-    [ "TMR0_SET_MODE", "timer0_8h.html#ae96c17128a6f15ba9f0ca4a2a77c5665", null ],
     [ "tClock_Selector", "timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2", [
       [ "NO_CLOCK_SOURCE", "timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2ae89f92ea0ffcda1050fe5b523e2655e0", null ],
       [ "NO_PRESCALER", "timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2a52ef245693e7fb70943bcc1b91cd16c9", null ],

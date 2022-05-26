@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pwm_8h_source" xml:lang="en-US">
+<title>pwm.h</title>
+<indexterm><primary>include/pwm.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;_PWM_H_</emphasis>
+2 <emphasis role="preprocessor">#define&#32;_PWM_H_</emphasis>
+3 
+14 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
+15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__port_8h">Port.h</link>&quot;</emphasis>
+16 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+18 
+19 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
+20 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
+21 <emphasis role="preprocessor">#define&#32;PWM0_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
+22 
+23 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
+24 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
+25 <emphasis role="preprocessor">#define&#32;PWM2_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
+26 
+27 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+28 {
+29 &#32;&#32;&#32;&#32;PWM_0,
+30 &#32;&#32;&#32;&#32;PWM_2
+31 }&#32;tPWM;
+32 
+33 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+34 {
+35 &#32;&#32;&#32;&#32;PWM_MODE_STOPPED,
+36 &#32;&#32;&#32;&#32;PWM_MODE_RUNNING
+37 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PWM_MODE_PHASE_CORRECTED</emphasis>
+38 }&#32;tPWM_MODE;
+39 
+40 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Init(tPWM&#32;pwm,&#32;tPWM_MODE&#32;init_mode,&#32;u8&#32;init_duty,&#32;u8&#32;init_prescaler);
+41 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Set_Duty(tPWM&#32;pwm,&#32;u8&#32;duty);
+42 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Set_Clock(tPWM&#32;pwm,&#32;u8&#32;clock);
+43 u8&#32;PWM_Get_Duty(tPWM&#32;pwm);
+44 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Start(tPWM&#32;pwm);
+45 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Resume(tPWM&#32;pwm);
+46 
+47 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Pause(tPWM&#32;pwm);
+48 
+49 <emphasis role="preprocessor">#endif</emphasis>
+</programlisting></section>

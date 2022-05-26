@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ECG Monitor
+   <div id="projectname">ECG Monitor<span id="projectnumber">&#160;0.6.0</span>
    </div>
   </td>
  </tr>
@@ -91,36 +92,49 @@ $(document).ready(function(){initNavTree('_buzzer_8h.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
+<p>Buzzer driver module.  
+<a href="#details">More...</a></p>
+
 <p><a href="_buzzer_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a20bbfde662ddcde633ff5c7e9262245b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a20bbfde662ddcde633ff5c7e9262245b">BUZ_DELAY_MS</a>&#160;&#160;&#160;(1000)</td></tr>
+<tr class="memitem:a20bbfde662ddcde633ff5c7e9262245b"><td class="memItemLeft" align="right" valign="top"><a id="a20bbfde662ddcde633ff5c7e9262245b" name="a20bbfde662ddcde633ff5c7e9262245b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BUZ_DELAY_MS</b>&#160;&#160;&#160;(1000)</td></tr>
 <tr class="separator:a20bbfde662ddcde633ff5c7e9262245b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a60ca5eb89ee60dfdc6adb2b497af8a48"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a></td></tr>
+<tr class="memitem:a60ca5eb89ee60dfdc6adb2b497af8a48"><td class="memItemLeft" align="right" valign="top"><a id="a60ca5eb89ee60dfdc6adb2b497af8a48" name="a60ca5eb89ee60dfdc6adb2b497af8a48"></a>
+typedef enum <a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tBUZ</b></td></tr>
+<tr class="memdesc:a60ca5eb89ee60dfdc6adb2b497af8a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of supported buzzers. <br /></td></tr>
 <tr class="separator:a60ca5eb89ee60dfdc6adb2b497af8a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae424ee37aaf0ce6fd006e006dd5909c"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#aae424ee37aaf0ce6fd006e006dd5909c">tBUZ_State</a></td></tr>
+<tr class="memitem:aae424ee37aaf0ce6fd006e006dd5909c"><td class="memItemLeft" align="right" valign="top"><a id="aae424ee37aaf0ce6fd006e006dd5909c" name="aae424ee37aaf0ce6fd006e006dd5909c"></a>
+typedef enum <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tBUZ_State</b></td></tr>
+<tr class="memdesc:aae424ee37aaf0ce6fd006e006dd5909c"><td class="mdescLeft">&#160;</td><td class="mdescRight">States of the buzzer pin. <br /></td></tr>
 <tr class="separator:aae424ee37aaf0ce6fd006e006dd5909c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a071c7e79bc0662dd7d5c28d2b1cce9ab"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a071c7e79bc0662dd7d5c28d2b1cce9ab">tBUZ_Mode</a></td></tr>
+<tr class="memitem:a071c7e79bc0662dd7d5c28d2b1cce9ab"><td class="memItemLeft" align="right" valign="top"><a id="a071c7e79bc0662dd7d5c28d2b1cce9ab" name="a071c7e79bc0662dd7d5c28d2b1cce9ab"></a>
+typedef enum <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><b>tBUZ_Mode</b></td></tr>
+<tr class="memdesc:a071c7e79bc0662dd7d5c28d2b1cce9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the sound pattern operation modes. <br /></td></tr>
 <tr class="separator:a071c7e79bc0662dd7d5c28d2b1cce9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a0431c1e3d13807f611ffe80c2e421088"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</a> { <a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088ab531ccd57b82dc2c2fa68893d91d4205">BUZ_ALARM</a>
+<tr class="memitem:a0431c1e3d13807f611ffe80c2e421088"><td class="memItemLeft" align="right" valign="top"><a id="a0431c1e3d13807f611ffe80c2e421088" name="a0431c1e3d13807f611ffe80c2e421088"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</a> { <b>BUZ_ALARM</b>
  }</td></tr>
+<tr class="memdesc:a0431c1e3d13807f611ffe80c2e421088"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of supported buzzers. <br /></td></tr>
 <tr class="separator:a0431c1e3d13807f611ffe80c2e421088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0c443838ea85d7cb2d454d8c0dc5b56"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a> { <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56af507bda4bf4c7b592ab540193e6ecb98">BUZ_OFF</a> = 0
-, <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56af6a4f5530ee362c287c6e1fffebfb553">BUZ_ON</a> = 1
+<tr class="memitem:aa0c443838ea85d7cb2d454d8c0dc5b56"><td class="memItemLeft" align="right" valign="top"><a id="aa0c443838ea85d7cb2d454d8c0dc5b56" name="aa0c443838ea85d7cb2d454d8c0dc5b56"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a> { <b>BUZ_OFF</b> = 0
+, <b>BUZ_ON</b> = 1
  }</td></tr>
+<tr class="memdesc:aa0c443838ea85d7cb2d454d8c0dc5b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">States of the buzzer pin. <br /></td></tr>
 <tr class="separator:aa0c443838ea85d7cb2d454d8c0dc5b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af77d749161eec1892df160aab4dd706d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a> { <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706da39df9eb6bb21eee7f2f09a26acb351ae">BUZ_STOPPED_MODE</a>
-, <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706da6aaedb80407e3309b8c5c98a653a7283">BUZ_SINGLE_MODE</a>
-, <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706da577d2a9bb883d6cdcacdc6594c7daf2c">BUZ_PATTERN_MODE</a>
-, <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706daec9d75ac15623a3c38d38fcece40d5ba">BUZ_TOGGLE_MODE</a>
+<tr class="memitem:af77d749161eec1892df160aab4dd706d"><td class="memItemLeft" align="right" valign="top"><a id="af77d749161eec1892df160aab4dd706d" name="af77d749161eec1892df160aab4dd706d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a> { <b>BUZ_STOPPED_MODE</b>
+, <b>BUZ_SINGLE_MODE</b>
+, <b>BUZ_PATTERN_MODE</b>
+, <b>BUZ_TOGGLE_MODE</b>
  }</td></tr>
+<tr class="memdesc:af77d749161eec1892df160aab4dd706d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the sound pattern operation modes. <br /></td></tr>
 <tr class="separator:af77d749161eec1892df160aab4dd706d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -143,18 +157,20 @@ Functions</h2></td></tr>
 <tr class="memitem:add905ca0911317e301020b214453150e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#add905ca0911317e301020b214453150e">BUZ_GetMode</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer)</td></tr>
 <tr class="memdesc:add905ca0911317e301020b214453150e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current sound mode of one buzzer.  <a href="_buzzer_8h.html#add905ca0911317e301020b214453150e">More...</a><br /></td></tr>
 <tr class="separator:add905ca0911317e301020b214453150e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45a8be203173b3387272c64980ca01f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a45a8be203173b3387272c64980ca01f5">BUZ_GeneratePWM</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer, <a class="el" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> duty_cycle)</td></tr>
+<tr class="memitem:a45a8be203173b3387272c64980ca01f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a45a8be203173b3387272c64980ca01f5">BUZ_GeneratePWM</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer, u8 duty_cycle)</td></tr>
 <tr class="memdesc:a45a8be203173b3387272c64980ca01f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates PWM signal at the buzzer pin.  <a href="_buzzer_8h.html#a45a8be203173b3387272c64980ca01f5">More...</a><br /></td></tr>
 <tr class="separator:a45a8be203173b3387272c64980ca01f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae14daf7dd7cd337cc991c73ed868b2ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#ae14daf7dd7cd337cc991c73ed868b2ab">BUZ_SetVolume</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer, <a class="el" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> volume)</td></tr>
+<tr class="memitem:ae14daf7dd7cd337cc991c73ed868b2ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#ae14daf7dd7cd337cc991c73ed868b2ab">BUZ_SetVolume</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer, u8 volume)</td></tr>
 <tr class="memdesc:ae14daf7dd7cd337cc991c73ed868b2ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the buzzer's volume level.  <a href="_buzzer_8h.html#ae14daf7dd7cd337cc991c73ed868b2ab">More...</a><br /></td></tr>
 <tr class="separator:ae14daf7dd7cd337cc991c73ed868b2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44394fd0a79b23c15a643855c27af8fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a44394fd0a79b23c15a643855c27af8fb">BUZ_VolumeUp</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer)</td></tr>
-<tr class="memdesc:a44394fd0a79b23c15a643855c27af8fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the buzzer's volume level.  <a href="_buzzer_8h.html#a44394fd0a79b23c15a643855c27af8fb">More...</a><br /></td></tr>
-<tr class="separator:a44394fd0a79b23c15a643855c27af8fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2d2392f7296acd29c70f966114e5bd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#aa2d2392f7296acd29c70f966114e5bd0">BUZ_VolumeDn</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer)</td></tr>
-<tr class="memdesc:aa2d2392f7296acd29c70f966114e5bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement the buzzer's volume level.  <a href="_buzzer_8h.html#aa2d2392f7296acd29c70f966114e5bd0">More...</a><br /></td></tr>
-<tr class="separator:aa2d2392f7296acd29c70f966114e5bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a545e730cc7d0debd813906deda40225f"><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a545e730cc7d0debd813906deda40225f">BUZ_GetVolume</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer)</td></tr>
+<tr class="separator:a545e730cc7d0debd813906deda40225f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacef2c9c9fc5ec65c393ce7a681a9543"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#aacef2c9c9fc5ec65c393ce7a681a9543">BUZ_VolumeUp</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer, u8 increments)</td></tr>
+<tr class="memdesc:aacef2c9c9fc5ec65c393ce7a681a9543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment the buzzer's volume level.  <a href="_buzzer_8h.html#aacef2c9c9fc5ec65c393ce7a681a9543">More...</a><br /></td></tr>
+<tr class="separator:aacef2c9c9fc5ec65c393ce7a681a9543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c2a52eb710eec0674f42b480e1b8a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a95c2a52eb710eec0674f42b480e1b8a7">BUZ_VolumeDn</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer, u8 decrements)</td></tr>
+<tr class="memdesc:a95c2a52eb710eec0674f42b480e1b8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrement the buzzer's volume level.  <a href="_buzzer_8h.html#a95c2a52eb710eec0674f42b480e1b8a7">More...</a><br /></td></tr>
+<tr class="separator:a95c2a52eb710eec0674f42b480e1b8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69449961331b25b2a3239d0e532f7c10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_buzzer_8h.html#a69449961331b25b2a3239d0e532f7c10">BUZ_Mute</a> (<a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a> buzzer)</td></tr>
 <tr class="memdesc:a69449961331b25b2a3239d0e532f7c10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the volume to zero.  <a href="_buzzer_8h.html#a69449961331b25b2a3239d0e532f7c10">More...</a><br /></td></tr>
 <tr class="separator:a69449961331b25b2a3239d0e532f7c10"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,121 +178,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:a46a04bde975c0cbb87face7a6eb58866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the volume back to previous level.  <a href="_buzzer_8h.html#a46a04bde975c0cbb87face7a6eb58866">More...</a><br /></td></tr>
 <tr class="separator:a46a04bde975c0cbb87face7a6eb58866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a20bbfde662ddcde633ff5c7e9262245b" name="a20bbfde662ddcde633ff5c7e9262245b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20bbfde662ddcde633ff5c7e9262245b">&#9670;&nbsp;</a></span>BUZ_DELAY_MS</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define BUZ_DELAY_MS&#160;&#160;&#160;(1000)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="a60ca5eb89ee60dfdc6adb2b497af8a48" name="a60ca5eb89ee60dfdc6adb2b497af8a48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60ca5eb89ee60dfdc6adb2b497af8a48">&#9670;&nbsp;</a></span>tBUZ</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</a> <a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a071c7e79bc0662dd7d5c28d2b1cce9ab" name="a071c7e79bc0662dd7d5c28d2b1cce9ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a071c7e79bc0662dd7d5c28d2b1cce9ab">&#9670;&nbsp;</a></span>tBUZ_Mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a> <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aae424ee37aaf0ce6fd006e006dd5909c" name="aae424ee37aaf0ce6fd006e006dd5909c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae424ee37aaf0ce6fd006e006dd5909c">&#9670;&nbsp;</a></span>tBUZ_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a> <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="af77d749161eec1892df160aab4dd706d" name="af77d749161eec1892df160aab4dd706d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af77d749161eec1892df160aab4dd706d">&#9670;&nbsp;</a></span>tBUZ_Mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_buzzer_8h.html#af77d749161eec1892df160aab4dd706d">tBUZ_Mode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af77d749161eec1892df160aab4dd706da39df9eb6bb21eee7f2f09a26acb351ae" name="af77d749161eec1892df160aab4dd706da39df9eb6bb21eee7f2f09a26acb351ae"></a>BUZ_STOPPED_MODE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af77d749161eec1892df160aab4dd706da6aaedb80407e3309b8c5c98a653a7283" name="af77d749161eec1892df160aab4dd706da6aaedb80407e3309b8c5c98a653a7283"></a>BUZ_SINGLE_MODE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af77d749161eec1892df160aab4dd706da577d2a9bb883d6cdcacdc6594c7daf2c" name="af77d749161eec1892df160aab4dd706da577d2a9bb883d6cdcacdc6594c7daf2c"></a>BUZ_PATTERN_MODE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af77d749161eec1892df160aab4dd706daec9d75ac15623a3c38d38fcece40d5ba" name="af77d749161eec1892df160aab4dd706daec9d75ac15623a3c38d38fcece40d5ba"></a>BUZ_TOGGLE_MODE&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a0431c1e3d13807f611ffe80c2e421088" name="a0431c1e3d13807f611ffe80c2e421088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0431c1e3d13807f611ffe80c2e421088">&#9670;&nbsp;</a></span>tBUZ_Name</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_buzzer_8h.html#a0431c1e3d13807f611ffe80c2e421088">tBUZ_Name</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0431c1e3d13807f611ffe80c2e421088ab531ccd57b82dc2c2fa68893d91d4205" name="a0431c1e3d13807f611ffe80c2e421088ab531ccd57b82dc2c2fa68893d91d4205"></a>BUZ_ALARM&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="aa0c443838ea85d7cb2d454d8c0dc5b56" name="aa0c443838ea85d7cb2d454d8c0dc5b56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0c443838ea85d7cb2d454d8c0dc5b56">&#9670;&nbsp;</a></span>tBUZ_State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa0c443838ea85d7cb2d454d8c0dc5b56af507bda4bf4c7b592ab540193e6ecb98" name="aa0c443838ea85d7cb2d454d8c0dc5b56af507bda4bf4c7b592ab540193e6ecb98"></a>BUZ_OFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="aa0c443838ea85d7cb2d454d8c0dc5b56af6a4f5530ee362c287c6e1fffebfb553" name="aa0c443838ea85d7cb2d454d8c0dc5b56af6a4f5530ee362c287c6e1fffebfb553"></a>BUZ_ON&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Buzzer driver module. </p>
+<dl class="section author"><dt>Author</dt><dd>Mohamed Nasser</dd></dl>
+<dl class="section version"><dt>Version</dt><dd>0.9.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-5-04 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a45a8be203173b3387272c64980ca01f5" name="a45a8be203173b3387272c64980ca01f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a45a8be203173b3387272c64980ca01f5">&#9670;&nbsp;</a></span>BUZ_GeneratePWM()</h2>
 
@@ -292,7 +199,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramtype">u8&#160;</td>
           <td class="paramname"><em>duty_cycle</em>&#160;</td>
         </tr>
         <tr>
@@ -366,6 +273,31 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>tBUZ_State - The current state of the buzzer. </dd></dl>
+
+</div>
+</div>
+<a id="a545e730cc7d0debd813906deda40225f" name="a545e730cc7d0debd813906deda40225f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545e730cc7d0debd813906deda40225f">&#9670;&nbsp;</a></span>BUZ_GetVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u8 BUZ_GetVolume </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a>&#160;</td>
+          <td class="paramname"><em>buzzer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buzzer</td><td>Selected buzzer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>u8 returned volume (0-100) </dd></dl>
 
 </div>
 </div>
@@ -527,7 +459,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td>
+          <td class="paramtype">u8&#160;</td>
           <td class="paramname"><em>volume</em>&#160;</td>
         </tr>
         <tr>
@@ -606,8 +538,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa2d2392f7296acd29c70f966114e5bd0" name="aa2d2392f7296acd29c70f966114e5bd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2d2392f7296acd29c70f966114e5bd0">&#9670;&nbsp;</a></span>BUZ_VolumeDn()</h2>
+<a id="a95c2a52eb710eec0674f42b480e1b8a7" name="a95c2a52eb710eec0674f42b480e1b8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c2a52eb710eec0674f42b480e1b8a7">&#9670;&nbsp;</a></span>BUZ_VolumeDn()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -616,8 +548,18 @@ Functions</h2></td></tr>
           <td class="memname">void BUZ_VolumeDn </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a>&#160;</td>
-          <td class="paramname"><em>buzzer</em></td><td>)</td>
+          <td class="paramname"><em>buzzer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">u8&#160;</td>
+          <td class="paramname"><em>decrements</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -634,8 +576,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a44394fd0a79b23c15a643855c27af8fb" name="a44394fd0a79b23c15a643855c27af8fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44394fd0a79b23c15a643855c27af8fb">&#9670;&nbsp;</a></span>BUZ_VolumeUp()</h2>
+<a id="aacef2c9c9fc5ec65c393ce7a681a9543" name="aacef2c9c9fc5ec65c393ce7a681a9543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacef2c9c9fc5ec65c393ce7a681a9543">&#9670;&nbsp;</a></span>BUZ_VolumeUp()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -644,8 +586,18 @@ Functions</h2></td></tr>
           <td class="memname">void BUZ_VolumeUp </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="_buzzer_8h.html#a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</a>&#160;</td>
-          <td class="paramname"><em>buzzer</em></td><td>)</td>
+          <td class="paramname"><em>buzzer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">u8&#160;</td>
+          <td class="paramname"><em>increments</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

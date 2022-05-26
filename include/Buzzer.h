@@ -2,21 +2,21 @@
 #define __BUZZER_H__
 
 /**
- * @file       Buzzer
+ * @file       Buzzer.h
  * @author     Mohamed Nasser
  *
  * @brief      Buzzer driver module
  *
  * @version    0.9.1
  * @date       2022-5-04
- */
+ **/
 
 #define BUZ_DELAY_MS (1000)
 
 /**
  * @brief List of supported buzzers
  *
- */
+ **/
 typedef enum tBUZ_Name
 {
     BUZ_ALARM,
@@ -25,7 +25,7 @@ typedef enum tBUZ_Name
 /**
  * @brief  States of the buzzer pin
  *
- */
+ **/
 typedef enum tBUZ_State
 {
     BUZ_OFF = 0,
@@ -35,7 +35,7 @@ typedef enum tBUZ_State
 /**
  * @brief Contains the sound pattern operation modes
  *
- */
+ **/
 typedef enum tBUZ_Mode
 {
     BUZ_STOPPED_MODE,
@@ -108,7 +108,7 @@ void BUZ_GeneratePWM(tBUZ buzzer, u8 duty_cycle);
  * @param buzzer - The buzzer to set volume for.
  * @param volume - The volume level to set the buzzer to.
  * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
- */
+ **/
 void BUZ_SetVolume(tBUZ buzzer, u8 volume);
 
 /**
@@ -116,7 +116,7 @@ void BUZ_SetVolume(tBUZ buzzer, u8 volume);
  *
  * @param buzzer Selected buzzer
  * @return u8 returned volume (0-100)
- */
+ **/
 u8 BUZ_GetVolume(tBUZ buzzer);
 
 /**

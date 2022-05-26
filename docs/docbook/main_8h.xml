@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8h" xml:lang="en-US">
+<title>include/main.h File Reference</title>
+<indexterm><primary>include/main.h</primary></indexterm>
+<para>
+
+<para>Microprocessor abstraction layer. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
+#include &lt;avr/interrupt.h&gt;
+</programlisting>Include dependency graph for main.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="main_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8h_1a43bafb28b29491ec7f871319b5a3b2f8"/>#define <emphasis role="strong">F_CPU</emphasis>   16000000UL</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a7b1ce6c6fa5e99708ec906377f229b31"/>#define <emphasis role="strong">ISR_TMR0_Period_ms</emphasis>   4</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a04df1d71c8d2fca797eca90c70f06dba"/>#define <emphasis role="strong">enable_global_interrupt</emphasis>()   sei()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a176efbf43a259b7bb0a85a47401505be"/>#define <emphasis role="strong">GPIO_PIN_0</emphasis>   (0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a6c35af4e75c3cb57bb650feaa7a136b5"/>#define <emphasis role="strong">GPIO_PIN_1</emphasis>   (1)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a6eee38b797a7268f04357dfa2759efd2"/>#define <emphasis role="strong">GPIO_PIN_2</emphasis>   (2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1adcaf899c018a0dde572b5af783565c62"/>#define <emphasis role="strong">GPIO_PIN_3</emphasis>   (3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ab3871e35868deecd260e586ad70d4b83"/>#define <emphasis role="strong">GPIO_PIN_4</emphasis>   (4)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a01cc9ed93f6fd12fd3403362779aaa18"/>#define <emphasis role="strong">GPIO_PIN_5</emphasis>   (5)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a9089f18f20ec88ee38ce6f27389e6d7e"/>#define <emphasis role="strong">GPIO_PIN_6</emphasis>   (6)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a482cb86c2f036e630661a41e8986bcfe"/>#define <emphasis role="strong">GPIO_PIN_7</emphasis>   (7)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a88025c178b14a467ecf713261603cc51"/>#define <emphasis role="strong">GPIO_PORT_1_DATA</emphasis>   (PORTB)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a3939da6340ef895064e6296a5ebdf874"/>#define <emphasis role="strong">GPIO_PORT_1_INPUT</emphasis>   (PINB)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1afc088a2ca1db1ee50dbfe329ca4abeff"/>#define <emphasis role="strong">GPIO_PORT_1_DIRECTION</emphasis>   (DDRB)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a56b46b33bc0ae955813d95e72c18e012"/>#define <emphasis role="strong">GPIO_PORT_2_DATA</emphasis>   (PORTC)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ad5a7b471b1386c05202862ae22a470ac"/>#define <emphasis role="strong">GPIO_PORT_2_INPUT</emphasis>   (PINC)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ab80d95b0626dab0703d0a0654673cd99"/>#define <emphasis role="strong">GPIO_PORT_2_DIRECTION</emphasis>   (DDRC)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a76c55e070c9a5b1b9c0bb93d186cc72a"/>#define <emphasis role="strong">GPIO_PORT_3_DATA</emphasis>   (PORTD)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a4fe58f7e3269e060f76edc99367aed25"/>#define <emphasis role="strong">GPIO_PORT_3_INPUT</emphasis>   (PIND)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a150d3c9b805f9dca95cb360d8fb121c9"/>#define <emphasis role="strong">GPIO_PORT_3_DIRECTION</emphasis>   (DDRD)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aa0d5e0e1b44c5015f31a44079fd2d9e6"/>#define <emphasis role="strong">GPIO_OUT</emphasis>   (1)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aa253a7f9c099890d2575f29dda32f154"/>#define <emphasis role="strong">GPIO_IN</emphasis>   (0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ac5d4f3761ef41b3b74ca17943decf343"/>#define <emphasis role="strong">SET_REGISTER_PIN</emphasis>(REG,  BIT,  VAL)   ((REG) = (((REG) &amp; (~(1 &lt;&lt; BIT))) | ((VAL) &lt;&lt; (BIT))))</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1af184c48e1c5d904aaf8a2f70340a394f"/>#define <emphasis role="strong">READ_REGISTER_PIN</emphasis>(REG,  BIT)   ((REG &amp; (1 &lt;&lt; BIT)) &gt;&gt; (BIT))</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a821d0ccd80f45e8ae72b68254b0be577"/>#define <emphasis role="strong">GPIO_InitPort</emphasis>(CONTROL,  DIRECTION)   ((CONTROL) = ((DIRECTION) ? (~GPIO_OUT) : (GPIO_OUT)))</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1ae0259564164446eace63b5f415deb0ed"/>#define <emphasis role="strong">GPIO_WritePort</emphasis>(PORT,  DATA)   ((PORT) = (DATA))</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a1766ed7006c689205a223b8cc244dd9e"/>#define <emphasis role="strong">GPIO_ReadPort</emphasis>(PORT)   (PORT)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a28cbcd188b8ac9f697f45b8e385d1e0e"/>#define <emphasis role="strong">GPIO_InitPortPin</emphasis>(CONTROL,  PIN,  DIRECTION)   ((CONTROL) = (CONTROL &amp; (~(1 &lt;&lt; PIN))) | (DIRECTION &lt;&lt; PIN))</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a57e960c8c71db410b5758ad4cd117ae0"/>#define <emphasis role="strong">GPIO_WritePortPin</emphasis>(PORT,  PIN,  DATA)   ((PORT) = (PORT &amp; (~(1 &lt;&lt; PIN))) | (DATA &lt;&lt; PIN))</para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a3f1c2de1abd799e6b73cba89b31687db"/>#define <emphasis role="strong">GPIO_ReadPortPin</emphasis>(PORT,  PIN)   (((PORT) &amp; (1 &lt;&lt; PIN)) &gt;&gt; (PIN))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_main_8h_1a29017762bac0d276046595ec3c599fcf"/>typedef unsigned int <emphasis role="strong">tWord</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aed742c436da53c1080638ce6ef7d13de"/>typedef unsigned char <emphasis role="strong">u8</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aa0b167025ed1eead1300bc4dbdfb230e"/>typedef unsigned short int <emphasis role="strong">u16</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a0ceed739f3b2b55ee8d4d2a79a82cdea"/>typedef unsigned long int <emphasis role="strong">u32</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a151f780fb455885061d3b77ec1c90c03"/>typedef signed char <emphasis role="strong">s8</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a4cb19f4a3324cfe0938ddfbfabaa825b"/>typedef signed short int <emphasis role="strong">s16</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1aba045a0b8c912badb14f00167aae5417"/>typedef signed long int <emphasis role="strong">s32</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a5f6906312a689f27d70e9d086649d3fd"/>typedef float <emphasis role="strong">f32</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_main_8h_1a94dab5770726ccbef8c7d026cfbdf8e5"/>typedef double <emphasis role="strong">f64</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Microprocessor abstraction layer. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser</para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.2.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-5-25 </para>
+</formalpara>
+</para>
+</section>
+</section>

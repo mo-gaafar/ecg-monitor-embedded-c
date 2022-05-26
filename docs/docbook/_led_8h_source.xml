@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__led_8h_source" xml:lang="en-US">
+<title>Led.h</title>
+<indexterm><primary>include/Led.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__LED_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__LED_H__</emphasis>
+3 
+12 <emphasis role="preprocessor">#define&#32;LED_DELAY_MS&#32;(1000)</emphasis>
+13 
+18 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</link>
+19 {
+20 &#32;&#32;&#32;&#32;LED_ALARM,
+21 &#32;&#32;&#32;&#32;LED_PROCESSING,
+22 &#32;&#32;&#32;&#32;LED_2,
+23 &#32;&#32;&#32;&#32;LED_3,
+24 &#32;&#32;&#32;&#32;LED_4
+25 }&#32;<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>;
+26 
+31 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>&#32;<link linkend="__led_8h_1a4a8326721c03c1e5b40de78b999236b8">LED_State</link>
+32 {
+33 &#32;&#32;&#32;&#32;LED_OFF&#32;=&#32;0,
+34 &#32;&#32;&#32;&#32;LED_ON&#32;=&#32;1
+35 }&#32;<link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link>;
+36 
+45 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__led_8h_1a5c94357ac45b8fbae1f5f82d4d8d98ba">LED_Init</link>(<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>&#32;led,&#32;<link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link>&#32;state);
+46 
+55 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__led_8h_1a4da8fb54006f04c1a081af656bd769b1">LED_SetState</link>(<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>&#32;led,&#32;<link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link>&#32;state);
+56 
+63 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__led_8h_1a5988e25776a512a49cf76c38b0a2aff8">LED_Toggle</link>(<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>&#32;led);
+64 
+72 <link linkend="__led_8h_1a5eecfe1091700dc9320c31d17a0645cf">tLED_State</link>&#32;<link linkend="__led_8h_1a4095f62ac58106e30268c979becbfbf3">LED_GetState</link>(<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>&#32;led);
+73 
+79 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__led_8h_1afbc92c0219f5323097677bc5c397a4fb">LED_On</link>(<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>&#32;led);
+80 
+86 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__led_8h_1a6b9b6d9e873da32aa5fcc421d4b8aecf">LED_Off</link>(<link linkend="__led_8h_1a7d240b7077545455fc6ede382a7a0779">tLED</link>&#32;led);
+87 
+88 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__LED_H__</emphasis>
+</programlisting></section>

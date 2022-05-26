@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_2code_01examples_2_seb7a___o_s___sol___p_i_c_2_push___button_8h_source" xml:lang="en-US">
+<title>push_button.h</title>
+<indexterm><primary>lib/code examples/Seb7a_OS_Sol_PIC/push_button.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__PB_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__PB_H__</emphasis>
+3 
+4 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+5 {
+6 &#32;&#32;&#32;&#32;PB_PLUS,
+7 &#32;&#32;&#32;&#32;PB_RESET,
+8 &#32;&#32;&#32;&#32;PB_UNUSED_1,
+9 &#32;&#32;&#32;&#32;PB_UNUSED_2
+10 }<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link>;
+11 
+12 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+13 {
+14 &#32;&#32;&#32;&#32;PB_RELEASED,
+15 &#32;&#32;&#32;&#32;PB_PRE_PRESSED,
+16 &#32;&#32;&#32;&#32;PB_PRESSED,
+17 &#32;&#32;&#32;&#32;PB_PRE_RELEASED
+18 }<link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link>;
+19 
+20 
+21 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a80c4a02c09621448913663654e359a67">PB_Init</link>(tPB&#32;pb,&#32;tPB_State&#32;initial_state);
+22 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2_push___button_8h_1a65ea2a324d4774c441b0fadc0936f5fc">PB_Update</link>(<emphasis role="keywordtype">void</emphasis>);
+23 tPB_State&#32;<link linkend="_include_2_push___button_8h_1af1726202fc37b0188259ad902957b035">PB_GetState</link>(tPB&#32;pb);
+24 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__PB_H__</emphasis>
+</programlisting></section>

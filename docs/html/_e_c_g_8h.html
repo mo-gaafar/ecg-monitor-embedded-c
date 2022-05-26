@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ECG Monitor
+   <div id="projectname">ECG Monitor<span id="projectnumber">&#160;0.6.0</span>
    </div>
   </td>
  </tr>
@@ -83,9 +84,10 @@ $(document).ready(function(){initNavTree('_e_c_g_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">ECG.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -93,74 +95,187 @@ $(document).ready(function(){initNavTree('_e_c_g_8h.html',''); initResizable(); 
 <p>ECG Signal Processing and feature extraction module.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="main_8h_source.html">main.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for ECG.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="_e_c_g_8h__incl.png" border="0" usemap="#ainclude_2_e_c_g_8h" alt=""/></div>
+</div>
 </div>
 <p><a href="_e_c_g_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_e_c_g___statistics.html">ECG_Statistics</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memItemLeft" align="right" valign="top"><a id="a41f9c5fb8b08eb5dc3edce4dcb37fee7" name="a41f9c5fb8b08eb5dc3edce4dcb37fee7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>true</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65e9886d74aaee76545e83dd09011727"><td class="memItemLeft" align="right" valign="top"><a id="a65e9886d74aaee76545e83dd09011727" name="a65e9886d74aaee76545e83dd09011727"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>false</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a65e9886d74aaee76545e83dd09011727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52037c938e3c1b126c6277da5ca689d0"><td class="memItemLeft" align="right" valign="top"><a id="a52037c938e3c1b126c6277da5ca689d0" name="a52037c938e3c1b126c6277da5ca689d0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>M</b>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a52037c938e3c1b126c6277da5ca689d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0240ac851181b84ac374872dc5434ee4"><td class="memItemLeft" align="right" valign="top"><a id="a0240ac851181b84ac374872dc5434ee4" name="a0240ac851181b84ac374872dc5434ee4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>N</b>&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a0240ac851181b84ac374872dc5434ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacfe12e63b0b4e8c3164cf339d82ea9"><td class="memItemLeft" align="right" valign="top"><a id="aaacfe12e63b0b4e8c3164cf339d82ea9" name="aaacfe12e63b0b4e8c3164cf339d82ea9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>winSize</b>&#160;&#160;&#160;250</td></tr>
+<tr class="separator:aaacfe12e63b0b4e8c3164cf339d82ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03397b70f326713d444c987222a6bb7e"><td class="memItemLeft" align="right" valign="top"><a id="a03397b70f326713d444c987222a6bb7e" name="a03397b70f326713d444c987222a6bb7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>HP_CONSTANT</b>&#160;&#160;&#160;((float)1 / (float)M)</td></tr>
+<tr class="separator:a03397b70f326713d444c987222a6bb7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7684ed93fa5077ca1147bf07a34cc930"><td class="memItemLeft" align="right" valign="top"><a id="a7684ed93fa5077ca1147bf07a34cc930" name="a7684ed93fa5077ca1147bf07a34cc930"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MAX_BPM</b>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a7684ed93fa5077ca1147bf07a34cc930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c127573736aaf80d0abb0121930bda0"><td class="memItemLeft" align="right" valign="top"><a id="a3c127573736aaf80d0abb0121930bda0" name="a3c127573736aaf80d0abb0121930bda0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ECG_DEBUG</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a3c127573736aaf80d0abb0121930bda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0c4ba9234455597dae8787c75133d5"><td class="memItemLeft" align="right" valign="top"><a id="abb0c4ba9234455597dae8787c75133d5" name="abb0c4ba9234455597dae8787c75133d5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>ECG_Sample_Period_ms</b>&#160;&#160;&#160;(ISR_TMR0_Period_ms)</td></tr>
+<tr class="separator:abb0c4ba9234455597dae8787c75133d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04da189703b8a6000e2e95eca7231dcd"><td class="memItemLeft" align="right" valign="top"><a id="a04da189703b8a6000e2e95eca7231dcd" name="a04da189703b8a6000e2e95eca7231dcd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S_ECG_SIZE</b>&#160;&#160;&#160;226</td></tr>
+<tr class="separator:a04da189703b8a6000e2e95eca7231dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b61b73775f79f1c69363c263c5fd23"><td class="memItemLeft" align="right" valign="top"><a id="af8b61b73775f79f1c69363c263c5fd23" name="af8b61b73775f79f1c69363c263c5fd23"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>RAND_RES</b>&#160;&#160;&#160;100000000</td></tr>
+<tr class="separator:af8b61b73775f79f1c69363c263c5fd23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ad3539e468b6fbacec8b1ed753333f491"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> { <a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a>
-, <a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7">Tachycardia</a>
-, <a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4">Bradycardia</a>
-, <a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74">Irregular_Heartbeat</a>
+<tr class="memitem:ad3539e468b6fbacec8b1ed753333f491"><td class="memItemLeft" align="right" valign="top"><a id="ad3539e468b6fbacec8b1ed753333f491" name="ad3539e468b6fbacec8b1ed753333f491"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> { <b>Normal</b>
+, <b>Tachycardia</b>
+, <b>Bradycardia</b>
+, <b>Irregular_Heartbeat</b>
  }</td></tr>
+<tr class="memdesc:ad3539e468b6fbacec8b1ed753333f491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cointains supported arrythmia types. <br /></td></tr>
 <tr class="separator:ad3539e468b6fbacec8b1ed753333f491"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aba08485b53f56de97b7aee9a039f321d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#aba08485b53f56de97b7aee9a039f321d">ECG_Init</a> (void)</td></tr>
-<tr class="separator:aba08485b53f56de97b7aee9a039f321d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a677b0e53cb36755e36e041705d550c7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#a677b0e53cb36755e36e041705d550c7e">ECG_Update</a> (void)</td></tr>
+<tr class="memitem:a3dea6402ef2b9b53d8dd231c0f6f423a"><td class="memItemLeft" align="right" valign="top"><a id="a3dea6402ef2b9b53d8dd231c0f6f423a" name="a3dea6402ef2b9b53d8dd231c0f6f423a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ECG_Init</b> ()</td></tr>
+<tr class="memdesc:a3dea6402ef2b9b53d8dd231c0f6f423a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize ECG Drivers. <br /></td></tr>
+<tr class="separator:a3dea6402ef2b9b53d8dd231c0f6f423a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a677b0e53cb36755e36e041705d550c7e"><td class="memItemLeft" align="right" valign="top"><a id="a677b0e53cb36755e36e041705d550c7e" name="a677b0e53cb36755e36e041705d550c7e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ECG_Update</b> (void)</td></tr>
+<tr class="memdesc:a677b0e53cb36755e36e041705d550c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update ECG filtering, detection. <br /></td></tr>
 <tr class="separator:a677b0e53cb36755e36e041705d550c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ab516ef024cabbe15ae72208b46690a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#a7ab516ef024cabbe15ae72208b46690a">ECG_UpdateArrythmia</a> (void)</td></tr>
-<tr class="separator:a7ab516ef024cabbe15ae72208b46690a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f06c21e8629d0cafd74dacfdfe3f16a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#a7f06c21e8629d0cafd74dacfdfe3f16a">ECG_GetArrythmia</a> (void)</td></tr>
-<tr class="separator:a7f06c21e8629d0cafd74dacfdfe3f16a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f444b72866661b3ce7800340e056d72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#a4f444b72866661b3ce7800340e056d72">ECG_GetHR</a> (void)</td></tr>
-<tr class="separator:a4f444b72866661b3ce7800340e056d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec25294c95954bfb06838412a5afdcee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_e_c_g___statistics.html">ECG_Statistics</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#aec25294c95954bfb06838412a5afdcee">ECG_GetStatistics</a> (void)</td></tr>
-<tr class="separator:aec25294c95954bfb06838412a5afdcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0763e90ac9b72b09dd897435131f837"><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</a> (void)</td></tr>
+<tr class="memdesc:ad0763e90ac9b72b09dd897435131f837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates BPM from ms tick counters.  <a href="_e_c_g_8h.html#ad0763e90ac9b72b09dd897435131f837">More...</a><br /></td></tr>
+<tr class="separator:ad0763e90ac9b72b09dd897435131f837"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd69427017a6b1d7a731edcbcfeabe07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</a> (void)</td></tr>
+<tr class="memdesc:afd69427017a6b1d7a731edcbcfeabe07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses BPM to calculate arrythmia type based on ECG_Arrythmia_Type enum.  <a href="_e_c_g_8h.html#afd69427017a6b1d7a731edcbcfeabe07">More...</a><br /></td></tr>
+<tr class="separator:afd69427017a6b1d7a731edcbcfeabe07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a346cad9a373adc1fb5c2dace0ebc0f96"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</a> (void)</td></tr>
+<tr class="memdesc:a346cad9a373adc1fb5c2dace0ebc0f96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts tECG_Arrythmia_Type to char array for LCD.  <a href="_e_c_g_8h.html#a346cad9a373adc1fb5c2dace0ebc0f96">More...</a><br /></td></tr>
+<tr class="separator:a346cad9a373adc1fb5c2dace0ebc0f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7d56516f139537a7186781941304a59"><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_e_c_g_8h.html#ab7d56516f139537a7186781941304a59">ECG_Detect</a> (float ecg_sample)</td></tr>
+<tr class="memdesc:ab7d56516f139537a7186781941304a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs filtering and adaptive threshold operations to detect R waves.  <a href="_e_c_g_8h.html#ab7d56516f139537a7186781941304a59">More...</a><br /></td></tr>
+<tr class="separator:ab7d56516f139537a7186781941304a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a86a8e9b62873270152d361a84ec8ddb3"><td class="memItemLeft" align="right" valign="top"><a id="a86a8e9b62873270152d361a84ec8ddb3" name="a86a8e9b62873270152d361a84ec8ddb3"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>s_ecg_idx</b></td></tr>
+<tr class="separator:a86a8e9b62873270152d361a84ec8ddb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1792a5ba2babec2a9f62f24c96210789"><td class="memItemLeft" align="right" valign="top"><a id="a1792a5ba2babec2a9f62f24c96210789" name="a1792a5ba2babec2a9f62f24c96210789"></a>
+u16&#160;</td><td class="memItemRight" valign="bottom"><b>ecg_found_ticks_ms</b></td></tr>
+<tr class="separator:a1792a5ba2babec2a9f62f24c96210789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a4364468fd448e8fbcda0695ebacefd"><td class="memItemLeft" align="right" valign="top"><a id="a8a4364468fd448e8fbcda0695ebacefd" name="a8a4364468fd448e8fbcda0695ebacefd"></a>
+u16&#160;</td><td class="memItemRight" valign="bottom"><b>ecg_old_found_ticks_ms</b></td></tr>
+<tr class="separator:a8a4364468fd448e8fbcda0695ebacefd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55098b874849f651f27a21db1c886657"><td class="memItemLeft" align="right" valign="top"><a id="a55098b874849f651f27a21db1c886657" name="a55098b874849f651f27a21db1c886657"></a>
+volatile u16&#160;</td><td class="memItemRight" valign="bottom"><b>bpm</b></td></tr>
+<tr class="separator:a55098b874849f651f27a21db1c886657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab40e28c3d64ca4f06d61124d12820cdb"><td class="memItemLeft" align="right" valign="top"><a id="ab40e28c3d64ca4f06d61124d12820cdb" name="ab40e28c3d64ca4f06d61124d12820cdb"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>ecg_buff</b> [M+1]</td></tr>
+<tr class="separator:ab40e28c3d64ca4f06d61124d12820cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e0c1b9cfe47b03bd26ade06d2567431"><td class="memItemLeft" align="right" valign="top"><a id="a0e0c1b9cfe47b03bd26ade06d2567431" name="a0e0c1b9cfe47b03bd26ade06d2567431"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ecg_buff_WR_idx</b></td></tr>
+<tr class="separator:a0e0c1b9cfe47b03bd26ade06d2567431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ef10c36c7baff53510142c2cc5e599"><td class="memItemLeft" align="right" valign="top"><a id="aa0ef10c36c7baff53510142c2cc5e599" name="aa0ef10c36c7baff53510142c2cc5e599"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>ecg_buff_RD_idx</b></td></tr>
+<tr class="separator:aa0ef10c36c7baff53510142c2cc5e599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d3b91eee0a9de9584f093158f59923"><td class="memItemLeft" align="right" valign="top"><a id="af3d3b91eee0a9de9584f093158f59923" name="af3d3b91eee0a9de9584f093158f59923"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>hp_buff</b> [N+1]</td></tr>
+<tr class="separator:af3d3b91eee0a9de9584f093158f59923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d983c8366cba50c82a40f6d7db2cde1"><td class="memItemLeft" align="right" valign="top"><a id="a2d983c8366cba50c82a40f6d7db2cde1" name="a2d983c8366cba50c82a40f6d7db2cde1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>hp_buff_WR_idx</b></td></tr>
+<tr class="separator:a2d983c8366cba50c82a40f6d7db2cde1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7f3c07c6ddf93c5a4ef75b612a4d91"><td class="memItemLeft" align="right" valign="top"><a id="a5e7f3c07c6ddf93c5a4ef75b612a4d91" name="a5e7f3c07c6ddf93c5a4ef75b612a4d91"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>hp_buff_RD_idx</b></td></tr>
+<tr class="separator:a5e7f3c07c6ddf93c5a4ef75b612a4d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abca04ca0392b86942af021ef45b1a3bc"><td class="memItemLeft" align="right" valign="top"><a id="abca04ca0392b86942af021ef45b1a3bc" name="abca04ca0392b86942af021ef45b1a3bc"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>next_eval_pt</b></td></tr>
+<tr class="separator:abca04ca0392b86942af021ef45b1a3bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cde068960720a8905f1a7f8aa65f8bf"><td class="memItemLeft" align="right" valign="top"><a id="a0cde068960720a8905f1a7f8aa65f8bf" name="a0cde068960720a8905f1a7f8aa65f8bf"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>hp_sum</b></td></tr>
+<tr class="separator:a0cde068960720a8905f1a7f8aa65f8bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac79bdccb484a348ae8de55391b008780"><td class="memItemLeft" align="right" valign="top"><a id="ac79bdccb484a348ae8de55391b008780" name="ac79bdccb484a348ae8de55391b008780"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>lp_sum</b></td></tr>
+<tr class="separator:ac79bdccb484a348ae8de55391b008780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39244e34268e768eefe8843add1d94ca"><td class="memItemLeft" align="right" valign="top"><a id="a39244e34268e768eefe8843add1d94ca" name="a39244e34268e768eefe8843add1d94ca"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>treshold</b></td></tr>
+<tr class="separator:a39244e34268e768eefe8843add1d94ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4394e307ec88de91f545f242a8347f"><td class="memItemLeft" align="right" valign="top"><a id="a3b4394e307ec88de91f545f242a8347f" name="a3b4394e307ec88de91f545f242a8347f"></a>
+u8&#160;</td><td class="memItemRight" valign="bottom"><b>triggered</b></td></tr>
+<tr class="separator:a3b4394e307ec88de91f545f242a8347f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa165cbd697ed850861c23a0a147675c7"><td class="memItemLeft" align="right" valign="top"><a id="aa165cbd697ed850861c23a0a147675c7" name="aa165cbd697ed850861c23a0a147675c7"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>trig_time</b></td></tr>
+<tr class="separator:aa165cbd697ed850861c23a0a147675c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4a5e359fe7321bdf59ff0d1fb9f936"><td class="memItemLeft" align="right" valign="top"><a id="a9e4a5e359fe7321bdf59ff0d1fb9f936" name="a9e4a5e359fe7321bdf59ff0d1fb9f936"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>win_max</b></td></tr>
+<tr class="separator:a9e4a5e359fe7321bdf59ff0d1fb9f936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b49f579bda94a4f278fb7a1207cea8"><td class="memItemLeft" align="right" valign="top"><a id="a18b49f579bda94a4f278fb7a1207cea8" name="a18b49f579bda94a4f278fb7a1207cea8"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>win_idx</b></td></tr>
+<tr class="separator:a18b49f579bda94a4f278fb7a1207cea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a869dc96b4fa3d9bd19c20088b1fc9cf4"><td class="memItemLeft" align="right" valign="top"><a id="a869dc96b4fa3d9bd19c20088b1fc9cf4" name="a869dc96b4fa3d9bd19c20088b1fc9cf4"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>tmp</b></td></tr>
+<tr class="separator:a869dc96b4fa3d9bd19c20088b1fc9cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8cfdec70d310e45e2ad207a8b730aa9"><td class="memItemLeft" align="right" valign="top"><a id="ab8cfdec70d310e45e2ad207a8b730aa9" name="ab8cfdec70d310e45e2ad207a8b730aa9"></a>
+u16&#160;</td><td class="memItemRight" valign="bottom"><b>number_iter</b></td></tr>
+<tr class="separator:ab8cfdec70d310e45e2ad207a8b730aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >ECG Signal Processing and feature extraction module. </p>
 <dl class="section author"><dt>Author</dt><dd>Mohamed Nasser </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>0.0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2022-05-05</dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>TODO: THIS MODULE IS TO BE DOCUMENTED WHEN FINISHED </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ad3539e468b6fbacec8b1ed753333f491" name="ad3539e468b6fbacec8b1ed753333f491"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3539e468b6fbacec8b1ed753333f491">&#9670;&nbsp;</a></span>ECG_Arrythmia_Type</h2>
+<dl class="section version"><dt>Version</dt><dd>0.9.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-05-24 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ab7d56516f139537a7186781941304a59" name="ab7d56516f139537a7186781941304a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7d56516f139537a7186781941304a59">&#9670;&nbsp;</a></span>ECG_Detect()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a></td>
+          <td class="memname">u8 ECG_Detect </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ecg_sample</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b" name="ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b"></a>Normal&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7" name="ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7"></a>Tachycardia&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4" name="ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4"></a>Bradycardia&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74" name="ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74"></a>Irregular_Heartbeat&#160;</td><td class="fielddoc"></td></tr>
-</table>
+
+<p>Performs filtering and adaptive threshold operations to detect R waves. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ecg_sample</td><td>Input sample </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>u8 boolean value (1 = detected) </dd></dl>
 
 </div>
 </div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a7f06c21e8629d0cafd74dacfdfe3f16a" name="a7f06c21e8629d0cafd74dacfdfe3f16a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f06c21e8629d0cafd74dacfdfe3f16a">&#9670;&nbsp;</a></span>ECG_GetArrythmia()</h2>
+<a id="afd69427017a6b1d7a731edcbcfeabe07" name="afd69427017a6b1d7a731edcbcfeabe07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd69427017a6b1d7a731edcbcfeabe07">&#9670;&nbsp;</a></span>ECG_Get_Arrythmia_Type()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> ECG_GetArrythmia </td>
+          <td class="memname"><a class="el" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> ECG_Get_Arrythmia_Type </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -169,16 +284,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Uses BPM to calculate arrythmia type based on ECG_Arrythmia_Type enum. </p>
+<dl class="section return"><dt>Returns</dt><dd>ECG_Arrythmia_Type </dd></dl>
+
 </div>
 </div>
-<a id="a4f444b72866661b3ce7800340e056d72" name="a4f444b72866661b3ce7800340e056d72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f444b72866661b3ce7800340e056d72">&#9670;&nbsp;</a></span>ECG_GetHR()</h2>
+<a id="a346cad9a373adc1fb5c2dace0ebc0f96" name="a346cad9a373adc1fb5c2dace0ebc0f96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346cad9a373adc1fb5c2dace0ebc0f96">&#9670;&nbsp;</a></span>ECG_Get_Arrythmia_Type_String()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> ECG_GetHR </td>
+          <td class="memname">char * ECG_Get_Arrythmia_Type_String </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -187,16 +305,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Converts tECG_Arrythmia_Type to char array for LCD. </p>
+<dl class="section return"><dt>Returns</dt><dd>char* String </dd></dl>
+
 </div>
 </div>
-<a id="aec25294c95954bfb06838412a5afdcee" name="aec25294c95954bfb06838412a5afdcee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec25294c95954bfb06838412a5afdcee">&#9670;&nbsp;</a></span>ECG_GetStatistics()</h2>
+<a id="ad0763e90ac9b72b09dd897435131f837" name="ad0763e90ac9b72b09dd897435131f837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0763e90ac9b72b09dd897435131f837">&#9670;&nbsp;</a></span>ECG_Get_BPM()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_e_c_g___statistics.html">ECG_Statistics</a> ECG_GetStatistics </td>
+          <td class="memname">u8 ECG_Get_BPM </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -205,59 +326,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="aba08485b53f56de97b7aee9a039f321d" name="aba08485b53f56de97b7aee9a039f321d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba08485b53f56de97b7aee9a039f321d">&#9670;&nbsp;</a></span>ECG_Init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ECG_Init </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a677b0e53cb36755e36e041705d550c7e" name="a677b0e53cb36755e36e041705d550c7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a677b0e53cb36755e36e041705d550c7e">&#9670;&nbsp;</a></span>ECG_Update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ECG_Update </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7ab516ef024cabbe15ae72208b46690a" name="a7ab516ef024cabbe15ae72208b46690a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ab516ef024cabbe15ae72208b46690a">&#9670;&nbsp;</a></span>ECG_UpdateArrythmia()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ECG_UpdateArrythmia </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Calculates BPM from ms tick counters. </p>
+<dl class="section return"><dt>Returns</dt><dd>u8 Beats per minute </dd></dl>
 
 </div>
 </div>

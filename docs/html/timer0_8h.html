@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ECG Monitor
+   <div id="projectname">ECG Monitor<span id="projectnumber">&#160;0.6.0</span>
    </div>
   </td>
  </tr>
@@ -89,45 +90,60 @@ $(document).ready(function(){initNavTree('timer0_8h.html',''); initResizable(); 
   <div class="headertitle"><div class="title">timer0.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>This module drives the timer0 peripheral.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="main_8h_source.html">main.h</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for timer0.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="timer0_8h__incl.png" border="0" usemap="#ainclude_2timer0_8h" alt=""/></div>
+</div>
 </div>
 <p><a href="timer0_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:a519525e9a15ac7bf39e86c67711fdddd"><td class="memItemLeft" align="right" valign="top"><a id="a519525e9a15ac7bf39e86c67711fdddd" name="a519525e9a15ac7bf39e86c67711fdddd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TMR0_IS_USED</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a519525e9a15ac7bf39e86c67711fdddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d100ac3a9804f9cc0ab1f10dd7a46bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a8d100ac3a9804f9cc0ab1f10dd7a46bb">TMR0_SET_CLOCK_SELECTOR</a>(x)</td></tr>
 <tr class="separator:a8d100ac3a9804f9cc0ab1f10dd7a46bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae96c17128a6f15ba9f0ca4a2a77c5665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#ae96c17128a6f15ba9f0ca4a2a77c5665">TMR0_SET_MODE</a>(x)</td></tr>
 <tr class="separator:ae96c17128a6f15ba9f0ca4a2a77c5665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70ab3c85a23cb4520bd81c9594ddbd00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a70ab3c85a23cb4520bd81c9594ddbd00">TMR0_SET_INTERRUPT</a>(x)</td></tr>
 <tr class="separator:a70ab3c85a23cb4520bd81c9594ddbd00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af443153043184296a315f206bfad9233"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#af443153043184296a315f206bfad9233">TMR0_READ_COUNTER</a>()&#160;&#160;&#160;(<a class="el" href="main_8h.html#af184c48e1c5d904aaf8a2f70340a394f">READ_REGISTER_PIN</a>(TCNT0))</td></tr>
+<tr class="memitem:af443153043184296a315f206bfad9233"><td class="memItemLeft" align="right" valign="top"><a id="af443153043184296a315f206bfad9233" name="af443153043184296a315f206bfad9233"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TMR0_READ_COUNTER</b>()&#160;&#160;&#160;(READ_REGISTER_PIN(TCNT0))</td></tr>
 <tr class="separator:af443153043184296a315f206bfad9233"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a6ce04cefa5af7e9bdcd73f544d004fd2"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a> { <br />
-&#160;&#160;<a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2ae89f92ea0ffcda1050fe5b523e2655e0">NO_CLOCK_SOURCE</a> = 0
-, <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2a52ef245693e7fb70943bcc1b91cd16c9">NO_PRESCALER</a> = 1
-, <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2af4c98a9ece6e04f96fb78421d5dc900d">PRESCALAR_8</a> = 2
-, <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2a2fef84be9bb8f23f7305f7b2e3444a64">PRESCALAR_64</a> = 3
+<tr class="memitem:a6ce04cefa5af7e9bdcd73f544d004fd2"><td class="memItemLeft" align="right" valign="top"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2" name="a6ce04cefa5af7e9bdcd73f544d004fd2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a> { <br />
+&#160;&#160;<b>NO_CLOCK_SOURCE</b> = 0
+, <b>NO_PRESCALER</b> = 1
+, <b>PRESCALAR_8</b> = 2
+, <b>PRESCALAR_64</b> = 3
 , <br />
-&#160;&#160;<a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2a5bef61e0a1a4f3b7bed7ead2c27e0b10">PRESCALAR_256</a> = 4
-, <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2a325bbe1a030dfd1fe6be1b04af63d1f5">PRESCALAR_1024</a> = 5
+&#160;&#160;<b>PRESCALAR_256</b> = 4
+, <b>PRESCALAR_1024</b> = 5
 <br />
  }</td></tr>
+<tr class="memdesc:a6ce04cefa5af7e9bdcd73f544d004fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supported clock prescalars. <br /></td></tr>
 <tr class="separator:a6ce04cefa5af7e9bdcd73f544d004fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac868b2c13e2f38789c7d1151ef5e7314"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</a> { <a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314aef2e962aaf50f85f1b416dee5acb44e3">MODE_UpToFF</a> = 0
-, <a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314a6bb84cfa88f41304d070d3b241a95130">MODE_UpToOCR0A</a> = 2
-, <a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314a9424e3539a0cd349f8b535ee84a21552">MODE_UpToFF_PWM</a> = 3
-, <a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314a879659b98e94994186817fac9447d28f">MODE_UpToOCR0A_PWM</a> = 7
+<tr class="memitem:ac868b2c13e2f38789c7d1151ef5e7314"><td class="memItemLeft" align="right" valign="top"><a id="ac868b2c13e2f38789c7d1151ef5e7314" name="ac868b2c13e2f38789c7d1151ef5e7314"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</a> { <b>MODE_UpToFF</b> = 0
+, <b>MODE_UpToOCR0A</b> = 2
+, <b>MODE_UpToFF_PWM</b> = 3
+, <b>MODE_UpToOCR0A_PWM</b> = 7
  }</td></tr>
+<tr class="memdesc:ac868b2c13e2f38789c7d1151ef5e7314"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supported timer modes. <br /></td></tr>
 <tr class="separator:ac868b2c13e2f38789c7d1151ef5e7314"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa6787592e2887f44627915d92f460d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</a> { <a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460dafbad049ccaff80e3ebd021d07fbe9309">INTERRUPT_OVR</a> = TOIE0
-, <a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460da01316c0195974453984f05b5d4e9f579">INTERRUPT_COMPA</a> = OCIE0A
-, <a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460dabfcc3eef99c6ab22501e09cb5efded5c">INTERRUPT_OVR_and_COMPA</a> = 3
-, <a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460da61d2d6c26a0fd94bad148a0c4c6bf226">INTERRUPT_COMPB</a> = OCIE0B
+<tr class="memitem:a0fa6787592e2887f44627915d92f460d"><td class="memItemLeft" align="right" valign="top"><a id="a0fa6787592e2887f44627915d92f460d" name="a0fa6787592e2887f44627915d92f460d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</a> { <b>INTERRUPT_OVR</b> = TOIE0
+, <b>INTERRUPT_COMPA</b> = OCIE0A
+, <b>INTERRUPT_OVR_and_COMPA</b> = 3
+, <b>INTERRUPT_COMPB</b> = OCIE0B
  }</td></tr>
+<tr class="memdesc:a0fa6787592e2887f44627915d92f460d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timer Interrupt enable flags. <br /></td></tr>
 <tr class="separator:a0fa6787592e2887f44627915d92f460d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -138,31 +154,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a929005b553f4395d7b8ec3418129130a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#a929005b553f4395d7b8ec3418129130a">TMR0_Init</a> (<a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a> prescalar, <a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</a> timer, <a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</a> interrupt)</td></tr>
 <tr class="memdesc:a929005b553f4395d7b8ec3418129130a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the timer0 peripheral.  <a href="timer0_8h.html#a929005b553f4395d7b8ec3418129130a">More...</a><br /></td></tr>
 <tr class="separator:a929005b553f4395d7b8ec3418129130a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadcaf39e3384bdf319c0c697ffd6f096"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#aadcaf39e3384bdf319c0c697ffd6f096">TMR0_Stop</a> ()</td></tr>
-<tr class="memdesc:aadcaf39e3384bdf319c0c697ffd6f096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop timer0 by setting the clock selector to NO_CLOCK_SOURCE.  <a href="timer0_8h.html#aadcaf39e3384bdf319c0c697ffd6f096">More...</a><br /></td></tr>
+<tr class="memitem:aadcaf39e3384bdf319c0c697ffd6f096"><td class="memItemLeft" align="right" valign="top"><a id="aadcaf39e3384bdf319c0c697ffd6f096" name="aadcaf39e3384bdf319c0c697ffd6f096"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TMR0_Stop</b> ()</td></tr>
+<tr class="memdesc:aadcaf39e3384bdf319c0c697ffd6f096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop timer0 by setting the clock selector to NO_CLOCK_SOURCE. <br /></td></tr>
 <tr class="separator:aadcaf39e3384bdf319c0c697ffd6f096"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3e65f3af7dc6f877c4c29ae52dd740c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="timer0_8h.html#aa3e65f3af7dc6f877c4c29ae52dd740c">TMR0_Start</a> (void)</td></tr>
-<tr class="memdesc:aa3e65f3af7dc6f877c4c29ae52dd740c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start timer0 by setting the clock selector to the last used prescaler.  <a href="timer0_8h.html#aa3e65f3af7dc6f877c4c29ae52dd740c">More...</a><br /></td></tr>
+<tr class="memitem:aa3e65f3af7dc6f877c4c29ae52dd740c"><td class="memItemLeft" align="right" valign="top"><a id="aa3e65f3af7dc6f877c4c29ae52dd740c" name="aa3e65f3af7dc6f877c4c29ae52dd740c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>TMR0_Start</b> (void)</td></tr>
+<tr class="memdesc:aa3e65f3af7dc6f877c4c29ae52dd740c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start timer0 by setting the clock selector to the last used prescaler. <br /></td></tr>
 <tr class="separator:aa3e65f3af7dc6f877c4c29ae52dd740c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="af443153043184296a315f206bfad9233" name="af443153043184296a315f206bfad9233"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af443153043184296a315f206bfad9233">&#9670;&nbsp;</a></span>TMR0_READ_COUNTER</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define TMR0_READ_COUNTER</td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;(<a class="el" href="main_8h.html#af184c48e1c5d904aaf8a2f70340a394f">READ_REGISTER_PIN</a>(TCNT0))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >This module drives the timer0 peripheral. </p>
+<dl class="section author"><dt>Author</dt><dd>Mohamed Nasser </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-4-28 </dd></dl>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a8d100ac3a9804f9cc0ab1f10dd7a46bb" name="a8d100ac3a9804f9cc0ab1f10dd7a46bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d100ac3a9804f9cc0ab1f10dd7a46bb">&#9670;&nbsp;</a></span>TMR0_SET_CLOCK_SELECTOR</h2>
 
@@ -178,10 +184,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="main_8h.html#ac5d4f3761ef41b3b74ca17943decf343">SET_REGISTER_PIN</a>(TCCR0B, CS00, (x &amp; 0x1));           \</div>
+<b>Value:</b><div class="fragment"><div class="line">    SET_REGISTER_PIN(TCCR0B, CS00, (x &amp; 0x1));           \</div>
 <div class="line">    SET_REGISTER_PIN(TCCR0B, CS01, ((x &amp; 0x2) &gt;&gt; CS01)); \</div>
 <div class="line">    SET_REGISTER_PIN(TCCR0B, CS02, ((x &amp; 0x4) &gt;&gt; CS02));</div>
-<div class="ttc" id="amain_8h_html_ac5d4f3761ef41b3b74ca17943decf343"><div class="ttname"><a href="main_8h.html#ac5d4f3761ef41b3b74ca17943decf343">SET_REGISTER_PIN</a></div><div class="ttdeci">#define SET_REGISTER_PIN(REG, BIT, VAL)</div><div class="ttdef"><b>Definition:</b> main.h:49</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -200,7 +205,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="main_8h.html#ac5d4f3761ef41b3b74ca17943decf343">SET_REGISTER_PIN</a>(TIMSK0, TOIE0, (x &amp; 0x1));              \</div>
+<b>Value:</b><div class="fragment"><div class="line">    SET_REGISTER_PIN(TIMSK0, TOIE0, ((0x1) &gt;&gt; TOIE0));       \</div>
 <div class="line">    SET_REGISTER_PIN(TIMSK0, OCIE0A, ((x &amp; 0x2) &gt;&gt; OCIE0A)); \</div>
 <div class="line">    SET_REGISTER_PIN(TIMSK0, OCIE0B, ((x &amp; 0x4) &gt;&gt; OCIE0B));</div>
 </div><!-- fragment -->
@@ -221,73 +226,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="main_8h.html#ac5d4f3761ef41b3b74ca17943decf343">SET_REGISTER_PIN</a>(TCCR0B, WGM02, ((x &amp; 0x8) &gt;&gt; WGM02)); \</div>
+<b>Value:</b><div class="fragment"><div class="line">    SET_REGISTER_PIN(TCCR0B, WGM02, ((x &amp; 0x8) &gt;&gt; WGM02)); \</div>
 <div class="line">    SET_REGISTER_PIN(TCCR0A, WGM01, ((x &amp; 0x2) &gt;&gt; WGM01)); \</div>
 <div class="line">    SET_REGISTER_PIN(TCCR0A, WGM00, (x &amp; 0x1));</div>
 </div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a6ce04cefa5af7e9bdcd73f544d004fd2" name="a6ce04cefa5af7e9bdcd73f544d004fd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ce04cefa5af7e9bdcd73f544d004fd2">&#9670;&nbsp;</a></span>tClock_Selector</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2ae89f92ea0ffcda1050fe5b523e2655e0" name="a6ce04cefa5af7e9bdcd73f544d004fd2ae89f92ea0ffcda1050fe5b523e2655e0"></a>NO_CLOCK_SOURCE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2a52ef245693e7fb70943bcc1b91cd16c9" name="a6ce04cefa5af7e9bdcd73f544d004fd2a52ef245693e7fb70943bcc1b91cd16c9"></a>NO_PRESCALER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2af4c98a9ece6e04f96fb78421d5dc900d" name="a6ce04cefa5af7e9bdcd73f544d004fd2af4c98a9ece6e04f96fb78421d5dc900d"></a>PRESCALAR_8&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2a2fef84be9bb8f23f7305f7b2e3444a64" name="a6ce04cefa5af7e9bdcd73f544d004fd2a2fef84be9bb8f23f7305f7b2e3444a64"></a>PRESCALAR_64&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2a5bef61e0a1a4f3b7bed7ead2c27e0b10" name="a6ce04cefa5af7e9bdcd73f544d004fd2a5bef61e0a1a4f3b7bed7ead2c27e0b10"></a>PRESCALAR_256&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6ce04cefa5af7e9bdcd73f544d004fd2a325bbe1a030dfd1fe6be1b04af63d1f5" name="a6ce04cefa5af7e9bdcd73f544d004fd2a325bbe1a030dfd1fe6be1b04af63d1f5"></a>PRESCALAR_1024&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="a0fa6787592e2887f44627915d92f460d" name="a0fa6787592e2887f44627915d92f460d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa6787592e2887f44627915d92f460d">&#9670;&nbsp;</a></span>tTimer_Interrupt</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0fa6787592e2887f44627915d92f460dafbad049ccaff80e3ebd021d07fbe9309" name="a0fa6787592e2887f44627915d92f460dafbad049ccaff80e3ebd021d07fbe9309"></a>INTERRUPT_OVR&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0fa6787592e2887f44627915d92f460da01316c0195974453984f05b5d4e9f579" name="a0fa6787592e2887f44627915d92f460da01316c0195974453984f05b5d4e9f579"></a>INTERRUPT_COMPA&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0fa6787592e2887f44627915d92f460dabfcc3eef99c6ab22501e09cb5efded5c" name="a0fa6787592e2887f44627915d92f460dabfcc3eef99c6ab22501e09cb5efded5c"></a>INTERRUPT_OVR_and_COMPA&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0fa6787592e2887f44627915d92f460da61d2d6c26a0fd94bad148a0c4c6bf226" name="a0fa6787592e2887f44627915d92f460da61d2d6c26a0fd94bad148a0c4c6bf226"></a>INTERRUPT_COMPB&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<a id="ac868b2c13e2f38789c7d1151ef5e7314" name="ac868b2c13e2f38789c7d1151ef5e7314"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac868b2c13e2f38789c7d1151ef5e7314">&#9670;&nbsp;</a></span>tTimer_mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac868b2c13e2f38789c7d1151ef5e7314aef2e962aaf50f85f1b416dee5acb44e3" name="ac868b2c13e2f38789c7d1151ef5e7314aef2e962aaf50f85f1b416dee5acb44e3"></a>MODE_UpToFF&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac868b2c13e2f38789c7d1151ef5e7314a6bb84cfa88f41304d070d3b241a95130" name="ac868b2c13e2f38789c7d1151ef5e7314a6bb84cfa88f41304d070d3b241a95130"></a>MODE_UpToOCR0A&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac868b2c13e2f38789c7d1151ef5e7314a9424e3539a0cd349f8b535ee84a21552" name="ac868b2c13e2f38789c7d1151ef5e7314a9424e3539a0cd349f8b535ee84a21552"></a>MODE_UpToFF_PWM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac868b2c13e2f38789c7d1151ef5e7314a879659b98e94994186817fac9447d28f" name="ac868b2c13e2f38789c7d1151ef5e7314a879659b98e94994186817fac9447d28f"></a>MODE_UpToOCR0A_PWM&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -330,22 +272,21 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2" title="Supported clock prescalars.">tClock_Selector</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tTimer_mode</td><td>mode </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer0_8h.html#ac868b2c13e2f38789c7d1151ef5e7314" title="Supported timer modes.">tTimer_mode</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tTimer_Interrupt</td><td>interrupt </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</a> </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timer0_8h.html#a0fa6787592e2887f44627915d92f460d" title="Timer Interrupt enable flags.">tTimer_Interrupt</a> </dd></dl>
 
 </div>
 </div>
@@ -370,50 +311,11 @@ Functions</h2></td></tr>
 <dd>
 Clock Selector: NO_CLOCK_SOURCE </dd>
 <dd>
-Mode: MODE_UpToOCR0A </dd>
+Mode: MODE_UpToFF </dd>
 <dd>
 Interrupt: INTERRUPT_OVR </dd>
 <dd>
 Prescalar: PRESCALAR_256 </dd></dl>
-
-</div>
-</div>
-<a id="aa3e65f3af7dc6f877c4c29ae52dd740c" name="aa3e65f3af7dc6f877c4c29ae52dd740c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3e65f3af7dc6f877c4c29ae52dd740c">&#9670;&nbsp;</a></span>TMR0_Start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TMR0_Start </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Start timer0 by setting the clock selector to the last used prescaler. </p>
-
-</div>
-</div>
-<a id="aadcaf39e3384bdf319c0c697ffd6f096" name="aadcaf39e3384bdf319c0c697ffd6f096"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadcaf39e3384bdf319c0c697ffd6f096">&#9670;&nbsp;</a></span>TMR0_Stop()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TMR0_Stop </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stop timer0 by setting the clock selector to NO_CLOCK_SOURCE. </p>
 
 </div>
 </div>

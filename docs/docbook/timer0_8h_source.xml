@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_timer0_8h_source" xml:lang="en-US">
+<title>timer0.h</title>
+<indexterm><primary>include/timer0.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__TMR_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__TMR_H__</emphasis>
+3 
+12 <emphasis role="preprocessor">#include&#32;&lt;<link linkend="_main_8h">main.h</link>&gt;</emphasis>
+13 
+14 <emphasis role="preprocessor">#define&#32;TMR0_IS_USED&#32;1</emphasis>
+15 
+16 <emphasis role="preprocessor">#define&#32;TMR0_SET_CLOCK_SELECTOR(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+17 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;CS00,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+18 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;CS01,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS01));&#32;\</emphasis>
+19 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;CS02,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS02));</emphasis>
+20 
+21 <emphasis role="preprocessor">#define&#32;TMR0_SET_MODE(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+22 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;WGM02,&#32;((x&#32;&amp;&#32;0x8)&#32;&gt;&gt;&#32;WGM02));&#32;\</emphasis>
+23 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0A,&#32;WGM01,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;WGM01));&#32;\</emphasis>
+24 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0A,&#32;WGM00,&#32;(x&#32;&amp;&#32;0x1));</emphasis>
+25 
+26 <emphasis role="comment">//&#32;TODO:&#32;Refactor&#32;syntax,&#32;causes&#32;bugs</emphasis>
+27 <emphasis role="preprocessor">#define&#32;TMR0_SET_INTERRUPT(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+28 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;TOIE0,&#32;((0x1)&#32;&gt;&gt;&#32;TOIE0));&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+29 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;OCIE0A,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;OCIE0A));&#32;\</emphasis>
+30 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;OCIE0B,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;OCIE0B));</emphasis>
+31 
+32 <emphasis role="preprocessor">#define&#32;TMR0_READ_COUNTER()&#32;(READ_REGISTER_PIN(TCNT0))</emphasis>
+33 
+38 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+39 {
+40 &#32;&#32;&#32;&#32;NO_CLOCK_SOURCE&#32;=&#32;0,
+41 &#32;&#32;&#32;&#32;NO_PRESCALER&#32;=&#32;1,
+42 &#32;&#32;&#32;&#32;PRESCALAR_8&#32;=&#32;2,
+43 &#32;&#32;&#32;&#32;PRESCALAR_64&#32;=&#32;3,
+44 &#32;&#32;&#32;&#32;PRESCALAR_256&#32;=&#32;4,
+45 &#32;&#32;&#32;&#32;PRESCALAR_1024&#32;=&#32;5,
+46 }&#32;<link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link>;
+47 
+52 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+53 {
+54 &#32;&#32;&#32;&#32;MODE_UpToFF&#32;=&#32;0,
+55 &#32;&#32;&#32;&#32;MODE_UpToOCR0A&#32;=&#32;2,
+56 &#32;&#32;&#32;&#32;MODE_UpToFF_PWM&#32;=&#32;3,
+57 &#32;&#32;&#32;&#32;MODE_UpToOCR0A_PWM&#32;=&#32;7,
+58 }&#32;<link linkend="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</link>;
+59 
+64 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+65 {
+66 &#32;&#32;&#32;&#32;INTERRUPT_OVR&#32;=&#32;TOIE0,
+67 &#32;&#32;&#32;&#32;INTERRUPT_COMPA&#32;=&#32;OCIE0A,
+68 &#32;&#32;&#32;&#32;INTERRUPT_OVR_and_COMPA&#32;=&#32;3,
+69 &#32;&#32;&#32;&#32;INTERRUPT_COMPB&#32;=&#32;OCIE0B,
+70 }&#32;<link linkend="_timer0_8h_1a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</link>;
+71 
+80 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_timer0_8h_1aed1e13d4b0ea572e22241e00d59762b4">TMR0_Init_Default</link>(<emphasis role="keywordtype">void</emphasis>);
+81 
+91 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_timer0_8h_1a929005b553f4395d7b8ec3418129130a">TMR0_Init</link>(<link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link>&#32;prescalar,&#32;<link linkend="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</link>&#32;timer,&#32;<link linkend="_timer0_8h_1a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</link>&#32;interrupt);
+92 
+96 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_timer0_8h_1aadcaf39e3384bdf319c0c697ffd6f096">TMR0_Stop</link>();
+97 
+101 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_timer0_8h_1aa3e65f3af7dc6f877c4c29ae52dd740c">TMR0_Start</link>(<emphasis role="keywordtype">void</emphasis>);
+102 
+103 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__TMR_H__</emphasis>
+</programlisting></section>

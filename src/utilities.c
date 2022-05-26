@@ -15,6 +15,8 @@ void UTIL_DelayMS(u16 delay_ms)
             "    brne 1b	\n"
             "    dec  r18	\n"
             "    brne 1b	\n");
+#else
+        throw("Unsupported CPU frequency");
 #endif
     }
 }

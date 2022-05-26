@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_utilities_8h" xml:lang="en-US">
+<title>include/utilities.h File Reference</title>
+<indexterm><primary>include/utilities.h</primary></indexterm>
+<para>
+
+<para>Useful functions. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;main.h&gt;
+</programlisting>Include dependency graph for utilities.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="utilities_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_utilities_8h_1a6a488a11d9378574052140463f702dce">UTIL_DelayMS</link> (u16 delay_ms)</para>
+
+<para>This function is used to delay the program for a certain amount of time. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Useful functions. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser</para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>0.5.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-5-25 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_utilities_8h_1a6a488a11d9378574052140463f702dce"/><section>
+    <title>UTIL_DelayMS()</title>
+<indexterm><primary>UTIL_DelayMS</primary><secondary>utilities.h</secondary></indexterm>
+<indexterm><primary>utilities.h</primary><secondary>UTIL_DelayMS</secondary></indexterm>
+<para><computeroutput>void UTIL_DelayMS (u16 delay_ms)</computeroutput></para><para>
+
+<para>This function is used to delay the program for a certain amount of time. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delay_ms</entry><entry>
+<para>The amount of time to delay the program for in milliseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

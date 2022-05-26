@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_timer0_8h" xml:lang="en-US">
+<title>include/timer0.h File Reference</title>
+<indexterm><primary>include/timer0.h</primary></indexterm>
+<para>
+
+<para>This module drives the timer0 peripheral. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;main.h&gt;
+</programlisting>Include dependency graph for timer0.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="timer0_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_timer0_8h_1a519525e9a15ac7bf39e86c67711fdddd"/>#define <emphasis role="strong">TMR0_IS_USED</emphasis>   1</para>
+</listitem>
+            <listitem><para>#define <link linkend="_timer0_8h_1a8d100ac3a9804f9cc0ab1f10dd7a46bb">TMR0_SET_CLOCK_SELECTOR</link>(x)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_timer0_8h_1ae96c17128a6f15ba9f0ca4a2a77c5665">TMR0_SET_MODE</link>(x)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_timer0_8h_1a70ab3c85a23cb4520bd81c9594ddbd00">TMR0_SET_INTERRUPT</link>(x)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_timer0_8h_1af443153043184296a315f206bfad9233"/>#define <emphasis role="strong">TMR0_READ_COUNTER</emphasis>()   (READ_REGISTER_PIN(TCNT0))</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2"/>enum <link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> { 
+<emphasis role="strong">NO_CLOCK_SOURCE</emphasis> = 0
+, <emphasis role="strong">NO_PRESCALER</emphasis> = 1
+, <emphasis role="strong">PRESCALAR_8</emphasis> = 2
+, <emphasis role="strong">PRESCALAR_64</emphasis> = 3
+, 
+<emphasis role="strong">PRESCALAR_256</emphasis> = 4
+, <emphasis role="strong">PRESCALAR_1024</emphasis> = 5
+ }</para>
+
+<para>Supported clock prescalars. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314"/>enum <link linkend="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</link> { <emphasis role="strong">MODE_UpToFF</emphasis> = 0
+, <emphasis role="strong">MODE_UpToOCR0A</emphasis> = 2
+, <emphasis role="strong">MODE_UpToFF_PWM</emphasis> = 3
+, <emphasis role="strong">MODE_UpToOCR0A_PWM</emphasis> = 7
+ }</para>
+
+<para>Supported timer modes. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_timer0_8h_1a0fa6787592e2887f44627915d92f460d"/>enum <link linkend="_timer0_8h_1a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</link> { <emphasis role="strong">INTERRUPT_OVR</emphasis> = TOIE0
+, <emphasis role="strong">INTERRUPT_COMPA</emphasis> = OCIE0A
+, <emphasis role="strong">INTERRUPT_OVR_and_COMPA</emphasis> = 3
+, <emphasis role="strong">INTERRUPT_COMPB</emphasis> = OCIE0B
+ }</para>
+
+<para>Timer Interrupt enable flags. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_timer0_8h_1aed1e13d4b0ea572e22241e00d59762b4">TMR0_Init_Default</link> (void)</para>
+
+<para>Initialize the timer0 peripheral using default values. </para>
+</listitem>
+            <listitem><para>void <link linkend="_timer0_8h_1a929005b553f4395d7b8ec3418129130a">TMR0_Init</link> (<link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> prescalar, <link linkend="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</link> timer, <link linkend="_timer0_8h_1a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</link> interrupt)</para>
+
+<para>Initialize the timer0 peripheral. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_timer0_8h_1aadcaf39e3384bdf319c0c697ffd6f096"/>void <emphasis role="strong">TMR0_Stop</emphasis> ()</para>
+
+<para>Stop timer0 by setting the clock selector to NO_CLOCK_SOURCE. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_timer0_8h_1aa3e65f3af7dc6f877c4c29ae52dd740c"/>void <emphasis role="strong">TMR0_Start</emphasis> (void)</para>
+
+<para>Start timer0 by setting the clock selector to the last used prescaler. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This module drives the timer0 peripheral. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-4-28 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_timer0_8h_1a8d100ac3a9804f9cc0ab1f10dd7a46bb"/><section>
+    <title>TMR0_SET_CLOCK_SELECTOR</title>
+<indexterm><primary>TMR0_SET_CLOCK_SELECTOR</primary><secondary>timer0.h</secondary></indexterm>
+<indexterm><primary>timer0.h</primary><secondary>TMR0_SET_CLOCK_SELECTOR</secondary></indexterm>
+<para><computeroutput>#define TMR0_SET_CLOCK_SELECTOR( x)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;CS00,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;CS01,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS01));&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;CS02,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS02));
+</programlisting></section>
+<anchor xml:id="_timer0_8h_1a70ab3c85a23cb4520bd81c9594ddbd00"/><section>
+    <title>TMR0_SET_INTERRUPT</title>
+<indexterm><primary>TMR0_SET_INTERRUPT</primary><secondary>timer0.h</secondary></indexterm>
+<indexterm><primary>timer0.h</primary><secondary>TMR0_SET_INTERRUPT</secondary></indexterm>
+<para><computeroutput>#define TMR0_SET_INTERRUPT( x)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;TOIE0,&#32;((0x1)&#32;&gt;&gt;&#32;TOIE0));&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;OCIE0A,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;OCIE0A));&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;OCIE0B,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;OCIE0B));
+</programlisting></section>
+<anchor xml:id="_timer0_8h_1ae96c17128a6f15ba9f0ca4a2a77c5665"/><section>
+    <title>TMR0_SET_MODE</title>
+<indexterm><primary>TMR0_SET_MODE</primary><secondary>timer0.h</secondary></indexterm>
+<indexterm><primary>timer0.h</primary><secondary>TMR0_SET_MODE</secondary></indexterm>
+<para><computeroutput>#define TMR0_SET_MODE( x)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0B,&#32;WGM02,&#32;((x&#32;&amp;&#32;0x8)&#32;&gt;&gt;&#32;WGM02));&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0A,&#32;WGM01,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;WGM01));&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0A,&#32;WGM00,&#32;(x&#32;&amp;&#32;0x1));
+</programlisting></section>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_timer0_8h_1a929005b553f4395d7b8ec3418129130a"/><section>
+    <title>TMR0_Init()</title>
+<indexterm><primary>TMR0_Init</primary><secondary>timer0.h</secondary></indexterm>
+<indexterm><primary>timer0.h</primary><secondary>TMR0_Init</secondary></indexterm>
+<para><computeroutput>void TMR0_Init (<link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> prescalar, <link linkend="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</link> timer, <link linkend="_timer0_8h_1a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</link> interrupt)</computeroutput></para><para>
+
+<para>Initialize the timer0 peripheral. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tClock_Selector</entry><entry>
+<para>clock input / prescalar </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para><link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tTimer_mode</entry><entry>
+<para>mode </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para><link linkend="_timer0_8h_1ac868b2c13e2f38789c7d1151ef5e7314">tTimer_mode</link> </para>
+</formalpara>
+
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tTimer_Interrupt</entry><entry>
+<para>interrupt </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>See also</title>
+
+<para><link linkend="_timer0_8h_1a0fa6787592e2887f44627915d92f460d">tTimer_Interrupt</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_timer0_8h_1aed1e13d4b0ea572e22241e00d59762b4"/><section>
+    <title>TMR0_Init_Default()</title>
+<indexterm><primary>TMR0_Init_Default</primary><secondary>timer0.h</secondary></indexterm>
+<indexterm><primary>timer0.h</primary><secondary>TMR0_Init_Default</secondary></indexterm>
+<para><computeroutput>void TMR0_Init_Default (void )</computeroutput></para><para>
+
+<para>Initialize the timer0 peripheral using default values. </para>
+</para>
+
+<para><note><title>Note</title>
+
+<para>The default values are: </para>
+
+<para>Clock Selector: NO_CLOCK_SOURCE </para>
+
+<para>Mode: MODE_UpToFF </para>
+
+<para>Interrupt: INTERRUPT_OVR </para>
+
+<para>Prescalar: PRESCALAR_256 </para>
+</note>
+</para>
+</section>
+</section>
+</section>

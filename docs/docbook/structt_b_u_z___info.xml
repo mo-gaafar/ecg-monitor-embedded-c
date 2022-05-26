@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structt_b_u_z___info" xml:lang="en-US">
+<title>tBUZ_Info Struct Reference</title>
+<indexterm><primary>tBUZ_Info</primary></indexterm>
+<simplesect>
+    <title>Data Fields    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structt_b_u_z___info_1a3ab4778f099272a18caa9de825ba77b1"/><link linkend="__buzzer_8h_1aa0c443838ea85d7cb2d454d8c0dc5b56">tBUZ_State</link> <emphasis role="strong">state_sequence</emphasis> [STATE_SEQUENCE_LENGTH]</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structt_b_u_z___info_1a1b7c0fc2b31d4c225a8108e868f4f6f9"/><link linkend="__buzzer_8h_1af77d749161eec1892df160aab4dd706d">tBUZ_Mode</link> <emphasis role="strong">mode</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_structt_b_u_z___info_1a8cba4ecf2fd0204159e09783bac5ab83"/>u8 <emphasis role="strong">volume</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+src/Buzzer.c</section>

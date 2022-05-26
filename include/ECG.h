@@ -2,13 +2,13 @@
 #define _ECG_H_
 
 /**
- * @file ECG
+ * @file ECG.h
  * @author Mohamed Nasser
  * @brief ECG Signal Processing and feature extraction module
  * @version 0.9.1
  * @date 2022-05-24
  *
- */
+ **/
 
 #include <main.h>
 
@@ -68,7 +68,7 @@ u16 number_iter;
 /**
  * @brief Cointains supported arrythmia types
  *
- */
+ **/
 typedef enum
 {
     Normal,
@@ -89,34 +89,34 @@ typedef enum
 /**
  * @brief Initialize ECG Drivers
  *
- */
+ **/
 void ECG_Init();
 
 /**
  * @brief Update ECG filtering, detection
  *
- */
+ **/
 void ECG_Update(void); // update ecg signal, update counter, detect peaks, calculate heart rate
 
 /**
  * @brief Calculates BPM from ms tick counters
  *
  * @return u8 Beats per minute
- */
+ **/
 u8 ECG_Get_BPM(void);
 
 /**
  * @brief Uses BPM to calculate arrythmia type based on ECG_Arrythmia_Type enum
  *
  * @return ECG_Arrythmia_Type
- */
+ **/
 ECG_Arrythmia_Type ECG_Get_Arrythmia_Type(void);
 
 /**
  * @brief Converts tECG_Arrythmia_Type to char array for LCD
  *
  * @return char* String
- */
+ **/
 char *ECG_Get_Arrythmia_Type_String(void);
 
 /**
@@ -124,7 +124,7 @@ char *ECG_Get_Arrythmia_Type_String(void);
  *
  * @param ecg_sample Input sample
  * @return u8 boolean value (1 = detected)
- */
+ **/
 u8 ECG_Detect(float ecg_sample);
 
 // static u8 current_bpm = 0; // Current heart rate in beats per minute

@@ -30,12 +30,12 @@ Designed for the Atmel Atmega328p microcontroller
 
 ## Context Diagram
 
-![context diagram](./docs/Context_Diagram.png)
+![context diagram](./docs/context_diagram.png)
 
 ## System Block Diagram
 
-![block diagram](./docs/Block_Diagram.png)
-![signal processing](./docs/Signal_Process.png)
+![block diagram](./docs/block_diagram.png)
+![signal processing](./docs/signal_process.png)
 
 ## Useful References
 

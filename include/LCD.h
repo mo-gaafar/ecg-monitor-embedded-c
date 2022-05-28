@@ -18,6 +18,18 @@
 /* User Input */
 #define LCD_MODE LCD_4BIT_MODE
 
+// typedef struct LCD_Buffer
+// {
+//     u8 data[16];
+//     u8 length = 0;
+//     //?? missing
+//     u8 empty_flag = 1;
+//     u8 cursor_pos = 0;
+//     u8 cursor_flag = 0;
+// } LCD_Buffer;
+
+// LCD_Buffer LCDBuffer;
+
 /**
  * @brief Waits for the LCD to be ready to recieve more commands
  *
@@ -29,6 +41,14 @@ void LCD_WaitBusy();
  * @n (whether it is 8-bit or 4-bit defined in the preprocessor directive).
  **/
 void LCD_Init(void);
+
+// TODO: documentation
+void LCD_UpdateDisplay(void);
+
+// void LCD_SetBuffer(char *buffer);
+// char *LCD_GetBuffer(void);
+// void LCD_ClearBuffer(void);
+// u8 LCD_GetBufferEmpty(void);
 
 /**
  * @brief Sends a command to the LCD.
@@ -81,11 +101,10 @@ void LCD_PrintSpecialCharacter(char *arr, char patternno, char x, char y);
 /**
  * @brief Clears the LCD.
  * @return void
- * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
- * @todo Implement this function
  **/
 void LCD_Clear(void);
 
+//TODO: implement this function too
 /**
  * @brief Clears the specified line.
  * @param char line - The line to clear.

@@ -16,8 +16,13 @@
 /**
  * @brief This function is used to delay the program for a certain amount of time
  * @param delay_ms The amount of time to delay the program for in milliseconds
- * @return void
  **/
 void UTIL_DelayMS(u16 delay_ms);
+
+/**
+ * @brief This function is used to delay the program for a certain amount of time
+ * @param delay_ms The amount of time to delay the program for in microseconds
+ **/
+void UTIL_DelayUS(u16 delay_us);
 
 #endif // __UTIL_H__

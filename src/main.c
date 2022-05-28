@@ -2,12 +2,13 @@
 #include "LCD.h"
 #include "Led.h"
 #include "Buzzer.h"
+
 #include "main.h"
+#include <util/delay.h>
+
 #include "timer0.h"
 #include "ADC.h"
 #include "ECG.h"
-
-#include <util/delay.h>
 
 u16 adc_out = 0;
 u8 Test_Button_State = 0;
@@ -36,40 +37,11 @@ int main(void)
         /* Tasks */
 
 #if MAIN_Debug == 0
-        // _delay_ms(20);
-        Test_Button_State = PB_GetState(PB_VOL_PLUS);
-        LCD_SendCommand(0x01);
-        if (PB_GetClicks(PB_SNOOZE) > 0)
-        {
-            LCD_PrintString("SNOOZE");
-            BUZ_SetState(BUZ_ALARM, BUZ_STOPPED_MODE);
-            PB_ResetClicks(PB_SNOOZE);
-        }
-        else
-        {
-            if (ECG_Get_Arrythmia_Type() != Normal)
-            {
-                BUZ_SetState(BUZ_ALARM, BUZ_PATTERN_MODE);
-                LED_SetState(LED_ALARM, LED_ON);
-            }
-            else
-            {
-                BUZ_SetState(BUZ_ALARM, BUZ_STOPPED_MODE);
-                LED_SetState(LED_ALARM, LED_OFF);
-            }
-        }
 
-        BUZ_VolumeUp(BUZ_ALARM, PB_GetClicks(PB_VOL_PLUS));
-        BUZ_VolumeDn(BUZ_ALARM, PB_GetClicks(PB_VOL_MINUS));
-
-        PB_ResetClicks(PB_VOL_PLUS);
-        PB_ResetClicks(PB_VOL_MINUS);
-
-        LCD_SetCursorAt(0, 0);
-        LCD_PrintString("BPM: ");
-        LCD_PrintNumber(ECG_Get_BPM());
-        LCD_SetCursorAt(0, 1);
-        LCD_PrintString(ECG_Get_Arrythmia_Type_String());
+        /*Low Priority Tasks*/
+        LED_On(LED_PROCESSING);
+        LCD_UpdateDisplay();
+        LED_Off(LED_PROCESSING);
 #else
 
         if (PB_GetClicks(PB_DISP_SLEEP) > 0)

@@ -2,6 +2,7 @@
 #include "Port.h"
 #include "Buzzer.h"
 #include "pwm.h"
+#include "Push_Button.h"
 
 #define NUMBER_OF_BUZZERS (1)
 #define NUMBER_OF_MODES (4)
@@ -53,14 +54,32 @@ void BUZ_Init(tBUZ buzzer, tBUZ_Mode mode)
     BUZ_SetMode(buzzer, mode);
 }
 
+void BUZ_UpdateVolume(tBUZ buzzer, tPB buttonUp, tPB buttonDn)
+{
+    if (PB_GetClicks(buttonUp) > 0)
+    {
+        BUZ_VolumeUp(buzzer, PB_GetClicks(buttonUp));
+        PB_ResetClicks(buttonUp);
+    }
+    else if (PB_GetClicks(buttonDn) > 0)
+    {
+        BUZ_VolumeDn(buzzer, PB_GetClicks(buttonDn));
+        PB_ResetClicks(buttonDn);
+    }
+}
+
 void BUZ_Update(void)
 {
+
     if (buzzer_update_ms >= BUZ_State_Update_Period_ms)
     {
         buzzer_update_ms = 0;
 
         tBUZ current_buzzer = BUZ_ALARM;
         tBUZ_State current_state = BUZ_OFF;
+
+        // Update volume of alarm buzzer
+        BUZ_UpdateVolume(BUZ_ALARM, PB_VOL_PLUS, PB_VOL_MINUS);
 
         /* Update state for all buzzers */
         for (; current_buzzer < NUMBER_OF_BUZZERS; current_buzzer++)

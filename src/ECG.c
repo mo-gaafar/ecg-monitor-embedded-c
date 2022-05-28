@@ -50,6 +50,15 @@ void ECG_Init()
     tmp = 0;
 }
 
+void ECG_UpdateDisplay(void)
+{
+    // checks arrythmia type
+    // if arrythmia type is not normal
+    // then set buzzer to be on and set led to be on and send data to LCD
+    // if arrythmia type is normal
+    // then set buzzer to be off and set led to be off and send data to LCD
+}
+
 u8 ECG_Get_BPM(void)
 {
     return bpm;

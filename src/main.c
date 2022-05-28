@@ -37,39 +37,10 @@ int main(void)
 
 #if MAIN_Debug == 0
         // _delay_ms(20);
-        Test_Button_State = PB_GetState(PB_VOL_PLUS);
-        LCD_SendCommand(0x01);
-        if (PB_GetClicks(PB_SNOOZE) > 0)
-        {
-            LCD_PrintString("SNOOZE");
-            BUZ_SetState(BUZ_ALARM, BUZ_STOPPED_MODE);
-            PB_ResetClicks(PB_SNOOZE);
-        }
-        else
-        {
-            if (ECG_Get_Arrythmia_Type() != Normal)
-            {
-                BUZ_SetState(BUZ_ALARM, BUZ_PATTERN_MODE);
-                LED_SetState(LED_ALARM, LED_ON);
-            }
-            else
-            {
-                BUZ_SetState(BUZ_ALARM, BUZ_STOPPED_MODE);
-                LED_SetState(LED_ALARM, LED_OFF);
-            }
-        }
+        // LED_On(LED_PROCESSING);
+        LCD_UpdateDisplay();
+        // LED_Off(LED_PROCESSING);
 
-        BUZ_VolumeUp(BUZ_ALARM, PB_GetClicks(PB_VOL_PLUS));
-        BUZ_VolumeDn(BUZ_ALARM, PB_GetClicks(PB_VOL_MINUS));
-
-        PB_ResetClicks(PB_VOL_PLUS);
-        PB_ResetClicks(PB_VOL_MINUS);
-
-        LCD_SetCursorAt(0, 0);
-        LCD_PrintString("BPM: ");
-        LCD_PrintNumber(ECG_Get_BPM());
-        LCD_SetCursorAt(0, 1);
-        LCD_PrintString(ECG_Get_Arrythmia_Type_String());
 #else
 
         if (PB_GetClicks(PB_DISP_SLEEP) > 0)
@@ -112,7 +83,7 @@ int main(void)
 ISR(TIMER0_OVF_vect) // called when timer 0 overflows
 {
     // Overall Timing overhead: BCET = 160us, WCET = 312us + 5us
-    LED_On(LED_PROCESSING);
+
     if (ticks_ms == 0)
     {
 
@@ -126,7 +97,14 @@ ISR(TIMER0_OVF_vect) // called when timer 0 overflows
         // BCET = 1.46us , WCET = 2.11 us
         BUZ_Update();
     }
-    LED_Off(LED_PROCESSING);
+    if (ticks_ms == 2)
+    {
+        LED_On(LED_PROCESSING);
+        // ?
+        ECG_Update_Alarm();
+        LED_Off(LED_PROCESSING);
+    }
+
     ticks_ms++;
 
     // Reset at 4th ms (250 Hz)

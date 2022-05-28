@@ -98,6 +98,9 @@ void ECG_Init();
  **/
 void ECG_Update(void); // update ecg signal, update counter, detect peaks, calculate heart rate
 
+// TODO add documentation
+void ECG_Update_Alarm(void);
+
 /**
  * @brief Calculates BPM from ms tick counters
  *

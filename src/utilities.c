@@ -1,7 +1,7 @@
 #include "utilities.h"
 #include "main.h"
 
-void UTIL_DelayUS(uint16_t us)
+void UTIL_DelayUS(u16 us)
 {
     u16 x;
     for (x = 0; x < us; x++)

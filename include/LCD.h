@@ -100,4 +100,7 @@ void LCD_ClearLine(char line);
  **/
 void LCD_LatchSignal(void);
 
+// TODO: documentation
+void LCD_UpdateDisplay(void);
+
 #endif /* LCD_H */

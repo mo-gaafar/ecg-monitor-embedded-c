@@ -6,11 +6,17 @@
 #include "Led.h"
 #include "avr/io.h"
 #include "util/delay.h"
+#include "Push_Button.h"
+#include "ECG.h"
 
 /* delays; refer to the manual */
 #define LCD_DELAY_US_AFTER_VDD 500
 #define LCD_DELAY_US_LONG 52
 #define LCD_DELAY_US_SHORT 15
+
+#define LCD_CLEAR_PERIOD 100
+u8 LCD_SleepFlag = 0;
+u8 LCD_ClearPeriodic = 0;
 
 void LCD_Init()
 {
@@ -93,7 +99,6 @@ void LCD_SendData(char Data)
 //   char firstCharAdr[] = {0x80, 0xC0, 0x94, 0xD4};
 //   LCD_SendCommand(firstCharAdr[x - 1] + (y - 1));
 // }
-
 void LCD_LatchSignal(void)
 {
     _delay_us(20);
@@ -101,6 +106,13 @@ void LCD_LatchSignal(void)
     _delay_us(20);
     GPIO_WritePortPin(LCD_CPRT_DR, LCD_EN, 0);
 }
+
+void LCD_Clear(void)
+{
+    LCD_SendCommand(0x01);
+    UTIL_DelayUS(1300);
+}
+
 void LCD_SetCursorAt(char Columns, char Rows)
 {
     char address = 0;
@@ -194,5 +206,46 @@ void LCD_WaitBusy(void)
     // GPIO_InitPortPin(LCD_DPRT_CR, 7, GPIO_OUT);
 
     // bala waga3 dema8
-    UTIL_DelayMS(2);
+    // UTIL_DelayUS(10000);
+}
+
+void LCD_UpdateDisplay(void)
+{
+    LCD_ClearPeriodic++;
+
+    if (LCD_ClearPeriodic == LCD_CLEAR_PERIOD)
+    {
+        LCD_ClearPeriodic = 0;
+        LCD_Clear();
+    }
+    else
+    {
+        // if normal mode only check for HR and Arrythmia type
+        if (!LCD_SleepFlag)
+        {
+            // LCD_Clear();
+            LCD_SetCursorAt(4, 0);
+            LCD_PrintString("BPM: ");
+            LCD_PrintNumber(ECG_Get_BPM());
+            LCD_SetCursorAt(0, 1);
+            LCD_PrintString(ECG_Get_Arrythmia_Type_String());
+            // Toggle condition
+            if (PB_GetClicks(PB_DISP_SLEEP) >= 1)
+            {
+                PB_ResetClicks(PB_DISP_SLEEP);
+                LCD_SleepFlag = 1;
+            }
+        }
+        else
+        {
+            LCD_Clear();
+            // LCD_SendCommand(0x01);
+            // Toggle condition
+            if (PB_GetClicks(PB_DISP_SLEEP) >= 1)
+            {
+                PB_ResetClicks(PB_DISP_SLEEP);
+                LCD_SleepFlag = 0;
+            }
+        }
+    }
 }

@@ -42,7 +42,7 @@ void BUZ_Init(tBUZ buzzer, tBUZ_Mode mode)
     {
     case BUZ_ALARM:
         GPIO_InitPortPin(BUZ_ALARM_PORT_DIRECTION, BUZ_ALARM_PIN, GPIO_OUT); // port, pin, direction
-        PWM_Init(BUZ_ALARM_TIMER, PWM_MODE_STOPPED, 100, PRESCALAR_8);
+        // PWM_Init(BUZ_ALARM_TIMER, PWM_MODE_STOPPED, 100, PRESCALAR_8);
         break;
     default:
         /* Should not be here */
@@ -105,18 +105,16 @@ void BUZ_SetState(tBUZ buzzer, tBUZ_State state)
     case BUZ_ALARM:
         if (state == BUZ_OFF)
         {
-            PWM_Pause(BUZ_ALARM_TIMER);
+            // PWM_Pause(BUZ_ALARM_TIMER);
             GPIO_WritePortPin(BUZ_ALARM_PORT_DATA, BUZ_ALARM_PIN, 0);
         }
         else
         {
-            // GPIO_WritePortPin(BUZ_ALARM_PORT_DATA, BUZ_ALARM_PIN, 1);
-            PWM_Start(BUZ_ALARM_TIMER);
+            GPIO_WritePortPin(BUZ_ALARM_PORT_DATA, BUZ_ALARM_PIN, 1);
             // PWM_Resume(BUZ_ALARM_TIMER);
-            PWM_Set_Duty(BUZ_ALARM_TIMER, buzzer_info[BUZ_ALARM].volume);
+            // PWM_Set_Duty(BUZ_ALARM_TIMER, buzzer_info[BUZ_ALARM].volume);
         }
 
-        // GPIO_WritePortPin(BUZ_ALARM_PORT_DATA, BUZ_ALARM_PIN, state); // port, pin
         break;
     default:
         /* Should not be here */

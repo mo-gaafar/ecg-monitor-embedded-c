@@ -12,6 +12,8 @@ typedef struct tPWM_CONFIG
 static tPWM_CONFIG pwm_config[2];
 
 // Timer 2 Phase correct pwm, main frequency 50hz
+// TODO needs refactoring
+// https://wolles-elektronikkiste.de/en/timer-and-pwm-part-1-8-bit-timer0-2
 
 void PWM_Init(tPWM pwm, tPWM_MODE init_mode, u8 init_duty, tClock_Selector init_clock)
 {
@@ -58,10 +60,10 @@ void PWM_Init(tPWM pwm, tPWM_MODE init_mode, u8 init_duty, tClock_Selector init_
         pwm_config[PWM_2].prescaler = init_clock;
         SET_REGISTER_PIN(TCCR2A, WGM20, 1);
         SET_REGISTER_PIN(TCCR2A, WGM21, 1);
-        SET_REGISTER_PIN(TCCR2B, WGM22, 0);
+        SET_REGISTER_PIN(TCCR2B, WGM22, 1);
 
         // TOGGLE OC2A on compare match
-        SET_REGISTER_PIN(TCCR2A, COM2A1, 1);
+        SET_REGISTER_PIN(TCCR2A, COM2A1, 0);
         SET_REGISTER_PIN(TCCR2A, COM2A0, 1);
 
         SET_REGISTER_PIN(TCCR2B, FOC2A, 0);

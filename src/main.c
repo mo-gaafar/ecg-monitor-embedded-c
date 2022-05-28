@@ -12,7 +12,7 @@
 // u16 adc_out = 0;
 // u8 Test_Button_State = 0;
 static u8 ticks_ms = 0;
-#define MAIN_Debug 1
+#define MAIN_Debug 0
 
 int main(void)
 {

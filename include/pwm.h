@@ -6,7 +6,7 @@
  * @author     Mohamed Nasser
  *
  * @brief      Pulse width modulation driver module
- *
+ * @warning THIS MODULE IS CURRENTLY NOT USED
  * @version    0.2.1
  * @date       2022-5-25
  **/

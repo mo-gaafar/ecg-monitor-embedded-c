@@ -1,4 +1,5 @@
 # Embedded_ECG_Monitor
+
 A software written in Embedded C that drives a prototype ECG monitor and detects arrhythmic heart rates using digital signal processing and realtime filtering techniques.
 
 ## For Detailed Documentation Visit
@@ -14,7 +15,7 @@ Designed for the Atmel Atmega328p microcontroller
 
 ## Preview
 
-![animation](/docs/Animation.gif)
+![animation](./docs/Animation.gif)
 
 ## Supported Modules
 
@@ -29,12 +30,12 @@ Designed for the Atmel Atmega328p microcontroller
 
 ## Context Diagram
 
-![context diagram](/docs/Context_Diagram.png)
+![context diagram](./docs/Context_Diagram.png)
 
 ## System Block Diagram
 
-![block diagram](/docs/Block_Diagram.png)
-![signal processing](/docs/Signal_Process.png)
+![block diagram](./docs/Block_Diagram.png)
+![signal processing](./docs/Signal_Process.png)
 
 ## Useful References
 

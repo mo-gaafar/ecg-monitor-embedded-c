@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_2code_01examples_2_digital_01_clock_2utilities_8h_source" xml:lang="en-US">
+<title>utilities.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/utilities.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__UTIL_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__UTIL_H__</emphasis>
+3 
+4 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2utilities_8h_1a6a488a11d9378574052140463f702dce">UTIL_DelayMS</link>(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;delay_ms);
+5 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__UTIL_H__</emphasis>
+</programlisting></section>

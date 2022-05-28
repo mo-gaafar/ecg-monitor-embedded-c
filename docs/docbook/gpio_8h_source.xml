@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_gpio_8h_source" xml:lang="en-US">
+<title>gpio.h</title>
+<indexterm><primary>lib/code examples/Seb7a_OS_Sol_PIC/gpio.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__GPIO_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__GPIO_H__</emphasis>
+3 
+4 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+5 {
+6 &#32;&#32;&#32;PORT_A,
+7 &#32;&#32;&#32;PORT_B,
+8 &#32;&#32;&#32;PORT_C,
+9 &#32;&#32;&#32;PORT_D,
+10 &#32;&#32;&#32;PORT_E
+11 }tPort;
+12 
+13 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+14 {
+15 &#32;&#32;&#32;&#32;GPIO_OUT&#32;=&#32;0,
+16 &#32;&#32;&#32;&#32;GPIO_IN&#32;=&#32;1
+17 }tPortDirection;
+18 
+19 <emphasis role="keywordtype">void</emphasis>&#32;GPIO_InitPortPin(tPort&#32;port,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;pin,&#32;tPortDirection&#32;direction);
+20 <emphasis role="keywordtype">void</emphasis>&#32;GPIO_InitPort(tPort&#32;port,&#32;tPortDirection&#32;direction);
+21 <emphasis role="keywordtype">void</emphasis>&#32;GPIO_Update(<emphasis role="keywordtype">void</emphasis>);
+22 <emphasis role="keywordtype">void</emphasis>&#32;GPIO_SetPortPinState(tPort&#32;port,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;pin,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;state);
+23 <emphasis role="keywordtype">void</emphasis>&#32;GPIO_SetPortState(tPort&#32;port,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;state);
+24 <emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;GPIO_GetPortPinState(tPort&#32;port,&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;pin);
+25 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__GPIO_H__</emphasis>
+</programlisting></section>

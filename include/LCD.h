@@ -19,17 +19,20 @@
 #define LCD_MODE LCD_4BIT_MODE
 
 /**
+ * @brief Waits for the LCD to be ready to recieve more commands
+ *
+ */
+void LCD_WaitBusy();
+
+/**
  * @brief Initializes the LCD command and data pins and the data mode
  * @n (whether it is 8-bit or 4-bit defined in the preprocessor directive).
- * @param void
- * @return void
  **/
 void LCD_Init(void);
 
 /**
  * @brief Sends a command to the LCD.
  * @param char command - The command to send to the LCD.
- * @return void
  **/
 void LCD_SendCommand(char command);
 
@@ -37,7 +40,7 @@ void LCD_SendCommand(char command);
  * @brief Sends data to the LCD.
  *
  * @param char Data
- */
+ **/
 void LCD_SendData(char Data);
 
 /**
@@ -96,5 +99,10 @@ void LCD_ClearLine(char line);
  * @brief Latches the EN pin on the LCD.
  **/
 void LCD_LatchSignal(void);
+
+/**
+ * @brief Updates the LCD with the new Heartrate and Arrythmia
+ **/
+void LCD_UpdateDisplay(void);
 
 #endif /* LCD_H */

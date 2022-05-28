@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_2code_01examples_2_digital_01_clock_2main_8h_source" xml:lang="en-US">
+<title>main.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/main.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__MAIN_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__MAIN_H__</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&lt;pic16f877a.h&gt;</emphasis>
+5 
+6 <emphasis role="comment">/*&#32;Fill&#32;missing&#32;code&#32;below&#32;*/</emphasis>
+7 <emphasis role="comment">/*&#32;GPIO&#32;definitions&#32;*/</emphasis>
+8 <emphasis role="comment">/*&#32;GPIO&#32;Pins&#32;*/</emphasis>
+9 <emphasis role="preprocessor">#define&#32;GPIO_PIN_0&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(0)</emphasis>
+10 <emphasis role="preprocessor">#define&#32;GPIO_PIN_1&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1)</emphasis>
+11 <emphasis role="preprocessor">#define&#32;GPIO_PIN_2&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(2)</emphasis>
+12 <emphasis role="preprocessor">#define&#32;GPIO_PIN_3&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(3)</emphasis>
+13 <emphasis role="preprocessor">#define&#32;GPIO_PIN_4&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(4)</emphasis>
+14 <emphasis role="preprocessor">#define&#32;GPIO_PIN_5&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(5)</emphasis>
+15 <emphasis role="preprocessor">#define&#32;GPIO_PIN_6&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(6)</emphasis>
+16 <emphasis role="preprocessor">#define&#32;GPIO_PIN_7&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(7)</emphasis>
+17 
+18 <emphasis role="comment">/*&#32;GPIO&#32;Port&#32;Registers&#32;redefinition&#32;*/</emphasis>
+19 <emphasis role="preprocessor">#define&#32;GPIO_PORTA_DATA&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PORTA)</emphasis>
+20 <emphasis role="preprocessor">#define&#32;GPIO_PORTA_DIRECTION&#32;&#32;&#32;&#32;(TRISA)</emphasis>
+21 
+22 <emphasis role="preprocessor">#define&#32;GPIO_PORTB_DATA&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PORTB)</emphasis>
+23 <emphasis role="preprocessor">#define&#32;GPIO_PORTB_DIRECTION&#32;&#32;&#32;&#32;(TRISB)</emphasis>
+24 
+25 <emphasis role="preprocessor">#define&#32;GPIO_PORTC_DATA&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PORTC)</emphasis>
+26 <emphasis role="preprocessor">#define&#32;GPIO_PORTC_DIRECTION&#32;&#32;&#32;&#32;(TRISC)</emphasis>
+27 
+28 <emphasis role="preprocessor">#define&#32;GPIO_PORTD_DATA&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PORTD)</emphasis>
+29 <emphasis role="preprocessor">#define&#32;GPIO_PORTD_DIRECTION&#32;&#32;&#32;&#32;(TRISD)</emphasis>
+30 
+31 <emphasis role="preprocessor">#define&#32;GPIO_PORTE_DATA&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PORTE)</emphasis>
+32 <emphasis role="preprocessor">#define&#32;GPIO_PORTE_DIRECTION&#32;&#32;&#32;&#32;(TRISE)</emphasis>
+33 
+34 <emphasis role="comment">/*&#32;GPIO&#32;direction&#32;setting&#32;*/</emphasis>
+35 <emphasis role="preprocessor">#define&#32;GPIO_OUT&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(0)</emphasis>
+36 <emphasis role="preprocessor">#define&#32;GPIO_IN&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(1)</emphasis>
+37 
+38 <emphasis role="comment">/*&#32;GPIO&#32;port&#32;operations&#32;*/</emphasis>
+39 <emphasis role="preprocessor">#define&#32;GPIO_InitPort(CONTROL,&#32;DIRECTION)&#32;&#32;&#32;((CONTROL)&#32;=&#32;((DIRECTION)?&#32;(~GPIO_OUT):(GPIO_OUT)))</emphasis>
+40 <emphasis role="preprocessor">#define&#32;GPIO_WritePort(PORT,&#32;DATA)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PORT)&#32;=&#32;(DATA))</emphasis>
+41 <emphasis role="preprocessor">#define&#32;GPIO_ReadPort(PORT)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(PORT)</emphasis>
+42 
+43 <emphasis role="comment">/*&#32;GPIO&#32;port&#32;pin&#32;operations&#32;*/</emphasis>
+44 <emphasis role="preprocessor">#define&#32;GPIO_InitPortPin(CONTROL,&#32;PIN,&#32;DIRECTION)&#32;&#32;&#32;((CONTROL)&#32;=&#32;(CONTROL&#32;&amp;&#32;(~(1&#32;&lt;&lt;&#32;PIN)))|(DIRECTION&#32;&lt;&lt;&#32;PIN))</emphasis>
+45 <emphasis role="preprocessor">#define&#32;GPIO_WritePortPin(PORT,&#32;PIN,&#32;DATA)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;((PORT)&#32;=&#32;(PORT&#32;&amp;&#32;(~(1&#32;&lt;&lt;&#32;PIN)))|(DATA&#32;&lt;&lt;&#32;PIN))</emphasis>
+46 <emphasis role="preprocessor">#define&#32;GPIO_ReadPortPin(PORT,&#32;PIN)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(((PORT)&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;PIN))&#32;&gt;&gt;&#32;(PIN))</emphasis>
+47 <emphasis role="comment">/*&#32;End&#32;of&#32;code&#32;filling&#32;*/</emphasis>
+48 
+49 <emphasis role="comment">/*&#32;Standard&#32;data&#32;types&#32;*/</emphasis>
+50 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;tWord;
+51 
+52 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__MAIN_H__</emphasis>
+53 
+54 
+</programlisting></section>

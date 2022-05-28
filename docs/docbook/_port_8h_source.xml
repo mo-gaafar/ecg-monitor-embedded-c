@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__port_8h_source" xml:lang="en-US">
+<title>Port.h</title>
+<indexterm><primary>include/Port.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__PORT_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__PORT_H__</emphasis>
+3 
+12 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
+13 
+14 <emphasis role="comment">/************************************************</emphasis>
+15 <emphasis role="comment">&#32;*&#32;&#32;...&#32;OUTPUT&#32;PORTS</emphasis>
+16 <emphasis role="comment">&#32;***********************************************/</emphasis>
+17 
+18 <emphasis role="comment">/*BUZZER*/</emphasis>
+19 
+20 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_TIMER&#32;(PWM_2)</emphasis>
+21 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PORT_DATA&#32;(GPIO_PORT_1_DATA)</emphasis>
+22 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PORT_DIRECTION&#32;(GPIO_PORT_1_DIRECTION)</emphasis>
+23 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PIN&#32;(GPIO_PIN_3)</emphasis>
+24 
+25 <emphasis role="comment">/*LED*/</emphasis>
+26 
+27 <emphasis role="preprocessor">#define&#32;LED_ALARM_PORT_DATA&#32;(GPIO_PORT_1_DATA)</emphasis>
+28 <emphasis role="preprocessor">#define&#32;LED_ALARM_PORT_DIRECTION&#32;(GPIO_PORT_1_DIRECTION)</emphasis>
+29 <emphasis role="preprocessor">#define&#32;LED_ALARM_PIN&#32;(GPIO_PIN_2)</emphasis>
+30 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PORT_DATA&#32;(GPIO_PORT_1_DATA)</emphasis>
+31 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PORT_DIRECTION&#32;(GPIO_PORT_1_DIRECTION)</emphasis>
+32 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PIN&#32;(GPIO_PIN_1)</emphasis>
+33 
+34 <emphasis role="comment">/*LCD*/</emphasis>
+35 
+36 <emphasis role="preprocessor">#define&#32;LCD_RS&#32;(GPIO_PIN_1)</emphasis>
+37 <emphasis role="preprocessor">#define&#32;LCD_RW&#32;(GPIO_PIN_2)</emphasis>
+38 <emphasis role="preprocessor">#define&#32;LCD_EN&#32;(GPIO_PIN_3)</emphasis>
+39 
+40 <emphasis role="preprocessor">#define&#32;LCD_CPRT_DR&#32;(GPIO_PORT_3_DATA)</emphasis>
+41 <emphasis role="preprocessor">#define&#32;lCD_CPRT_CR&#32;(GPIO_PORT_3_DIRECTION)</emphasis>
+42 
+43 <emphasis role="preprocessor">#define&#32;LCD_DPRT_DR&#32;(GPIO_PORT_3_DATA)</emphasis>
+44 <emphasis role="preprocessor">#define&#32;LCD_DPRT_CR&#32;(GPIO_PORT_3_DIRECTION)</emphasis>
+45 <emphasis role="preprocessor">#define&#32;LCD_DPRT_IN&#32;(GPIO_PORT_3_INPUT)</emphasis>
+46 
+47 <emphasis role="comment">/************************************************</emphasis>
+48 <emphasis role="comment">&#32;*&#32;&#32;...&#32;INPUT&#32;PORTS</emphasis>
+49 <emphasis role="comment">&#32;***********************************************/</emphasis>
+50 
+51 <emphasis role="comment">/*ADC*/</emphasis>
+52 
+53 <emphasis role="preprocessor">#define&#32;ADC_ECG_IN_PORT_DATA&#32;(GPIO_PORT_2_DATA)</emphasis>
+54 <emphasis role="preprocessor">#define&#32;ADC_ECG_IN_PORT_DIRECTION&#32;(GPIO_PORT_2_DIRECTION)</emphasis>
+55 <emphasis role="preprocessor">#define&#32;ADC_ECG_IN_PIN&#32;(GPIO_PIN_0)</emphasis>
+56 
+57 <emphasis role="comment">/*BUTTON*/</emphasis>
+58 
+59 <emphasis role="preprocessor">#define&#32;PB_DISP_SLEEP_PORT_DATA&#32;(GPIO_PORT_2_INPUT)</emphasis>
+60 <emphasis role="preprocessor">#define&#32;PB_DISP_SLEEP_PORT_DIRECTION&#32;(GPIO_PORT_2_DIRECTION)</emphasis>
+61 <emphasis role="preprocessor">#define&#32;PB_DISP_SLEEP_PIN&#32;(GPIO_PIN_1)</emphasis>
+62 
+63 <emphasis role="preprocessor">#define&#32;PB_VOL_MINUS_PORT_DATA&#32;(GPIO_PORT_2_INPUT)</emphasis>
+64 <emphasis role="preprocessor">#define&#32;PB_VOL_MINUS_PORT_DIRECTION&#32;(GPIO_PORT_2_DIRECTION)</emphasis>
+65 <emphasis role="preprocessor">#define&#32;PB_VOL_MINUS_PIN&#32;(GPIO_PIN_2)</emphasis>
+66 
+67 <emphasis role="preprocessor">#define&#32;PB_VOL_PLUS_PORT_DATA&#32;(GPIO_PORT_2_INPUT)</emphasis>
+68 <emphasis role="preprocessor">#define&#32;PB_VOL_PLUS_PORT_DIRECTION&#32;(GPIO_PORT_2_DIRECTION)</emphasis>
+69 <emphasis role="preprocessor">#define&#32;PB_VOL_PLUS_PIN&#32;(GPIO_PIN_3)</emphasis>
+70 
+71 <emphasis role="preprocessor">#define&#32;PB_SNOOZE_PORT_DATA&#32;(GPIO_PORT_2_INPUT)</emphasis>
+72 <emphasis role="preprocessor">#define&#32;PB_SNOOZE_PORT_DIRECTION&#32;(GPIO_PORT_2_DIRECTION)</emphasis>
+73 <emphasis role="preprocessor">#define&#32;PB_SNOOZE_PIN&#32;(GPIO_PIN_4)</emphasis>
+74 
+75 <emphasis role="comment">/*&#32;End&#32;of&#32;code&#32;filling&#32;*/</emphasis>
+76 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__PORT_H__</emphasis>
+</programlisting></section>

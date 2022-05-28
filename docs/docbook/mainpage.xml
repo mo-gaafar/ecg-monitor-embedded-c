@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<chapter xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_mainpage" xml:lang="en-US">
+<section xml:id="_index_1intro_sec">
+<title>Introduction</title>
+
+<para>The project is designed to be used with the Atmel AVR series of microcontrollers.</para>
+
+<para>This project is a simple ECG Monitor that can be used to reliably measure the heart rate of a patient by extracting features from an ECG signal based on digital signal processing algorithms.</para>
+</section>
+<section xml:id="_index_1install_sec">
+<title>Installation</title>
+<section xml:id="_index_1step1">
+<title>Step 1: Install platform IO drivers</title>
+</section>
+<section xml:id="_index_1step2">
+<title>Step 2: Open the project in platform IO</title>
+</section>
+<section xml:id="_index_1step3">
+<title>Step 3: Build/Upload the project to you MCU</title>
+</section>
+<section xml:id="_index_1step4">
+<title>Step 4: Wiring diagrams are in the simulation folder</title>
+</section>
+</section>
+</chapter>

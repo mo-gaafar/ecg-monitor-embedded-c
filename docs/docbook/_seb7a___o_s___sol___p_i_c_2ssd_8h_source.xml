@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__seb7a___o_s___sol___p_i_c_2ssd_8h_source" xml:lang="en-US">
+<title>ssd.h</title>
+<indexterm><primary>lib/code examples/Seb7a_OS_Sol_PIC/ssd.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__SSD_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__SSD_H__</emphasis>
+3 
+4 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+5 {
+6 &#32;&#32;&#32;&#32;SSD_L,
+7 &#32;&#32;&#32;&#32;SSD_M,
+8 &#32;&#32;&#32;&#32;SSD_N,
+9 &#32;&#32;&#32;&#32;SSD_R
+10 
+11 }tSSD;
+12 
+13 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+14 {
+15 &#32;&#32;&#32;&#32;SSD_OFF&#32;=&#32;0,
+16 &#32;&#32;&#32;&#32;SSD_ON
+17 }tSSD_State;
+18 
+19 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+20 {
+21 &#32;&#32;&#32;SSD_0,
+22 &#32;&#32;&#32;SSD_1,
+23 &#32;&#32;&#32;SSD_2,
+24 &#32;&#32;&#32;SSD_3,
+25 &#32;&#32;&#32;SSD_4,
+26 &#32;&#32;&#32;SSD_5,
+27 &#32;&#32;&#32;SSD_6,
+28 &#32;&#32;&#32;SSD_7,
+29 &#32;&#32;&#32;SSD_8,
+30 &#32;&#32;&#32;SSD_9,
+31 &#32;&#32;&#32;SSD_NULL
+32 }tSSD_Symbol;
+33 
+34 <emphasis role="keywordtype">void</emphasis>&#32;SSD_Init(tSSD&#32;ssd,&#32;tSSD_State&#32;initial_state,&#32;tSSD_Symbol&#32;initial_symbol);
+35 <emphasis role="keywordtype">void</emphasis>&#32;SSD_Update(<emphasis role="keywordtype">void</emphasis>);
+36 <emphasis role="keywordtype">void</emphasis>&#32;SSD_SetSymbol(tSSD&#32;ssd,&#32;tSSD_Symbol&#32;symbol);
+37 <emphasis role="keywordtype">void</emphasis>&#32;SSD_SetState(tSSD&#32;ssd,&#32;tSSD_State&#32;state);
+38 tSSD_Symbol&#32;SSD_GetSymbol(tSSD&#32;ssd);
+39 tSSD_State&#32;SSD_GetState(tSSD&#32;ssd);
+40 
+41 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__SSD_H__</emphasis>
+</programlisting></section>

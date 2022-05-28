@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__digital_01_clock_2ssd_8h_source" xml:lang="en-US">
+<title>ssd.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/ssd.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__SSD_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__SSD_H__</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&quot;main.h&quot;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&quot;port.h&quot;</emphasis>
+5 
+6 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;PERIOD;
+7 
+8 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+9 {
+10 &#32;&#32;&#32;&#32;SSD_L,
+11 &#32;&#32;&#32;&#32;SSD_M,
+12 &#32;&#32;&#32;&#32;SSD_N,
+13 &#32;&#32;&#32;&#32;SSD_R
+14 
+15 }tSSD;
+16 
+17 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+18 {
+19 &#32;&#32;&#32;&#32;SSD_OFF&#32;=&#32;0,
+20 &#32;&#32;&#32;&#32;SSD_ON
+21 }tSSD_State;
+22 
+23 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+24 {
+25 &#32;&#32;&#32;&#32;LED_OFF&#32;=&#32;0,
+26 &#32;&#32;&#32;&#32;LED_ON
+27 }tSSD_LED;
+28 
+29 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+30 {
+31 &#32;&#32;&#32;&#32;TOGGLE_OFF&#32;=&#32;0,
+32 &#32;&#32;&#32;&#32;TOGGLE_ON
+33 }tSSD_TOGGLE;
+34 
+35 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+36 {
+37 &#32;&#32;&#32;SSD_0,
+38 &#32;&#32;&#32;SSD_1,
+39 &#32;&#32;&#32;SSD_2,
+40 &#32;&#32;&#32;SSD_3,
+41 &#32;&#32;&#32;SSD_4,
+42 &#32;&#32;&#32;SSD_5,
+43 &#32;&#32;&#32;SSD_6,
+44 &#32;&#32;&#32;SSD_7,
+45 &#32;&#32;&#32;SSD_8,
+46 &#32;&#32;&#32;SSD_9,
+47 &#32;&#32;&#32;SSD_NULL
+48 }tSSD_Symbol;
+49 
+50 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+51 {
+52 &#32;&#32;&#32;NORMAL_MODE,
+53 &#32;&#32;&#32;SET_HOURS_MODE,
+54 &#32;&#32;&#32;SET_MINUTES_MODE
+55 }Mode;
+56 
+57 <emphasis role="keywordtype">void</emphasis>&#32;SSD_Init(tSSD&#32;ssd,&#32;tSSD_State&#32;initial_state,&#32;tSSD_Symbol&#32;initial_symbol);
+58 <emphasis role="keywordtype">void</emphasis>&#32;SSD_Update(<emphasis role="keywordtype">void</emphasis>);
+59 <emphasis role="keywordtype">void</emphasis>&#32;SSD_SetSymbol(tSSD&#32;ssd,&#32;tSSD_Symbol&#32;symbol);
+60 <emphasis role="keywordtype">void</emphasis>&#32;SSD_SetState(tSSD&#32;ssd,&#32;tSSD_State&#32;state);
+61 <emphasis role="keywordtype">void</emphasis>&#32;SSD_SetMode(Mode&#32;mode);
+62 <emphasis role="keywordtype">void</emphasis>&#32;SSD_DisplayToggle(tSSD&#32;firstSSD,tSSD&#32;secondSSD);
+63 <emphasis role="keywordtype">void</emphasis>&#32;SSD_SetLed(tSSD_LED&#32;led);
+64 
+65 tSSD&#32;SSD_getCurrentSSD(<emphasis role="keywordtype">void</emphasis>);
+66 tSSD_Symbol&#32;SSD_GetSymbol(tSSD&#32;ssd);
+67 tSSD_State&#32;SSD_GetState(tSSD&#32;ssd);
+68 
+69 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__SSD_H__</emphasis>
+</programlisting></section>

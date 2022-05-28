@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_main_8h_source" xml:lang="en-US">
+<title>main.h</title>
+<indexterm><primary>include/main.h</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__MAIN_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__MAIN_H__</emphasis>
+3 
+34 <emphasis role="comment">/************************************************</emphasis>
+35 <emphasis role="comment">&#32;*&#32;&#32;...&#32;MCU&#32;SPECIFIC&#32;DEFINITIONS</emphasis>
+36 <emphasis role="comment">&#32;***********************************************/</emphasis>
+37 
+38 <emphasis role="comment">/*&#32;MCU&#32;Libraries*/</emphasis>
+39 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+40 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+41 <emphasis role="preprocessor">#include&#32;&lt;avr/interrupt.h&gt;</emphasis>
+42 
+43 <emphasis role="comment">/*&#32;CPU&#32;Clock&#32;Frequency&#32;*/</emphasis>
+44 <emphasis role="preprocessor">#ifndef&#32;F_CPU</emphasis>
+45 <emphasis role="preprocessor">#define&#32;F_CPU&#32;16000000UL</emphasis>
+46 <emphasis role="preprocessor">#endif</emphasis>
+47 
+48 <emphasis role="preprocessor">#define&#32;ISR_TMR0_Period_ms&#32;4</emphasis>
+49 
+50 <emphasis role="comment">/*Interrupt&#32;wrapper&#32;macro*/</emphasis>
+51 <emphasis role="preprocessor">#define&#32;enable_global_interrupt()&#32;sei()</emphasis>
+52 
+53 <emphasis role="comment">/*&#32;GPIO&#32;definitions&#32;*/</emphasis>
+54 <emphasis role="comment">/*&#32;GPIO&#32;Pins&#32;*/</emphasis>
+55 <emphasis role="preprocessor">#define&#32;GPIO_PIN_0&#32;(0)</emphasis>
+56 <emphasis role="preprocessor">#define&#32;GPIO_PIN_1&#32;(1)</emphasis>
+57 <emphasis role="preprocessor">#define&#32;GPIO_PIN_2&#32;(2)</emphasis>
+58 <emphasis role="preprocessor">#define&#32;GPIO_PIN_3&#32;(3)</emphasis>
+59 <emphasis role="preprocessor">#define&#32;GPIO_PIN_4&#32;(4)</emphasis>
+60 <emphasis role="preprocessor">#define&#32;GPIO_PIN_5&#32;(5)</emphasis>
+61 <emphasis role="preprocessor">#define&#32;GPIO_PIN_6&#32;(6)</emphasis>
+62 <emphasis role="preprocessor">#define&#32;GPIO_PIN_7&#32;(7)</emphasis>
+63 
+64 <emphasis role="comment">/*&#32;GPIO&#32;Port&#32;Registers&#32;redefinition&#32;*/</emphasis>
+65 
+66 <emphasis role="preprocessor">#define&#32;GPIO_PORT_1_DATA&#32;(PORTB)</emphasis>
+67 <emphasis role="preprocessor">#define&#32;GPIO_PORT_1_INPUT&#32;(PINB)</emphasis>
+68 <emphasis role="preprocessor">#define&#32;GPIO_PORT_1_DIRECTION&#32;(DDRB)</emphasis>
+69 
+70 <emphasis role="preprocessor">#define&#32;GPIO_PORT_2_DATA&#32;(PORTC)</emphasis>
+71 <emphasis role="preprocessor">#define&#32;GPIO_PORT_2_INPUT&#32;(PINC)</emphasis>
+72 <emphasis role="preprocessor">#define&#32;GPIO_PORT_2_DIRECTION&#32;(DDRC)</emphasis>
+73 
+74 <emphasis role="preprocessor">#define&#32;GPIO_PORT_3_DATA&#32;(PORTD)</emphasis>
+75 <emphasis role="preprocessor">#define&#32;GPIO_PORT_3_INPUT&#32;(PIND)</emphasis>
+76 <emphasis role="preprocessor">#define&#32;GPIO_PORT_3_DIRECTION&#32;(DDRD)</emphasis>
+77 
+78 <emphasis role="comment">/*&#32;GPIO&#32;direction&#32;setting&#32;*/</emphasis>
+79 <emphasis role="preprocessor">#define&#32;GPIO_OUT&#32;(1)</emphasis>
+80 <emphasis role="preprocessor">#define&#32;GPIO_IN&#32;(0)</emphasis>
+81 
+82 <emphasis role="comment">/************************************************</emphasis>
+83 <emphasis role="comment">&#32;*&#32;&#32;...&#32;REGISTER&#32;OPERATION&#32;MACROS</emphasis>
+84 <emphasis role="comment">&#32;***********************************************/</emphasis>
+85 
+86 <emphasis role="preprocessor">#define&#32;SET_REGISTER_PIN(REG,&#32;BIT,&#32;VAL)&#32;((REG)&#32;=&#32;(((REG)&#32;&amp;&#32;(~(1&#32;&lt;&lt;&#32;BIT)))&#32;|&#32;((VAL)&#32;&lt;&lt;&#32;(BIT))))</emphasis>
+87 <emphasis role="preprocessor">#define&#32;READ_REGISTER_PIN(REG,&#32;BIT)&#32;((REG&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;BIT))&#32;&gt;&gt;&#32;(BIT))</emphasis>
+88 
+89 <emphasis role="comment">/*&#32;GPIO&#32;port&#32;operations&#32;*/</emphasis>
+90 <emphasis role="preprocessor">#define&#32;GPIO_InitPort(CONTROL,&#32;DIRECTION)&#32;((CONTROL)&#32;=&#32;((DIRECTION)&#32;?&#32;(~GPIO_OUT)&#32;:&#32;(GPIO_OUT)))</emphasis>
+91 <emphasis role="preprocessor">#define&#32;GPIO_WritePort(PORT,&#32;DATA)&#32;((PORT)&#32;=&#32;(DATA))</emphasis>
+92 <emphasis role="preprocessor">#define&#32;GPIO_ReadPort(PORT)&#32;(PORT)</emphasis>
+93 
+94 <emphasis role="comment">/*&#32;GPIO&#32;port&#32;pin&#32;operations&#32;*/</emphasis>
+95 <emphasis role="preprocessor">#define&#32;GPIO_InitPortPin(CONTROL,&#32;PIN,&#32;DIRECTION)&#32;((CONTROL)&#32;=&#32;(CONTROL&#32;&amp;&#32;(~(1&#32;&lt;&lt;&#32;PIN)))&#32;|&#32;(DIRECTION&#32;&lt;&lt;&#32;PIN))</emphasis>
+96 <emphasis role="preprocessor">#define&#32;GPIO_WritePortPin(PORT,&#32;PIN,&#32;DATA)&#32;((PORT)&#32;=&#32;(PORT&#32;&amp;&#32;(~(1&#32;&lt;&lt;&#32;PIN)))&#32;|&#32;(DATA&#32;&lt;&lt;&#32;PIN))</emphasis>
+97 <emphasis role="preprocessor">#define&#32;GPIO_ReadPortPin(PORT,&#32;PIN)&#32;(((PORT)&#32;&amp;&#32;(1&#32;&lt;&lt;&#32;PIN))&#32;&gt;&gt;&#32;(PIN))</emphasis>
+98 
+99 <emphasis role="comment">/************************************************</emphasis>
+100 <emphasis role="comment">&#32;*&#32;&#32;...&#32;STANDARD&#32;DATA&#32;TYPES</emphasis>
+101 <emphasis role="comment">&#32;***********************************************/</emphasis>
+102 
+103 <emphasis role="comment">/*&#32;Standard&#32;data&#32;types&#32;*/</emphasis>
+104 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;tWord;
+105 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;u8;
+106 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;u16;
+107 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;u32;
+108 
+109 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;s8;
+110 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">short</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;s16;
+111 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">signed</emphasis>&#32;<emphasis role="keywordtype">long</emphasis>&#32;<emphasis role="keywordtype">int</emphasis>&#32;s32;
+112 
+113 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">float</emphasis>&#32;f32;
+114 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">double</emphasis>&#32;f64;
+115 
+116 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__MAIN_H__</emphasis>
+</programlisting></section>

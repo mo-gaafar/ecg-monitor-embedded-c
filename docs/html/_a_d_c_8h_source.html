@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ECG Monitor
+   <div id="projectname">ECG Monitor<span id="projectnumber">&#160;0.6.0</span>
    </div>
   </td>
  </tr>
@@ -85,48 +86,42 @@ $(document).ready(function(){initNavTree('_a_d_c_8h_source.html',''); initResiza
   <div class="headertitle"><div class="title">ADC.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_a_d_c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">ADC Library 0x05</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">copyright (c) Davide Gironi, 2013</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"></span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">Released under GPLv3.</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">Please refer to LICENSE file for licensing information.</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef ADC_H</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define ADC_H</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// setup values</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#abe7d90bd1e8c6c56e8a9f8542f80baa0">   14</a></span><span class="preprocessor">#define ADC_REF 1         </span><span class="comment">// adc reference voltage (see adc_init function for reference)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#ab1d0703f6d84b37cbaa587a1a4515dd4">   15</a></span><span class="preprocessor">#define ADC_PRESCALER 128 </span><span class="comment">// adc prescaler (2, 4, 8, 16, 32, 64, 128)</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a1977f4a2ce445388b0eb38c7973993c4">   16</a></span><span class="preprocessor">#define ADC_JUSTIFY &#39;R&#39;   </span><span class="comment">// adc justify (&#39;L&#39; or &#39;R&#39;)</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a6524ca64275c143c9fd03320170c1fe8">   17</a></span><span class="preprocessor">#define ADC_TRIGGERON 0   </span><span class="comment">// adc trigger (1 on - 0 off)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a9425848274a05772a698b8b146fc14a9">   18</a></span><span class="preprocessor">#define ADC_REFRES 1024   </span><span class="comment">// reference resolution used for conversions</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// bandgap reference voltage * 1000, refers to datasheet</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#ae9c540daaf396d9fffe8f13f2e268368">   21</a></span><span class="preprocessor">#define ADC_BANDGAPVOLTAGE 1100L</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// functions</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#af43ad9d3e9259845a1c78d557430ef52">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_a_d_c_8h.html#af43ad9d3e9259845a1c78d557430ef52">ADC_SetChannel</a>(uint8_t channel);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#ab0bfe89c06929fe65db2112532cb4047">   26</a></span>uint16_t <a class="code hl_function" href="_a_d_c_8h.html#ab0bfe89c06929fe65db2112532cb4047">ADC_Read</a>(uint8_t channel);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a75444d6153828bfab040cc302b8166d9">   27</a></span>uint16_t <a class="code hl_function" href="_a_d_c_8h.html#a75444d6153828bfab040cc302b8166d9">ADC_ReadSel</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a5137b551f1b83b0f4d8df7d071a3d3a6">   28</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_a_d_c_8h.html#a5137b551f1b83b0f4d8df7d071a3d3a6">ADC_Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a6c506aca9ba25089c09e29f7732ee901">   29</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_a_d_c_8h.html#a6c506aca9ba25089c09e29f7732ee901">ADC_GetRealVref</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a8749eaac5e4449a038c3625b87be1050">   30</a></span><span class="keywordtype">long</span> <a class="code hl_function" href="_a_d_c_8h.html#a8749eaac5e4449a038c3625b87be1050">ADC_GetResistance</a>(uint16_t adcread, uint16_t adcbalanceresistor);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#ac83da7df0bfffc6af47a9d71502d1605">   31</a></span><span class="keywordtype">double</span> <a class="code hl_function" href="_a_d_c_8h.html#ac83da7df0bfffc6af47a9d71502d1605">ADC_GetVoltage</a>(uint16_t adcread, <span class="keywordtype">double</span> adcvref);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_a_d_c_8h.html#a1034ca6ad4e70aeab53dbed88349c78f">   32</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_function" href="_a_d_c_8h.html#a1034ca6ad4e70aeab53dbed88349c78f">ADC_EMAFilter</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> newvalue, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> value);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a_a_d_c_8h_html_a1034ca6ad4e70aeab53dbed88349c78f"><div class="ttname"><a href="_a_d_c_8h.html#a1034ca6ad4e70aeab53dbed88349c78f">ADC_EMAFilter</a></div><div class="ttdeci">unsigned int ADC_EMAFilter(unsigned int newvalue, unsigned int value)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_a5137b551f1b83b0f4d8df7d071a3d3a6"><div class="ttname"><a href="_a_d_c_8h.html#a5137b551f1b83b0f4d8df7d071a3d3a6">ADC_Init</a></div><div class="ttdeci">void ADC_Init(void)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_a6c506aca9ba25089c09e29f7732ee901"><div class="ttname"><a href="_a_d_c_8h.html#a6c506aca9ba25089c09e29f7732ee901">ADC_GetRealVref</a></div><div class="ttdeci">double ADC_GetRealVref(void)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_a75444d6153828bfab040cc302b8166d9"><div class="ttname"><a href="_a_d_c_8h.html#a75444d6153828bfab040cc302b8166d9">ADC_ReadSel</a></div><div class="ttdeci">uint16_t ADC_ReadSel(void)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_a8749eaac5e4449a038c3625b87be1050"><div class="ttname"><a href="_a_d_c_8h.html#a8749eaac5e4449a038c3625b87be1050">ADC_GetResistance</a></div><div class="ttdeci">long ADC_GetResistance(uint16_t adcread, uint16_t adcbalanceresistor)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_ab0bfe89c06929fe65db2112532cb4047"><div class="ttname"><a href="_a_d_c_8h.html#ab0bfe89c06929fe65db2112532cb4047">ADC_Read</a></div><div class="ttdeci">uint16_t ADC_Read(uint8_t channel)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_ac83da7df0bfffc6af47a9d71502d1605"><div class="ttname"><a href="_a_d_c_8h.html#ac83da7df0bfffc6af47a9d71502d1605">ADC_GetVoltage</a></div><div class="ttdeci">double ADC_GetVoltage(uint16_t adcread, double adcvref)</div></div>
-<div class="ttc" id="a_a_d_c_8h_html_af43ad9d3e9259845a1c78d557430ef52"><div class="ttname"><a href="_a_d_c_8h.html#af43ad9d3e9259845a1c78d557430ef52">ADC_SetChannel</a></div><div class="ttdeci">void ADC_SetChannel(uint8_t channel)</div></div>
+<a href="_a_d_c_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef ADC_H</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define ADC_H</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="main_8h.html">main.h</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">// setup values</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ADC_REF 1       </span><span class="comment">// adc reference voltage (see adc_init function for reference)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define ADC_PRESCALER 2 </span><span class="comment">// adc prescaler (2, 4, 8, 16, 32, 64, 128)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ADC_JUSTIFY &#39;R&#39; </span><span class="comment">// adc justify (&#39;L&#39; or &#39;R&#39;)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define ADC_TRIGGERON 0 </span><span class="comment">// adc trigger (1 on - 0 off)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define ADC_REFRES 1024 </span><span class="comment">// reference resolution used for conversions</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// bandgap reference voltage * 1000, refers to datasheet</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define ADC_BANDGAPVOLTAGE 1100L</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">void</span> <a class="code hl_function" href="_a_d_c_8h.html#a97dac8e43580922decfbeeff5f81c20e">ADC_SetChannel</a>(u8 channel);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>u16 <a class="code hl_function" href="_a_d_c_8h.html#a6a85b60779f57a690db7dffe0a0d1032">ADC_Read</a>(u8 channel);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>u16 <a class="code hl_function" href="_a_d_c_8h.html#a530e13d9a3c1e74fc986494e087e2acb">ADC_ReadSel</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span> <a class="code hl_function" href="_a_d_c_8h.html#a5137b551f1b83b0f4d8df7d071a3d3a6">ADC_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>f64 <a class="code hl_function" href="_a_d_c_8h.html#aa15e16978b9201a27c6bf8101dc35f14">ADC_GetVoltage</a>(u16 adcread, f64 adcvref);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>u8 <a class="code hl_function" href="_a_d_c_8h.html#a651109313f5b954d4230ddd25bb1d921">ADC_ReadNormalized8Bit</a>(u8 channel);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_a_d_c_8h_html_a5137b551f1b83b0f4d8df7d071a3d3a6"><div class="ttname"><a href="_a_d_c_8h.html#a5137b551f1b83b0f4d8df7d071a3d3a6">ADC_Init</a></div><div class="ttdeci">void ADC_Init(void)</div><div class="ttdoc">Initialize ADC module.</div><div class="ttdef"><b>Definition:</b> ADC.c:52</div></div>
+<div class="ttc" id="a_a_d_c_8h_html_a530e13d9a3c1e74fc986494e087e2acb"><div class="ttname"><a href="_a_d_c_8h.html#a530e13d9a3c1e74fc986494e087e2acb">ADC_ReadSel</a></div><div class="ttdeci">u16 ADC_ReadSel(void)</div><div class="ttdoc">Reads previously selected channel (use ADC_SetChannel)</div><div class="ttdef"><b>Definition:</b> ADC.c:29</div></div>
+<div class="ttc" id="a_a_d_c_8h_html_a651109313f5b954d4230ddd25bb1d921"><div class="ttname"><a href="_a_d_c_8h.html#a651109313f5b954d4230ddd25bb1d921">ADC_ReadNormalized8Bit</a></div><div class="ttdeci">u8 ADC_ReadNormalized8Bit(u8 channel)</div><div class="ttdoc">Gets ADC reading from channel and returns 8-bit normalized value.</div><div class="ttdef"><b>Definition:</b> ADC.c:122</div></div>
+<div class="ttc" id="a_a_d_c_8h_html_a6a85b60779f57a690db7dffe0a0d1032"><div class="ttname"><a href="_a_d_c_8h.html#a6a85b60779f57a690db7dffe0a0d1032">ADC_Read</a></div><div class="ttdeci">u16 ADC_Read(u8 channel)</div><div class="ttdoc">Read ADC using entered channel argument.</div><div class="ttdef"><b>Definition:</b> ADC.c:43</div></div>
+<div class="ttc" id="a_a_d_c_8h_html_a97dac8e43580922decfbeeff5f81c20e"><div class="ttname"><a href="_a_d_c_8h.html#a97dac8e43580922decfbeeff5f81c20e">ADC_SetChannel</a></div><div class="ttdeci">void ADC_SetChannel(u8 channel)</div><div class="ttdoc">Set ADC channel to read from later using ReadSel.</div><div class="ttdef"><b>Definition:</b> ADC.c:19</div></div>
+<div class="ttc" id="a_a_d_c_8h_html_aa15e16978b9201a27c6bf8101dc35f14"><div class="ttname"><a href="_a_d_c_8h.html#aa15e16978b9201a27c6bf8101dc35f14">ADC_GetVoltage</a></div><div class="ttdeci">f64 ADC_GetVoltage(u16 adcread, f64 adcvref)</div><div class="ttdoc">Converts from adc binary to voltage based on given vref.</div><div class="ttdef"><b>Definition:</b> ADC.c:114</div></div>
+<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">Microprocessor abstraction layer.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

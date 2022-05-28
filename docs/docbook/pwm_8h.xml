@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_pwm_8h" xml:lang="en-US">
+<title>include/pwm.h File Reference</title>
+<indexterm><primary>include/pwm.h</primary></indexterm>
+<para>
+
+<para>Pulse width modulation driver module. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;main.h&quot;
+#include &quot;Port.h&quot;
+#include &quot;timer0.h&quot;
+#include &lt;avr/io.h&gt;
+#include &lt;util/delay.h&gt;
+</programlisting>Include dependency graph for pwm.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="pwm_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pwm_8h_1afb8d4d5a2964974bf3c95ee1e0aa3ab3"/>#define <emphasis role="strong">PWM0_PORT_DATA</emphasis>   (BUZ_ALARM_PORT_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a44f2c4595c3a0f41f36fe43f2e6367eb"/>#define <emphasis role="strong">PWM0_PORT_DIRECTION</emphasis>   (BUZ_ALARM_PORT_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1ac6dd68dd2a679111dfa8a4bc71bbeec8"/>#define <emphasis role="strong">PWM0_PIN</emphasis>   (BUZ_ALARM_PIN)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a539297964059a069ab211da260af13b2"/>#define <emphasis role="strong">PWM2_PORT_DATA</emphasis>   (BUZ_ALARM_PORT_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a65f21b85a936abdf1df7666a0b5bf9c3"/>#define <emphasis role="strong">PWM2_PORT_DIRECTION</emphasis>   (BUZ_ALARM_PORT_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a16704a6d8c87a0fae0bf45b403d46aad"/>#define <emphasis role="strong">PWM2_PIN</emphasis>   (BUZ_ALARM_PIN)</para>
+</listitem>
+            <listitem><para>#define <link linkend="_pwm_8h_1aad22f87e8c52593a59ddb39d5d0151dd">TMR2_SET_CLOCK_SELECTOR</link>(x)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pwm_8h_1af8714713f1e9c29695f559ad117e8e96"/>enum <emphasis role="strong">tPWM</emphasis> { <emphasis role="strong">PWM_0</emphasis>
+, <emphasis role="strong">PWM_2</emphasis>
+ }</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a4ea2d07ecc00dc760e3c62f8233e0334"/>enum <emphasis role="strong">tPWM_MODE</emphasis> { <emphasis role="strong">PWM_MODE_STOPPED</emphasis>
+, <emphasis role="strong">PWM_MODE_RUNNING</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_pwm_8h_1a253c2decc36b49bcba18fdd2cf8b00b0"/>void <emphasis role="strong">PWM_Init</emphasis> (tPWM pwm, tPWM_MODE init_mode, u8 init_duty, <link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> init_prescaler)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1af0a74961af9a40e243803b36f23e823a"/>void <emphasis role="strong">PWM_Set_Duty</emphasis> (tPWM pwm, u8 duty)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a4c4d4f98199913a01c322ba9f209a7e4"/>void <emphasis role="strong">PWM_Set_Clock</emphasis> (tPWM pwm, <link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> clock)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a9ab4831dbaef0f53e64b87f7abd3f73a"/>u8 <emphasis role="strong">PWM_Get_Duty</emphasis> (tPWM pwm)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1aad6850ae79bdda16b41e78fbc0169937"/>void <emphasis role="strong">PWM_Start</emphasis> (tPWM pwm)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1aaeb0190d8b548c580b149fd5c872f080"/>void <emphasis role="strong">PWM_Resume</emphasis> (tPWM pwm)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_pwm_8h_1a428e62835aa244b6d4589140611dada5"/>void <emphasis role="strong">PWM_Pause</emphasis> (tPWM pwm)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Pulse width modulation driver module. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser</para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS MODULE IS CURRENTLY NOT USED </para>
+</warning>
+<formalpara><title>Version</title>
+
+<para>0.2.1 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-5-25 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_pwm_8h_1aad22f87e8c52593a59ddb39d5d0151dd"/><section>
+    <title>TMR2_SET_CLOCK_SELECTOR</title>
+<indexterm><primary>TMR2_SET_CLOCK_SELECTOR</primary><secondary>pwm.h</secondary></indexterm>
+<indexterm><primary>pwm.h</primary><secondary>TMR2_SET_CLOCK_SELECTOR</secondary></indexterm>
+<para><computeroutput>#define TMR2_SET_CLOCK_SELECTOR( x)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS20,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS21,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS21));&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS22,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS22));
+</programlisting></section>
+</section>
+</section>

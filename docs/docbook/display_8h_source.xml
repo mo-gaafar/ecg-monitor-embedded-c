@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_display_8h_source" xml:lang="en-US">
+<title>display.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/display.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;_DISPLAY_H_</emphasis>
+2 <emphasis role="preprocessor">#define&#32;_DISPLAY_H_</emphasis>
+3 
+4 
+5 <emphasis role="keywordtype">void</emphasis>&#32;DISP_Init(<emphasis role="keywordtype">void</emphasis>);
+6 <emphasis role="keywordtype">void</emphasis>&#32;DISP_Update(<emphasis role="keywordtype">void</emphasis>);
+7 
+8 
+9 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;_DISPLAY_H_</emphasis>
+</programlisting></section>

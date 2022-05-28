@@ -11,6 +11,10 @@
 
 #define LED_DELAY_MS (1000)
 
+/**
+ * @brief Contains supported LED names
+ *
+ */
 typedef enum LED_Name
 {
     LED_ALARM,
@@ -20,6 +24,10 @@ typedef enum LED_Name
     LED_4
 } tLED;
 
+/**
+ * @brief LED Output pin state
+ *
+ */
 typedef enum LED_State
 {
     LED_OFF = 0,
@@ -63,8 +71,18 @@ void LED_Toggle(tLED led);
  **/
 tLED_State LED_GetState(tLED led);
 
-// TODO: Documentation missing
+/**
+ * @brief Turn selected LED on
+ *
+ * @param led selected LED
+ */
 void LED_On(tLED led);
+
+/**
+ * @brief Turn selected LED off
+ *
+ * @param led selected LED
+ */
 void LED_Off(tLED led);
 
 #endif // __LED_H__

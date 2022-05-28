@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_2code_01examples_2_digital_01_clock_2timer0_8h_source" xml:lang="en-US">
+<title>timer0.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/timer0.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__TMR_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__TMR_H__</emphasis>
+3 
+4 
+5 
+6 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2timer0_8h_1a929005b553f4395d7b8ec3418129130a">TMR0_Init</link>(<emphasis role="keywordtype">void</emphasis>);
+7 <emphasis role="keywordtype">void</emphasis>&#32;TMR0_Update(<emphasis role="keywordtype">void</emphasis>)&#32;__interrupt&#32;0;
+8 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_include_2timer0_8h_1aa3e65f3af7dc6f877c4c29ae52dd740c">TMR0_Start</link>(<emphasis role="keywordtype">void</emphasis>);
+9 
+10 
+11 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__TMR_H__</emphasis>
+</programlisting></section>

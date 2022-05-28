@@ -1,14 +1,20 @@
 #ifndef __PB_H__
 #define __PB_H__
 
+#include <main.h>
+
 /**
  * @file Push_Button.h
  * @author Mohamed Nasser
  * @brief This is a Push Button driver module
- * @version 1.0
- * @date 2022-4-30
+ * @version 1.1
+ * @date 2022-5-25
  **/
 
+/**
+ * @brief Names of supported pushbuttons
+ *
+ */
 typedef enum PB_Name
 {
     PB_VOL_PLUS,
@@ -18,6 +24,10 @@ typedef enum PB_Name
 
 } tPB;
 
+/**
+ * @brief Pushbutton states according to cyclic state machine
+ *
+ */
 typedef enum PB_State
 {
     PB_RELEASED,
@@ -42,6 +52,21 @@ void PB_Init(tPB pb, tPB_State initial_state);
  * @return void
  **/
 void PB_Update(void);
+
+/**
+ * @brief Counts pushbutton clicks based on prepressed state transitions
+ *
+ * @param pb  selected pushbutton
+ * @return u16 number of clicks
+ */
+u16 PB_GetClicks(tPB pb);
+
+/**
+ * @brief Resets internal click counter for selected pushbutton
+ *
+ * @param pb selected pushbutton
+ */
+void PB_ResetClicks(tPB pb);
 
 /**
  * @brief Gets the current state of one pushbutton.

@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__port_8h" xml:lang="en-US">
+<title>include/Port.h File Reference</title>
+<indexterm><primary>include/Port.h</primary></indexterm>
+<para>
+
+<para>This module abstracts the pcb. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;main.h&quot;
+</programlisting>Include dependency graph for Port.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_port_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+This graph shows which files directly or indirectly include this file:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_port_8h__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__port_8h_1a6af4be1692da064303fd09f26c0a348d"/>#define <emphasis role="strong">BUZ_ALARM_TIMER</emphasis>   (PWM_2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1afec19eb71a6e9828ad3d73d3a0d3a8a5"/>#define <emphasis role="strong">BUZ_ALARM_PORT_DATA</emphasis>   (GPIO_PORT_1_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a903a80b8cdef7b11b074b05d21e36077"/>#define <emphasis role="strong">BUZ_ALARM_PORT_DIRECTION</emphasis>   (GPIO_PORT_1_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a17c0340acc6a61d45a516e72e0185371"/>#define <emphasis role="strong">BUZ_ALARM_PIN</emphasis>   (GPIO_PIN_3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a842233d2c605a013e5e8b09debe9728a"/>#define <emphasis role="strong">LED_ALARM_PORT_DATA</emphasis>   (GPIO_PORT_1_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a020bb536b9e15793184d5943233ac43d"/>#define <emphasis role="strong">LED_ALARM_PORT_DIRECTION</emphasis>   (GPIO_PORT_1_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1acdca1db416e8beea2cfae6a6d80f0614"/>#define <emphasis role="strong">LED_ALARM_PIN</emphasis>   (GPIO_PIN_2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1ab75c91178ba495c0708c629d5160ad50"/>#define <emphasis role="strong">LED_PROCESSING_PORT_DATA</emphasis>   (GPIO_PORT_1_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1abe471995ca4f5daf4a5c8ae0d25aaecb"/>#define <emphasis role="strong">LED_PROCESSING_PORT_DIRECTION</emphasis>   (GPIO_PORT_1_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a8ad166fcf6c81a53d79a23024cac8376"/>#define <emphasis role="strong">LED_PROCESSING_PIN</emphasis>   (GPIO_PIN_1)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a4781e073871c6f27f89b9463ad3a4ed1"/>#define <emphasis role="strong">LCD_RS</emphasis>   (GPIO_PIN_1)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a26089a10ddd59a0dc7283c19ccc02533"/>#define <emphasis role="strong">LCD_RW</emphasis>   (GPIO_PIN_2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a1640ffbc0d8ec0f7edb04a2b93918072"/>#define <emphasis role="strong">LCD_EN</emphasis>   (GPIO_PIN_3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a8ee961e8377c3989a2e6ff75d297755e"/>#define <emphasis role="strong">LCD_CPRT_DR</emphasis>   (GPIO_PORT_3_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a416fb76153c3621c2db43f11364c2020"/>#define <emphasis role="strong">lCD_CPRT_CR</emphasis>   (GPIO_PORT_3_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a1882d7cd7e07508079fc553e9adbd67e"/>#define <emphasis role="strong">LCD_DPRT_DR</emphasis>   (GPIO_PORT_3_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1acf2aef4e471566f86f13554de15dd7af"/>#define <emphasis role="strong">LCD_DPRT_CR</emphasis>   (GPIO_PORT_3_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a593fd51bd2ea3213593af58b973777b0"/>#define <emphasis role="strong">LCD_DPRT_IN</emphasis>   (GPIO_PORT_3_INPUT)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a1d0c109c1eaab0ef1fc2818e37b8686c"/>#define <emphasis role="strong">ADC_ECG_IN_PORT_DATA</emphasis>   (GPIO_PORT_2_DATA)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1aff2e6294177ff6486ff4e757b4e9b366"/>#define <emphasis role="strong">ADC_ECG_IN_PORT_DIRECTION</emphasis>   (GPIO_PORT_2_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a5a6a8bdb57a07ad3fccb249019bc9a07"/>#define <emphasis role="strong">ADC_ECG_IN_PIN</emphasis>   (GPIO_PIN_0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a6768aadae417f67c73f2e3c5233e1d83"/>#define <emphasis role="strong">PB_DISP_SLEEP_PORT_DATA</emphasis>   (GPIO_PORT_2_INPUT)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a3b4596d061c63c5722b2e4005383b5ac"/>#define <emphasis role="strong">PB_DISP_SLEEP_PORT_DIRECTION</emphasis>   (GPIO_PORT_2_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1aa8205b4874b99f7b4fb2beb79a73b3c2"/>#define <emphasis role="strong">PB_DISP_SLEEP_PIN</emphasis>   (GPIO_PIN_1)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a002a67fb81d71c766e6d9e676a0ec406"/>#define <emphasis role="strong">PB_VOL_MINUS_PORT_DATA</emphasis>   (GPIO_PORT_2_INPUT)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a3ea950d8f158a54d5181ad264e357fab"/>#define <emphasis role="strong">PB_VOL_MINUS_PORT_DIRECTION</emphasis>   (GPIO_PORT_2_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a9a07f476a90d8d1e331381a3b62f225b"/>#define <emphasis role="strong">PB_VOL_MINUS_PIN</emphasis>   (GPIO_PIN_2)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a30948958de032e1a31d62f5a892622c7"/>#define <emphasis role="strong">PB_VOL_PLUS_PORT_DATA</emphasis>   (GPIO_PORT_2_INPUT)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a87acc8d7ef79617318931784f7f9bdd7"/>#define <emphasis role="strong">PB_VOL_PLUS_PORT_DIRECTION</emphasis>   (GPIO_PORT_2_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a27fb43c9dd734db35d0b5b1ee48ce91e"/>#define <emphasis role="strong">PB_VOL_PLUS_PIN</emphasis>   (GPIO_PIN_3)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1a81682b1952191ed3c16bdbfe3234d5d3"/>#define <emphasis role="strong">PB_SNOOZE_PORT_DATA</emphasis>   (GPIO_PORT_2_INPUT)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1afe53583010f6eebf07691f5c2ea5a38b"/>#define <emphasis role="strong">PB_SNOOZE_PORT_DIRECTION</emphasis>   (GPIO_PORT_2_DIRECTION)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__port_8h_1ac23eae6ac9d00437669f53bc5b08e0a8"/>#define <emphasis role="strong">PB_SNOOZE_PIN</emphasis>   (GPIO_PIN_4)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This module abstracts the pcb. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.0 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-4-28 </para>
+</formalpara>
+</para>
+</section>
+</section>

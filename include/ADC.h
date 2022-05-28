@@ -1,15 +1,19 @@
-/*
-ADC Library 0x05
 
-copyright (c) Davide Gironi, 2013
-
-Released under GPLv3.
-Please refer to LICENSE file for licensing information.
-*/
 
 #ifndef ADC_H
 #define ADC_H
 #include <main.h>
+
+/**
+ * @file       ADC.h
+ * @author     Mohamed Nasser
+ * @copyright Davide Gironi 2013
+ *
+ * @brief      ADC driver module
+ *
+ * @version    1.0
+ * @date       2022-5-25
+ **/
 
 // setup values
 #define ADC_REF 1       // adc reference voltage (see adc_init function for reference)
@@ -21,15 +25,49 @@ Please refer to LICENSE file for licensing information.
 // bandgap reference voltage * 1000, refers to datasheet
 #define ADC_BANDGAPVOLTAGE 1100L
 
-// functions
+/**
+ * @brief Set ADC channel to read from later using ReadSel
+ *
+ * @param channel selected ADC channel
+ **/
 void ADC_SetChannel(u8 channel);
+
+/**
+ * @brief Read ADC using entered channel argument
+ *
+ * @param channel selected channel
+ * @return u16 10-bit adc reading
+ **/
 u16 ADC_Read(u8 channel);
+
+/**
+ * @brief Reads previously selected channel (use ADC_SetChannel)
+ *
+ * @return u16  10-bit adc reading
+ **/
 u16 ADC_ReadSel(void);
+
+/**
+ * @brief Initialize ADC module
+ * @warning must be called before using adc
+ **/
 void ADC_Init(void);
-f64 ADC_GetRealVref(void);
-f64 ADC_GetResistance(u16 adcread, u16 adcbalanceresistor);
+
+/**
+ * @brief Converts from adc binary to voltage based on given vref
+ *
+ * @param adcread input adc value
+ * @param adcvref voltage reference
+ * @return f64 converted value
+ **/
 f64 ADC_GetVoltage(u16 adcread, f64 adcvref);
-u16 ADC_EMAFilter(u16 newvalue, u16 value);
+
+/**
+ * @brief Gets ADC reading from channel and returns 8-bit normalized value
+ *
+ * @param channel selected ADC channel to read from
+ * @return u8 normalized ADC value
+ **/
 u8 ADC_ReadNormalized8Bit(u8 channel);
 
 #endif

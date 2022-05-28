@@ -2,7 +2,7 @@
 #define __TMR_H__
 
 /**
- * @file Timer0 Module
+ * @file timer0.h
  * @author Mohamed Nasser
  * @brief This module drives the timer0 peripheral
  * @version 1.0
@@ -10,6 +10,8 @@
  **/
 
 #include <main.h>
+
+#define TMR0_IS_USED 1
 
 #define TMR0_SET_CLOCK_SELECTOR(x)                       \
     SET_REGISTER_PIN(TCCR0B, CS00, (x & 0x1));           \
@@ -21,7 +23,7 @@
     SET_REGISTER_PIN(TCCR0A, WGM01, ((x & 0x2) >> WGM01)); \
     SET_REGISTER_PIN(TCCR0A, WGM00, (x & 0x1));
 
-// TODO: Refactor syntax, causes bugs
+// TODO: Refactor later, causes bugs
 #define TMR0_SET_INTERRUPT(x)                                \
     SET_REGISTER_PIN(TIMSK0, TOIE0, ((0x1) >> TOIE0));       \
     SET_REGISTER_PIN(TIMSK0, OCIE0A, ((x & 0x2) >> OCIE0A)); \
@@ -29,6 +31,10 @@
 
 #define TMR0_READ_COUNTER() (READ_REGISTER_PIN(TCNT0))
 
+/**
+ * @brief Supported clock prescalars
+ *
+ */
 typedef enum
 {
     NO_CLOCK_SOURCE = 0,
@@ -39,6 +45,10 @@ typedef enum
     PRESCALAR_1024 = 5,
 } tClock_Selector;
 
+/**
+ * @brief Supported timer modes
+ *
+ */
 typedef enum
 {
     MODE_UpToFF = 0,
@@ -47,6 +57,10 @@ typedef enum
     MODE_UpToOCR0A_PWM = 7,
 } tTimer_mode;
 
+/**
+ * @brief Timer Interrupt enable flags
+ *
+ */
 typedef enum
 {
     INTERRUPT_OVR = TOIE0,
@@ -73,7 +87,6 @@ void TMR0_Init_Default(void);
  * @see tTimer_mode
  * @param tTimer_Interrupt interrupt
  * @see tTimer_Interrupt
- * @return void
  **/
 void TMR0_Init(tClock_Selector prescalar, tTimer_mode timer, tTimer_Interrupt interrupt);
 

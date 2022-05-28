@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__digital_01_clock_2count_8h_source" xml:lang="en-US">
+<title>count.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/count.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__CNT_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__CNT_H__</emphasis>
+3 
+4 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;HOURS;
+5 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;MINUTS;
+6 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;SECONDS;
+7 
+8 
+9 
+10 <emphasis role="keywordtype">void</emphasis>&#32;CNT_Init(<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;initial_hour,<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;initial_minut,<emphasis role="keywordtype">unsigned</emphasis>&#32;<emphasis role="keywordtype">char</emphasis>&#32;initial_seconds);
+11 <emphasis role="keywordtype">void</emphasis>&#32;CNT_Update(<emphasis role="keywordtype">void</emphasis>);
+12 <emphasis role="keywordtype">void</emphasis>&#32;CNT_IncSeconds(<emphasis role="keywordtype">void</emphasis>);
+13 <emphasis role="keywordtype">void</emphasis>&#32;CNT_toggleLed(<emphasis role="keywordtype">void</emphasis>);
+14 
+15 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__CNT_H__</emphasis>
+</programlisting></section>

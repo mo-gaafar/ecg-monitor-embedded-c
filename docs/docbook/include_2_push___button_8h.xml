@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_include_2_push___button_8h" xml:lang="en-US">
+<title>include/Push_Button.h File Reference</title>
+<indexterm><primary>include/Push_Button.h</primary></indexterm>
+<para>
+
+<para>This is a Push Button driver module. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;main.h&gt;
+</programlisting>Include dependency graph for Push_Button.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="include_2_push___button_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Typedefs    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db"/>typedef enum <link linkend="_include_2_push___button_8h_1a914905e917b30f9a0d59250bb8e55cef">PB_Name</link> <emphasis role="strong">tPB</emphasis></para>
+
+<para>Names of supported pushbuttons. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233"/>typedef enum <link linkend="_include_2_push___button_8h_1a2c36253581090b7a8ea320c3f88d5d32">PB_State</link> <emphasis role="strong">tPB_State</emphasis></para>
+
+<para>Pushbutton states according to cyclic state machine. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_include_2_push___button_8h_1a914905e917b30f9a0d59250bb8e55cef"/>enum <link linkend="_include_2_push___button_8h_1a914905e917b30f9a0d59250bb8e55cef">PB_Name</link> { <emphasis role="strong">PB_VOL_PLUS</emphasis>
+, <emphasis role="strong">PB_VOL_MINUS</emphasis>
+, <emphasis role="strong">PB_SNOOZE</emphasis>
+, <emphasis role="strong">PB_DISP_SLEEP</emphasis>
+ }</para>
+
+<para>Names of supported pushbuttons. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_include_2_push___button_8h_1a2c36253581090b7a8ea320c3f88d5d32"/>enum <link linkend="_include_2_push___button_8h_1a2c36253581090b7a8ea320c3f88d5d32">PB_State</link> { <emphasis role="strong">PB_RELEASED</emphasis>
+, <emphasis role="strong">PB_PRE_PRESSED</emphasis>
+, <emphasis role="strong">PB_PRESSED</emphasis>
+, <emphasis role="strong">PB_PRE_RELEASED</emphasis>
+ }</para>
+
+<para>Pushbutton states according to cyclic state machine. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_include_2_push___button_8h_1a80c4a02c09621448913663654e359a67">PB_Init</link> (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb, <link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> initial_state)</para>
+
+<para>Initializes the Push Button with its initial state and sets HW pin direction. </para>
+</listitem>
+            <listitem><para>void <link linkend="_include_2_push___button_8h_1a65ea2a324d4774c441b0fadc0936f5fc">PB_Update</link> (void)</para>
+
+<para>Updates the state and samples of all pushbuttons. </para>
+</listitem>
+            <listitem><para>u16 <link linkend="_include_2_push___button_8h_1a680b8c37ddd449ecbbb9097a35346fe0">PB_GetClicks</link> (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb)</para>
+
+<para>Counts pushbutton clicks based on prepressed state transitions. </para>
+</listitem>
+            <listitem><para>void <link linkend="_include_2_push___button_8h_1a05aa4260d9a09a3ae207d009ebd936b9">PB_ResetClicks</link> (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb)</para>
+
+<para>Resets internal click counter for selected pushbutton. </para>
+</listitem>
+            <listitem><para><link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> <link linkend="_include_2_push___button_8h_1af1726202fc37b0188259ad902957b035">PB_GetState</link> (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb)</para>
+
+<para>Gets the current state of one pushbutton. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This is a Push Button driver module. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>1.1 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-5-25 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="_include_2_push___button_8h_1a680b8c37ddd449ecbbb9097a35346fe0"/><section>
+    <title>PB_GetClicks()</title>
+<indexterm><primary>PB_GetClicks</primary><secondary>Push_Button.h</secondary></indexterm>
+<indexterm><primary>Push_Button.h</primary><secondary>PB_GetClicks</secondary></indexterm>
+<para><computeroutput>u16 PB_GetClicks (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb)</computeroutput></para><para>
+
+<para>Counts pushbutton clicks based on prepressed state transitions. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pb</entry><entry>
+<para>selected pushbutton </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>u16 number of clicks </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_include_2_push___button_8h_1af1726202fc37b0188259ad902957b035"/><section>
+    <title>PB_GetState()</title>
+<indexterm><primary>PB_GetState</primary><secondary>Push_Button.h</secondary></indexterm>
+<indexterm><primary>Push_Button.h</primary><secondary>PB_GetState</secondary></indexterm>
+<para><computeroutput><link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> PB_GetState (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb)</computeroutput></para><para>
+
+<para>Gets the current state of one pushbutton. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>tPB</entry><entry>
+<para>pb - pushbutton to get state of </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>tPB_State - The current state of the Push Button. </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> </para>
+
+<para><link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_include_2_push___button_8h_1a80c4a02c09621448913663654e359a67"/><section>
+    <title>PB_Init()</title>
+<indexterm><primary>PB_Init</primary><secondary>Push_Button.h</secondary></indexterm>
+<indexterm><primary>Push_Button.h</primary><secondary>PB_Init</secondary></indexterm>
+<para><computeroutput>void PB_Init (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb, <link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> initial_state)</computeroutput></para><para>
+
+<para>Initializes the Push Button with its initial state and sets HW pin direction. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pb</entry><entry>
+<para>The Push Button to initialize. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>state</entry><entry>
+<para>The initial state of the Push Button. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<formalpara><title>See also</title>
+
+<para><link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> </para>
+
+<para><link linkend="_include_2_push___button_8h_1afc56d806cd3549e563250fbe7f645233">tPB_State</link> </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_include_2_push___button_8h_1a05aa4260d9a09a3ae207d009ebd936b9"/><section>
+    <title>PB_ResetClicks()</title>
+<indexterm><primary>PB_ResetClicks</primary><secondary>Push_Button.h</secondary></indexterm>
+<indexterm><primary>Push_Button.h</primary><secondary>PB_ResetClicks</secondary></indexterm>
+<para><computeroutput>void PB_ResetClicks (<link linkend="_include_2_push___button_8h_1aac80e11f9742cceb4908f0501d64b6db">tPB</link> pb)</computeroutput></para><para>
+
+<para>Resets internal click counter for selected pushbutton. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>pb</entry><entry>
+<para>selected pushbutton </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_include_2_push___button_8h_1a65ea2a324d4774c441b0fadc0936f5fc"/><section>
+    <title>PB_Update()</title>
+<indexterm><primary>PB_Update</primary><secondary>Push_Button.h</secondary></indexterm>
+<indexterm><primary>Push_Button.h</primary><secondary>PB_Update</secondary></indexterm>
+<para><computeroutput>void PB_Update (void )</computeroutput></para><para>
+
+<para>Updates the state and samples of all pushbuttons. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>void</entry><entry>
+<para></para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

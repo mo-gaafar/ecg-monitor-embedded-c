@@ -1,0 +1,11 @@
+digraph "lib/code examples/Seb7a_OS_Sol_PIC"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  compound=true
+  subgraph clusterdir_84c3d07b5e1b77fb358b7da029237d00 {
+    graph [ bgcolor="#f0f3f3", pencolor="grey50", style="filled,dashed,", label="code examples", fontname="Helvetica", fontsize="10", URL="dir_84c3d07b5e1b77fb358b7da029237d00.html"]
+  dir_a0b7af27289560065cf8231c0284e8bb [shape=box, label="Seb7a_OS_Sol_PIC", style="filled,bold,", fillcolor="#f0f3f3", color="grey25", URL="dir_a0b7af27289560065cf8231c0284e8bb.html"];
+  }
+}

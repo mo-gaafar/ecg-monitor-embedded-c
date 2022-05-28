@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__l_c_d_8h" xml:lang="en-US">
+<title>include/LCD.h File Reference</title>
+<indexterm><primary>include/LCD.h</primary></indexterm>
+<para>
+
+<para>This is a LCD driver module. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &quot;main.h&quot;
+</programlisting>Include dependency graph for LCD.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_l_c_d_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1a623021324dfbf538f5a80f6550552698"/>#define <emphasis role="strong">LCD_8BIT_MODE</emphasis>   0</para>
+</listitem>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1a3f40e25f9d2917262913dafe43a2f944"/>#define <emphasis role="strong">LCD_4BIT_MODE</emphasis>   1</para>
+</listitem>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1af7bc5ceff70dca775dd2d76a673944a8"/>#define <emphasis role="strong">LCD_MODE</emphasis>   LCD_4BIT_MODE</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1a8da1164ef72160c76f2942455afc5f82"/>void <emphasis role="strong">LCD_WaitBusy</emphasis> ()</para>
+
+<para>Waits for the LCD to be ready to recieve more commands. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1aa53c9d40f3aa552a9974cd55ac510cb3"/>void <emphasis role="strong">LCD_Init</emphasis> (void)</para>
+
+<para>Initializes the LCD command and data pins and the data mode 
+<literallayout>&#160;&#xa;</literallayout>
+ (whether it is 8-bit or 4-bit defined in the preprocessor directive). </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1a8b5d0007beae86db52e5c5116369ec38">LCD_SendCommand</link> (char command)</para>
+
+<para>Sends a command to the LCD. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1ad55c31aa224052ee56d5e0361f17a660">LCD_SendData</link> (char Data)</para>
+
+<para>Sends data to the LCD. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1aea6baf25c39b13ae7f99cf34886283a0">LCD_SetCursorAt</link> (char Columns, char Rows)</para>
+
+<para>Sets the cursor at the specified position. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1af98eeee119bf1662b2b1a1fe5156e32b">LCD_PrintNumber</link> (u32 numb)</para>
+
+<para>Prints a number to the LCD. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1accb051c780ec0b69e76a39fd5f3d328c">LCD_PrintString</link> (const char *Str)</para>
+
+<para>Prints a string to the LCD. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1a5d739b4dfe04ff901f83f379e828be3e">LCD_PrintSpecialCharacter</link> (char *arr, char patternno, char x, char y)</para>
+
+<para>Prints a special character to the LCD. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1ae60d0b62d7eb3fa31266c095d7b3c245">LCD_Clear</link> (void)</para>
+
+<para>Clears the LCD. </para>
+</listitem>
+            <listitem><para>void <link linkend="__l_c_d_8h_1a0083f5163ab55b3501fe6bc1f794aff5">LCD_ClearLine</link> (char line)</para>
+
+<para>Clears the specified line. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1afbf0ca489cc7beb5a4bc2d13a718822b"/>void <emphasis role="strong">LCD_LatchSignal</emphasis> (void)</para>
+
+<para>Latches the EN pin on the LCD. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1a02dd7b07f11d93845a82c30d140ab245"/>void <emphasis role="strong">LCD_UpdateDisplay</emphasis> (void)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>This is a LCD driver module. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>0.1 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-04-30 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__l_c_d_8h_1ae60d0b62d7eb3fa31266c095d7b3c245"/><section>
+    <title>LCD_Clear()</title>
+<indexterm><primary>LCD_Clear</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_Clear</secondary></indexterm>
+<para><computeroutput>void LCD_Clear (void )</computeroutput></para><para>
+
+<para>Clears the LCD. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+<para><link linkend="_todo_1_todo000002">Todo</link> 
+<para>Implement this function </para>
+</para></para>
+</section>
+<anchor xml:id="__l_c_d_8h_1a0083f5163ab55b3501fe6bc1f794aff5"/><section>
+    <title>LCD_ClearLine()</title>
+<indexterm><primary>LCD_ClearLine</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_ClearLine</secondary></indexterm>
+<para><computeroutput>void LCD_ClearLine (char line)</computeroutput></para><para>
+
+<para>Clears the specified line. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char</entry><entry>
+<para>line - The line to clear. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+<para><link linkend="_todo_1_todo000003">Todo</link> 
+<para>Implement this function </para>
+</para></para>
+</section>
+<anchor xml:id="__l_c_d_8h_1af98eeee119bf1662b2b1a1fe5156e32b"/><section>
+    <title>LCD_PrintNumber()</title>
+<indexterm><primary>LCD_PrintNumber</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_PrintNumber</secondary></indexterm>
+<para><computeroutput>void LCD_PrintNumber (u32 numb)</computeroutput></para><para>
+
+<para>Prints a number to the LCD. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char</entry><entry>
+<para>numb - The number to print. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__l_c_d_8h_1a5d739b4dfe04ff901f83f379e828be3e"/><section>
+    <title>LCD_PrintSpecialCharacter()</title>
+<indexterm><primary>LCD_PrintSpecialCharacter</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_PrintSpecialCharacter</secondary></indexterm>
+<para><computeroutput>void LCD_PrintSpecialCharacter (char * arr, char patternno, char x, char y)</computeroutput></para><para>
+
+<para>Prints a special character to the LCD. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char</entry><entry>
+<para>*arr - The char array pointer (string) to print. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>char</entry><entry>
+<para>patternno - The pattern number to print. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>char</entry><entry>
+<para>x - The x position of the cursor. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>char</entry><entry>
+<para>y - The y position of the cursor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+<warning><title>Warning</title>
+
+<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
+</warning>
+<para><link linkend="_todo_1_todo000001">Todo</link> 
+<para>Implement this function </para>
+</para></para>
+</section>
+<anchor xml:id="__l_c_d_8h_1accb051c780ec0b69e76a39fd5f3d328c"/><section>
+    <title>LCD_PrintString()</title>
+<indexterm><primary>LCD_PrintString</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_PrintString</secondary></indexterm>
+<para><computeroutput>void LCD_PrintString (const char * Str)</computeroutput></para><para>
+
+<para>Prints a string to the LCD. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char*</entry><entry>
+<para>str - The char array pointer (string) to print. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__l_c_d_8h_1a8b5d0007beae86db52e5c5116369ec38"/><section>
+    <title>LCD_SendCommand()</title>
+<indexterm><primary>LCD_SendCommand</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_SendCommand</secondary></indexterm>
+<para><computeroutput>void LCD_SendCommand (char command)</computeroutput></para><para>
+
+<para>Sends a command to the LCD. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char</entry><entry>
+<para>command - The command to send to the LCD. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__l_c_d_8h_1ad55c31aa224052ee56d5e0361f17a660"/><section>
+    <title>LCD_SendData()</title>
+<indexterm><primary>LCD_SendData</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_SendData</secondary></indexterm>
+<para><computeroutput>void LCD_SendData (char Data)</computeroutput></para><para>
+
+<para>Sends data to the LCD. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char</entry><entry>
+<para>Data </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="__l_c_d_8h_1aea6baf25c39b13ae7f99cf34886283a0"/><section>
+    <title>LCD_SetCursorAt()</title>
+<indexterm><primary>LCD_SetCursorAt</primary><secondary>LCD.h</secondary></indexterm>
+<indexterm><primary>LCD.h</primary><secondary>LCD_SetCursorAt</secondary></indexterm>
+<para><computeroutput>void LCD_SetCursorAt (char Columns, char Rows)</computeroutput></para><para>
+
+<para>Sets the cursor at the specified position. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>char</entry><entry>
+<para>x - The x position of the cursor. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>char</entry><entry>
+<para>y - The y position of the cursor. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>void </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

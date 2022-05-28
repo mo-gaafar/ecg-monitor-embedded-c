@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__e_c_g_8h" xml:lang="en-US">
+<title>include/ECG.h File Reference</title>
+<indexterm><primary>include/ECG.h</primary></indexterm>
+<para>
+
+<para>ECG Signal Processing and feature extraction module. </para>
+ 
+</para>
+<programlisting linenumbering="unnumbered">#include &lt;main.h&gt;
+</programlisting>Include dependency graph for ECG.h:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="_e_c_g_8h__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Macros    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a41f9c5fb8b08eb5dc3edce4dcb37fee7"/>#define <emphasis role="strong">true</emphasis>   1</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a65e9886d74aaee76545e83dd09011727"/>#define <emphasis role="strong">false</emphasis>   0</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a52037c938e3c1b126c6277da5ca689d0"/>#define <emphasis role="strong">M</emphasis>   5</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a0240ac851181b84ac374872dc5434ee4"/>#define <emphasis role="strong">N</emphasis>   30</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1aaacfe12e63b0b4e8c3164cf339d82ea9"/>#define <emphasis role="strong">winSize</emphasis>   250</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a03397b70f326713d444c987222a6bb7e"/>#define <emphasis role="strong">HP_CONSTANT</emphasis>   ((float)1 / (float)M)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a7684ed93fa5077ca1147bf07a34cc930"/>#define <emphasis role="strong">MAX_BPM</emphasis>   100</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a3c127573736aaf80d0abb0121930bda0"/>#define <emphasis role="strong">ECG_DEBUG</emphasis>   1</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1abb0c4ba9234455597dae8787c75133d5"/>#define <emphasis role="strong">ECG_Sample_Period_ms</emphasis>   (ISR_TMR0_Period_ms)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a04da189703b8a6000e2e95eca7231dcd"/>#define <emphasis role="strong">S_ECG_SIZE</emphasis>   226</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1af8b61b73775f79f1c69363c263c5fd23"/>#define <emphasis role="strong">RAND_RES</emphasis>   100000000</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491"/>enum <link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link> { <emphasis role="strong">Normal</emphasis>
+, <emphasis role="strong">Tachycardia</emphasis>
+, <emphasis role="strong">Bradycardia</emphasis>
+, <emphasis role="strong">Irregular_Heartbeat</emphasis>
+ }</para>
+
+<para>Cointains supported arrythmia types. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a3dea6402ef2b9b53d8dd231c0f6f423a"/>void <emphasis role="strong">ECG_Init</emphasis> ()</para>
+
+<para>Initialize ECG Drivers. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a677b0e53cb36755e36e041705d550c7e"/>void <emphasis role="strong">ECG_Update</emphasis> (void)</para>
+
+<para>Update ECG filtering, detection. </para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a602c5000169967bba85ccf93f8ac47f1"/>void <emphasis role="strong">ECG_Update_Alarm</emphasis> (void)</para>
+</listitem>
+            <listitem><para>u8 <link linkend="__e_c_g_8h_1ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</link> (void)</para>
+
+<para>Calculates BPM from ms tick counters. </para>
+</listitem>
+            <listitem><para><link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link> <link linkend="__e_c_g_8h_1afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</link> (void)</para>
+
+<para>Uses BPM to calculate arrythmia type based on ECG_Arrythmia_Type enum. </para>
+</listitem>
+            <listitem><para>char * <link linkend="__e_c_g_8h_1a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</link> (void)</para>
+
+<para>Converts tECG_Arrythmia_Type to char array for LCD. </para>
+</listitem>
+            <listitem><para>u8 <link linkend="__e_c_g_8h_1ab7d56516f139537a7186781941304a59">ECG_Detect</link> (float ecg_sample)</para>
+
+<para>Performs filtering and adaptive threshold operations to detect R waves. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Variables    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a86a8e9b62873270152d361a84ec8ddb3"/>int <emphasis role="strong">s_ecg_idx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a1792a5ba2babec2a9f62f24c96210789"/>u16 <emphasis role="strong">ecg_found_ticks_ms</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a8a4364468fd448e8fbcda0695ebacefd"/>u16 <emphasis role="strong">ecg_old_found_ticks_ms</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a55098b874849f651f27a21db1c886657"/>volatile u16 <emphasis role="strong">bpm</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1ab40e28c3d64ca4f06d61124d12820cdb"/>float <emphasis role="strong">ecg_buff</emphasis> [M+1]</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a0e0c1b9cfe47b03bd26ade06d2567431"/>int <emphasis role="strong">ecg_buff_WR_idx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1aa0ef10c36c7baff53510142c2cc5e599"/>int <emphasis role="strong">ecg_buff_RD_idx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1af3d3b91eee0a9de9584f093158f59923"/>float <emphasis role="strong">hp_buff</emphasis> [N+1]</para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a2d983c8366cba50c82a40f6d7db2cde1"/>int <emphasis role="strong">hp_buff_WR_idx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a5e7f3c07c6ddf93c5a4ef75b612a4d91"/>int <emphasis role="strong">hp_buff_RD_idx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1abca04ca0392b86942af021ef45b1a3bc"/>float <emphasis role="strong">next_eval_pt</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a0cde068960720a8905f1a7f8aa65f8bf"/>float <emphasis role="strong">hp_sum</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1ac79bdccb484a348ae8de55391b008780"/>float <emphasis role="strong">lp_sum</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a39244e34268e768eefe8843add1d94ca"/>double <emphasis role="strong">treshold</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a3b4394e307ec88de91f545f242a8347f"/>u8 <emphasis role="strong">triggered</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1aa165cbd697ed850861c23a0a147675c7"/>int <emphasis role="strong">trig_time</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a9e4a5e359fe7321bdf59ff0d1fb9f936"/>float <emphasis role="strong">win_max</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a18b49f579bda94a4f278fb7a1207cea8"/>int <emphasis role="strong">win_idx</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1a869dc96b4fa3d9bd19c20088b1fc9cf4"/>int <emphasis role="strong">tmp</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="__e_c_g_8h_1ab8cfdec70d310e45e2ad207a8b730aa9"/>u16 <emphasis role="strong">number_iter</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>ECG Signal Processing and feature extraction module. </para>
+
+<para><formalpara><title>Author</title>
+
+<para>Mohamed Nasser </para>
+</formalpara>
+<formalpara><title>Version</title>
+
+<para>0.9.1 </para>
+</formalpara>
+<formalpara><title>Date</title>
+
+<para>2022-05-24 </para>
+</formalpara>
+</para>
+</section>
+<section>
+<title>Function Documentation</title>
+<anchor xml:id="__e_c_g_8h_1ab7d56516f139537a7186781941304a59"/><section>
+    <title>ECG_Detect()</title>
+<indexterm><primary>ECG_Detect</primary><secondary>ECG.h</secondary></indexterm>
+<indexterm><primary>ECG.h</primary><secondary>ECG_Detect</secondary></indexterm>
+<para><computeroutput>u8 ECG_Detect (float ecg_sample)</computeroutput></para><para>
+
+<para>Performs filtering and adaptive threshold operations to detect R waves. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ecg_sample</entry><entry>
+<para>Input sample </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>u8 boolean value (1 = detected) </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__e_c_g_8h_1afd69427017a6b1d7a731edcbcfeabe07"/><section>
+    <title>ECG_Get_Arrythmia_Type()</title>
+<indexterm><primary>ECG_Get_Arrythmia_Type</primary><secondary>ECG.h</secondary></indexterm>
+<indexterm><primary>ECG.h</primary><secondary>ECG_Get_Arrythmia_Type</secondary></indexterm>
+<para><computeroutput><link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link> ECG_Get_Arrythmia_Type (void )</computeroutput></para><para>
+
+<para>Uses BPM to calculate arrythmia type based on ECG_Arrythmia_Type enum. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>ECG_Arrythmia_Type </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__e_c_g_8h_1a346cad9a373adc1fb5c2dace0ebc0f96"/><section>
+    <title>ECG_Get_Arrythmia_Type_String()</title>
+<indexterm><primary>ECG_Get_Arrythmia_Type_String</primary><secondary>ECG.h</secondary></indexterm>
+<indexterm><primary>ECG.h</primary><secondary>ECG_Get_Arrythmia_Type_String</secondary></indexterm>
+<para><computeroutput>char * ECG_Get_Arrythmia_Type_String (void )</computeroutput></para><para>
+
+<para>Converts tECG_Arrythmia_Type to char array for LCD. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>char* String </para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="__e_c_g_8h_1ad0763e90ac9b72b09dd897435131f837"/><section>
+    <title>ECG_Get_BPM()</title>
+<indexterm><primary>ECG_Get_BPM</primary><secondary>ECG.h</secondary></indexterm>
+<indexterm><primary>ECG.h</primary><secondary>ECG_Get_BPM</secondary></indexterm>
+<para><computeroutput>u8 ECG_Get_BPM (void )</computeroutput></para><para>
+
+<para>Calculates BPM from ms tick counters. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>u8 Beats per minute </para>
+</formalpara>
+</para>
+</section>
+</section>
+</section>

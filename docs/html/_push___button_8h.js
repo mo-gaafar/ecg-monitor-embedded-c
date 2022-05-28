@@ -14,7 +14,9 @@ var _push___button_8h =
       [ "PB_PRESSED", "_push___button_8h.html#a2c36253581090b7a8ea320c3f88d5d32a50f516e20b3b36a568e3c67fad8343c4", null ],
       [ "PB_PRE_RELEASED", "_push___button_8h.html#a2c36253581090b7a8ea320c3f88d5d32ab53237d1e9c4ac2dff367d87a0aefbb1", null ]
     ] ],
+    [ "PB_GetClicks", "_push___button_8h.html#a680b8c37ddd449ecbbb9097a35346fe0", null ],
     [ "PB_GetState", "_push___button_8h.html#af1726202fc37b0188259ad902957b035", null ],
     [ "PB_Init", "_push___button_8h.html#a80c4a02c09621448913663654e359a67", null ],
+    [ "PB_ResetClicks", "_push___button_8h.html#a05aa4260d9a09a3ae207d009ebd936b9", null ],
     [ "PB_Update", "_push___button_8h.html#a65ea2a324d4774c441b0fadc0936f5fc", null ]
 ];

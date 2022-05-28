@@ -1,6 +1,36 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+/*! \mainpage ECG Monitor Documentation
+ *
+ * \section intro_sec Introduction
+ *
+ * The project is designed to be used with the
+ * Atmel AVR series of microcontrollers.
+ *
+ * This project is a simple ECG Monitor that can be used to
+ * reliably measure the heart rate of a patient by extracting features
+ * from an ECG signal based on digital signal processing algorithms.
+ *
+ * \section install_sec Installation
+ *
+ * \subsection step1 Step 1: Install platform IO drivers
+ * \subsection step2 Step 2: Open the project in platform IO
+ * \subsection step3 Step 3: Build/Upload the project to you MCU
+ * \subsection step4 Step 4: Wiring diagrams are in the simulation folder
+ *
+ */
+
+/**
+ * @file       main.h
+ * @author     Mohamed Nasser
+ *
+ * @brief      Microprocessor abstraction layer
+ *
+ * @version    1.2.0
+ * @date       2022-5-25
+ **/
+
 /************************************************
  *  ... MCU SPECIFIC DEFINITIONS
  ***********************************************/
@@ -9,6 +39,13 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
+
+/* CPU Clock Frequency */
+#ifndef F_CPU
+#define F_CPU 16000000UL
+#endif
+
+#define ISR_TMR0_Period_ms 4
 
 /*Interrupt wrapper macro*/
 #define enable_global_interrupt() sei()

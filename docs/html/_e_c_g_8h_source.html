@@ -24,8 +24,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">ECG Monitor
+   <div id="projectname">ECG Monitor<span id="projectnumber">&#160;0.6.0</span>
    </div>
   </td>
  </tr>
@@ -88,53 +89,108 @@ $(document).ready(function(){initNavTree('_e_c_g_8h_source.html',''); initResiza
 <a href="_e_c_g_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef _ECG_H_</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define _ECG_H_</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="main_8h.html">main.h</a>&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">   16</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b">   18</a></span>    <a class="code hl_enumvalue" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a>,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7">   19</a></span>    <a class="code hl_enumvalue" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7">Tachycardia</a>,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4">   20</a></span>    <a class="code hl_enumvalue" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4">Bradycardia</a>,</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_enumvalue" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74">Irregular_Heartbeat</a></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74">   22</a></span>} <a class="code hl_enumeration" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_e_c_g___statistics.html">   24</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_e_c_g___statistics.html#a3b8cd73d0731f45be63818aa91738f41">   26</a></span>    <span class="keywordtype">float</span> *NN_intervals_Array = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="struct_e_c_g___statistics.html#aeaf8a0d3d7b17249cdb2357b85b4b2da">   27</a></span>    <span class="keywordtype">float</span> SDNN = 0;  <span class="comment">// Standard deviation of NN intervals</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="struct_e_c_g___statistics.html#abefbe234d50bf0513db1bbd9b97d361b">   28</a></span>    <span class="keywordtype">float</span> RMSSD = 0; <span class="comment">// Root mean square of successive differences</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="struct_e_c_g___statistics.html#a8bed12b318ede4fc002b66870d185299">   29</a></span>    <span class="keywordtype">float</span> pNN50 = 0; <span class="comment">// Percentage of NN intervals greater than 50 ms</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_e_c_g___statistics.html#aed9478333dc2ee6ffe945b8c00606a5b">   30</a></span>    <span class="keywordtype">float</span> SDSD = 0;  <span class="comment">// Standard deviation of successive differences</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>} <a class="code hl_struct" href="struct_e_c_g___statistics.html">ECG_Statistics</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">static</span> <a class="code hl_typedef" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> current_bpm = 0; <span class="comment">// Current heart rate in beats per minute</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">static</span> <a class="code hl_enumeration" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> current_arrythmia = <a class="code hl_enumvalue" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">static</span> <a class="code hl_struct" href="struct_e_c_g___statistics.html">ECG_Statistics</a> current_statistics;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="main_8h.html">main.h</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define true 1</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define false 0</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define M 5</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define N 30</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define winSize 250</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define HP_CONSTANT ((float)1 / (float)M)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define MAX_BPM 100</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#define ECG_DEBUG 1</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define ECG_Sample_Period_ms (ISR_TMR0_Period_ms)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// pre-recorded ECG, for testing</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keywordtype">int</span> s_ecg_idx;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define S_ECG_SIZE 226</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// const float s_ecg[S_ECG_SIZE];</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>u16 ecg_found_ticks_ms;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>u16 ecg_old_found_ticks_ms;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">volatile</span> u16 bpm;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// resolution of RNG</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#define RAND_RES 100000000</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#aba08485b53f56de97b7aee9a039f321d">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_e_c_g_8h.html#aba08485b53f56de97b7aee9a039f321d">ECG_Init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#a677b0e53cb36755e36e041705d550c7e">   39</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_e_c_g_8h.html#a677b0e53cb36755e36e041705d550c7e">ECG_Update</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#a7ab516ef024cabbe15ae72208b46690a">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_e_c_g_8h.html#a7ab516ef024cabbe15ae72208b46690a">ECG_UpdateArrythmia</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#a7f06c21e8629d0cafd74dacfdfe3f16a">   42</a></span><a class="code hl_enumeration" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> <a class="code hl_function" href="_e_c_g_8h.html#a7f06c21e8629d0cafd74dacfdfe3f16a">ECG_GetArrythmia</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#a4f444b72866661b3ce7800340e056d72">   43</a></span><a class="code hl_typedef" href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a> <a class="code hl_function" href="_e_c_g_8h.html#a4f444b72866661b3ce7800340e056d72">ECG_GetHR</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#aec25294c95954bfb06838412a5afdcee">   44</a></span><a class="code hl_struct" href="struct_e_c_g___statistics.html">ECG_Statistics</a> <a class="code hl_function" href="_e_c_g_8h.html#aec25294c95954bfb06838412a5afdcee">ECG_GetStatistics</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a_e_c_g_8h_html_a4f444b72866661b3ce7800340e056d72"><div class="ttname"><a href="_e_c_g_8h.html#a4f444b72866661b3ce7800340e056d72">ECG_GetHR</a></div><div class="ttdeci">u8 ECG_GetHR(void)</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_a677b0e53cb36755e36e041705d550c7e"><div class="ttname"><a href="_e_c_g_8h.html#a677b0e53cb36755e36e041705d550c7e">ECG_Update</a></div><div class="ttdeci">void ECG_Update(void)</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_a7ab516ef024cabbe15ae72208b46690a"><div class="ttname"><a href="_e_c_g_8h.html#a7ab516ef024cabbe15ae72208b46690a">ECG_UpdateArrythmia</a></div><div class="ttdeci">void ECG_UpdateArrythmia(void)</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_a7f06c21e8629d0cafd74dacfdfe3f16a"><div class="ttname"><a href="_e_c_g_8h.html#a7f06c21e8629d0cafd74dacfdfe3f16a">ECG_GetArrythmia</a></div><div class="ttdeci">ECG_Arrythmia_Type ECG_GetArrythmia(void)</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_aba08485b53f56de97b7aee9a039f321d"><div class="ttname"><a href="_e_c_g_8h.html#aba08485b53f56de97b7aee9a039f321d">ECG_Init</a></div><div class="ttdeci">void ECG_Init(void)</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_ad3539e468b6fbacec8b1ed753333f491"><div class="ttname"><a href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a></div><div class="ttdeci">ECG_Arrythmia_Type</div><div class="ttdef"><b>Definition:</b> ECG.h:17</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4"><div class="ttname"><a href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a20290848da6706235b51f4e07c1b3ec4">Bradycardia</a></div><div class="ttdeci">@ Bradycardia</div><div class="ttdef"><b>Definition:</b> ECG.h:20</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b"><div class="ttname"><a href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a></div><div class="ttdeci">@ Normal</div><div class="ttdef"><b>Definition:</b> ECG.h:18</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74"><div class="ttname"><a href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a6b8cc5d842e9aed013092aafde7e4f74">Irregular_Heartbeat</a></div><div class="ttdeci">@ Irregular_Heartbeat</div><div class="ttdef"><b>Definition:</b> ECG.h:21</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7"><div class="ttname"><a href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491a7e06becb334e28a0a5cafd03e27dd9d7">Tachycardia</a></div><div class="ttdeci">@ Tachycardia</div><div class="ttdef"><b>Definition:</b> ECG.h:19</div></div>
-<div class="ttc" id="a_e_c_g_8h_html_aec25294c95954bfb06838412a5afdcee"><div class="ttname"><a href="_e_c_g_8h.html#aec25294c95954bfb06838412a5afdcee">ECG_GetStatistics</a></div><div class="ttdeci">ECG_Statistics ECG_GetStatistics(void)</div></div>
-<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
-<div class="ttc" id="amain_8h_html_aed742c436da53c1080638ce6ef7d13de"><div class="ttname"><a href="main_8h.html#aed742c436da53c1080638ce6ef7d13de">u8</a></div><div class="ttdeci">unsigned char u8</div><div class="ttdef"><b>Definition:</b> main.h:68</div></div>
-<div class="ttc" id="astruct_e_c_g___statistics_html"><div class="ttname"><a href="struct_e_c_g___statistics.html">ECG_Statistics</a></div><div class="ttdef"><b>Definition:</b> ECG.h:25</div></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// circular buffer for input ecg signal</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// we need to keep a history of M + 1 samples for HP filter</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">float</span> ecg_buff[M + 1];</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">int</span> ecg_buff_WR_idx;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">int</span> ecg_buff_RD_idx;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// circular buffer for input ecg signal</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// we need to keep a history of N+1 samples for LP filter</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">float</span> hp_buff[N + 1];</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">int</span> hp_buff_WR_idx;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">int</span> hp_buff_RD_idx;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// LP filter outputs a single point for every input point</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">// This goes straight to adaptive filtering for eval</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keywordtype">float</span> next_eval_pt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// running sums for HP and LP filters, values shifted in FILO</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">float</span> hp_sum;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keywordtype">float</span> lp_sum;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">// parameters for adaptive thresholding</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">double</span> treshold;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>u8 triggered;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keywordtype">int</span> trig_time;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keywordtype">float</span> win_max;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keywordtype">int</span> win_idx;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="keywordtype">int</span> tmp;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>u16 number_iter;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">   72</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    Normal,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Tachycardia,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    Bradycardia,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    Irregular_Heartbeat</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>} <a class="code hl_enumeration" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">// typedef struct</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="comment">// {</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment">//     float *NN_intervals_Array = nullptr;</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="comment">//     float SDNN = 0;  // Standard deviation of NN intervals</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">//     float RMSSD = 0; // Root mean square of successive differences</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">//     float pNN50 = 0; // Percentage of NN intervals greater than 50 ms</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="comment">//     float SDSD = 0;  // Standard deviation of successive differences</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">// } ECG_Statistics;</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keywordtype">void</span> <a class="code hl_function" href="_e_c_g_8h.html#a3dea6402ef2b9b53d8dd231c0f6f423a">ECG_Init</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keywordtype">void</span> <a class="code hl_function" href="_e_c_g_8h.html#a677b0e53cb36755e36e041705d550c7e">ECG_Update</a>(<span class="keywordtype">void</span>); <span class="comment">// update ecg signal, update counter, detect peaks, calculate heart rate</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="comment">// TODO add documentation</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> ECG_Update_Alarm(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>u8 <a class="code hl_function" href="_e_c_g_8h.html#ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><a class="code hl_enumeration" href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a> <a class="code hl_function" href="_e_c_g_8h.html#afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keywordtype">char</span> *<a class="code hl_function" href="_e_c_g_8h.html#a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>u8 <a class="code hl_function" href="_e_c_g_8h.html#ab7d56516f139537a7186781941304a59">ECG_Detect</a>(<span class="keywordtype">float</span> ecg_sample);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">// static u8 current_bpm = 0; // Current heart rate in beats per minute</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="comment">// static ECG_Arrythmia_Type current_arrythmia = Normal;</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">// static ECG_Statistics current_statistics;</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// ECG_Statistics ECG_GetStatistics(void);</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_e_c_g_8h_html_a346cad9a373adc1fb5c2dace0ebc0f96"><div class="ttname"><a href="_e_c_g_8h.html#a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</a></div><div class="ttdeci">char * ECG_Get_Arrythmia_Type_String(void)</div><div class="ttdoc">Converts tECG_Arrythmia_Type to char array for LCD.</div><div class="ttdef"><b>Definition:</b> ECG.c:99</div></div>
+<div class="ttc" id="a_e_c_g_8h_html_a3dea6402ef2b9b53d8dd231c0f6f423a"><div class="ttname"><a href="_e_c_g_8h.html#a3dea6402ef2b9b53d8dd231c0f6f423a">ECG_Init</a></div><div class="ttdeci">void ECG_Init()</div><div class="ttdoc">Initialize ECG Drivers.</div><div class="ttdef"><b>Definition:</b> ECG.c:16</div></div>
+<div class="ttc" id="a_e_c_g_8h_html_a677b0e53cb36755e36e041705d550c7e"><div class="ttname"><a href="_e_c_g_8h.html#a677b0e53cb36755e36e041705d550c7e">ECG_Update</a></div><div class="ttdeci">void ECG_Update(void)</div><div class="ttdoc">Update ECG filtering, detection.</div><div class="ttdef"><b>Definition:</b> ECG.c:123</div></div>
+<div class="ttc" id="a_e_c_g_8h_html_ab7d56516f139537a7186781941304a59"><div class="ttname"><a href="_e_c_g_8h.html#ab7d56516f139537a7186781941304a59">ECG_Detect</a></div><div class="ttdeci">u8 ECG_Detect(float ecg_sample)</div><div class="ttdoc">Performs filtering and adaptive threshold operations to detect R waves.</div><div class="ttdef"><b>Definition:</b> ECG.c:173</div></div>
+<div class="ttc" id="a_e_c_g_8h_html_ad0763e90ac9b72b09dd897435131f837"><div class="ttname"><a href="_e_c_g_8h.html#ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</a></div><div class="ttdeci">u8 ECG_Get_BPM(void)</div><div class="ttdoc">Calculates BPM from ms tick counters.</div><div class="ttdef"><b>Definition:</b> ECG.c:57</div></div>
+<div class="ttc" id="a_e_c_g_8h_html_ad3539e468b6fbacec8b1ed753333f491"><div class="ttname"><a href="_e_c_g_8h.html#ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</a></div><div class="ttdeci">ECG_Arrythmia_Type</div><div class="ttdoc">Cointains supported arrythmia types.</div><div class="ttdef"><b>Definition:</b> ECG.h:73</div></div>
+<div class="ttc" id="a_e_c_g_8h_html_afd69427017a6b1d7a731edcbcfeabe07"><div class="ttname"><a href="_e_c_g_8h.html#afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</a></div><div class="ttdeci">ECG_Arrythmia_Type ECG_Get_Arrythmia_Type(void)</div><div class="ttdoc">Uses BPM to calculate arrythmia type based on ECG_Arrythmia_Type enum.</div><div class="ttdef"><b>Definition:</b> ECG.c:78</div></div>
+<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">Microprocessor abstraction layer.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

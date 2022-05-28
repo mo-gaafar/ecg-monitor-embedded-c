@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_lib_2code_01examples_2_digital_01_clock_2_port_8h_source" xml:lang="en-US">
+<title>port.h</title>
+<indexterm><primary>lib/code examples/Digital Clock/port.h</primary></indexterm>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;__PORT_H__</emphasis>
+2 <emphasis role="preprocessor">#define&#32;__PORT_H__</emphasis>
+3 
+4 <emphasis role="preprocessor">#include&#32;&quot;main.h&quot;</emphasis>
+5 
+6 <emphasis role="comment">/*&#32;Fill&#32;missing&#32;code&#32;below&#32;*/</emphasis>
+7 
+8 <emphasis role="comment">/******&#32;PUSH_BUTTONs&apos;&#32;pins&#32;******/</emphasis>
+9 <emphasis role="preprocessor">#define&#32;PB_1_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+10 <emphasis role="preprocessor">#define&#32;PB_1_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+11 <emphasis role="preprocessor">#define&#32;PB_1_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_0)</emphasis>
+12 
+13 <emphasis role="preprocessor">#define&#32;PB_2_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+14 <emphasis role="preprocessor">#define&#32;PB_2_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+15 <emphasis role="preprocessor">#define&#32;PB_2_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_1)</emphasis>
+16 
+17 <emphasis role="preprocessor">#define&#32;PB_3_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+18 <emphasis role="preprocessor">#define&#32;PB_3_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+19 <emphasis role="preprocessor">#define&#32;PB_3_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_2)</emphasis>
+20 
+21 <emphasis role="preprocessor">#define&#32;PB_4_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+22 <emphasis role="preprocessor">#define&#32;PB_4_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+23 <emphasis role="preprocessor">#define&#32;PB_4_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_3)</emphasis>
+24 
+25 
+26 <emphasis role="comment">/***********&#32;SSDs&apos;&#32;pins&#32;************/</emphasis>
+27 <emphasis role="preprocessor">#define&#32;SSD_1_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+28 <emphasis role="preprocessor">#define&#32;SSD_1_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+29 <emphasis role="preprocessor">#define&#32;SSD_1_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_7)</emphasis>
+30 
+31 <emphasis role="preprocessor">#define&#32;SSD_2_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+32 <emphasis role="preprocessor">#define&#32;SSD_2_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+33 <emphasis role="preprocessor">#define&#32;SSD_2_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_6)</emphasis>
+34 
+35 <emphasis role="preprocessor">#define&#32;SSD_3_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+36 <emphasis role="preprocessor">#define&#32;SSD_3_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+37 <emphasis role="preprocessor">#define&#32;SSD_3_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_5)</emphasis>
+38 
+39 <emphasis role="preprocessor">#define&#32;SDD_4_PORT_DR&#32;&#32;&#32;(GPIO_PORTB_DATA)</emphasis>
+40 <emphasis role="preprocessor">#define&#32;SSD_4_PORT_CR&#32;&#32;&#32;(GPIO_PORTB_DIRECTION)</emphasis>
+41 <emphasis role="preprocessor">#define&#32;SSD_4_PIN&#32;&#32;&#32;&#32;&#32;&#32;&#32;(GPIO_PIN_4)</emphasis>
+42 
+43 <emphasis role="comment">/*&#32;End&#32;of&#32;code&#32;filling&#32;*/</emphasis>
+44 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__PORT_H__</emphasis>
+</programlisting></section>

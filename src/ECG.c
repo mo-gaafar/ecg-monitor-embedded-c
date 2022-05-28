@@ -145,7 +145,7 @@ void ECG_Update_Alarm(void)
         }
         else
         {
-            BUZ_SetMode(BUZ_OFF, BUZ_PATTERN_MODE);
+            BUZ_SetMode(BUZ_ALARM, BUZ_STOPPED_MODE);
         }
         // buzzer snooze toggling
         if (PB_GetClicks(PB_SNOOZE) > 0)
@@ -167,6 +167,7 @@ void ECG_Update_Alarm(void)
         BUZ_SetMode(BUZ_ALARM, BUZ_STOPPED_MODE);
         LED_Off(LED_ALARM);
         PB_ResetClicks(PB_SNOOZE);
+        SnoozeFlag = 0;
     }
 }
 

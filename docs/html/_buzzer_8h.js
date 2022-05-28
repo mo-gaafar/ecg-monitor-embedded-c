@@ -16,7 +16,6 @@ var _buzzer_8h =
       [ "BUZ_OFF", "_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56af507bda4bf4c7b592ab540193e6ecb98", null ],
       [ "BUZ_ON", "_buzzer_8h.html#aa0c443838ea85d7cb2d454d8c0dc5b56af6a4f5530ee362c287c6e1fffebfb553", null ]
     ] ],
-    [ "BUZ_GeneratePWM", "_buzzer_8h.html#a45a8be203173b3387272c64980ca01f5", null ],
     [ "BUZ_GetMode", "_buzzer_8h.html#add905ca0911317e301020b214453150e", null ],
     [ "BUZ_GetState", "_buzzer_8h.html#ab353b2f78f65e3f3bb620837def896ec", null ],
     [ "BUZ_GetVolume", "_buzzer_8h.html#a545e730cc7d0debd813906deda40225f", null ],

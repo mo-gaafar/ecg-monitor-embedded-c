@@ -19,9 +19,6 @@ typedef enum LED_Name
 {
     LED_ALARM,
     LED_PROCESSING,
-    LED_2,
-    LED_3,
-    LED_4
 } tLED;
 
 /**

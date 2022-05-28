@@ -5,26 +5,26 @@
 Go to the documentation of this file.<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#ifndef&#32;_PWM_H_</emphasis>
 2 <emphasis role="preprocessor">#define&#32;_PWM_H_</emphasis>
 3 
-14 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
-15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__port_8h">Port.h</link>&quot;</emphasis>
-16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_timer0_8h">timer0.h</link>&quot;</emphasis>
-17 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
-18 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
-19 
-20 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
-21 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
-22 <emphasis role="preprocessor">#define&#32;PWM0_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
-23 
-24 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
-25 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
-26 <emphasis role="preprocessor">#define&#32;PWM2_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
-27 
-28 <emphasis role="preprocessor">#define&#32;TMR2_SET_CLOCK_SELECTOR(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
-29 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS20,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
-30 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS21,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS21));&#32;\</emphasis>
-31 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS22,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS22));</emphasis>
-32 
-33 <emphasis role="comment">//&#32;TODO&#32;document&#32;PWM&#32;module</emphasis>
+14 <emphasis role="comment">//&#32;TODO&#32;document&#32;PWM&#32;module</emphasis>
+15 
+16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__port_8h">Port.h</link>&quot;</emphasis>
+18 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_timer0_8h">timer0.h</link>&quot;</emphasis>
+19 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+20 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+21 
+22 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
+23 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
+24 <emphasis role="preprocessor">#define&#32;PWM0_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
+25 
+26 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
+27 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
+28 <emphasis role="preprocessor">#define&#32;PWM2_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
+29 
+30 <emphasis role="preprocessor">#define&#32;TMR2_SET_CLOCK_SELECTOR(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+31 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS20,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+32 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS21,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS21));&#32;\</emphasis>
+33 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS22,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS22));</emphasis>
 34 
 35 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
 36 {

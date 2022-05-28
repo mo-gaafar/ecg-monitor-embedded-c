@@ -30,13 +30,8 @@
 <simplesect>
     <title>Enumerations    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5"/>enum <link linkend="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</link> { 
-<emphasis role="strong">LED_ALARM</emphasis>
+            <listitem><para><anchor xml:id="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5"/>enum <link linkend="__led_8h_1a9632506c5b20ae2f4a0d0942bf1d7db5">LED_Name</link> { <emphasis role="strong">LED_ALARM</emphasis>
 , <emphasis role="strong">LED_PROCESSING</emphasis>
-, <emphasis role="strong">LED_2</emphasis>
-, <emphasis role="strong">LED_3</emphasis>
-, 
-<emphasis role="strong">LED_4</emphasis>
  }</para>
 
 <para>Contains supported LED names. </para>

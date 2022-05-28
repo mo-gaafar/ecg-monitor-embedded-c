@@ -19,7 +19,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 23 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0A,&#32;WGM01,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;WGM01));&#32;\</emphasis>
 24 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR0A,&#32;WGM00,&#32;(x&#32;&amp;&#32;0x1));</emphasis>
 25 
-26 <emphasis role="comment">//&#32;TODO:&#32;Refactor&#32;syntax,&#32;causes&#32;bugs</emphasis>
+26 <emphasis role="comment">//&#32;TODO:&#32;Refactor&#32;later,&#32;causes&#32;bugs</emphasis>
 27 <emphasis role="preprocessor">#define&#32;TMR0_SET_INTERRUPT(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
 28 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;TOIE0,&#32;((0x1)&#32;&gt;&gt;&#32;TOIE0));&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
 29 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TIMSK0,&#32;OCIE0A,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;OCIE0A));&#32;\</emphasis>

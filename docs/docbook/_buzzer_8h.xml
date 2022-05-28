@@ -86,10 +86,6 @@
 
 <para>Gets the current sound mode of one buzzer. </para>
 </listitem>
-            <listitem><para>void <link linkend="__buzzer_8h_1a45a8be203173b3387272c64980ca01f5">BUZ_GeneratePWM</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 duty_cycle)</para>
-
-<para>Generates PWM signal at the buzzer pin. </para>
-</listitem>
             <listitem><para>void <link linkend="__buzzer_8h_1ae14daf7dd7cd337cc991c73ed868b2ab">BUZ_SetVolume</link> (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 volume)</para>
 
 <para>Sets the buzzer&apos;s volume level. </para>
@@ -135,46 +131,6 @@
 </section>
 <section>
 <title>Function Documentation</title>
-<anchor xml:id="__buzzer_8h_1a45a8be203173b3387272c64980ca01f5"/><section>
-    <title>BUZ_GeneratePWM()</title>
-<indexterm><primary>BUZ_GeneratePWM</primary><secondary>Buzzer.h</secondary></indexterm>
-<indexterm><primary>Buzzer.h</primary><secondary>BUZ_GeneratePWM</secondary></indexterm>
-<para><computeroutput>void BUZ_GeneratePWM (<link linkend="__buzzer_8h_1a60ca5eb89ee60dfdc6adb2b497af8a48">tBUZ</link> buzzer, u8 duty_cycle)</computeroutput></para><para>
-
-<para>Generates PWM signal at the buzzer pin. </para>
-</para>
-
-<para>
-                <formalpara>
-                    <title>
-Parameters</title>
-                    <para>
-                    <table frame="all">
-                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                        <colspec colwidth="1*"/>
-                        <colspec colwidth="4*"/>
-                        <tbody>
-                            <row>
-<entry>tBUZ</entry><entry>
-<para>buzzer - The buzzer to generate PWM signal for. </para>
-</entry>
-                            </row>
-                            <row>
-<entry>u8</entry><entry>
-<para>duty_cycle - The duty cycle of the PWM signal. </para>
-</entry>
-                            </row>
-                        </tbody>
-                        </tgroup>
-                    </table>
-                    </para>
-                </formalpara>
-                <warning><title>Warning</title>
-
-<para>THIS FUNCTION IS NOT YET IMPLEMENTED </para>
-</warning>
-</para>
-</section>
 <anchor xml:id="__buzzer_8h_1add905ca0911317e301020b214453150e"/><section>
     <title>BUZ_GetMode()</title>
 <indexterm><primary>BUZ_GetMode</primary><secondary>Buzzer.h</secondary></indexterm>

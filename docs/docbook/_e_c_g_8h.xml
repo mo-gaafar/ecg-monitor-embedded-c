@@ -69,6 +69,8 @@
 <para>Update ECG filtering, detection. </para>
 </listitem>
             <listitem><para><anchor xml:id="__e_c_g_8h_1a602c5000169967bba85ccf93f8ac47f1"/>void <emphasis role="strong">ECG_Update_Alarm</emphasis> (void)</para>
+
+<para>Sets LED_Alarm and BUZ_ALARM stated depending on arrythmia. </para>
 </listitem>
             <listitem><para>u8 <link linkend="__e_c_g_8h_1ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</link> (void)</para>
 

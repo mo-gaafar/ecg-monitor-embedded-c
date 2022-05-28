@@ -36,8 +36,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 97 
 101 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1afbf0ca489cc7beb5a4bc2d13a718822b">LCD_LatchSignal</link>(<emphasis role="keywordtype">void</emphasis>);
 102 
-103 <emphasis role="comment">//&#32;TODO:&#32;documentation</emphasis>
-104 <emphasis role="keywordtype">void</emphasis>&#32;LCD_UpdateDisplay(<emphasis role="keywordtype">void</emphasis>);
-105 
-106 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;LCD_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
+106 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__l_c_d_8h_1a02dd7b07f11d93845a82c30d140ab245">LCD_UpdateDisplay</link>(<emphasis role="keywordtype">void</emphasis>);
+107 
+108 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">/*&#32;LCD_H&#32;*/</emphasis><emphasis role="preprocessor"></emphasis>
 </programlisting></section>

@@ -2,6 +2,7 @@
 #include "Port.h"
 #include "Buzzer.h"
 #include "pwm.h"
+#include "timer0.h"
 #include "Push_Button.h"
 
 #define NUMBER_OF_BUZZERS (1)
@@ -10,9 +11,7 @@
 
 #define BUZ_MAX_VOLTAGE (1)
 #define BUZ_MIN_VOLTAGE (0)
-
-#define BUZ_Update_Period_ms (ISR_TMR0_Period_ms)
-#define BUZ_State_Update_Period_ms (1000)
+#define BUZ_VOLUME_STEP (5)
 
 u16 buzzer_update_ms = 0;
 
@@ -43,6 +42,7 @@ void BUZ_Init(tBUZ buzzer, tBUZ_Mode mode)
     {
     case BUZ_ALARM:
         GPIO_InitPortPin(BUZ_ALARM_PORT_DIRECTION, BUZ_ALARM_PIN, GPIO_OUT); // port, pin, direction
+        PWM_Init(BUZ_ALARM_TIMER, PWM_MODE_STOPPED, 100, PRESCALAR_8);
         break;
     default:
         /* Should not be here */
@@ -57,12 +57,12 @@ void BUZ_UpdateVolume(tBUZ buzzer, tPB buttonUp, tPB buttonDn)
 {
     if (PB_GetClicks(buttonUp) > 0)
     {
-        BUZ_VolumeUp(buzzer, PB_GetClicks(buttonUp));
+        BUZ_VolumeUp(buzzer, BUZ_VOLUME_STEP * PB_GetClicks(buttonUp));
         PB_ResetClicks(buttonUp);
     }
     else if (PB_GetClicks(buttonDn) > 0)
     {
-        BUZ_VolumeDn(buzzer, PB_GetClicks(buttonDn));
+        BUZ_VolumeDn(buzzer, BUZ_VOLUME_STEP * PB_GetClicks(buttonDn));
         PB_ResetClicks(buttonDn);
     }
 }
@@ -106,10 +106,13 @@ void BUZ_SetState(tBUZ buzzer, tBUZ_State state)
         if (state == BUZ_OFF)
         {
             PWM_Pause(BUZ_ALARM_TIMER);
+            GPIO_WritePortPin(BUZ_ALARM_PORT_DATA, BUZ_ALARM_PIN, 0);
         }
         else
         {
-            PWM_Resume(BUZ_ALARM_TIMER);
+            // GPIO_WritePortPin(BUZ_ALARM_PORT_DATA, BUZ_ALARM_PIN, 1);
+            PWM_Start(BUZ_ALARM_TIMER);
+            // PWM_Resume(BUZ_ALARM_TIMER);
             PWM_Set_Duty(BUZ_ALARM_TIMER, buzzer_info[BUZ_ALARM].volume);
         }
 
@@ -147,6 +150,7 @@ void BUZ_SetMode(tBUZ buzzer, tBUZ_Mode mode)
 };
 void BUZ_SetVolume(tBUZ buzzer, u8 volume)
 {
+
     /* Set buzzer volume */
     for (u8 current_buz = 0; current_buz < NUMBER_OF_BUZZERS; current_buz++)
     {
@@ -160,11 +164,6 @@ void BUZ_SetVolume(tBUZ buzzer, u8 volume)
             {
                 buzzer_info[current_buz].volume = 100;
             }
-            else
-            {
-                buzzer_info[current_buz].volume = 0;
-            }
-            buzzer_info[current_buz].volume = volume;
         }
     }
 }
@@ -206,22 +205,6 @@ void BUZ_VolumeDn(tBUZ buzzer, u8 decrements)
     }
 }
 
-// tBUZ_State BUZ_GetState(tBUZ buzzer) // TODO: Add safety check?
-// {
-//     /* Get buzzer state */
-//     tBUZ_State state = BUZ_OFF;
-//     switch (buzzer)
-//     {
-//     case BUZ_ALARM:
-//         state = buzzer_info[buzzer].; // port, pin
-//         break;
-//     default:
-//         /* Should not be here */
-//         break;
-//     }
-//     /* End of your code */
-//     return state;
-// }
 tBUZ_Mode BUZ_GetMode(tBUZ buzzer)
 {
     /* Get buzzer mode */

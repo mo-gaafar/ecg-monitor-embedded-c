@@ -12,6 +12,8 @@
  **/
 
 #define BUZ_DELAY_MS (1000)
+#define BUZ_Update_Period_ms (ISR_TMR0_Period_ms)
+#define BUZ_State_Update_Period_ms (40)
 
 /**
  * @brief List of supported buzzers

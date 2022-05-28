@@ -9,10 +9,10 @@
 
 #include <util/delay.h>
 
-u16 adc_out = 0;
-u8 Test_Button_State = 0;
+// u16 adc_out = 0;
+// u8 Test_Button_State = 0;
 static u8 ticks_ms = 0;
-#define MAIN_Debug 0
+#define MAIN_Debug 1
 
 int main(void)
 {
@@ -42,34 +42,19 @@ int main(void)
         // LED_Off(LED_PROCESSING);
 
 #else
-
-        if (PB_GetClicks(PB_DISP_SLEEP) > 0)
+        if (PB_GetState(PB_DISP_SLEEP) == PB_PRESSED)
         {
-            LCD_SendCommand(0x01);
-            LCD_PrintString("SLEEP");
-            BUZ_SetState(BUZ_ALARM, BUZ_STOPPED_MODE);
-            LED_Off(LED_ALARM);
-            PB_ResetClicks(PB_VOL_MINUS);
-            PB_ResetClicks(PB_DISP_SLEEP);
+            BUZ_SetMode(BUZ_ALARM, BUZ_PATTERN_MODE);
+            LED_On(LED_ALARM);
         }
         else
         {
-            LCD_SendCommand(0x01);
-            BUZ_SetMode(BUZ_ALARM, BUZ_PATTERN_MODE);
-            LED_On(LED_ALARM);
-            LCD_PrintString("Count");
-            LCD_PrintNumber(PB_GetClicks(PB_VOL_MINUS));
-
-            BUZ_VolumeUp(BUZ_ALARM, PB_GetClicks(PB_VOL_PLUS));
-            BUZ_VolumeDn(BUZ_ALARM, PB_GetClicks(PB_VOL_MINUS));
-
-            LCD_SetCursorAt(0, 1);
-            LCD_PrintString("Volume");
-            LCD_PrintNumber(BUZ_GetVolume(BUZ_ALARM));
-
-            PB_ResetClicks(PB_VOL_PLUS);
-            PB_ResetClicks(PB_VOL_MINUS);
+            BUZ_SetMode(BUZ_ALARM, BUZ_STOPPED_MODE);
+            LED_Off(LED_ALARM);
         }
+        LCD_SetCursorAt(0, 0);
+        LCD_PrintNumber(BUZ_GetVolume(BUZ_ALARM));
+        LCD_PrintString(" "); // ;)
 #endif
     }
     return 0;
@@ -82,11 +67,12 @@ int main(void)
 
 ISR(TIMER0_OVF_vect) // called when timer 0 overflows
 {
+#if MAIN_Debug == 0
+    LED_On(LED_PROCESSING);
     // Overall Timing overhead: BCET = 160us, WCET = 312us + 5us
 
     if (ticks_ms == 0)
     {
-
         // BCET 145.17 us , WCET 308.2 us
         ECG_Update();
     }
@@ -99,11 +85,32 @@ ISR(TIMER0_OVF_vect) // called when timer 0 overflows
     }
     if (ticks_ms == 2)
     {
-        LED_On(LED_PROCESSING);
-        // ?
+        // BCET = 3.91 us, WCET = 4.03 us
         ECG_Update_Alarm();
-        LED_Off(LED_PROCESSING);
     }
+    LED_Off(LED_PROCESSING);
+#else
+    LED_On(LED_PROCESSING);
+    if (ticks_ms == 0)
+    {
+
+        // BCET 145.17 us , WCET 308.2 us
+        // ECG_Update();
+    }
+    if (ticks_ms == 1)
+    {
+        // BCET = 11.5us, WCET = 11.78 us
+        PB_Update();
+        // BCET = 1.46us , WCET = 2.11 us
+        BUZ_Update();
+    }
+    if (ticks_ms == 2)
+    {
+        // ?
+        // ECG_Update_Alarm();
+    }
+    LED_Off(LED_PROCESSING);
+#endif
 
     ticks_ms++;
 

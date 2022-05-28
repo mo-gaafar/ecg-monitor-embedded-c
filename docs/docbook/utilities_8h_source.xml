@@ -9,5 +9,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 15 
 21 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_utilities_8h_1a6a488a11d9378574052140463f702dce">UTIL_DelayMS</link>(u16&#32;delay_ms);
 22 
-23 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__UTIL_H__</emphasis>
+28 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_utilities_8h_1abc3f3556a4360a137210554c4bbfd425">UTIL_DelayUS</link>(u16&#32;delay_us);
+29 
+30 <emphasis role="preprocessor">#endif&#32;</emphasis><emphasis role="comment">//&#32;__UTIL_H__</emphasis>
 </programlisting></section>

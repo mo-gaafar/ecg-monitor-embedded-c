@@ -94,15 +94,6 @@ tBUZ_State BUZ_GetState(tBUZ buzzer);
  **/
 tBUZ_Mode BUZ_GetMode(tBUZ buzzer);
 
-// TODO: Implement these functions then add documentation
-
-/**
- * @brief Generates PWM signal at the buzzer pin.
- * @param tBUZ buzzer - The buzzer to generate PWM signal for.
- * @param u8 duty_cycle - The duty cycle of the PWM signal.
- * @warning THIS FUNCTION IS NOT YET IMPLEMENTED
- **/
-void BUZ_GeneratePWM(tBUZ buzzer, u8 duty_cycle);
 
 /**
  * @brief Sets the buzzer's volume level

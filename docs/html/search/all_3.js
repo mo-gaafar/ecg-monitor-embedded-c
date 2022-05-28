@@ -1,7 +1,7 @@
 var searchData=
 [
   ['lcd_2eh_0',['LCD.h',['../_l_c_d_8h.html',1,'']]],
-  ['lcd_5fclear_1',['LCD_Clear',['../_l_c_d_8h.html#ae60d0b62d7eb3fa31266c095d7b3c245',1,'LCD.h']]],
+  ['lcd_5fclear_1',['LCD_Clear',['../_l_c_d_8h.html#ae60d0b62d7eb3fa31266c095d7b3c245',1,'LCD.c']]],
   ['lcd_5fclearline_2',['LCD_ClearLine',['../_l_c_d_8h.html#a0083f5163ab55b3501fe6bc1f794aff5',1,'LCD.h']]],
   ['lcd_5finit_3',['LCD_Init',['../_l_c_d_8h.html#aa53c9d40f3aa552a9974cd55ac510cb3',1,'LCD.c']]],
   ['lcd_5flatchsignal_4',['LCD_LatchSignal',['../_l_c_d_8h.html#afbf0ca489cc7beb5a4bc2d13a718822b',1,'LCD.c']]],

@@ -11,6 +11,8 @@
  * @date       2022-5-25
  **/
 
+// TODO document PWM module
+
 #include "main.h"
 #include "Port.h"
 #include "timer0.h"
@@ -29,8 +31,6 @@
     SET_REGISTER_PIN(TCCR2B, CS20, (x & 0x1));           \
     SET_REGISTER_PIN(TCCR2B, CS21, ((x & 0x2) >> CS21)); \
     SET_REGISTER_PIN(TCCR2B, CS22, ((x & 0x4) >> CS22));
-
-// TODO document PWM module
 
 typedef enum
 {

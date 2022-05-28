@@ -100,7 +100,9 @@ void LCD_ClearLine(char line);
  **/
 void LCD_LatchSignal(void);
 
-// TODO: documentation
+/**
+ * @brief Updates the LCD with the new Heartrate and Arrythmia
+ **/
 void LCD_UpdateDisplay(void);
 
 #endif /* LCD_H */

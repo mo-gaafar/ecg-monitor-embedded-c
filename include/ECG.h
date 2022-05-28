@@ -98,7 +98,10 @@ void ECG_Init();
  **/
 void ECG_Update(void); // update ecg signal, update counter, detect peaks, calculate heart rate
 
-// TODO add documentation
+/**
+ * @brief Sets LED_Alarm and BUZ_ALARM stated depending on arrythmia
+ *
+ **/
 void ECG_Update_Alarm(void);
 
 /**

@@ -22,7 +22,11 @@
         <itemizedlist>
             <listitem><para>void <link linkend="_utilities_8h_1a6a488a11d9378574052140463f702dce">UTIL_DelayMS</link> (u16 delay_ms)</para>
 
-<para>This function is used to delay the program for a certain amount of time. </para>
+<para>Delays the program for a certain amount of time. </para>
+</listitem>
+            <listitem><para>void <link linkend="_utilities_8h_1abc3f3556a4360a137210554c4bbfd425">UTIL_DelayUS</link> (u16 delay_us)</para>
+
+<para>Delays the program for a certain amount of time. </para>
 </listitem>
         </itemizedlist>
 </simplesect>
@@ -53,7 +57,7 @@
 <indexterm><primary>utilities.h</primary><secondary>UTIL_DelayMS</secondary></indexterm>
 <para><computeroutput>void UTIL_DelayMS (u16 delay_ms)</computeroutput></para><para>
 
-<para>This function is used to delay the program for a certain amount of time. </para>
+<para>Delays the program for a certain amount of time. </para>
 </para>
 
 <para>
@@ -68,7 +72,7 @@ Parameters</title>
                         <tbody>
                             <row>
 <entry>delay_ms</entry><entry>
-<para>The amount of time to delay the program for in milliseconds </para>
+<para>The amount of time in milliseconds </para>
 </entry>
                             </row>
                         </tbody>
@@ -81,6 +85,37 @@ Parameters</title>
 <para>void </para>
 </formalpara>
 </para>
+</section>
+<anchor xml:id="_utilities_8h_1abc3f3556a4360a137210554c4bbfd425"/><section>
+    <title>UTIL_DelayUS()</title>
+<indexterm><primary>UTIL_DelayUS</primary><secondary>utilities.h</secondary></indexterm>
+<indexterm><primary>utilities.h</primary><secondary>UTIL_DelayUS</secondary></indexterm>
+<para><computeroutput>void UTIL_DelayUS (u16 delay_us)</computeroutput></para><para>
+
+<para>Delays the program for a certain amount of time. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delay_us</entry><entry>
+<para>The amount of time in microseconds </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
 </section>
 </section>
 </section>

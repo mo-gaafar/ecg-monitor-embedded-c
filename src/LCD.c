@@ -57,7 +57,6 @@ void LCD_SendCommand(char Command)
     GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
     LCD_LatchSignal();
 #elif LCD_MODE == LCD_4BIT_MODE
-    /// TODO:
     GPIO_WritePortPin(LCD_CPRT_DR, LCD_RS, 0);
     GPIO_WritePortPin(LCD_CPRT_DR, LCD_RW, 0);
     LCD_CPRT_DR = (LCD_CPRT_DR & 0x0f) | (Command & 0xf0);

@@ -9,6 +9,7 @@
 </para>
 <programlisting linenumbering="unnumbered">#include &quot;main.h&quot;
 #include &quot;Port.h&quot;
+#include &quot;timer0.h&quot;
 #include &lt;avr/io.h&gt;
 #include &lt;util/delay.h&gt;
 </programlisting>Include dependency graph for pwm.h:<para>
@@ -35,6 +36,8 @@
 </listitem>
             <listitem><para><anchor xml:id="_pwm_8h_1a16704a6d8c87a0fae0bf45b403d46aad"/>#define <emphasis role="strong">PWM2_PIN</emphasis>   (BUZ_ALARM_PIN)</para>
 </listitem>
+            <listitem><para>#define <link linkend="_pwm_8h_1aad22f87e8c52593a59ddb39d5d0151dd">TMR2_SET_CLOCK_SELECTOR</link>(x)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>
@@ -53,11 +56,11 @@
 <simplesect>
     <title>Functions    </title>
         <itemizedlist>
-            <listitem><para><anchor xml:id="_pwm_8h_1a859201c54873932fb56898c4b02e8dd3"/>void <emphasis role="strong">PWM_Init</emphasis> (tPWM pwm, tPWM_MODE init_mode, u8 init_duty, u8 init_prescaler)</para>
+            <listitem><para><anchor xml:id="_pwm_8h_1a253c2decc36b49bcba18fdd2cf8b00b0"/>void <emphasis role="strong">PWM_Init</emphasis> (tPWM pwm, tPWM_MODE init_mode, u8 init_duty, <link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> init_prescaler)</para>
 </listitem>
             <listitem><para><anchor xml:id="_pwm_8h_1af0a74961af9a40e243803b36f23e823a"/>void <emphasis role="strong">PWM_Set_Duty</emphasis> (tPWM pwm, u8 duty)</para>
 </listitem>
-            <listitem><para><anchor xml:id="_pwm_8h_1acf389431814ad6ffa788baa736fd66ef"/>void <emphasis role="strong">PWM_Set_Clock</emphasis> (tPWM pwm, u8 clock)</para>
+            <listitem><para><anchor xml:id="_pwm_8h_1a4c4d4f98199913a01c322ba9f209a7e4"/>void <emphasis role="strong">PWM_Set_Clock</emphasis> (tPWM pwm, <link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link> clock)</para>
 </listitem>
             <listitem><para><anchor xml:id="_pwm_8h_1a9ab4831dbaef0f53e64b87f7abd3f73a"/>u8 <emphasis role="strong">PWM_Get_Duty</emphasis> (tPWM pwm)</para>
 </listitem>
@@ -78,6 +81,10 @@
 
 <para>Mohamed Nasser</para>
 </formalpara>
+<warning><title>Warning</title>
+
+<para>THIS MODULE IS CURRENTLY NOT USED </para>
+</warning>
 <formalpara><title>Version</title>
 
 <para>0.2.1 </para>
@@ -87,5 +94,16 @@
 <para>2022-5-25 </para>
 </formalpara>
 </para>
+</section>
+<section>
+<title>Macro Definition Documentation</title>
+<anchor xml:id="_pwm_8h_1aad22f87e8c52593a59ddb39d5d0151dd"/><section>
+    <title>TMR2_SET_CLOCK_SELECTOR</title>
+<indexterm><primary>TMR2_SET_CLOCK_SELECTOR</primary><secondary>pwm.h</secondary></indexterm>
+<indexterm><primary>pwm.h</primary><secondary>TMR2_SET_CLOCK_SELECTOR</secondary></indexterm>
+<para><computeroutput>#define TMR2_SET_CLOCK_SELECTOR( x)</computeroutput></para><emphasis role="strong">Value:</emphasis><programlisting linenumbering="unnumbered">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS20,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS21,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS21));&#32;\
+&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS22,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS22));
+</programlisting></section>
 </section>
 </section>

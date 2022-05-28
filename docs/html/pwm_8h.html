@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('pwm_8h.html',''); initResizable(); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_port_8h_source.html">Port.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer0_8h_source.html">timer0.h</a>&quot;</code><br />
 <code>#include &lt;avr/io.h&gt;</code><br />
 <code>#include &lt;util/delay.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -125,6 +126,8 @@ Macros</h2></td></tr>
 <tr class="memitem:a16704a6d8c87a0fae0bf45b403d46aad"><td class="memItemLeft" align="right" valign="top"><a id="a16704a6d8c87a0fae0bf45b403d46aad" name="a16704a6d8c87a0fae0bf45b403d46aad"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>PWM2_PIN</b>&#160;&#160;&#160;(BUZ_ALARM_PIN)</td></tr>
 <tr class="separator:a16704a6d8c87a0fae0bf45b403d46aad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad22f87e8c52593a59ddb39d5d0151dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pwm_8h.html#aad22f87e8c52593a59ddb39d5d0151dd">TMR2_SET_CLOCK_SELECTOR</a>(x)</td></tr>
+<tr class="separator:aad22f87e8c52593a59ddb39d5d0151dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -139,15 +142,15 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a859201c54873932fb56898c4b02e8dd3"><td class="memItemLeft" align="right" valign="top"><a id="a859201c54873932fb56898c4b02e8dd3" name="a859201c54873932fb56898c4b02e8dd3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Init</b> (tPWM pwm, tPWM_MODE init_mode, u8 init_duty, u8 init_prescaler)</td></tr>
-<tr class="separator:a859201c54873932fb56898c4b02e8dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253c2decc36b49bcba18fdd2cf8b00b0"><td class="memItemLeft" align="right" valign="top"><a id="a253c2decc36b49bcba18fdd2cf8b00b0" name="a253c2decc36b49bcba18fdd2cf8b00b0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Init</b> (tPWM pwm, tPWM_MODE init_mode, u8 init_duty, <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a> init_prescaler)</td></tr>
+<tr class="separator:a253c2decc36b49bcba18fdd2cf8b00b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0a74961af9a40e243803b36f23e823a"><td class="memItemLeft" align="right" valign="top"><a id="af0a74961af9a40e243803b36f23e823a" name="af0a74961af9a40e243803b36f23e823a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Set_Duty</b> (tPWM pwm, u8 duty)</td></tr>
 <tr class="separator:af0a74961af9a40e243803b36f23e823a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf389431814ad6ffa788baa736fd66ef"><td class="memItemLeft" align="right" valign="top"><a id="acf389431814ad6ffa788baa736fd66ef" name="acf389431814ad6ffa788baa736fd66ef"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Set_Clock</b> (tPWM pwm, u8 clock)</td></tr>
-<tr class="separator:acf389431814ad6ffa788baa736fd66ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4d4f98199913a01c322ba9f209a7e4"><td class="memItemLeft" align="right" valign="top"><a id="a4c4d4f98199913a01c322ba9f209a7e4" name="a4c4d4f98199913a01c322ba9f209a7e4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Set_Clock</b> (tPWM pwm, <a class="el" href="timer0_8h.html#a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</a> clock)</td></tr>
+<tr class="separator:a4c4d4f98199913a01c322ba9f209a7e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab4831dbaef0f53e64b87f7abd3f73a"><td class="memItemLeft" align="right" valign="top"><a id="a9ab4831dbaef0f53e64b87f7abd3f73a" name="a9ab4831dbaef0f53e64b87f7abd3f73a"></a>
 u8&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Get_Duty</b> (tPWM pwm)</td></tr>
 <tr class="separator:a9ab4831dbaef0f53e64b87f7abd3f73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,9 +167,32 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PWM_Pause</b> (tPWM p
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Pulse width modulation driver module. </p>
 <dl class="section author"><dt>Author</dt><dd>Mohamed Nasser</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>THIS MODULE IS CURRENTLY NOT USED </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.2.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-5-25 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aad22f87e8c52593a59ddb39d5d0151dd" name="aad22f87e8c52593a59ddb39d5d0151dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad22f87e8c52593a59ddb39d5d0151dd">&#9670;&nbsp;</a></span>TMR2_SET_CLOCK_SELECTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMR2_SET_CLOCK_SELECTOR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    SET_REGISTER_PIN(TCCR2B, CS20, (x &amp; 0x1));           \</div>
+<div class="line">    SET_REGISTER_PIN(TCCR2B, CS21, ((x &amp; 0x2) &gt;&gt; CS21)); \</div>
+<div class="line">    SET_REGISTER_PIN(TCCR2B, CS22, ((x &amp; 0x4) &gt;&gt; CS22));</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

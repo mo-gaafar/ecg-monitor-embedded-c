@@ -81,19 +81,22 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 94 
 99 <emphasis role="keywordtype">void</emphasis>&#32;<link linkend="__e_c_g_8h_1a677b0e53cb36755e36e041705d550c7e">ECG_Update</link>(<emphasis role="keywordtype">void</emphasis>);&#32;<emphasis role="comment">//&#32;update&#32;ecg&#32;signal,&#32;update&#32;counter,&#32;detect&#32;peaks,&#32;calculate&#32;heart&#32;rate</emphasis>
 100 
-106 u8&#32;<link linkend="__e_c_g_8h_1ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</link>(<emphasis role="keywordtype">void</emphasis>);
-107 
-113 <link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link>&#32;<link linkend="__e_c_g_8h_1afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</link>(<emphasis role="keywordtype">void</emphasis>);
-114 
-120 <emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__e_c_g_8h_1a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</link>(<emphasis role="keywordtype">void</emphasis>);
-121 
-128 u8&#32;<link linkend="__e_c_g_8h_1ab7d56516f139537a7186781941304a59">ECG_Detect</link>(<emphasis role="keywordtype">float</emphasis>&#32;ecg_sample);
-129 
-130 <emphasis role="comment">//&#32;static&#32;u8&#32;current_bpm&#32;=&#32;0;&#32;//&#32;Current&#32;heart&#32;rate&#32;in&#32;beats&#32;per&#32;minute</emphasis>
-131 <emphasis role="comment">//&#32;static&#32;ECG_Arrythmia_Type&#32;current_arrythmia&#32;=&#32;Normal;</emphasis>
-132 <emphasis role="comment">//&#32;static&#32;ECG_Statistics&#32;current_statistics;</emphasis>
-133 
-134 <emphasis role="comment">//&#32;ECG_Statistics&#32;ECG_GetStatistics(void);</emphasis>
-135 
-136 <emphasis role="preprocessor">#endif</emphasis>
+101 <emphasis role="comment">//&#32;TODO&#32;add&#32;documentation</emphasis>
+102 <emphasis role="keywordtype">void</emphasis>&#32;ECG_Update_Alarm(<emphasis role="keywordtype">void</emphasis>);
+103 
+109 u8&#32;<link linkend="__e_c_g_8h_1ad0763e90ac9b72b09dd897435131f837">ECG_Get_BPM</link>(<emphasis role="keywordtype">void</emphasis>);
+110 
+116 <link linkend="__e_c_g_8h_1ad3539e468b6fbacec8b1ed753333f491">ECG_Arrythmia_Type</link>&#32;<link linkend="__e_c_g_8h_1afd69427017a6b1d7a731edcbcfeabe07">ECG_Get_Arrythmia_Type</link>(<emphasis role="keywordtype">void</emphasis>);
+117 
+123 <emphasis role="keywordtype">char</emphasis>&#32;*<link linkend="__e_c_g_8h_1a346cad9a373adc1fb5c2dace0ebc0f96">ECG_Get_Arrythmia_Type_String</link>(<emphasis role="keywordtype">void</emphasis>);
+124 
+131 u8&#32;<link linkend="__e_c_g_8h_1ab7d56516f139537a7186781941304a59">ECG_Detect</link>(<emphasis role="keywordtype">float</emphasis>&#32;ecg_sample);
+132 
+133 <emphasis role="comment">//&#32;static&#32;u8&#32;current_bpm&#32;=&#32;0;&#32;//&#32;Current&#32;heart&#32;rate&#32;in&#32;beats&#32;per&#32;minute</emphasis>
+134 <emphasis role="comment">//&#32;static&#32;ECG_Arrythmia_Type&#32;current_arrythmia&#32;=&#32;Normal;</emphasis>
+135 <emphasis role="comment">//&#32;static&#32;ECG_Statistics&#32;current_statistics;</emphasis>
+136 
+137 <emphasis role="comment">//&#32;ECG_Statistics&#32;ECG_GetStatistics(void);</emphasis>
+138 
+139 <emphasis role="preprocessor">#endif</emphasis>
 </programlisting></section>

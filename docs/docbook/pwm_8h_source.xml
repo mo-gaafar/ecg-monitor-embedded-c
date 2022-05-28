@@ -7,38 +7,46 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 3 
 14 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_main_8h">main.h</link>&quot;</emphasis>
 15 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="__port_8h">Port.h</link>&quot;</emphasis>
-16 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
-17 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
-18 
-19 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
-20 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
-21 <emphasis role="preprocessor">#define&#32;PWM0_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
-22 
-23 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
-24 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
-25 <emphasis role="preprocessor">#define&#32;PWM2_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
-26 
-27 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
-28 {
-29 &#32;&#32;&#32;&#32;PWM_0,
-30 &#32;&#32;&#32;&#32;PWM_2
-31 }&#32;tPWM;
+16 <emphasis role="preprocessor">#include&#32;&quot;<link linkend="_timer0_8h">timer0.h</link>&quot;</emphasis>
+17 <emphasis role="preprocessor">#include&#32;&lt;avr/io.h&gt;</emphasis>
+18 <emphasis role="preprocessor">#include&#32;&lt;util/delay.h&gt;</emphasis>
+19 
+20 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
+21 <emphasis role="preprocessor">#define&#32;PWM0_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
+22 <emphasis role="preprocessor">#define&#32;PWM0_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
+23 
+24 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DATA&#32;(BUZ_ALARM_PORT_DATA)</emphasis>
+25 <emphasis role="preprocessor">#define&#32;PWM2_PORT_DIRECTION&#32;(BUZ_ALARM_PORT_DIRECTION)</emphasis>
+26 <emphasis role="preprocessor">#define&#32;PWM2_PIN&#32;(BUZ_ALARM_PIN)</emphasis>
+27 
+28 <emphasis role="preprocessor">#define&#32;TMR2_SET_CLOCK_SELECTOR(x)&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+29 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS20,&#32;(x&#32;&amp;&#32;0x1));&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;\</emphasis>
+30 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS21,&#32;((x&#32;&amp;&#32;0x2)&#32;&gt;&gt;&#32;CS21));&#32;\</emphasis>
+31 <emphasis role="preprocessor">&#32;&#32;&#32;&#32;SET_REGISTER_PIN(TCCR2B,&#32;CS22,&#32;((x&#32;&amp;&#32;0x4)&#32;&gt;&gt;&#32;CS22));</emphasis>
 32 
-33 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
-34 {
-35 &#32;&#32;&#32;&#32;PWM_MODE_STOPPED,
-36 &#32;&#32;&#32;&#32;PWM_MODE_RUNNING
-37 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PWM_MODE_PHASE_CORRECTED</emphasis>
-38 }&#32;tPWM_MODE;
-39 
-40 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Init(tPWM&#32;pwm,&#32;tPWM_MODE&#32;init_mode,&#32;u8&#32;init_duty,&#32;u8&#32;init_prescaler);
-41 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Set_Duty(tPWM&#32;pwm,&#32;u8&#32;duty);
-42 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Set_Clock(tPWM&#32;pwm,&#32;u8&#32;clock);
-43 u8&#32;PWM_Get_Duty(tPWM&#32;pwm);
-44 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Start(tPWM&#32;pwm);
-45 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Resume(tPWM&#32;pwm);
-46 
-47 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Pause(tPWM&#32;pwm);
-48 
-49 <emphasis role="preprocessor">#endif</emphasis>
+33 <emphasis role="comment">//&#32;TODO&#32;document&#32;PWM&#32;module</emphasis>
+34 
+35 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+36 {
+37 &#32;&#32;&#32;&#32;PWM_0,
+38 &#32;&#32;&#32;&#32;PWM_2
+39 }&#32;tPWM;
+40 
+41 <emphasis role="keyword">typedef</emphasis>&#32;<emphasis role="keyword">enum</emphasis>
+42 {
+43 &#32;&#32;&#32;&#32;PWM_MODE_STOPPED,
+44 &#32;&#32;&#32;&#32;PWM_MODE_RUNNING
+45 &#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;PWM_MODE_PHASE_CORRECTED</emphasis>
+46 }&#32;tPWM_MODE;
+47 
+48 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Init(tPWM&#32;pwm,&#32;tPWM_MODE&#32;init_mode,&#32;u8&#32;init_duty,&#32;<link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link>&#32;init_prescaler);
+49 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Set_Duty(tPWM&#32;pwm,&#32;u8&#32;duty);
+50 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Set_Clock(tPWM&#32;pwm,&#32;<link linkend="_timer0_8h_1a6ce04cefa5af7e9bdcd73f544d004fd2">tClock_Selector</link>&#32;clock);
+51 u8&#32;PWM_Get_Duty(tPWM&#32;pwm);
+52 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Start(tPWM&#32;pwm);
+53 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Resume(tPWM&#32;pwm);
+54 
+55 <emphasis role="keywordtype">void</emphasis>&#32;PWM_Pause(tPWM&#32;pwm);
+56 
+57 <emphasis role="preprocessor">#endif</emphasis>
 </programlisting></section>

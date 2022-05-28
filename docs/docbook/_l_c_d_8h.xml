@@ -77,6 +77,8 @@
 
 <para>Latches the EN pin on the LCD. </para>
 </listitem>
+            <listitem><para><anchor xml:id="__l_c_d_8h_1a02dd7b07f11d93845a82c30d140ab245"/>void <emphasis role="strong">LCD_UpdateDisplay</emphasis> (void)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <section>

@@ -23,7 +23,7 @@
     SET_REGISTER_PIN(TCCR0A, WGM01, ((x & 0x2) >> WGM01)); \
     SET_REGISTER_PIN(TCCR0A, WGM00, (x & 0x1));
 
-// TODO: Refactor syntax, causes bugs
+// TODO: Refactor later, causes bugs
 #define TMR0_SET_INTERRUPT(x)                                \
     SET_REGISTER_PIN(TIMSK0, TOIE0, ((0x1) >> TOIE0));       \
     SET_REGISTER_PIN(TIMSK0, OCIE0A, ((x & 0x2) >> OCIE0A)); \

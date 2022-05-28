@@ -13,10 +13,10 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 17 
 18 <emphasis role="comment">/*BUZZER*/</emphasis>
 19 
-20 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_TIMER&#32;(2)</emphasis>
+20 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_TIMER&#32;(PWM_2)</emphasis>
 21 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PORT_DATA&#32;(GPIO_PORT_1_DATA)</emphasis>
 22 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PORT_DIRECTION&#32;(GPIO_PORT_1_DIRECTION)</emphasis>
-23 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PIN&#32;(GPIO_PIN_1)</emphasis>
+23 <emphasis role="preprocessor">#define&#32;BUZ_ALARM_PIN&#32;(GPIO_PIN_3)</emphasis>
 24 
 25 <emphasis role="comment">/*LED*/</emphasis>
 26 
@@ -25,7 +25,7 @@ Go to the documentation of this file.<programlisting linenumbering="unnumbered">
 29 <emphasis role="preprocessor">#define&#32;LED_ALARM_PIN&#32;(GPIO_PIN_2)</emphasis>
 30 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PORT_DATA&#32;(GPIO_PORT_1_DATA)</emphasis>
 31 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PORT_DIRECTION&#32;(GPIO_PORT_1_DIRECTION)</emphasis>
-32 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PIN&#32;(GPIO_PIN_3)</emphasis>
+32 <emphasis role="preprocessor">#define&#32;LED_PROCESSING_PIN&#32;(GPIO_PIN_1)</emphasis>
 33 
 34 <emphasis role="comment">/*LCD*/</emphasis>
 35 

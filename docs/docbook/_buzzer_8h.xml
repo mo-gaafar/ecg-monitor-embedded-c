@@ -12,6 +12,10 @@
         <itemizedlist>
             <listitem><para><anchor xml:id="__buzzer_8h_1a20bbfde662ddcde633ff5c7e9262245b"/>#define <emphasis role="strong">BUZ_DELAY_MS</emphasis>   (1000)</para>
 </listitem>
+            <listitem><para><anchor xml:id="__buzzer_8h_1aa6b6246c279fd37d71552b38af07f14c"/>#define <emphasis role="strong">BUZ_Update_Period_ms</emphasis>   (ISR_TMR0_Period_ms)</para>
+</listitem>
+            <listitem><para><anchor xml:id="__buzzer_8h_1aad1e5b7a285da541837aa414b305adcc"/>#define <emphasis role="strong">BUZ_State_Update_Period_ms</emphasis>   (40)</para>
+</listitem>
         </itemizedlist>
 </simplesect>
 <simplesect>

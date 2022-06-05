@@ -1,4 +1,4 @@
-# Embedded ECG Monitor
+# Mini ECG Monitor
 
 A software written in Embedded C that drives a prototype ECG monitor and detects arrhythmic heart rates using digital signal processing and realtime filtering techniques.
 
@@ -25,6 +25,7 @@ Designed for the Atmel Atmega328p microcontroller
 ✅ ADC
 ✅ Timer0
 ✅ LCD
+<br>
 ✅ LED
 ✅ PushButton
 ✅ Buzzer

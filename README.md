@@ -2,7 +2,7 @@
 
 A software written in Embedded C that drives a prototype ECG monitor and detects arrhythmic heart rates using digital signal processing and realtime filtering techniques.
 
-## For Detailed Documentation Visit
+## For Detailed Documentation Visit 
 
 ![Website](https://img.shields.io/website?url=https://mo-gaafar.github.io/ECG_Monitor_Embedded_C/html/index.html) </br>
 
